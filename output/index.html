@@ -334,6 +334,27 @@
 </head>
 <body>
 
+<!-- AGENT LOADING SCREEN -->
+<div id="agent-loader" style="display:none;position:fixed;inset:0;background:#0a0a14;z-index:2000;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:48px">
+    <div style="width:40px;height:40px;background:linear-gradient(135deg,#5b50f0,#8b5cf6);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:#fff">G</div>
+    <div style="font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.3px">Glance PMM Channel Co-Pilot</div>
+  </div>
+  <div style="font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#5b50f0;margin-bottom:32px" id="loader-channel-label">Loading Substack Dashboard</div>
+  <div style="width:100%;max-width:540px;display:flex;flex-direction:column;gap:10px" id="agent-steps">
+    <!-- steps injected by JS -->
+  </div>
+  <div style="width:100%;max-width:540px;margin-top:28px">
+    <div style="height:3px;background:#1a1b2e;border-radius:4px;overflow:hidden">
+      <div id="loader-progress-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#5b50f0,#8b5cf6);border-radius:4px;transition:width 0.6s ease"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:10px">
+      <div id="loader-status-text" style="font-size:12px;color:#6b6f8a">Initialising agents…</div>
+      <div id="loader-pct" style="font-size:12px;color:#5b50f0;font-weight:700">0%</div>
+    </div>
+  </div>
+</div>
+
 <!-- ONBOARDING OVERLAY -->
 <div class="onboarding" id="onboarding">
   <div class="onboarding-logo">
@@ -1348,9 +1369,110 @@ function toggleSidebar() {
 }
 
 function enterDashboard() {
-  const overlay = document.getElementById('onboarding');
-  overlay.classList.add('hidden');
-  setTimeout(() => { overlay.style.display = 'none'; }, 420);
+  // Hide channel selector
+  const onboarding = document.getElementById('onboarding');
+  onboarding.classList.add('hidden');
+  setTimeout(() => { onboarding.style.display = 'none'; }, 380);
+
+  // Show loader
+  const loader = document.getElementById('agent-loader');
+  loader.style.display = 'flex';
+
+  const AGENTS = [
+    { name: 'Trend Scout',      model: 'Sonnet 4.6 + Gemini 2.0 Flash',  icon: '📡', color: '#5b50f0', task: 'Querying Google Search grounding · scoring 5 trends for Glance relevance' },
+    { name: 'SOV Monitor',      model: 'Sonnet 4.6',                       icon: '🔑', color: '#0891b2', task: 'Mapping 14 GEO queries · identifying whitespace and high-volume gaps' },
+    { name: 'Competitor Pulse', model: 'Sonnet 4.6',                       icon: '🔭', color: '#7c3aed', task: 'Parsing 9 Substack RSS feeds · extracting whitespace and momentum angles' },
+    { name: 'Calendar Agent',   model: 'Haiku 4.5',                        icon: '📅', color: '#059669', task: 'Sourcing 12 events for May 2026 · tagging content hooks' },
+    { name: 'Orchestrator',     model: 'Opus 4.7',                         icon: '🧠', color: '#d97706', task: 'Synthesising intelligence · ranking 5 article ideas by priority and GEO fit' },
+    { name: 'QA Checker',       model: 'Sonnet 4.6',                       icon: '✅', color: '#16a34a', task: 'Fact-checking all outputs · verifying stats · confirming QA passed' },
+  ];
+
+  // Total duration: ~6.5s. Each agent gets a staggered slot.
+  // Timing: step visible at t, "running" for ~0.8s, "done" shortly after
+  const TOTAL_MS   = 6500;
+  const STEP_GAP   = 900;   // ms between each step starting
+  const RUN_DUR    = 700;   // ms a step stays "running" before flipping to done
+
+  const stepsEl = document.getElementById('agent-steps');
+  const progressBar = document.getElementById('loader-progress-bar');
+  const statusText  = document.getElementById('loader-status-text');
+  const pctEl       = document.getElementById('loader-pct');
+
+  // Build step rows (all hidden initially)
+  AGENTS.forEach((a, i) => {
+    const row = document.createElement('div');
+    row.id = 'agent-row-' + i;
+    row.style.cssText = 'display:flex;align-items:center;gap:14px;background:#111120;border:1px solid #1e1f36;border-radius:12px;padding:13px 18px;opacity:0;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease';
+    row.innerHTML = `
+      <div style="width:34px;height:34px;border-radius:10px;background:${a.color}18;border:1px solid ${a.color}40;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">${a.icon}</div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+          <span style="font-size:13.5px;font-weight:700;color:#e2e4f0">${a.name}</span>
+          <span style="font-size:10px;color:#4a4d6a;background:#1a1b2e;border:1px solid #2a2b45;border-radius:20px;padding:1px 8px;font-family:monospace">${a.model}</span>
+        </div>
+        <div class="agent-task-text" style="font-size:11.5px;color:#5a5d78;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${a.task}</div>
+      </div>
+      <div class="agent-status-chip" style="font-size:10px;font-weight:700;letter-spacing:.08em;padding:3px 10px;border-radius:20px;flex-shrink:0;background:#1a1b2e;color:#3a3d58;border:1px solid #2a2b45">QUEUED</div>
+    `;
+    stepsEl.appendChild(row);
+  });
+
+  function setChip(i, state) {
+    const chip = document.querySelector('#agent-row-' + i + ' .agent-status-chip');
+    if (!chip) return;
+    if (state === 'running') {
+      chip.style.background = '#1e1b4b'; chip.style.color = '#818cf8'; chip.style.borderColor = '#4338ca';
+      chip.textContent = '⟳ RUNNING';
+    } else if (state === 'done') {
+      chip.style.background = '#052e16'; chip.style.color = '#4ade80'; chip.style.borderColor = '#166534';
+      chip.textContent = '✓ DONE';
+    }
+  }
+
+  // Animate each step
+  AGENTS.forEach((_, i) => {
+    const showAt = i * STEP_GAP;
+    const runAt  = showAt + 80;
+    const doneAt = showAt + RUN_DUR;
+
+    // Appear
+    setTimeout(() => {
+      const row = document.getElementById('agent-row-' + i);
+      row.style.opacity = '1';
+      row.style.transform = 'translateY(0)';
+    }, showAt);
+
+    // Running
+    setTimeout(() => setChip(i, 'running'), runAt);
+
+    // Done
+    setTimeout(() => {
+      setChip(i, 'done');
+      const pct = Math.round(((i + 1) / AGENTS.length) * 100);
+      progressBar.style.width = pct + '%';
+      pctEl.textContent = pct + '%';
+      statusText.textContent = AGENTS[i].name + ' complete';
+    }, doneAt);
+  });
+
+  // Status messages during gaps
+  const messages = [
+    [300,  'Fetching live signals from Gemini + Google Search…'],
+    [1200, 'Analysing GEO keyword landscape…'],
+    [2100, 'Reading competitor Substack feeds…'],
+    [3000, 'Mapping editorial calendar events…'],
+    [3900, 'Synthesising article ideas with Opus…'],
+    [4800, 'Running QA checks and fact verification…'],
+    [5800, 'All agents complete · preparing dashboard…'],
+  ];
+  messages.forEach(([t, msg]) => setTimeout(() => { statusText.textContent = msg; }, t));
+
+  // Open dashboard after TOTAL_MS
+  setTimeout(() => {
+    loader.style.opacity = '0';
+    loader.style.transition = 'opacity .4s ease';
+    setTimeout(() => { loader.style.display = 'none'; loader.style.opacity = ''; loader.style.transition = ''; }, 420);
+  }, TOTAL_MS);
 }
 
 function toggleCheck(label, id) {
