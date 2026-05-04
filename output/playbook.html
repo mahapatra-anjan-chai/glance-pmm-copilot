@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Glance × Substack Playbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:#0D0D12; --surface:#14141C; --surface2:#1C1C28; --border:#2A2A3A;
+  --accent:#F0A030; --accent2:#E05C3A; --text:#EDE8DF; --muted:#8A8499;
+  --dim:#5A5468; --green:#3AB87A; --blue:#3A7ED8; --teal:#2ABFBF;
+  --phase2:#7B5EA7;
+  --tag-bg:rgba(240,160,48,.10); --tag-b:rgba(240,160,48,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;display:flex;min-height:100vh;}
+
+/* ─── MODE TOGGLE ─────────────────────────────── */
+.mode-bar{position:fixed;top:0;left:268px;right:0;height:44px;background:rgba(13,13,18,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:flex-end;padding:0 28px;z-index:300;gap:16px;}
+.mode-label{font-size:11px;color:var(--dim);letter-spacing:0.1em;text-transform:uppercase;}
+.toggle-pill{display:flex;background:var(--surface2);border:1px solid var(--border);border-radius:40px;padding:3px;gap:2px;cursor:pointer;}
+.toggle-opt{font-size:12px;font-weight:600;padding:5px 16px;border-radius:40px;transition:all 0.2s;color:var(--muted);white-space:nowrap;}
+.toggle-opt.active{background:var(--accent2);color:#fff;}
+.toggle-opt.active.quick-btn{background:var(--accent);}
+
+/* ─── SIDEBAR ──────────────────────────────────── */
+.sidebar{width:268px;min-width:268px;background:var(--surface);border-right:1px solid var(--border);position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column;padding:28px 0 40px;z-index:100;}
+.sb-logo{padding:0 24px 20px;border-bottom:1px solid var(--border);margin-bottom:16px;}
+.sb-logo .brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--accent);}
+.sb-logo .sub{font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-top:3px;}
+.nav-lbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);padding:0 24px 6px;margin-top:10px;}
+.nav-a{display:flex;align-items:center;gap:10px;padding:8px 24px;cursor:pointer;border-left:3px solid transparent;transition:all .2s;font-size:13px;color:var(--muted);text-decoration:none;}
+.nav-a:hover,.nav-a.active{color:var(--text);background:var(--surface2);border-left-color:var(--accent);}
+.nav-a .nn{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim);width:18px;flex-shrink:0;}
+.nav-a.active .nn{color:var(--accent);}
+.sb-foot{margin-top:auto;padding:16px 24px 0;border-top:1px solid var(--border);font-size:11px;color:var(--dim);}
+
+/* ─── MAIN ─────────────────────────────────────── */
+.main{flex:1;overflow-y:auto;scroll-behavior:smooth;padding-top:44px;}
+.progress-bar-wrap{position:fixed;top:44px;left:268px;right:0;height:2px;background:var(--border);z-index:200;}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%;transition:width .1s;}
+
+/* ─── SECTION SHELLS ───────────────────────────── */
+.sec{border-bottom:1px solid var(--border);scroll-margin-top:46px;}
+.sec:last-child{border-bottom:none;}
+.sec-head{padding:48px 60px 0;}
+.sec-body{padding:0 60px 52px;}
+.sec-eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.sec-eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:currentColor;}
+.sec h2{font-family:'Playfair Display',serif;font-size:30px;line-height:1.2;margin-bottom:8px;}
+.sec h2 em{font-style:italic;color:var(--accent);}
+.sec-sub{color:var(--muted);font-size:13.5px;margin-bottom:32px;}
+
+/* ─── MODE VISIBILITY ──────────────────────────── */
+body.mode-quick  .detail-view{display:none!important;}
+body.mode-quick  .quick-view{display:block!important;}
+body.mode-detail .quick-view{display:none!important;}
+body.mode-detail .detail-view{display:block!important;}
+.quick-view{display:none;}
+.detail-view{display:block;}
+
+/* ─── Quick CARDS ───────────────────────────────── */
+.adhd-section{padding:28px 60px 36px;}
+.adhd-hero{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden;}
+.adhd-hero::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(240,160,48,.07) 0%,transparent 70%);pointer-events:none;}
+.adhd-hero .ah-icon{font-size:32px;margin-bottom:10px;}
+.adhd-hero h3{font-family:'Playfair Display',serif;font-size:26px;color:var(--text);margin-bottom:6px;line-height:1.2;}
+.adhd-hero p{font-size:14px;color:var(--muted);max-width:520px;}
+
+.action-list{display:flex;flex-direction:column;gap:8px;}
+.action-item{display:flex;align-items:flex-start;gap:14px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 18px;border-left:4px solid;transition:background .15s,transform .15s;cursor:pointer;}
+.action-item:hover{background:var(--surface2);transform:translateX(3px);}
+.action-item.critical{border-left-color:#E05C3A;}
+.action-item.major{border-left-color:var(--accent);}
+.action-item.watch{border-left-color:var(--green);}
+.action-item.info{border-left-color:var(--blue);}
+.action-item.teal{border-left-color:var(--teal);}
+.action-item .ai-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+.dot-red{background:#E05C3A;}
+.dot-amber{background:var(--accent);}
+.dot-green{background:var(--green);}
+.dot-blue{background:var(--blue);}
+.dot-teal{background:var(--teal);}
+.action-item .ai-body{flex:1;}
+.action-item .ai-body strong{font-size:14.5px;font-weight:600;display:block;line-height:1.3;margin-bottom:2px;}
+.action-item .ai-body span{font-size:12.5px;color:var(--muted);line-height:1.5;}
+.action-item .ai-time{font-family:'DM Mono',monospace;font-size:10px;padding:3px 9px;border-radius:20px;flex-shrink:0;margin-top:2px;white-space:nowrap;}
+.time-now{background:#E05C3A;color:#fff;}
+.time-week{background:rgba(240,160,48,.15);color:var(--accent);border:1px solid var(--tag-b);}
+.time-later{background:rgba(58,184,122,.1);color:var(--green);border:1px solid rgba(58,184,122,.2);}
+.time-always{background:rgba(58,126,216,.1);color:var(--blue);border:1px solid rgba(58,126,216,.2);}
+
+.adhd-rule-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-top:0;}
+.rule-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 20px;border-top:3px solid;}
+.rule-card.r-teal{border-top-color:var(--teal);}
+.rule-card.r-amber{border-top-color:var(--accent);}
+.rule-card.r-red{border-top-color:var(--accent2);}
+.rule-card.r-blue{border-top-color:var(--blue);}
+.rule-card .rn{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim);margin-bottom:6px;}
+.rule-card strong{font-size:14.5px;font-weight:600;display:block;margin-bottom:4px;}
+.rule-card span{font-size:12.5px;color:var(--muted);}
+
+.adhd-checklist{display:flex;flex-direction:column;gap:0;border:1px solid rgba(42,191,191,.2);border-radius:12px;overflow:hidden;}
+.adhd-check{display:flex;align-items:center;gap:14px;padding:13px 18px;border-bottom:1px solid var(--border);background:var(--surface);cursor:pointer;transition:background .15s;}
+.adhd-check:last-child{border-bottom:none;}
+.adhd-check:hover{background:var(--surface2);}
+.adhd-check input[type="checkbox"]{appearance:none;width:18px;height:18px;border:2px solid rgba(42,191,191,.3);border-radius:4px;flex-shrink:0;cursor:pointer;transition:all .15s;position:relative;}
+.adhd-check input[type="checkbox"]:checked{background:var(--teal);border-color:var(--teal);}
+.adhd-check input[type="checkbox"]:checked::after{content:'✓';position:absolute;color:#0D0D12;font-size:10px;font-weight:700;top:50%;left:50%;transform:translate(-50%,-50%);}
+.adhd-check.done label{text-decoration:line-through;color:var(--dim);}
+.adhd-check label{font-size:14px;font-weight:500;cursor:pointer;flex:1;}
+.adhd-check .ck-badge{font-size:10px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;border-radius:4px;flex-shrink:0;background:rgba(42,191,191,.08);color:var(--teal);border:1px solid rgba(42,191,191,.2);}
+
+.kw-pills-adhd{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.kw-own{background:rgba(240,160,48,.12);border:1px solid var(--tag-b);color:var(--accent);border-radius:30px;padding:6px 14px;font-size:13px;font-weight:500;}
+.kw-contest{background:rgba(58,126,216,.1);border:1px solid rgba(58,126,216,.2);color:var(--blue);border-radius:30px;padding:6px 14px;font-size:13px;font-weight:500;}
+
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:0;}
+.pillar-mini{border-radius:10px;padding:18px;border-top:3px solid;}
+.p1{background:rgba(240,160,48,.06);border-color:var(--accent);}
+.p2{background:rgba(58,126,216,.06);border-color:var(--blue);}
+.p3{background:rgba(42,191,191,.06);border-color:var(--teal);}
+.pillar-mini strong{font-size:14px;font-weight:600;display:block;margin-bottom:4px;}
+.pillar-mini span{font-size:12px;color:var(--muted);}
+
+.stat-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;}
+.stat-chip{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 18px;text-align:center;}
+.stat-chip .sv{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent);display:block;}
+.stat-chip .sl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+.stat-chip.red-chip .sv{color:#E05C3A;}
+
+.comp-mini{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;}
+.comp-m{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;}
+.comp-m .cm-name{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.comp-m .cm-url{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim);margin-bottom:8px;}
+.comp-m .cm-threat{font-size:10px;text-transform:uppercase;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:6px;}
+.t-h{background:rgba(224,92,58,.12);color:#E05C3A;border:1px solid rgba(224,92,58,.25);}
+.t-m{background:var(--tag-bg);color:var(--accent);border:1px solid var(--tag-b);}
+.comp-m p{font-size:12px;color:var(--muted);line-height:1.5;}
+
+.fix-list{display:flex;flex-direction:column;gap:0;border:1px solid rgba(224,92,58,.2);border-radius:12px;overflow:hidden;}
+.fix-row{display:flex;align-items:flex-start;gap:12px;padding:13px 18px;border-bottom:1px solid var(--border);background:var(--surface);}
+.fix-row:last-child{border-bottom:none;}
+.fix-num{font-family:'DM Mono',monospace;font-size:11px;color:#E05C3A;background:rgba(224,92,58,.1);border:1px solid rgba(224,92,58,.2);border-radius:4px;padding:2px 7px;flex-shrink:0;margin-top:2px;}
+.fix-row strong{font-size:13.5px;font-weight:600;display:block;margin-bottom:2px;}
+.fix-row span{font-size:12px;color:var(--muted);}
+.fix-time{font-family:'DM Mono',monospace;font-size:10px;padding:2px 8px;border-radius:4px;flex-shrink:0;margin-top:2px;white-space:nowrap;}
+
+/* ─── DETAIL COMPONENTS ────────────────────────── */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;transition:border-color .2s,transform .2s;}
+.card:hover{border-color:rgba(240,160,48,.35);transform:translateY(-2px);}
+.card .ci{font-size:22px;margin-bottom:12px;}
+.card h3{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px;}
+.card p{font-size:13px;color:var(--muted);line-height:1.6;}
+.callout{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0;font-size:13.5px;color:var(--muted);}
+.callout strong{color:var(--text);}
+.callout.ct{border-left-color:var(--teal);}
+.callout.cr{border-left-color:#E05C3A;}
+.divider{display:flex;align-items:center;gap:16px;margin:32px 0 20px;}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border);}
+.divider span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);}
+.checklist{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.check-item{display:flex;align-items:flex-start;gap:14px;padding:15px 20px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s;}
+.check-item:last-child{border-bottom:none;}
+.check-item:hover{background:var(--surface2);}
+.check-item input[type="checkbox"]{appearance:none;width:18px;height:18px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;margin-top:2px;cursor:pointer;transition:all .15s;position:relative;}
+.check-item input[type="checkbox"]:checked{background:var(--green);border-color:var(--green);}
+.check-item input[type="checkbox"]:checked::after{content:'✓';position:absolute;color:white;font-size:11px;top:50%;left:50%;transform:translate(-50%,-50%);}
+.check-item.done .ct-text{text-decoration:line-through;color:var(--dim);}
+.ct-text{font-size:14px;flex:1;}
+.ct-text strong{font-weight:600;display:block;margin-bottom:2px;}
+.ct-text span{font-size:12.5px;color:var(--muted);}
+.badge{font-size:10px;letter-spacing:.08em;text-transform:uppercase;border-radius:4px;padding:3px 8px;flex-shrink:0;margin-top:3px;}
+.b-must{background:rgba(224,92,58,.15);color:#E05C3A;border:1px solid rgba(224,92,58,.3);}
+.b-rec{background:var(--tag-bg);color:var(--accent);border:1px solid var(--tag-b);}
+.b-sov{background:rgba(224,92,58,.08);color:#E05C3A;border:1px solid rgba(224,92,58,.2);}
+.sop-list{display:flex;flex-direction:column;gap:12px;}
+.sop-step{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.sop-hd{display:flex;align-items:center;gap:14px;padding:15px 20px;cursor:pointer;transition:background .15s;}
+.sop-hd:hover{background:var(--surface2);}
+.sop-hd .sn{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);background:var(--tag-bg);border:1px solid var(--tag-b);border-radius:6px;padding:3px 9px;flex-shrink:0;}
+.sop-hd .st{font-size:14px;font-weight:600;flex:1;}
+.sop-hd .sw{font-size:12px;color:var(--muted);margin-top:1px;}
+.sop-tog{color:var(--dim);font-size:18px;}
+.sop-bd{display:none;padding:14px 20px 18px 54px;border-top:1px solid var(--border);}
+.sop-bd.open{display:block;}
+.sop-bd ul{padding-left:16px;}
+.sop-bd ul li{font-size:13.5px;color:var(--muted);margin-bottom:6px;line-height:1.6;}
+.sop-bd ul li strong{color:var(--text);font-weight:500;}
+.why-box{background:var(--tag-bg);border:1px solid var(--tag-b);border-radius:8px;padding:10px 14px;margin-top:12px;font-size:12.5px;color:var(--accent);}
+.why-box::before{content:'💡 Why: ';font-weight:600;}
+.finding-list{display:flex;flex-direction:column;gap:10px;}
+.finding{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;border-left:4px solid;}
+.finding.critical{border-left-color:#E05C3A;}
+.finding.major{border-left-color:var(--accent);}
+.finding.minor{border-left-color:var(--green);}
+.f-hd{display:flex;align-items:center;gap:12px;padding:15px 20px;cursor:pointer;transition:background .15s;}
+.f-hd:hover{background:var(--surface2);}
+.f-sev{font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;flex-shrink:0;font-weight:600;}
+.sev-c{background:rgba(224,92,58,.15);color:#E05C3A;border:1px solid rgba(224,92,58,.3);}
+.sev-m{background:rgba(232,160,32,.12);color:var(--accent);border:1px solid rgba(232,160,32,.28);}
+.sev-w{background:rgba(58,184,122,.1);color:var(--green);border:1px solid rgba(58,184,122,.24);}
+.f-title{font-size:13.5px;font-weight:600;flex:1;}
+.f-tog{color:var(--dim);font-size:18px;}
+.f-bd{display:none;padding:14px 20px 18px;border-top:1px solid var(--border);}
+.f-bd.open{display:block;}
+.f-current{background:rgba(224,92,58,.07);border:1px solid rgba(224,92,58,.2);border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:13px;color:var(--muted);}
+.f-current::before{content:'🔴 Current: ';font-weight:600;color:#E05C3A;}
+.f-fix{background:rgba(58,184,122,.07);border:1px solid rgba(58,184,122,.2);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--muted);}
+.f-fix::before{content:'✅ Fix: ';font-weight:600;color:var(--green);}
+table.rt{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+table.rt th{background:var(--surface);padding:12px 16px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);border-bottom:1px solid var(--border);text-align:left;}
+table.rt td{padding:12px 16px;font-size:13.5px;border-bottom:1px solid var(--border);vertical-align:top;}
+table.rt tr:last-child td{border-bottom:none;}
+table.rt tr:nth-child(even) td{background:var(--surface2);}
+.tick{color:var(--green);} .cross{color:var(--dim);}
+.pillar-3col{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.pillar-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;border-top:3px solid;}
+.pc-p1{border-top-color:var(--accent);}
+.pc-p2{border-top-color:var(--blue);}
+.pc-p3{border-top-color:var(--teal);}
+.pillar-card .pn{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim);margin-bottom:6px;}
+.pillar-card h3{font-size:14px;font-weight:600;margin-bottom:6px;}
+.pillar-card p{font-size:12.5px;color:var(--muted);line-height:1.6;}
+.formats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;}
+.fmt-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;transition:border-color .2s;}
+.fmt-card:hover{border-color:rgba(240,160,48,.3);}
+.fmt-card .fh{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.fmt-card .fi{font-size:20px;}
+.fmt-card .ft{font-size:15px;font-weight:600;}
+.fmt-card .ftag{margin-left:auto;font-size:10px;text-transform:uppercase;padding:2px 8px;border-radius:4px;}
+.tag-h{background:rgba(58,184,122,.12);color:var(--green);border:1px solid rgba(58,184,122,.25);}
+.tag-m{background:var(--tag-bg);color:var(--accent);border:1px solid var(--tag-b);}
+.tag-s{background:rgba(224,92,58,.1);color:#E05C3A;border:1px solid rgba(224,92,58,.2);}
+.fmt-card p{font-size:13px;color:var(--muted);margin-bottom:10px;line-height:1.6;}
+.seo-box{font-size:12.5px;color:var(--green);background:rgba(58,184,122,.08);border:1px solid rgba(58,184,122,.2);border-radius:6px;padding:8px 12px;margin-bottom:8px;}
+.seo-box::before{content:'📈 SEO: ';font-weight:600;}
+.glance-box{font-size:12.5px;color:var(--blue);background:rgba(58,126,216,.08);border:1px solid rgba(58,126,216,.2);border-radius:6px;padding:8px 12px;}
+.glance-box::before{content:'🎯 For Glance: ';font-weight:600;}
+.cadence-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.cad-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden;}
+.cad-card.rec{border-color:rgba(240,160,48,.4);}
+.cad-card.rec::after{content:'RECOMMENDED';position:absolute;top:12px;right:12px;font-size:9px;letter-spacing:.12em;color:var(--accent);background:var(--tag-bg);border:1px solid var(--tag-b);border-radius:4px;padding:2px 7px;}
+.cad-card h3{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:4px;}
+.cad-card .freq{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);margin-bottom:14px;}
+.cad-card ul{padding-left:14px;}
+.cad-card ul li{font-size:13px;color:var(--muted);margin-bottom:5px;}
+.dist-flow{display:flex;flex-direction:column;gap:10px;}
+.dist-row{display:flex;align-items:stretch;gap:10px;}
+.dist-src{background:rgba(240,160,48,.08);border:1px solid var(--tag-b);border-radius:10px;padding:12px 16px;min-width:170px;display:flex;align-items:center;gap:8px;}
+.dist-src .di{font-size:16px;flex-shrink:0;}
+.dist-src .dl{font-size:13px;font-weight:600;}
+.dist-arr{display:flex;align-items:center;color:var(--dim);font-size:18px;flex-shrink:0;}
+.dist-chs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;flex:1;}
+.dist-ch{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:7px 12px;font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:6px;}
+.sov-table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.sov-table th{background:var(--surface);padding:12px 16px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);border-bottom:1px solid var(--border);text-align:left;}
+.sov-table td{padding:12px 16px;font-size:13.5px;border-bottom:1px solid var(--border);vertical-align:top;}
+.sov-table tr:last-child td{border-bottom:none;}
+.sov-table tr:nth-child(odd) td{background:var(--surface2);}
+.impact{font-family:'DM Mono',monospace;font-size:10px;padding:2px 8px;border-radius:4px;}
+.ih{background:rgba(58,184,122,.12);color:var(--green);}
+.im{background:var(--tag-bg);color:var(--accent);}
+.il{background:rgba(138,132,153,.12);color:var(--muted);}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;}
+.metric-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;}
+.metric-card .mi{font-size:20px;margin-bottom:8px;}
+.metric-card .ml{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:5px;}
+.metric-card .mt{font-family:'Playfair Display',serif;font-size:22px;color:var(--accent);margin-bottom:4px;}
+.metric-card .mn{font-size:12px;color:var(--dim);}
+.phase2-banner{background:rgba(123,94,167,.12);border:1px solid rgba(123,94,167,.3);border-radius:12px;padding:18px 22px;display:flex;gap:14px;align-items:flex-start;margin-bottom:24px;}
+.phase2-banner h4{font-size:14px;font-weight:600;color:#7B5EA7;margin-bottom:3px;}
+.phase2-banner p{font-size:13px;color:var(--muted);}
+
+/* ─── DESIGN PHILOSOPHY ────────────────────────── */
+.cover-mock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.cover-mock{border-radius:10px;overflow:hidden;border:1px solid var(--border);aspect-ratio:1.9/1;position:relative;}
+.cover-mock.bad{border-color:rgba(224,92,58,.3);}
+.cover-mock.good{border-color:rgba(42,191,191,.3);}
+.mock-lbl{position:absolute;top:8px;left:8px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:4px;font-weight:600;z-index:2;}
+.ml-bad{background:rgba(224,92,58,.2);color:#E05C3A;border:1px solid rgba(224,92,58,.3);}
+.ml-good{background:rgba(42,191,191,.15);color:var(--teal);border:1px solid rgba(42,191,191,.3);}
+.mock-bg{width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:12px;position:relative;overflow:hidden;}
+.mock-title{font-family:'Playfair Display',serif;font-size:12px;color:white;font-weight:700;line-height:1.2;position:relative;z-index:1;}
+.mock-tag{font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;position:relative;z-index:1;}
+.palette-row{display:flex;gap:10px;flex-wrap:wrap;}
+.swatch{border-radius:10px;padding:14px 16px;flex:1;min-width:100px;}
+.sw-name{font-size:12px;font-weight:600;} .sw-use{font-size:11px;opacity:.7;} .sw-hex{font-family:'DM Mono',monospace;font-size:10px;opacity:.6;margin-top:6px;}
+.type-row{display:flex;flex-direction:column;gap:10px;}
+.type-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;display:flex;align-items:center;gap:22px;}
+.tc-sample{flex-shrink:0;}
+.tc-meta .tm-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--dim);margin-bottom:3px;}
+.tc-meta .tm-name{font-size:14px;font-weight:600;margin-bottom:2px;}
+.tc-meta .tm-use{font-size:12px;color:var(--muted);}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;}
+.tool-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;}
+.tool-card:hover{border-color:rgba(42,191,191,.3);}
+.tool-hd{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.tool-ic{font-size:20px;}
+.tool-nm{font-size:14px;font-weight:600;}
+.tool-tag{margin-left:auto;font-size:10px;text-transform:uppercase;padding:2px 7px;border-radius:4px;}
+.t-free{background:rgba(58,184,122,.1);color:var(--green);border:1px solid rgba(58,184,122,.2);}
+.t-paid{background:var(--tag-bg);color:var(--accent);border:1px solid var(--tag-b);}
+.tool-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:10px;}
+.tool-tip{font-size:12px;color:var(--teal);background:rgba(42,191,191,.07);border:1px solid rgba(42,191,191,.18);border-radius:6px;padding:7px 10px;}
+.tool-tip::before{content:'💡 ';}
+.pub-checklist{display:flex;flex-direction:column;border:1px solid rgba(42,191,191,.2);border-radius:12px;overflow:hidden;}
+.pub-check{display:flex;align-items:center;gap:12px;padding:13px 18px;border-bottom:1px solid var(--border);background:var(--surface);cursor:pointer;transition:background .15s;}
+.pub-check:last-child{border-bottom:none;}
+.pub-check:hover{background:var(--surface2);}
+.pub-check input[type="checkbox"]{appearance:none;width:17px;height:17px;border:2px solid rgba(42,191,191,.3);border-radius:4px;flex-shrink:0;cursor:pointer;transition:all .15s;position:relative;}
+.pub-check input[type="checkbox"]:checked{background:var(--teal);border-color:var(--teal);}
+.pub-check input[type="checkbox"]:checked::after{content:'✓';position:absolute;color:#0D0D12;font-size:10px;font-weight:700;top:50%;left:50%;transform:translate(-50%,-50%);}
+.pub-check.done label{text-decoration:line-through;color:var(--dim);}
+.pub-check label{font-size:14px;font-weight:500;cursor:pointer;flex:1;}
+.pub-check .pb{font-size:10px;text-transform:uppercase;padding:2px 8px;border-radius:4px;flex-shrink:0;background:rgba(42,191,191,.08);color:var(--teal);border:1px solid rgba(42,191,191,.2);}
+.prn-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px;}
+.prn-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;border-top:3px solid var(--teal);}
+.prn-card .pn{font-family:'DM Mono',monospace;font-size:10px;color:var(--teal);margin-bottom:8px;}
+.prn-card h3{font-size:14px;font-weight:600;margin-bottom:6px;}
+.prn-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.do-dont{display:flex;flex-wrap:wrap;gap:7px;}
+.do{font-size:11px;background:rgba(58,184,122,.08);border:1px solid rgba(58,184,122,.2);color:var(--green);border-radius:6px;padding:4px 9px;}
+.do::before{content:'✓ ';}
+.dont{font-size:11px;background:rgba(224,92,58,.08);border:1px solid rgba(224,92,58,.2);color:#E05C3A;border-radius:6px;padding:4px 9px;}
+.dont::before{content:'✗ ';}
+.layout-steps{display:flex;flex-direction:column;gap:10px;}
+.ls{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 18px;}
+.ls .ln{font-family:'DM Mono',monospace;font-size:12px;color:var(--teal);background:rgba(42,191,191,.08);border:1px solid rgba(42,191,191,.2);border-radius:6px;padding:2px 9px;flex-shrink:0;margin-top:2px;}
+.ls strong{font-size:14px;font-weight:600;display:block;margin-bottom:2px;}
+.ls span{font-size:12.5px;color:var(--muted);}
+.kw-map{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px;}
+.kw-tier{margin-bottom:24px;}
+.kw-tier:last-child{margin-bottom:0;}
+.kw-tier-lbl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.kw-tier-lbl::after{content:'';flex:1;height:1px;background:var(--border);}
+.kw-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.kp-own{background:rgba(240,160,48,.14);border:1px solid var(--tag-b);color:var(--accent);border-radius:30px;padding:6px 14px;font-size:12.5px;font-weight:500;}
+.kp-cont{background:rgba(58,126,216,.1);border:1px solid rgba(58,126,216,.2);color:var(--blue);border-radius:30px;padding:6px 14px;font-size:12.5px;font-weight:500;}
+.kp-mon{background:rgba(58,184,122,.08);border:1px solid rgba(58,184,122,.2);color:var(--green);border-radius:30px;padding:6px 14px;font-size:12.5px;font-weight:500;}
+
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+@media(max-width:900px){.sidebar{display:none;}.mode-bar,.progress-bar-wrap{left:0;}.sec-head,.sec-body,.adhd-section{padding-left:24px;padding-right:24px;}.three-col,.pillar-3col,.cadence-3,.cover-mock-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body class="mode-detail">
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar-wrap"><div class="progress-bar" id="pb"></div></div>
+
+<!-- MODE BAR -->
+<div class="mode-bar">
+  <span class="mode-label">View mode</span>
+  <div class="toggle-pill">
+    <span class="toggle-opt detail-btn active" onclick="setMode('detail')">📖 Detailed</span>
+    <span class="toggle-opt quick-btn" onclick="setMode('quick')">⚡ Quick Mode</span>
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="brand">Glance × Substack</div>
+    <div class="sub">Publishing & SOV Playbook</div>
+  </div>
+
+  <div class="nav-lbl">Priority</div>
+  <a class="nav-a" href="#gap" onclick="setActive(this)" style="color:#E05C3A;">
+    <span class="nn" style="color:#E05C3A;">⚡</span> Gap Analysis
+  </a>
+  <a class="nav-a" href="#design" onclick="setActive(this)" style="color:var(--teal);">
+    <span class="nn" style="color:var(--teal);">✦</span> Design Philosophy
+  </a>
+
+  <div class="nav-lbl">Foundation</div>
+  <a class="nav-a" href="#mandate" onclick="setActive(this)">
+    <span class="nn">00</span> The Mandate
+  </a>
+
+  <div class="nav-lbl">Setup</div>
+  <a class="nav-a" href="#prelaunch" onclick="setActive(this)">
+    <span class="nn">01</span> Pre-Launch
+  </a>
+  <a class="nav-a" href="#brandpage" onclick="setActive(this)">
+    <span class="nn">02</span> Brand Page
+  </a>
+  <a class="nav-a" href="#ecosystem" onclick="setActive(this)">
+    <span class="nn">03</span> Editor Roles
+  </a>
+
+  <div class="nav-lbl">Content</div>
+  <a class="nav-a" href="#sov" onclick="setActive(this)">
+    <span class="nn">04</span> Own Agentic Commerce
+  </a>
+  <a class="nav-a" href="#pillars" onclick="setActive(this)">
+    <span class="nn">05</span> Content Pillars
+  </a>
+  <a class="nav-a" href="#formats" onclick="setActive(this)">
+    <span class="nn">06</span> Formats
+  </a>
+
+  <div class="nav-lbl">Operations</div>
+  <a class="nav-a" href="#cadence" onclick="setActive(this)">
+    <span class="nn">07</span> Cadence
+  </a>
+  <a class="nav-a" href="#distribution" onclick="setActive(this)">
+    <span class="nn">08</span> Distribution
+  </a>
+  <a class="nav-a" href="#growth" onclick="setActive(this)">
+    <span class="nn">09</span> SOV Growth
+  </a>
+
+  <div class="nav-lbl">Phase 2</div>
+  <a class="nav-a" href="#guest" onclick="setActive(this)">
+    <span class="nn">10</span> Guest Editors
+  </a>
+
+  <div class="sb-foot">Glance Marketing · 2026</div>
+</aside>
+
+<!-- MAIN -->
+<main class="main" id="mainScroll">
+
+<!-- ════════════════════════════════════════════
+     GAP ANALYSIS
+════════════════════════════════════════════ -->
+<section class="sec" id="gap" style="background:#0F0A08;">
+
+  <!-- Quick VIEW -->
+  <div class="quick-view">
+    <div class="adhd-section">
+      <div class="adhd-hero" style="background:linear-gradient(135deg,#1A0E0A,#0D0D12);border-color:rgba(224,92,58,.25);">
+        <div class="ah-icon">⚡</div>
+        <h3 style="color:var(--text);">10 things broken.<br/>Fix them in <em style="font-style:italic;color:#E05C3A;">this exact order.</em></h3>
+        <p>Most are free to fix. Some take under 5 minutes. Start at #1 and don't skip.</p>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-chip red-chip"><span class="sv">18</span><span class="sl">Days Live</span></div>
+        <div class="stat-chip red-chip"><span class="sv">0</span><span class="sl">Google Results</span></div>
+        <div class="stat-chip red-chip"><span class="sv">0</span><span class="sl">Posts Published</span></div>
+        <div class="stat-chip red-chip"><span class="sv">6+</span><span class="sl">Rivals Already Ranking</span></div>
+        <div class="stat-chip red-chip"><span class="sv">10hrs</span><span class="sl">Since Top Rival Published</span></div>
+      </div>
+
+      <div class="fix-list" style="margin-bottom:24px;">
+        <div class="fix-row" style="border-left:4px solid #E05C3A;">
+          <span class="fix-num">#1</span>
+          <div>
+            <strong>Rename "GlanceInspires" to something with "agentic commerce" in the name</strong>
+            <span>"GlanceInspires" returns zero Google results. It sounds like a fashion blog. glance.substack.com is already taken — forever — by the Lubbock Chamber of Commerce.</span>
+          </div>
+          <span class="fix-time time-now">Today · 5 min</span>
+        </div>
+        <div class="fix-row" style="border-left:4px solid #E05C3A;">
+          <span class="fix-num">#2</span>
+          <div>
+            <strong>Set up newsletter.glance.com as a custom domain</strong>
+            <span>Right now every backlink and Google point goes to substack.com, not Glance. This is the most important technical fix. Get eng involved.</span>
+          </div>
+          <span class="fix-time time-now">Today · Eng needed</span>
+        </div>
+        <div class="fix-row" style="border-left:4px solid #E05C3A;">
+          <span class="fix-num">#3</span>
+          <div>
+            <strong>Write and publish the About page</strong>
+            <span>Right now the page is just a subscribe button. Journalists and analysts read the About page first. It's also indexed by Google.</span>
+          </div>
+          <span class="fix-time time-week">This week · 30 min</span>
+        </div>
+        <div class="fix-row" style="border-left:4px solid #E05C3A;">
+          <span class="fix-num">#4</span>
+          <div>
+            <strong>Publish "What is Agentic Commerce?" — the cornerstone post</strong>
+            <span>IBM, Wikipedia, Shopify, and Salesforce already define this term on Google. Glance doesn't appear anywhere. Google takes 4–8 weeks to rank new content. The clock hasn't started yet.</span>
+          </div>
+          <span class="fix-time time-week">This week · 2–3 hrs</span>
+        </div>
+        <div class="fix-row" style="border-left:4px solid var(--green);">
+          <span class="fix-num">#5</span>
+          <div>
+            <strong>Formalise the Notes cadence — minimum 2–3 per week</strong>
+            <span>Notes are being published — good start. But sporadic Notes don't build discovery presence. Assign one person to own Notes weekly and lock in a rhythm. Assign. Lock. Repeat.</span>
+          </div>
+          <span class="fix-time time-later">This week</span>
+        </div>
+        <div class="fix-row" style="border-left:4px solid var(--accent);">
+          <span class="fix-num">#6</span>
+          <div>
+            <strong>Add the Substack link to Glance's LinkedIn company page</strong>
+            <span>18 days of zero cross-promotion from the company's own LinkedIn. Add it to the bio, post an announcement. Done in 5 minutes.</span>
+          </div>
+          <span class="fix-time time-now">Today · 5 min</span>
+        </div>
+        <div class="fix-row" style="border-left:4px solid var(--accent);">
+          <span class="fix-num">#7</span>
+          <div>
+            <strong>Link the Substack from glance.com</strong>
+            <span>glance.com already ranks for agentic commerce terms. The two surfaces are completely disconnected. A sidebar link from the blog is a 10-minute fix.</span>
+          </div>
+          <span class="fix-time time-week">This week · 10 min</span>
+        </div>
+        <div class="fix-row" style="border-left:4px solid var(--accent);">
+          <span class="fix-num">#8</span>
+          <div>
+            <strong>Add a keyword-rich description to the publication settings</strong>
+            <span>The description field is blank or generic. It shows up in Google snippets and the Substack discover feed. Fill it in with "agentic commerce" in the first sentence.</span>
+          </div>
+          <span class="fix-time time-now">Today · 10 min</span>
+        </div>
+        <div class="fix-row" style="border-left:4px solid var(--accent);">
+          <span class="fix-num">#9</span>
+          <div>
+            <strong>Agentic Commerce Frontier published 10 hours ago. Again.</strong>
+            <span>They publish every Monday. They've been doing this since at least January. You've been live 18 days and have published nothing. This gap compounds every week.</span>
+          </div>
+          <span class="fix-time time-week">Start now</span>
+        </div>
+        <div class="fix-row" style="border-left:4px solid var(--green);">
+          <span class="fix-num">#10</span>
+          <div>
+            <strong>Replace the cover banner with an editorial-style image</strong>
+            <span>The current cover looks like a marketing asset. Industry readers (journalists, brand partners, investors) bounce off marketing-looking pages.</span>
+          </div>
+          <span class="fix-time time-later">This week · 30 min</span>
+        </div>
+        <div class="fix-row" style="border-left:4px solid var(--green);">
+          <span class="fix-num">#11</span>
+          <div>
+            <strong>Enable Recommendations — set up 3 reciprocal deals</strong>
+            <span>Substack's free subscriber growth engine. Find 3 adjacent newsletters, agree to recommend each other. Passive subscriber growth costs nothing.</span>
+          </div>
+          <span class="fix-time time-later">Month 1</span>
+        </div>
+      </div>
+
+      <div style="background:rgba(224,92,58,.06);border:1px solid rgba(224,92,58,.2);border-radius:12px;padding:18px 22px;">
+        <div style="font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#E05C3A;margin-bottom:10px;">Who's owning the space right now</div>
+        <div class="comp-mini">
+          <div class="comp-m">
+            <div class="cm-name">Agentic Commerce Frontier</div>
+            <div class="cm-url">agentcommerce.substack.com</div>
+            <span class="cm-threat t-h">Highest Threat</span>
+            <p>Publishes every Monday. Has an Ecosystem Map. Hundreds of subscribers. Their name IS the keyword. 6+ month head start.</p>
+          </div>
+          <div class="comp-m">
+            <div class="cm-name">Agentic Commerce Review</div>
+            <div class="cm-url">agenticcommercereview.substack.com</div>
+            <span class="cm-threat t-h">Already Indexed</span>
+            <p>Launched 8 days ago. Already on Google. GlanceInspires at 18 days old is not. A brand new competitor is already ahead.</p>
+          </div>
+          <div class="comp-m">
+            <div class="cm-name">IBM, Wikipedia, Shopify</div>
+            <div class="cm-url">Top 3 Google results</div>
+            <span class="cm-threat t-m">Category Ownership</span>
+            <p>These three define "what is agentic commerce" on Google. Glance doesn't appear. Every day without the cornerstone post makes this harder.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DETAIL VIEW -->
+  <div class="detail-view">
+    <div class="sec-head">
+      <div class="sec-eyebrow" style="color:#E05C3A;">Current State Audit · glanceinspires.substack.com</div>
+      <h2>What's missing — and what needs <em>fixing first</em></h2>
+      <p class="sec-sub">Google-verified audit of the live Glance Substack. 10 gaps identified.</p>
+    </div>
+    <div class="sec-body">
+      <div class="stat-row">
+        <div class="stat-chip red-chip"><span class="sv">18</span><span class="sl">Days Live</span></div>
+        <div class="stat-chip red-chip"><span class="sv">0</span><span class="sl">Google Results</span></div>
+        <div class="stat-chip red-chip"><span class="sv">0</span><span class="sl">Indexed Posts</span></div>
+        <div class="stat-chip red-chip"><span class="sv">6+</span><span class="sl">Active Competitors</span></div>
+        <div class="stat-chip red-chip"><span class="sv">10hrs</span><span class="sl">Since Top Rival Published</span></div>
+      </div>
+
+      <div class="finding-list">
+        <div class="finding critical"><div class="f-hd" onclick="toggleF(this)"><span class="f-sev sev-c">Critical — Google Verified</span><span class="f-title">"What is agentic commerce" is owned by IBM, Wikipedia, Shopify, Salesforce — Glance is absent</span><span class="f-tog">+</span></div><div class="f-bd"><div class="f-current">A Google search for "what is agentic commerce" returns: IBM (#1), Wikipedia (full dedicated article), Shopify, Salesforce, BigCommerce, Google Cloud. Glance doesn't appear in the first 3 pages. The companies defining the category are also companies building infrastructure — Glance, which is building the consumer-facing product, is missing from its own conversation.</div><div class="f-fix">The cornerstone post ("What is Agentic Commerce?") needs to be Glance's answer to IBM and Shopify — a long-form, keyword-optimised reference piece. Glance's unique angle: the only company in this list that sits on the consumer device layer, not the checkout or payments layer. That differentiator needs to be the opening paragraph.</div></div></div>
+
+        <div class="finding critical"><div class="f-hd" onclick="toggleF(this)"><span class="f-sev sev-c">Critical — Google Verified</span><span class="f-title">Publication name "GlanceInspires" has zero SEO value — and "glance.substack.com" is taken</span><span class="f-tog">+</span></div><div class="f-bd"><div class="f-current">Searching "glanceinspires substack" returns zero results for the page. What surfaces instead: a Lubbock Chamber of Commerce newsletter called "GLANCE" at glance.substack.com (thousands of subscribers), Second Glance, A Sideways Glance, and other unrelated publications. The clean "glance.substack.com" URL is permanently claimed.</div><div class="f-fix">Rename immediately: "Agentic Commerce Intelligence — by Glance" or "The Commerce AI Brief by Glance." The publication name appears in Google snippets and the Substack discover feed. Compare: "Agentic Commerce Frontier" ranks for the term because the name itself is the keyword.</div></div></div>
+
+        <div class="finding critical"><div class="f-hd" onclick="toggleF(this)"><span class="f-sev sev-c">Critical — LinkedIn Verified</span><span class="f-title">Glance's active LinkedIn page has zero mention of the Substack — 18 days of free distribution wasted</span><span class="f-tog">+</span></div><div class="f-bd"><div class="f-current">Glance's LinkedIn company page is actively posting. Team members are publishing about the Glance Agent framework. Zero posts mention the Substack. No link in bio. The Substack has been live 18 days and Glance's most direct distribution channel has never been told it exists.</div><div class="f-fix">Post a launch announcement on the Glance LinkedIn company page this week. Add the Substack URL to the company page description. Ask team members who post about agentic commerce to link to the Substack in their next relevant post. Zero-cost distribution from a warm audience.</div></div></div>
+
+        <div class="finding critical"><div class="f-hd" onclick="toggleF(this)"><span class="f-sev sev-c">Critical</span><span class="f-title">Zero published content — 18 days live, nothing indexed on Google</span><span class="f-tog">+</span></div><div class="f-bd"><div class="f-current">Zero published posts. "Agentic Commerce Review" launched 8 days ago and is already indexed. GlanceInspires at 18 days is not. Google takes 4–8 weeks to rank new content — every day without a post is a day the window stays closed.</div><div class="f-fix">Publish the cornerstone post this week. Even a single well-optimised 1200-word piece starts the Google indexing clock. The first post needs to go live today, not after all other setup is perfect.</div></div></div>
+
+        <div class="finding critical"><div class="f-hd" onclick="toggleF(this)"><span class="f-sev sev-c">Critical</span><span class="f-title">No About page — the page has no stated purpose</span><span class="f-tog">+</span></div><div class="f-bd"><div class="f-current">The About page doesn't exist or has no visible content. A journalist, analyst, or brand partner landing on this page sees: a cover banner and a subscribe button. No statement of what this covers, why Glance publishes it, or who it's for.</div><div class="f-fix">Three paragraphs: (1) define "agentic commerce" in Glance's words, (2) who publishes this and why Glance is uniquely positioned, (3) who reads this. The About page is indexed separately by Google — make it keyword-rich.</div></div></div>
+
+        <div class="finding critical"><div class="f-hd" onclick="toggleF(this)"><span class="f-sev sev-c">Critical</span><span class="f-title">Still on substack.com domain — no SEO authority accrues to Glance</span><span class="f-tog">+</span></div><div class="f-bd"><div class="f-current">Every backlink and Google ranking point goes to substack.com, not glance.com. If Glance ever migrates platforms, all accumulated SEO authority stays behind.</div><div class="f-fix">Set up newsletter.glance.com or intelligence.glance.com via CNAME. This routes all traffic and SEO authority to the Glance domain. Coordinate with engineering. Should be done before the first post goes live.</div></div></div>
+
+        <div class="finding minor"><div class="f-hd" onclick="toggleF(this)"><span class="f-sev sev-w">Watch</span><span class="f-title">Notes are being published — but cadence and strategy need to be formalised</span><span class="f-tog">+</span></div><div class="f-bd"><div class="f-current">GlanceInspires has published some Notes — which is a good start and puts it ahead of publications that haven't touched the feature at all. However, sporadic or infrequent Notes don't build the consistent presence needed to drive discovery. Without newsletter sends, Notes is the primary surface through which non-subscribers encounter Glance on Substack.</div><div class="f-fix">Formalise the Notes cadence to a minimum of 2–3 per week. Each Note should either tease an upcoming post, share a sharp 1-sentence take on an industry development, or restack relevant content from adjacent creators. Assign ownership — one person responsible for Notes every week, not a collective "someone will do it." Track which Notes generate the most profile visits and replicate those formats.</div></div></div>
+
+        <div class="finding major"><div class="f-hd" onclick="toggleF(this)"><span class="f-sev sev-m">Major — Google Verified</span><span class="f-title">Glance.com blog ranks for agentic commerce — but Substack gets none of that traffic</span><span class="f-tog">+</span></div><div class="f-bd"><div class="f-current">Glance.com blog posts ranking on Google include "Intelligent Shopping Agent," "Agentic AI vs Generative AI," "Redefining Shopping Experience." Glance already has SEO presence. But it's entirely siloed in glance.com — none flows to the Substack. The two surfaces are disconnected.</div><div class="f-fix">Every glance.com blog post should link to the relevant Substack piece and vice versa. Add the Substack to the blog sidebar, footer, and navigation. This concentrates topical authority on both domains.</div></div></div>
+
+        <div class="finding major"><div class="f-hd" onclick="toggleF(this)"><span class="f-sev sev-m">Major</span><span class="f-title">"GlanceInspires" naming signals lifestyle content — wrong for B2B agentic commerce</span><span class="f-tog">+</span></div><div class="f-bd"><div class="f-current">"GlanceInspires" positions this as a consumer lifestyle account — consistent with Glance's styling product, but at odds with owning "agentic commerce." A journalist searching "agentic commerce Substack" will find the competition, not Glance.</div><div class="f-fix">Rename before significant content is published. Once posts accumulate, renaming is disruptive. Rename now while there's nothing to lose: "Glance Intelligence," "Agentic Commerce by Glance," or "The Commerce AI Brief."</div></div></div>
+
+        <div class="finding major"><div class="f-hd" onclick="toggleF(this)"><span class="f-sev sev-m">Major</span><span class="f-title">No keyword strategy visible in current publication settings</span><span class="f-tog">+</span></div><div class="f-bd"><div class="f-current">No content focus, no keyword targeting, no publishing theme visible in the description field. No pinned posts, no series, no signal of what this publication covers.</div><div class="f-fix">Update publication description to keyword-rich and audience-specific in the first sentence. Fill all settings fields. Takes 20 minutes and directly affects Substack's recommendation algorithm.</div></div></div>
+
+        <div class="finding minor"><div class="f-hd" onclick="toggleF(this)"><span class="f-sev sev-w">Watch</span><span class="f-title">Cover image looks like a marketing banner, not an editorial publication</span><span class="f-tog">+</span></div><div class="f-bd"><div class="f-current">The visible cover image appears to be a branded marketing asset. Industry readers (investors, brand partners, journalists) bounce off marketing-looking pages before reading a word.</div><div class="f-fix">Replace with editorial-style cover: minimal text, dark and considered, magazine-masthead aesthetic. The cover is positioning before the first word. (See Design Philosophy section for full spec.)</div></div></div>
+      </div>
+
+      <div class="divider"><span>Who's already owning the space</span></div>
+      <div class="comp-mini" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));">
+        <div class="comp-m"><div class="cm-name">Agentic Commerce Frontier</div><div class="cm-url">agentcommerce.substack.com</div><span class="cm-threat t-h">Highest Threat</span><p>Top Google result for "agentic commerce substack." Publishes every Monday. Active since at least January 2026. Name itself is the keyword.</p></div>
+        <div class="comp-m"><div class="cm-name">Agentic Commerce Review</div><div class="cm-url">agenticcommercereview.substack.com</div><span class="cm-threat t-h">Already Indexed</span><p>Launched 8 days ago. Already indexed on Google ahead of GlanceInspires at 18 days. A newer competitor with keyword name is already ahead.</p></div>
+        <div class="comp-m"><div class="cm-name">Retail Razor Show</div><div class="cm-url">retailrazor.substack.com</div><span class="cm-threat t-m">Medium Threat</span><p>Deep-dive agentic commerce coverage. High credibility with the industry audience Glance is targeting.</p></div>
+        <div class="comp-m"><div class="cm-name">Google Cloud, IBM, Shopify</div><div class="cm-url">Non-Substack · Google pages</div><span class="cm-threat t-h">Category Framing</span><p>Own the top Google results for "what is agentic commerce." Glance's perspective is missing from the category definition entirely.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     DESIGN PHILOSOPHY
+════════════════════════════════════════════ -->
+<section class="sec" id="design" style="background:#0A1218;">
+
+  <!-- Quick VIEW -->
+  <div class="quick-view">
+    <div class="adhd-section">
+      <div class="adhd-hero" style="background:linear-gradient(135deg,#0A1A1A,#0D0D12);border-color:rgba(42,191,191,.25);">
+        <div class="ah-icon">🎨</div>
+        <h3>Glance needs to look like <em style="font-style:italic;color:var(--teal);">a publication, not a blog.</em></h3>
+        <p>Agentic commerce is a serious category. The people Glance needs to impress — journalists, brand partners, investors — judge credibility in 3 seconds. The visual system either earns that trust or loses it before a word is read. Here are the 6 rules. Follow all of them.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--dim);margin-bottom:12px;">6 rules — break any of them and the page looks bad</div>
+        <div class="action-list">
+          <div class="action-item teal" style="border-left-color:var(--teal);">
+            <div class="ai-dot dot-teal"></div>
+            <div class="ai-body"><strong>Settings → Design → Magazine layout. Turn it on.</strong><span>Magazine mode gives Glance a 3-column editorial grid with a large featured post at the center — the difference between a publication and a generic blog. Native Substack. Free. 2 minutes.</span></div>
+            <span class="ai-time" style="background:var(--teal);color:#0D0D12;">2 min</span>
+          </div>
+          <div class="action-item teal" style="border-left-color:var(--teal);">
+            <div class="ai-dot dot-teal"></div>
+            <div class="ai-body"><strong>Feature the cornerstone post (center hero position)</strong><span>Post editor → ··· → "Feature post." The "What is Agentic Commerce?" post lives here until something better exists.</span></div>
+            <span class="ai-time" style="background:var(--teal);color:#0D0D12;">1 min</span>
+          </div>
+          <div class="action-item critical">
+            <div class="ai-dot dot-red"></div>
+            <div class="ai-body"><strong>EVERY post needs a cover image. No exceptions.</strong><span>No cover = broken grey card in the magazine grid. This is the most common mistake. Dark navy base (#0D1520), one pillar color accent, title, "by Glance" in corner.</span></div>
+            <span class="ai-time time-always">Every post</span>
+          </div>
+          <div class="action-item critical">
+            <div class="ai-dot dot-red"></div>
+            <div class="ai-body"><strong>Title ≤ 7 words. Count them. If 8+, cut.</strong><span>Long titles overflow the grid card and break the layout rhythm. The rule for Glance: "The Search Bar is Dead" — not "Why the Traditional Search Bar Is Becoming Obsolete in an AI-First Commerce World." Short. Provocative. Memorable.</span></div>
+            <span class="ai-time time-always">Every post</span>
+          </div>
+          <div class="action-item critical">
+            <div class="ai-dot dot-red"></div>
+            <div class="ai-body"><strong>Fill the Subtitle field every time. It shows in the grid.</strong><span>The line under the title in the card is the Subtitle field. Without it the card looks empty. Title = hook. Subtitle = the explanation.</span></div>
+            <span class="ai-time time-always">Every post</span>
+          </div>
+          <div class="action-item major">
+            <div class="ai-dot dot-amber"></div>
+            <div class="ai-body"><strong>Pillar colors: Amber = Tech, Blue = Business, Teal = Human</strong><span>Every cover uses the same dark navy base + one pillar accent color. Don't mix. After 5–6 posts readers start associating colors with content types.</span></div>
+            <span class="ai-time time-always">Every cover</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid rgba(42,191,191,.2);border-radius:14px;padding:22px;margin-bottom:20px;">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--teal);margin-bottom:16px;">Cover image — what works vs what doesn't</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+
+          <!-- WRONG 1: purple gradient -->
+          <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(224,92,58,.35);aspect-ratio:1.9/1;position:relative;">
+            <div style="background:linear-gradient(135deg,#667eea,#764ba2);width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;position:relative;">
+              <span style="position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:700;background:rgba(224,92,58,.25);color:#ff8070;border:1px solid rgba(224,92,58,.4);">✗ Wrong</span>
+              <div style="font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:4px;">Agentic Commerce</div>
+              <div style="font-family:'Playfair Display',serif;font-size:11px;color:white;font-weight:700;line-height:1.3;">Why AI Shopping Agents Are Transforming the Future of E-Commerce in 2026</div>
+            </div>
+          </div>
+
+          <!-- WRONG 2: white/product banner -->
+          <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(224,92,58,.35);aspect-ratio:1.9/1;position:relative;">
+            <div style="background:#f5f5f5;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;position:relative;">
+              <span style="position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:700;background:rgba(224,92,58,.15);color:#E05C3A;border:1px solid rgba(224,92,58,.3);">✗ Wrong</span>
+              <div style="font-size:26px;margin-bottom:8px;">🛍️</div>
+              <div style="font-size:11px;font-weight:700;color:#333;text-align:center;line-height:1.4;letter-spacing:.04em;">GLANCE PRODUCT UPDATE<br/>Q2 2026 COMMERCE REPORT</div>
+            </div>
+          </div>
+
+          <!-- RIGHT 1: dark navy + amber -->
+          <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(42,191,191,.3);aspect-ratio:1.9/1;position:relative;">
+            <div style="background:linear-gradient(135deg,#0D1520 0%,#162030 100%);width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;position:relative;">
+              <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 75% 25%,rgba(240,160,48,.18) 0%,transparent 55%);"></div>
+              <span style="position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:700;background:rgba(42,191,191,.15);color:var(--teal);border:1px solid rgba(42,191,191,.3);">✓ Right</span>
+              <div style="font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:5px;position:relative;z-index:1;">The Technology of Commerce</div>
+              <div style="font-family:'Playfair Display',serif;font-size:13px;color:#EDE8DF;font-weight:700;line-height:1.2;position:relative;z-index:1;">The Search Bar is Dead</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.28);margin-top:5px;font-family:'DM Mono',monospace;position:relative;z-index:1;letter-spacing:.06em;">by Glance</div>
+            </div>
+          </div>
+
+          <!-- WRONG 3: grey stock photo -->
+          <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(224,92,58,.35);aspect-ratio:1.9/1;position:relative;">
+            <div style="background:#e8e8e8;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;position:relative;">
+              <span style="position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:700;background:rgba(224,92,58,.15);color:#E05C3A;border:1px solid rgba(224,92,58,.3);">✗ Wrong</span>
+              <div style="font-size:13px;color:#999;margin-bottom:8px;">🖼</div>
+              <div style="font-size:12px;color:#aaa;text-align:center;font-style:italic;">Stock Photo Here</div>
+              <div style="font-size:10px;font-weight:700;color:#888;text-align:center;margin-top:8px;position:absolute;bottom:14px;">Different style from last post</div>
+            </div>
+          </div>
+
+          <!-- RIGHT 2: dark navy + blue -->
+          <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(42,191,191,.3);aspect-ratio:1.9/1;position:relative;">
+            <div style="background:linear-gradient(135deg,#0D1520 0%,#162030 100%);width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;position:relative;">
+              <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 75%,rgba(58,126,216,.15) 0%,transparent 55%);"></div>
+              <span style="position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:700;background:rgba(42,191,191,.15);color:var(--teal);border:1px solid rgba(42,191,191,.3);">✓ Right</span>
+              <div style="font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:5px;position:relative;z-index:1;">The Business of Commerce</div>
+              <div style="font-family:'Playfair Display',serif;font-size:13px;color:#EDE8DF;font-weight:700;line-height:1.2;position:relative;z-index:1;">What Brand Partners Get Wrong</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.28);margin-top:5px;font-family:'DM Mono',monospace;position:relative;z-index:1;letter-spacing:.06em;">by Glance</div>
+            </div>
+          </div>
+
+          <!-- RIGHT 3: dark navy + teal -->
+          <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(42,191,191,.3);aspect-ratio:1.9/1;position:relative;">
+            <div style="background:linear-gradient(135deg,#0D1520 0%,#162030 100%);width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;position:relative;">
+              <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 35%,rgba(42,191,191,.12) 0%,transparent 55%);"></div>
+              <span style="position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:700;background:rgba(42,191,191,.15);color:var(--teal);border:1px solid rgba(42,191,191,.3);">✓ Right</span>
+              <div style="font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:5px;position:relative;z-index:1;">The Human Experience</div>
+              <div style="font-family:'Playfair Display',serif;font-size:13px;color:#EDE8DF;font-weight:700;line-height:1.2;position:relative;z-index:1;">Shopping Is Now a Conversation</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.28);margin-top:5px;font-family:'DM Mono',monospace;position:relative;z-index:1;letter-spacing:.06em;">by Glance</div>
+            </div>
+          </div>
+
+        </div>
+        <p style="font-size:11px;color:var(--dim);margin-top:12px;text-align:center;">The 3 ✓ covers are identical in structure: dark navy base → one pillar-color radial glow → pillar tag → short title → "by Glance". That's the whole system.</p>
+      </div>
+
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--teal);margin-bottom:12px;">Before every publish — tick all 10</div>
+      <div class="adhd-checklist">
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ Cover uploaded (1200×630px, dark navy base)</label><span class="ck-badge">Cover</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ Title is 7 words or fewer</label><span class="ck-badge">Title</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ Subtitle field filled in (under 18 words)</label><span class="ck-badge">Subtitle</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ Correct pillar accent color on cover</label><span class="ck-badge">Color</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ Pillar tag text above title on cover</label><span class="ck-badge">Tag</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ "by Glance" mark bottom-left</label><span class="ck-badge">Brand</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ Post tagged with correct pillar in Substack</label><span class="ck-badge">Tags</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ Links to at least 2 other Glance posts</label><span class="ck-badge">SEO</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ LinkedIn post drafted (tease + link in comment)</label><span class="ck-badge">Distribute</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ Substack Note written (sharpest line from post)</label><span class="ck-badge">Notes</span></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- DETAIL VIEW -->
+  <div class="detail-view">
+    <div class="sec-head">
+      <div class="sec-eyebrow" style="color:var(--teal);">Visual Identity · Glance on Substack</div>
+      <h2 style="color:var(--text);">Why Glance needs a <em style="color:var(--teal);">magazine layout</em></h2>
+      <p class="sec-sub">Agentic commerce is a credibility game. The visual system either earns trust in 3 seconds or loses it. Here's the full design spec.</p>
+    </div>
+    <div class="sec-body">
+      <div class="callout ct"><strong>Why magazine layout matters for Glance specifically:</strong> Glance is trying to own a category — agentic commerce — in the eyes of journalists, brand partners, and investors. These readers judge publication credibility in under 3 seconds. A generic blog layout signals "startup blog." A magazine layout signals "we know what we're doing." The visual system is the first argument Glance makes before anyone reads a word.</div>
+
+      <div class="divider"><span>Step 1 — Switch to Magazine Layout</span></div>
+      <div class="layout-steps">
+        <div class="ls"><span class="ln">①</span><div><strong>Settings → Design → Post list layout → Magazine</strong><span>Magazine mode gives Glance a 3-column editorial grid with a large featured center post — the visual difference between a publication that owns a category and a blog that comments on one. Native Substack. Free. 2 minutes to enable.</span></div></div>
+        <div class="ls"><span class="ln">②</span><div><strong>Feature the cornerstone post</strong><span>Post editor → ··· → "Feature post." The "What is Agentic Commerce?" piece lives in the center hero position permanently.</span></div></div>
+        <div class="ls"><span class="ln">③</span><div><strong>Every post needs a cover — no exceptions</strong><span>A post without a cover image in magazine layout shows a broken grey card. This is the most common mistake on new Substacks. Every. Single. Post.</span></div></div>
+        <div class="ls"><span class="ln">④</span><div><strong>Fill the Subtitle field every time</strong><span>Post editor → Subtitle (below title). This shows under the title in the grid card. Without it the card looks empty — a broken grid undermines the entire editorial aesthetic Glance is trying to build.</span></div></div>
+      </div>
+
+      <div class="divider"><span>6 Design Principles</span></div>
+      <div class="prn-grid">
+        <div class="prn-card"><div class="pn">PRINCIPLE 01</div><h3>One Visual System, Every Cover</h3><p>Pick one cover template and never deviate. Same dark base, same type placement, same color language. Variety kills credibility in magazine layout.</p><div class="do-dont"><span class="do">Same dark base every cover</span><span class="do">One type style</span><span class="dont">Different styles per post</span><span class="dont">Mixed photo types</span></div></div>
+        <div class="prn-card"><div class="pn">PRINCIPLE 02</div><h3>Covers Are Editorial, Not Marketing</h3><p>Marketing covers say "look at our product." Editorial covers say "here's a world worth entering." For B2B readers, a marketing cover is a trust killer before they read a word.</p><div class="do-dont"><span class="do">Abstract, conceptual imagery</span><span class="do">Dark, minimal</span><span class="dont">Product screenshots</span><span class="dont">Glance logo dominating</span></div></div>
+        <div class="prn-card"><div class="pn">PRINCIPLE 03</div><h3>Titles: 5–7 Words Max</h3><p>Long titles overflow the grid card and break the layout rhythm. The discipline Glance needs: "The Search Bar is Dead" — not "Why the Traditional Search Bar is Becoming Obsolete in an AI-First Commerce World." One is a headline. The other is a sentence.</p><div class="do-dont"><span class="do">"The Commerce Layer Nobody Sees"</span><span class="do">"What Your Agent Knows About You"</span><span class="dont">Long descriptive titles with colons</span></div></div>
+        <div class="prn-card"><div class="pn">PRINCIPLE 04</div><h3>Subtitles Do the Explaining</h3><p>Title = hook. Subtitle = context. For Glance: title "The Search Bar is Dead," subtitle "Why AI agents have made the most overused UI element in history redundant." The title creates intrigue; the subtitle delivers on it. Both fields must be filled every time.</p><div class="do-dont"><span class="do">Subtitle under 18 words</span><span class="do">Title = mystery, subtitle = payoff</span><span class="dont">Subtitle that repeats the title</span><span class="dont">Blank subtitle</span></div></div>
+        <div class="prn-card"><div class="pn">PRINCIPLE 05</div><h3>Dark Background = Intelligence Signal</h3><p>Deep navy/charcoal covers signal seriousness to an industry reader the same way FT pink does. The cover color is positioning before the first word.</p><div class="do-dont"><span class="do">Deep navy base (#0D1520)</span><span class="do">Amber/teal/blue accents only</span><span class="dont">White or pastel backgrounds</span><span class="dont">Bright gradients</span></div></div>
+        <div class="prn-card"><div class="pn">PRINCIPLE 06</div><h3>Watermark on Every Cover</h3><p>Every cover shared on LinkedIn, in WhatsApp, or embedded in a press article should carry the Glance identity. Add "by Glance" in DM Mono, bottom-left, 40% opacity. Small enough not to dominate — present enough that every image that escapes the page still points back to Glance.</p><div class="do-dont"><span class="do">Small "by Glance" bottom-left</span><span class="do">Consistent position every time</span><span class="dont">Full logo dominating the cover</span><span class="dont">No attribution at all</span></div></div>
+      </div>
+
+      <div class="divider"><span>Cover Image — What Works vs What Doesn't</span></div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:8px;">
+
+        <!-- WRONG 1 -->
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(224,92,58,.35);aspect-ratio:1.9/1;position:relative;">
+          <div style="background:linear-gradient(135deg,#667eea,#764ba2);width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;position:relative;">
+            <span style="position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:700;background:rgba(224,92,58,.25);color:#ff8070;border:1px solid rgba(224,92,58,.4);">✗ Wrong</span>
+            <div style="font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:5px;">Agentic Commerce</div>
+            <div style="font-family:'Playfair Display',serif;font-size:12px;color:white;font-weight:700;line-height:1.35;">Why AI Shopping Agents Are Transforming the Future of E-Commerce in 2026</div>
+          </div>
+        </div>
+
+        <!-- WRONG 2 -->
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(224,92,58,.35);aspect-ratio:1.9/1;position:relative;">
+          <div style="background:#f5f5f5;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;position:relative;">
+            <span style="position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:700;background:rgba(224,92,58,.12);color:#E05C3A;border:1px solid rgba(224,92,58,.28);">✗ Wrong</span>
+            <div style="font-size:28px;margin-bottom:8px;">🛍️</div>
+            <div style="font-size:11px;font-weight:700;color:#333;text-align:center;line-height:1.4;letter-spacing:.05em;">GLANCE PRODUCT UPDATE<br/>Q2 2026 COMMERCE REPORT</div>
+          </div>
+        </div>
+
+        <!-- RIGHT 1 -->
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(42,191,191,.3);aspect-ratio:1.9/1;position:relative;">
+          <div style="background:linear-gradient(135deg,#0D1520 0%,#162030 100%);width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;position:relative;">
+            <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 75% 25%,rgba(240,160,48,.18) 0%,transparent 55%);"></div>
+            <span style="position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:700;background:rgba(42,191,191,.15);color:var(--teal);border:1px solid rgba(42,191,191,.3);">✓ Right</span>
+            <div style="font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:5px;position:relative;z-index:1;">The Technology of Commerce</div>
+            <div style="font-family:'Playfair Display',serif;font-size:14px;color:#EDE8DF;font-weight:700;line-height:1.2;position:relative;z-index:1;">The Search Bar is Dead</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.28);margin-top:6px;font-family:'DM Mono',monospace;position:relative;z-index:1;letter-spacing:.07em;">by Glance</div>
+          </div>
+        </div>
+
+        <!-- WRONG 3 -->
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(224,92,58,.35);aspect-ratio:1.9/1;position:relative;">
+          <div style="background:#e0e0e0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;position:relative;">
+            <span style="position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:700;background:rgba(224,92,58,.12);color:#E05C3A;border:1px solid rgba(224,92,58,.28);">✗ Wrong</span>
+            <div style="font-size:13px;color:#b0b0b0;margin-bottom:8px;">🖼</div>
+            <div style="font-size:13px;color:#aaa;font-style:italic;">Stock Photo Here</div>
+            <div style="position:absolute;bottom:14px;font-size:11px;font-weight:700;color:#888;">Different style from last post</div>
+          </div>
+        </div>
+
+        <!-- RIGHT 2 -->
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(42,191,191,.3);aspect-ratio:1.9/1;position:relative;">
+          <div style="background:linear-gradient(135deg,#0D1520 0%,#162030 100%);width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;position:relative;">
+            <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 75%,rgba(58,126,216,.15) 0%,transparent 55%);"></div>
+            <span style="position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:700;background:rgba(42,191,191,.15);color:var(--teal);border:1px solid rgba(42,191,191,.3);">✓ Right</span>
+            <div style="font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:5px;position:relative;z-index:1;">The Business of Commerce</div>
+            <div style="font-family:'Playfair Display',serif;font-size:14px;color:#EDE8DF;font-weight:700;line-height:1.2;position:relative;z-index:1;">What Brand Partners Get Wrong</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.28);margin-top:6px;font-family:'DM Mono',monospace;position:relative;z-index:1;letter-spacing:.07em;">by Glance</div>
+          </div>
+        </div>
+
+        <!-- RIGHT 3 -->
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(42,191,191,.3);aspect-ratio:1.9/1;position:relative;">
+          <div style="background:linear-gradient(135deg,#0D1520 0%,#162030 100%);width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;position:relative;">
+            <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 35%,rgba(42,191,191,.12) 0%,transparent 55%);"></div>
+            <span style="position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;font-weight:700;background:rgba(42,191,191,.15);color:var(--teal);border:1px solid rgba(42,191,191,.3);">✓ Right</span>
+            <div style="font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:5px;position:relative;z-index:1;">The Human Experience</div>
+            <div style="font-family:'Playfair Display',serif;font-size:14px;color:#EDE8DF;font-weight:700;line-height:1.2;position:relative;z-index:1;">Shopping Is Now a Conversation</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.28);margin-top:6px;font-family:'DM Mono',monospace;position:relative;z-index:1;letter-spacing:.07em;">by Glance</div>
+          </div>
+        </div>
+
+      </div>
+      <p style="font-size:12px;color:var(--dim);margin-bottom:28px;text-align:center;">The 3 ✓ covers use identical structure — dark navy base, one pillar-color radial, pillar tag, short title, "by Glance." Consistency is the whole system.</p>
+
+      <div class="divider"><span>Colour Palette</span></div>
+      <div class="palette-row">
+        <div class="swatch" style="background:#0D1520;border:1px solid rgba(255,255,255,.08);"><div class="sw-name" style="color:#EDE8DF;">Deep Navy</div><div class="sw-use" style="color:#8A8499;">Primary background</div><div class="sw-hex" style="color:#5A5468;">#0D1520</div></div>
+        <div class="swatch" style="background:#F0A030;"><div class="sw-name" style="color:#0D0D12;">Glance Amber</div><div class="sw-use" style="color:rgba(0,0,0,.5);">Pillar 1 — Tech</div><div class="sw-hex" style="color:rgba(0,0,0,.4);">#F0A030</div></div>
+        <div class="swatch" style="background:#3A7ED8;"><div class="sw-name" style="color:#fff;">Intelligence Blue</div><div class="sw-use" style="color:rgba(255,255,255,.7);">Pillar 2 — Business</div><div class="sw-hex" style="color:rgba(255,255,255,.5);">#3A7ED8</div></div>
+        <div class="swatch" style="background:#2ABFBF;"><div class="sw-name" style="color:#0D0D12;">Teal</div><div class="sw-use" style="color:rgba(0,0,0,.5);">Pillar 3 — Human</div><div class="sw-hex" style="color:rgba(0,0,0,.4);">#2ABFBF</div></div>
+        <div class="swatch" style="background:#EDE8DF;border:1px solid rgba(0,0,0,.1);"><div class="sw-name" style="color:#0D0D12;">Off-White</div><div class="sw-use" style="color:rgba(0,0,0,.5);">Title text only</div><div class="sw-hex" style="color:rgba(0,0,0,.4);">#EDE8DF</div></div>
+      </div>
+
+      <div class="divider"><span>Typography</span></div>
+      <div class="type-row">
+        <div class="type-card"><div class="tc-sample"><span style="font-family:'Playfair Display',serif;font-size:30px;color:var(--text);">Aa</span></div><div class="tc-meta"><div class="tm-lbl">Display / Titles</div><div class="tm-name">Playfair Display — Semibold &amp; Bold Italic</div><div class="tm-use">Post titles on covers, section headings, masthead. Signals editorial authority. The serif creates the "magazine" feel. Free on Google Fonts.</div></div></div>
+        <div class="type-card"><div class="tc-sample"><span style="font-family:'DM Sans',sans-serif;font-size:28px;color:var(--muted);">Aa</span></div><div class="tc-meta"><div class="tm-lbl">Body / UI</div><div class="tm-name">DM Sans — Regular &amp; Medium</div><div class="tm-use">Cover tags, subtitles, all body text. Clean at small sizes, pairs with Playfair without competing. Free on Google Fonts.</div></div></div>
+        <div class="type-card"><div class="tc-sample"><span style="font-family:'DM Mono',monospace;font-size:24px;color:var(--teal);">01</span></div><div class="tc-meta"><div class="tm-lbl">Data / Labels</div><div class="tm-name">DM Mono — Regular</div><div class="tm-use">Pillar numbers, dates, "by Glance" attribution. Mono on dark = technical credibility. Intentional for an agentic commerce publication.</div></div></div>
+      </div>
+
+      <div class="divider"><span>Tools — How to Make the Covers</span></div>
+      <div class="tool-grid">
+        <div class="tool-card"><div class="tool-hd"><span class="tool-ic">🎨</span><span class="tool-nm">Figma</span><span class="tool-tag t-free">Free tier</span></div><p>Build a master cover template with all 3 pillar variants. Each new post = duplicate frame, change title + pillar color. Export at 1200×630px. 5 minutes per cover.</p><div class="tool-tip">You already have Figma MCP connected. Build the template once in the SA-Feed-2026-V2 file or a new "Substack Covers" file. Use it forever.</div></div>
+        <div class="tool-card"><div class="tool-hd"><span class="tool-ic">✨</span><span class="tool-nm">Canva</span><span class="tool-tag t-free">Free tier works</span></div><p>Faster alternative. Create a Brand Kit with the Glance palette and fonts, lock the template, share as a team template. Any editor can make covers without design help.</p><div class="tool-tip">Set up one 1200×630 template with dark base and fonts locked. Duplicate it for every post. 3 minutes per cover once set up.</div></div>
+        <div class="tool-card"><div class="tool-hd"><span class="tool-ic">🖼️</span><span class="tool-nm">Seedream 4.5</span><span class="tool-tag t-paid">Already in your stack</span></div><p>For covers needing a visual anchor beyond typography. Define a master prompt ("dark editorial, deep navy, abstract data visualization, minimal, no text") and lock it.</p><div class="tool-tip">Same prompt + same post-processing = visual consistency. Define the prompt once, use it every time. Don't freestyle — the consistency is the whole point.</div></div>
+        <div class="tool-card"><div class="tool-hd"><span class="tool-ic">📐</span><span class="tool-nm">Cover Spec</span><span class="tool-tag t-free">Reference</span></div><p>Design to these exact dimensions to avoid cropping surprises across grid, hero, and email preview views.</p><div class="tool-tip">1200×630px (1.9:1). Keep title and key elements in center 60% — edges get cropped in some views. Featured/hero post = same dimensions, displayed larger.</div></div>
+      </div>
+
+      <div class="divider"><span>Per-Post Checklist — Run Before Every Publish</span></div>
+      <div class="pub-checklist">
+        <label class="pub-check" onclick="togglePC(this)"><input type="checkbox"/><label>Cover uploaded (1200×630px, dark navy base, one pillar accent)</label><span class="pb">Cover</span></label>
+        <label class="pub-check" onclick="togglePC(this)"><input type="checkbox"/><label>Title is 7 words or fewer</label><span class="pb">Title</span></label>
+        <label class="pub-check" onclick="togglePC(this)"><input type="checkbox"/><label>Subtitle field filled in (under 18 words)</label><span class="pb">Subtitle</span></label>
+        <label class="pub-check" onclick="togglePC(this)"><input type="checkbox"/><label>Correct pillar accent color (Amber / Blue / Teal)</label><span class="pb">Color</span></label>
+        <label class="pub-check" onclick="togglePC(this)"><input type="checkbox"/><label>Pillar tag text present above title on cover</label><span class="pb">Tag</span></label>
+        <label class="pub-check" onclick="togglePC(this)"><input type="checkbox"/><label>"by Glance" mark bottom-left of cover at 40% opacity</label><span class="pb">Brand</span></label>
+        <label class="pub-check" onclick="togglePC(this)"><input type="checkbox"/><label>Post tagged with correct pillar in Substack settings</label><span class="pb">Tags</span></label>
+        <label class="pub-check" onclick="togglePC(this)"><input type="checkbox"/><label>Links to at least 2 other Glance Substack posts</label><span class="pb">SEO</span></label>
+        <label class="pub-check" onclick="togglePC(this)"><input type="checkbox"/><label>LinkedIn distribution post drafted (tease + link in first comment)</label><span class="pb">Distribute</span></label>
+        <label class="pub-check" onclick="togglePC(this)"><input type="checkbox"/><label>Substack Note written (sharpest 1–2 lines from the post)</label><span class="pb">Notes</span></label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     THE MANDATE
+════════════════════════════════════════════ -->
+<section class="sec" id="mandate">
+  <div class="quick-view">
+    <div class="adhd-section">
+      <div class="adhd-hero"><div class="ah-icon">🎯</div><h3>3 reasons Glance is on Substack.</h3><p>That's it. Not 10. Not 7. Three. If you can't answer these from memory, re-read this.</p></div>
+      <div class="action-list">
+        <div class="action-item teal" style="border-left-color:var(--teal);"><div class="ai-dot dot-teal"></div><div class="ai-body"><strong>① SEO — Own "agentic commerce" on Google</strong><span>Every post is a permanent, indexed web page. We publish consistently → Google ranks us → people searching the category find Glance first.</span></div></div>
+        <div class="action-item info"><div class="ai-dot dot-blue"></div><div class="ai-body"><strong>② Credibility — A URL to send journalists, investors, and partners</strong><span>When we pitch press or brief a brand partner, this is the URL that proves we know what we're talking about. Not a landing page. A publication.</span></div></div>
+        <div class="action-item major"><div class="ai-dot dot-amber"></div><div class="ai-body"><strong>③ Distribution hub — Every LinkedIn post and PR mention points here</strong><span>Substack is the source of record. Everything else (LinkedIn, press, notes) drives back to these URLs. One canonical home for Glance's point of view.</span></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-view">
+    <div class="sec-head"><div class="sec-eyebrow">The Strategic Case</div><h2>The Three-Part <em>Mandate</em></h2><p class="sec-sub">Why Substack — and why in this specific way.</p></div>
+    <div class="sec-body">
+      <div class="callout cr"><strong>The key distinction:</strong> Most brands use Substack to send emails. Glance is using Substack to own a corner of the internet. Every published post is a Google-indexed web page with a permanent URL — a piece of territory in the search landscape for agentic commerce.</div>
+      <div class="card-grid">
+        <div class="card"><div class="ci">🗺️</div><h3>SEO &amp; Content Moat</h3><p>"Agentic commerce" is an emerging category. The brands that publish the most credible content on a new keyword early tend to own it for years. First-mover advantage in content is real and Glance is running out of time.</p></div>
+        <div class="card"><div class="ci">📡</div><h3>Credibility Surface</h3><p>When journalists research agentic commerce, they read publications covering the space. When Glance is that publication, we control the narrative. When we're not, someone else does.</p></div>
+        <div class="card"><div class="ci">🔗</div><h3>Distribution Hub</h3><p>Substack becomes the canonical URL for all Glance thought leadership. LinkedIn posts, PR pitches, and media mentions link back here — concentrating authority and inbound signals to one domain.</p></div>
+        <div class="card"><div class="ci">🎙️</div><h3>Two Audiences, One Platform</h3><p>Industry readers (brand partners, investors, commerce execs) find Substack credible for serious long-form. Tech-savvy consumers discover through Notes and social shares. One platform, two audience fits.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     PRE-LAUNCH
+════════════════════════════════════════════ -->
+<section class="sec" id="prelaunch">
+  <div class="quick-view">
+    <div class="adhd-section">
+      <div class="adhd-hero"><div class="ah-icon">🚀</div><h3>Do these before you publish Post 1.</h3><p>Some of these should already be done. Check them off. The ones not done are blockers.</p></div>
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#E05C3A;margin:0 0 10px;">Do today</div>
+      <div class="action-list" style="margin-bottom:20px;">
+        <div class="action-item critical"><div class="ai-dot dot-red"></div><div class="ai-body"><strong>Rename the publication (keyword-bearing name)</strong><span>e.g., "Agentic Commerce by Glance" or "The Commerce AI Brief"</span></div><span class="ai-time time-now">5 min</span></div>
+        <div class="action-item critical"><div class="ai-dot dot-red"></div><div class="ai-body"><strong>Fill publication description with target keyword in first sentence</strong><span>"Glance's intelligence hub for agentic commerce — where AI rewrites how people shop."</span></div><span class="ai-time time-now">10 min</span></div>
+        <div class="action-item critical"><div class="ai-dot dot-red"></div><div class="ai-body"><strong>Add Substack link to Glance LinkedIn company page and bio</strong><span>Also post an announcement. 18 days of zero cross-promotion needs to end today.</span></div><span class="ai-time time-now">5 min</span></div>
+      </div>
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin:0 0 10px;">This week</div>
+      <div class="action-list">
+        <div class="action-item major"><div class="ai-dot dot-amber"></div><div class="ai-body"><strong>Request custom domain from eng (newsletter.glance.com)</strong><span>CNAME setup. SEO authority goes to Glance's domain, not substack.com.</span></div><span class="ai-time time-week">Eng ticket</span></div>
+        <div class="action-item major"><div class="ai-dot dot-amber"></div><div class="ai-body"><strong>Write and publish the About page (3 paragraphs)</strong><span>Para 1: define agentic commerce. Para 2: why Glance publishes this. Para 3: who reads it.</span></div><span class="ai-time time-week">30 min</span></div>
+        <div class="action-item major"><div class="ai-dot dot-amber"></div><div class="ai-body"><strong>Map 10 post topics to 10 keywords before writing anything</strong><span>Each post should target one keyword. Do the mapping first, then write. Not the other way around.</span></div><span class="ai-time time-week">1 hr</span></div>
+        <div class="action-item major"><div class="ai-dot dot-amber"></div><div class="ai-body"><strong>Write the cornerstone post: "What is Agentic Commerce?"</strong><span>1200+ words. This is the most important piece you'll ever publish on this platform. Don't rush it, but don't delay it either.</span></div><span class="ai-time time-week">2–3 hrs</span></div>
+        <div class="action-item watch"><div class="ai-dot dot-green"></div><div class="ai-body"><strong>Pre-write 2 more posts after the cornerstone</strong><span>Backlog protects you from missing publish dates. Launch with Issue 1 written, Issue 2 in draft, Issue 3 outlined.</span></div><span class="ai-time time-later">Week 2</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-view">
+    <div class="sec-head"><div class="sec-eyebrow">Before Post 1</div><h2>Pre-Launch <em>Checklist</em></h2><p class="sec-sub">Everything to lock in before publishing. Reframed around SEO and content strategy.</p></div>
+    <div class="sec-body">
+      <div class="divider"><span>SEO &amp; Keyword Strategy</span></div>
+      <div class="checklist">
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>Run a keyword audit for target terms</strong><span>Search "agentic commerce," "AI commerce," "conversational commerce," "agentic shopping" on Google. Note who currently ranks. Screenshot — this is your baseline.</span></div><span class="badge b-must">Must</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>Map 10 target keywords to 10 planned posts</strong><span>Each post should be built around a keyword Glance wants to own. Title, subtitle, and first paragraph should include the target keyword naturally.</span></div><span class="badge b-must">Must</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>Define the publication name with SEO in mind</strong><span>Consider "Agentic Commerce Intelligence by Glance" — descriptive names rank better than abstract brand names. Rename before any content goes live.</span></div><span class="badge b-sov">SOV</span></label>
+      </div>
+      <div class="divider"><span>Content Strategy</span></div>
+      <div class="checklist">
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>Define 3 content pillars</strong><span>Pillar 1: Technology of Commerce. Pillar 2: Business of Commerce. Pillar 3: Human Experience of Commerce. Every post fits in one.</span></div><span class="badge b-must">Must</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>Write the cornerstone post before launch</strong><span>"What is Agentic Commerce?" — long-form, definitive, keyword-rich. This is pinned permanently and linked from every other post.</span></div><span class="badge b-must">Must</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>Build a 90-day content calendar</strong><span>Map post topics, target keywords, content pillars, and publish dates for 12 weeks. Have 4 weeks of topics mapped before the first post.</span></div><span class="badge b-must">Must</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>Write a 3-sentence brand voice guide</strong><span>"Authoritative but not academic. Explains the technical without condescending. Writes for the exec who's smart but not a product engineer."</span></div><span class="badge b-must">Must</span></label>
+      </div>
+      <div class="divider"><span>Technical &amp; Distribution</span></div>
+      <div class="checklist">
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>Set up custom domain (newsletter.glance.com)</strong><span>Routes all SEO authority to Glance's domain. Most important technical fix. Get engineering involved.</span></div><span class="badge b-rec">Recommended</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>Define distribution chain before Post 1</strong><span>Know exactly who does what on LinkedIn and Notes after a post publishes. The distribution SOP must be ready before Post 1, not improvised after.</span></div><span class="badge b-must">Must</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>Embed subscribe widget on glance.com</strong><span>Even without a newsletter focus, a subscriber list is passive owned distribution. Costs nothing to add.</span></div><span class="badge b-rec">Recommended</span></label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     BRAND PAGE SETUP
+════════════════════════════════════════════ -->
+<section class="sec" id="brandpage">
+  <div class="quick-view">
+    <div class="adhd-section">
+      <div class="adhd-hero"><div class="ah-icon">⚙️</div><h3>5 settings to configure. In this order.</h3><p>Most of these take under 10 minutes. Do them before Post 1 goes live.</p></div>
+      <div class="action-list">
+        <div class="action-item critical"><div class="ai-dot dot-red"></div><div class="ai-body"><strong>Name + description: keyword in first sentence of description</strong><span>"Glance's intelligence hub for agentic commerce." This shows in Google snippets. Currently blank or generic.</span></div><span class="ai-time time-now">10 min</span></div>
+        <div class="action-item critical"><div class="ai-dot dot-red"></div><div class="ai-body"><strong>About page: 3 paragraphs — define, why us, who reads it</strong><span>This is what journalists and analysts read. Make it editorial, not marketing. No product pitching.</span></div><span class="ai-time time-week">30 min</span></div>
+        <div class="action-item major"><div class="ai-dot dot-amber"></div><div class="ai-body"><strong>Custom domain: newsletter.glance.com via CNAME</strong><span>Ticket engineering. Every future backlink points to Glance's domain, not substack.com.</span></div><span class="ai-time time-week">Eng needed</span></div>
+        <div class="action-item major"><div class="ai-dot dot-amber"></div><div class="ai-body"><strong>Enable Recommendations — and formalise the Notes cadence</strong><span>Notes are live — now build the rhythm. 2–3 per week minimum. Recommendations = passive subscriber growth. Set up 3 reciprocal deals with adjacent newsletters.</span></div><span class="ai-time time-week">This week</span></div>
+        <div class="action-item watch"><div class="ai-dot dot-green"></div><div class="ai-body"><strong>Cover image: editorial dark, minimal text, no product screenshots</strong><span>See Design Philosophy section. Replace the current marketing banner with something that looks like a publication masthead.</span></div><span class="ai-time time-week">30 min</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-view">
+    <div class="sec-head"><div class="sec-eyebrow">Setup</div><h2>Brand Page <em>Setup</em></h2><p class="sec-sub">Configure the page as an SEO and credibility surface — not a newsletter product.</p></div>
+    <div class="sec-body">
+      <div class="sop-list">
+        <div class="sop-step"><div class="sop-hd" onclick="toggleSOP(this)"><span class="sn">STEP 1</span><div><div class="st">Name and URL — optimise for search, not just branding</div><div class="sw">The publication name shows in Google snippets</div></div><span class="sop-tog">+</span></div><div class="sop-bd"><ul><li><strong>Publication name:</strong> Consider "Agentic Commerce Intelligence — by Glance" over just "Glance." Descriptive names carry keyword weight in search snippets.</li><li><strong>URL:</strong> Aim for commerce.glance.com via CNAME, or at minimum claim a short, clean Substack subdomain.</li><li><strong>Description field:</strong> Write with your primary keyword in the first sentence. This appears as the Google meta description.</li></ul><div class="why-box">Substack descriptions appear as meta descriptions in Google results. A keyword-rich description improves click-through on search impressions.</div></div></div>
+        <div class="sop-step"><div class="sop-hd" onclick="toggleSOP(this)"><span class="sn">STEP 2</span><div><div class="st">About Page — write it as a credibility document</div><div class="sw">Often the first thing a journalist, investor, or brand partner reads</div></div><span class="sop-tog">+</span></div><div class="sop-bd"><ul><li><strong>Para 1:</strong> Define "agentic commerce" in Glance's words. Own the definition. This framing gets quoted and linked to.</li><li><strong>Para 2:</strong> Who publishes this and why Glance is uniquely positioned (scale, data, product depth, device layer).</li><li><strong>Para 3:</strong> Who reads this and what they get. Speak directly to both audiences: industry and tech-savvy consumers.</li><li><strong>Do NOT</strong> make this a marketing page. Write it as editorial credentials, not a product pitch.</li></ul><div class="why-box">When journalists research agentic commerce, they often read the About page of publications covering the space. Make this page something a reporter would cite as a source.</div></div></div>
+        <div class="sop-step"><div class="sop-hd" onclick="toggleSOP(this)"><span class="sn">STEP 3</span><div><div class="st">Enable Notes and Recommendations</div><div class="sw">The two highest-ROI organic growth features on Substack</div></div><span class="sop-tog">+</span></div><div class="sop-bd"><ul><li><strong>Notes:</strong> Settings → Notes. Post 2–3 per week. Appears in feeds of non-subscribers. This is the primary discovery mechanism without a newsletter.</li><li><strong>Recommendations:</strong> Settings → Growth. When new subscribers sign up, they're shown publications you recommend. Set up 5–8 reciprocal recommendations with adjacent newsletters.</li></ul><div class="why-box">Recommendations is the single most underused growth lever on Substack. One recommendation from a newsletter with 10K subscribers can send 300–500 new subscribers in a week.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     EDITOR ECOSYSTEM
+════════════════════════════════════════════ -->
+<section class="sec" id="ecosystem">
+  <div class="quick-view">
+    <div class="adhd-section">
+      <div class="adhd-hero"><div class="ah-icon">👥</div><h3>3 roles. Lock them in before Post 1.</h3><p>Who writes. Who edits. Who approves. Without this, the first deadline will be chaos.</p></div>
+      <div class="three-col">
+        <div class="pillar-mini p1"><strong>Main Editor</strong><span>Owns all settings. Brand email (substack@glance.com), not a personal one. If the person leaves, access stays with Glance.</span></div>
+        <div class="pillar-mini p2"><strong>Co-Editor</strong><span>Can write, edit, publish. Can't change settings. Needs a 1-page style brief before they write anything.</span></div>
+        <div class="pillar-mini" style="background:rgba(123,94,167,.06);border-color:#7B5EA7;"><strong>Guest Writer</strong><span>Phase 2 only. Don't activate until month 4+.</span></div>
+      </div>
+      <div class="action-list" style="margin-top:16px;">
+        <div class="action-item info"><div class="ai-dot dot-blue"></div><div class="ai-body"><strong>Use a brand email for the main editor account</strong><span>substack@glance.com — not your personal email. Access survives team changes.</span></div><span class="ai-time time-now">Setup</span></div>
+        <div class="action-item info"><div class="ai-dot dot-blue"></div><div class="ai-body"><strong>Assign one editor as "owner" for each post before it's written</strong><span>One person accountable for each issue going out on time and on-brief. Assign in the content calendar.</span></div><span class="ai-time time-always">Process</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-view">
+    <div class="sec-head"><div class="sec-eyebrow">Setup</div><h2>Editor <em>Ecosystem</em></h2><p class="sec-sub">Roles, permissions, and editorial workflow for a publishing-first setup.</p></div>
+    <div class="sec-body">
+      <div class="callout"><strong>How it works:</strong> A Substack Brand Page is administered by a Main Editor. That editor can invite Co-Editors and (Phase 2) Guest Writers. Each role has different access.</div>
+      <table class="rt" style="margin-bottom:24px;">
+        <thead><tr><th>Role</th><th>Who it is</th><th>Can Publish</th><th>Can Edit Others</th><th>Can Change Settings</th><th>Attributed</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Main Editor</strong></td><td>Brand-owned account. Owns all settings.</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">Optional</td></tr>
+          <tr><td><strong>Co-Editor</strong></td><td>Team writers. Can write, edit, publish. Cannot change billing or settings.</td><td class="tick">✓</td><td class="tick">✓</td><td class="cross">✗</td><td class="tick">Optional</td></tr>
+          <tr><td><strong>Guest Writer</strong></td><td>Phase 2. External contributors. Single-post access.</td><td class="tick">✓ (1 post)</td><td class="cross">✗</td><td class="cross">✗</td><td class="tick">Always</td></tr>
+        </tbody>
+      </table>
+      <div class="card-grid">
+        <div class="card"><div class="ci">🔐</div><h3>Main Editor = Brand, Not Person</h3><p>Use a brand-owned email (substack@glance.com), not a personal email. Prevents access loss if the person leaves.</p></div>
+        <div class="card"><div class="ci">📋</div><h3>Give All Editors a Style Brief</h3><p>Every co-editor needs the brand voice guide and content pillars. 1 page is enough. Consistency is the SEO signal.</p></div>
+        <div class="card"><div class="ci">🔗</div><h3>Internal Linking is a Team Job</h3><p>Every new post links to 2+ older posts. Every older post gets retroactively updated to link to relevant new posts. Topical authority clusters.</p></div>
+        <div class="card"><div class="ci">📌</div><h3>Pin the Cornerstone Post</h3><p>The "What is Agentic Commerce?" post is pinned to the top of the page permanently. It's the highest-value SEO asset.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     OWN AGENTIC COMMERCE
+════════════════════════════════════════════ -->
+<section class="sec" id="sov">
+  <div class="quick-view">
+    <div class="adhd-section">
+      <div class="adhd-hero"><div class="ah-icon">🎯</div><h3>6 keywords to own. 10 posts to write. Start with #1.</h3><p>These are the posts that build the content moat. Write them in order. Each one targets a keyword Glance needs to rank for.</p></div>
+      <div style="margin-bottom:20px;">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:10px;">Own these terms first</div>
+        <div class="kw-pills-adhd">
+          <span class="kw-own">agentic commerce</span><span class="kw-own">what is agentic commerce</span><span class="kw-own">AI commerce agents</span><span class="kw-own">agentic shopping</span><span class="kw-own">lockscreen commerce</span><span class="kw-own">AI style agent</span>
+          <span class="kw-contest">conversational commerce</span><span class="kw-contest">AI shopping assistant</span><span class="kw-contest">virtual try-on AI</span>
+        </div>
+      </div>
+      <div class="adhd-checklist">
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>📌 POST 1 — "What is Agentic Commerce?" · 1500+ words · Pin this forever</label><span class="ck-badge" style="background:rgba(224,92,58,.1);color:#E05C3A;border-color:rgba(224,92,58,.25);">Publish First</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ POST 2 — "Why the Search Bar is Dead"</label><span class="ck-badge">SOV</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ POST 3 — "The Anatomy of an AI Commerce Agent"</label><span class="ck-badge">SOV</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ POST 4 — "The 5 Signals That Make AI Commerce Personal"</label><span class="ck-badge">Pillar 1</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ POST 5 — "Virtual Try-On Is Table Stakes. Here's What's Next"</label><span class="ck-badge">Pillar 1</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ POST 6 — "What Brand Partners Get Wrong About AI Commerce"</label><span class="ck-badge">Pillar 2</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ POST 7 — "The Commerce Layer That Lives Before the App"</label><span class="ck-badge">Pillar 2</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ POST 8 — "Shopping Is Now a Conversation"</label><span class="ck-badge">Pillar 3</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>✦ POST 9 — "Why We Rebuilt Our Recommendation Engine Three Times"</label><span class="ck-badge">Pillar 3</span></label>
+        <label class="adhd-check" onclick="toggleAC(this)"><input type="checkbox"/><label>📅 POST 10 — Annual "State of Agentic Commerce" Report</label><span class="ck-badge">Flagship</span></label>
+      </div>
+    </div>
+  </div>
+  <div class="detail-view">
+    <div class="sec-head"><div class="sec-eyebrow">Content Strategy</div><h2>Owning <em>Agentic Commerce</em></h2><p class="sec-sub">The keyword map, the content moat strategy, and the 10 posts Glance needs to publish.</p></div>
+    <div class="sec-body">
+      <div class="callout cr"><strong>Category creation is a content game.</strong> "Agentic commerce" is not yet a crowded search term — which means Glance has a narrow window to become the authoritative source before larger players colonise it. IBM, Shopify, and Wikipedia are already there.</div>
+      <div class="divider"><span>Keyword Ownership Map</span></div>
+      <div class="kw-map">
+        <div class="kw-tier"><div class="kw-tier-lbl">Own Now — Primary targets, low competition, high relevance</div><div class="kw-pills"><span class="kp-own">agentic commerce</span><span class="kp-own">what is agentic commerce</span><span class="kp-own">AI commerce agents</span><span class="kp-own">agentic shopping</span><span class="kp-own">lockscreen commerce</span><span class="kp-own">AI style agent</span></div></div>
+        <div class="kw-tier"><div class="kw-tier-lbl">Contest — Adjacent terms, moderate competition</div><div class="kw-pills"><span class="kp-cont">conversational commerce</span><span class="kp-cont">AI shopping assistant</span><span class="kp-cont">virtual try-on AI</span><span class="kp-cont">AI fashion recommendations</span><span class="kp-cont">future of e-commerce AI</span></div></div>
+        <div class="kw-tier"><div class="kw-tier-lbl">Monitor — High-volume, high-competition — reference but don't lead with</div><div class="kw-pills"><span class="kp-mon">AI commerce</span><span class="kp-mon">generative AI retail</span><span class="kp-mon">AI personalization shopping</span><span class="kp-mon">future of shopping</span></div></div>
+      </div>
+      <div class="divider"><span>The 10 Posts Glance Needs to Publish</span></div>
+      <div class="checklist">
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>POST 1 — The Cornerstone: "What is Agentic Commerce?"</strong><span>1500+ words. Definitive explainer. Pin it. Link everything to it. Update monthly. This is the anchor of the entire content moat.</span></div><span class="badge b-must">Publish First</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>POST 2 — "Why the Search Bar is Dead"</strong><span>The provocative thesis piece. AI agents don't search — they act. Highly shareable on LinkedIn and Twitter/X.</span></div><span class="badge b-sov">SOV</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>POST 3 — "The Anatomy of an AI Commerce Agent"</strong><span>Technical credibility piece. How an agentic system actually works — orchestrator, sub-agents, user model, context signals. Establishes Glance as technically authoritative.</span></div><span class="badge b-sov">SOV</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>POST 4 — "The 5 Signals That Make AI Commerce Personal"</strong><span>Data-informed piece on how contextual signals change what gets recommended. Bridges tech and consumer experience.</span></div><span class="badge b-rec">Pillar 1</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>POST 5 — "Virtual Try-On Is Table Stakes Now — Here's What's Next"</strong><span>Captures VTON search traffic while pivoting the narrative toward the full agentic commerce stack.</span></div><span class="badge b-rec">Pillar 1</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>POST 6 — "What Brand Partners Get Wrong About AI Commerce"</strong><span>Industry credibility piece. Addresses real objections. Positions Glance as the company that actually understands the channel.</span></div><span class="badge b-rec">Pillar 2</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>POST 7 — "The Commerce Layer That Lives Before the App"</strong><span>Lockscreen and ambient surface narrative — phone screen to TV screen. Glance's unique position without naming device numbers.</span></div><span class="badge b-rec">Pillar 2</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>POST 8 — "Shopping Is Now a Conversation"</strong><span>Consumer-facing explainer. Makes agentic commerce tangible and exciting for a non-technical audience. Targets "AI shopping assistant" search traffic.</span></div><span class="badge b-rec">Pillar 3</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>POST 9 — "Why We Rebuilt Our Recommendation Engine Three Times"</strong><span>Authenticity piece. Humanises the product. Builds trust faster than any polished marketing content.</span></div><span class="badge b-rec">Pillar 3</span></label>
+        <label class="check-item" onclick="toggleC(this)"><input type="checkbox"/><div class="ct-text"><strong>POST 10 — Annual "State of Agentic Commerce" Report</strong><span>Yearly data-informed report. Becomes a reference document cited by media and analysts. Most-shared piece Glance publishes annually.</span></div><span class="badge b-rec">Flagship</span></label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     CONTENT PILLARS
+════════════════════════════════════════════ -->
+<section class="sec" id="pillars">
+  <div class="quick-view">
+    <div class="adhd-section">
+      <div class="adhd-hero"><div class="ah-icon">🏗️</div><h3>3 content buckets. Every post fits in one.</h3><p>If a post doesn't fit in one of these 3, it probably shouldn't be published here.</p></div>
+      <div class="three-col">
+        <div class="pillar-mini p1"><strong>🟡 Tech · Pillar 1</strong><span>How the technology works. Agentic AI, user models, orchestration. For readers who want to understand the engine.</span></div>
+        <div class="pillar-mini p2"><strong>🔵 Business · Pillar 2</strong><span>What it means for brands, retailers, OEM partners. ROI, market shifts, strategic implications.</span></div>
+        <div class="pillar-mini p3"><strong>🟢 Human · Pillar 3</strong><span>How real people experience AI-assisted shopping. Consumer stories, culture, Glance behind-the-build.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-view">
+    <div class="sec-head"><div class="sec-eyebrow">Content Strategy</div><h2>Content <em>Pillars</em></h2><p class="sec-sub">Three topic areas that build topical authority in search. Every post belongs to one.</p></div>
+    <div class="sec-body">
+      <div class="callout ct"><strong>Why pillars matter for SEO:</strong> Google rewards "topical authority" — sites that consistently publish deep content on a defined set of topics. Three pillars consistently covered will rank better than ten pillars covered shallowly.</div>
+      <div class="pillar-3col">
+        <div class="pillar-card pc-p1"><div class="pn">PILLAR 01 — AMBER</div><h3>The Technology of Commerce</h3><p>How agentic AI, multi-agent systems, contextual signals, and user modelling change how commerce works. Technical credibility for industry readers.</p><p style="font-size:11px;color:var(--dim);margin-top:10px;"><strong style="color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:4px;">Topics</strong>Agentic commerce explainers · AI orchestration · VTON · User model design · Contextual recommendations · Sub-agent architecture</p></div>
+        <div class="pillar-card pc-p2"><div class="pn">PILLAR 02 — BLUE</div><h3>The Business of Commerce</h3><p>What agentic commerce means for brands, retailers, and OEM partners. ROI, positioning, and the strategic shifts required to compete in an AI-first landscape.</p><p style="font-size:11px;color:var(--dim);margin-top:10px;"><strong style="color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:4px;">Topics</strong>Brand partner playbooks · Commerce trends · OEM distribution · Retail AI adoption · Category creation · Industry data</p></div>
+        <div class="pillar-card pc-p3"><div class="pn">PILLAR 03 — TEAL</div><h3>The Human Experience of Commerce</h3><p>How real people shop, style, and discover products in an AI-assisted world. Consumer storytelling that makes Glance's technology feel tangible.</p><p style="font-size:11px;color:var(--dim);margin-top:10px;"><strong style="color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:4px;">Topics</strong>Consumer behaviour shifts · Style and identity · Shopping psychology · Behind-the-build stories · Cultural moments in commerce</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     CONTENT FORMATS
+════════════════════════════════════════════ -->
+<section class="sec" id="formats">
+  <div class="quick-view">
+    <div class="adhd-section">
+      <div class="adhd-hero"><div class="ah-icon">📝</div><h3>6 formats. Ranked by SEO value.</h3><p>Start with the top 3. Add the others once you have publishing rhythm established.</p></div>
+      <div class="action-list">
+        <div class="action-item teal" style="border-left-color:var(--teal);"><div class="ai-dot dot-teal"></div><div class="ai-body"><strong>🧱 Cornerstone Explainer — Highest SEO value</strong><span>1200–2000 words. Answers a core question. Ranks, gets cited, becomes evergreen. This is where to spend the most time.</span></div><span class="ai-time" style="background:var(--teal);color:#0D0D12;">Start here</span></div>
+        <div class="action-item teal" style="border-left-color:var(--teal);"><div class="ai-dot dot-teal"></div><div class="ai-body"><strong>📊 Data Story — Gets backlinks</strong><span>Anonymised product data or third-party research as a story. Journalists and analysts forward these. Each one attracts inbound links.</span></div><span class="ai-time" style="background:var(--teal);color:#0D0D12;">High value</span></div>
+        <div class="action-item major"><div class="ai-dot dot-amber"></div><div class="ai-body"><strong>🔥 Provocative Thesis — Gets shares</strong><span>600–900 words. Bold take. "The Search Bar is Dead." High LinkedIn shareability. Medium SEO, high distribution.</span></div><span class="ai-time time-week">High shares</span></div>
+        <div class="action-item info"><div class="ai-dot dot-blue"></div><div class="ai-body"><strong>💬 Notes — Discovery only, not SEO</strong><span>1–4 sentences. Shows to non-subscribers. Post 2–3/week. Use it to tease posts and react to industry news.</span></div><span class="ai-time time-always">2–3/week</span></div>
+        <div class="action-item info"><div class="ai-dot dot-blue"></div><div class="ai-body"><strong>🏗️ Behind the Build — Loyalty builder</strong><span>Transparent product storytelling. What failed, what surprised. Earns trust faster than any marketing content.</span></div><span class="ai-time time-week">Monthly</span></div>
+        <div class="action-item watch"><div class="ai-dot dot-green"></div><div class="ai-body"><strong>📅 Annual Report — Flagship, once a year</strong><span>"State of Agentic Commerce." The most cited, most linked, most shared piece. Start building data infrastructure for this now.</span></div><span class="ai-time time-later">Q4 annual</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-view">
+    <div class="sec-head"><div class="sec-eyebrow">Content Strategy</div><h2>Content <em>Formats</em></h2><p class="sec-sub">What works on Substack — evaluated by SEO value, distribution potential, and fit for Glance's two audiences.</p></div>
+    <div class="sec-body">
+      <div class="formats-grid">
+        <div class="fmt-card"><div class="fh"><span class="fi">🧱</span><span class="ft">Cornerstone Explainer</span><span class="ftag tag-s">SOV Priority</span></div><p>Long-form (1200–2000 words) definitive pieces answering a core question about the category. Built to rank, to be cited, to become evergreen assets.</p><div class="seo-box">Highest SEO impact. These are the posts that build domain authority. Invest the most time here.</div><div class="glance-box">"What is Agentic Commerce?" · "How AI Agents Shop For You" · "The Architecture of a Commerce Agent"</div></div>
+        <div class="fmt-card"><div class="fh"><span class="fi">📊</span><span class="ft">The Data Story</span><span class="ftag tag-h">High Value</span></div><p>Posts built around anonymised product data, user behaviour patterns, or third-party research. Journalists and analysts forward these — direct backlink source.</p><div class="seo-box">High — data posts attract backlinks from media and industry blogs, which is a direct SEO ranking signal.</div><div class="glance-box">Use behavioural signals and trend data. Never cite device or user numbers publicly — use the ambient surfaces narrative.</div></div>
+        <div class="fmt-card"><div class="fh"><span class="fi">🔥</span><span class="ft">Provocative Thesis</span><span class="ftag tag-h">High Shares</span></div><p>Bold, contrarian takes. 600–900 words. Designed to generate shares and LinkedIn engagement. Opinion with evidence.</p><div class="seo-box">Medium SEO, high distribution. Drive traffic back to cornerstone pieces via internal links.</div><div class="glance-box">"The Search Bar is Dead" · "Why Gen AI Hype is Hiding the Real Shift" · "E-commerce Isn't the Future — This Is"</div></div>
+        <div class="fmt-card"><div class="fh"><span class="fi">🏗️</span><span class="ft">Behind the Build</span><span class="ftag tag-h">High Trust</span></div><p>Transparent storytelling about how Glance builds its product. What was hard, what failed, what surprised the team. Earns deep trust.</p><div class="seo-box">Medium SEO, high loyalty. These posts build reader relationships.</div><div class="glance-box">Talk to PMs and engineers. The best behind-the-build stories come from product decisions, not marketing talking points.</div></div>
+        <div class="fmt-card"><div class="fh"><span class="fi">💬</span><span class="ft">Notes</span><span class="ftag tag-m">Discovery</span></div><p>1–4 sentence takes posted to Substack's feed. Not published as posts. Appears to non-subscribers. Primary discovery mechanism without a newsletter.</p><div class="seo-box">No direct SEO — but drives traffic to posts that do rank. Top-of-funnel for published content.</div><div class="glance-box">Post a Note teasing the next piece. Post a stat. Never paste the whole post — give them a reason to click.</div></div>
+        <div class="fmt-card"><div class="fh"><span class="fi">📅</span><span class="ft">Annual Report</span><span class="ftag tag-s">Flagship</span></div><p>Once yearly: "State of Agentic Commerce." The most linked, cited, and shared piece Glance publishes. A category-defining asset.</p><div class="seo-box">Highest long-term SEO. Annual reports attract inbound links for months after publication.</div><div class="glance-box">Start building data infrastructure now. First report in Q4 of launch year. Make it visual-heavy and downloadable.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     PUBLISHING CADENCE
+════════════════════════════════════════════ -->
+<section class="sec" id="cadence">
+  <div class="quick-view">
+    <div class="adhd-section">
+      <div class="adhd-hero"><div class="ah-icon">📅</div><h3>Post once a week. 2–3 Notes per week. Never skip.</h3><p>Consistency beats frequency. One good post/week for 3 months > five posts/week for 3 weeks then silence. Pick a cadence you can sustain.</p></div>
+      <div class="three-col" style="margin-bottom:20px;">
+        <div class="pillar-mini" style="background:rgba(42,191,191,.06);border-color:var(--teal);"><strong style="color:var(--teal);">NOW — Phase 1</strong><span>1 post/week. Start with the 10 priority posts. All keyword-targeted. Build the foundation.</span></div>
+        <div class="pillar-mini p1"><strong style="color:var(--accent);">Month 4 — Phase 2</strong><span>2 posts/week. One long-form + one shorter reactive piece. Add guest editors if workflow is ready.</span></div>
+        <div class="pillar-mini p2"><strong style="color:var(--blue);">Ongoing</strong><span>Update the cornerstone post monthly. Audit top performers quarterly. Annual report in Q4.</span></div>
+      </div>
+      <div class="action-list">
+        <div class="action-item teal" style="border-left-color:var(--teal);"><div class="ai-dot dot-teal"></div><div class="ai-body"><strong>Notes: 2–3 per week, starting today</strong><span>Pick the sharpest line from whatever you're writing. Post it. Done. 10 minutes each. This is the only way non-subscribers discover you right now.</span></div><span class="ai-time time-now">10 min each</span></div>
+        <div class="action-item major"><div class="ai-dot dot-amber"></div><div class="ai-body"><strong>Posts: Tuesday or Thursday, 9–11am Eastern</strong><span>Avoids Monday inbox chaos and Friday drop-off. Consistency of day matters — readers start to expect it.</span></div><span class="ai-time time-always">Always</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-view">
+    <div class="sec-head"><div class="sec-eyebrow">Operations</div><h2>Publishing <em>Cadence</em></h2><p class="sec-sub">How often to publish — optimised for SEO indexing and content quality, not email delivery windows.</p></div>
+    <div class="sec-body">
+      <div class="callout"><strong>The rule of thumb:</strong> Consistent frequency signals topical authority to Google. Publishing 2 quality posts per week consistently beats publishing 5 average posts then going quiet. Choose the cadence you can sustain at quality.</div>
+      <div class="cadence-3" style="margin-bottom:24px;">
+        <div class="cad-card"><h3>Monthly</h3><div class="freq">1× / month</div><ul><li>Lowest commitment</li><li>Hardest to build momentum</li><li>Works for a team of 1</li><li>Long-form deep dives only</li></ul></div>
+        <div class="cad-card rec"><h3>Bi-Weekly</h3><div class="freq">2× / month</div><ul><li>Sustainable for small team</li><li>Enough to stay top-of-mind</li><li>Mix of long + short formats</li><li><strong>Best starting cadence for Glance</strong></li></ul></div>
+        <div class="cad-card"><h3>Weekly</h3><div class="freq">4× / month</div><ul><li>Maximum growth velocity</li><li>Requires dedicated writer + editor</li><li>High quality-drop risk without process</li><li>Unlock after 3 months of bi-weekly</li></ul></div>
+      </div>
+      <div class="sop-list">
+        <div class="sop-step"><div class="sop-hd" onclick="toggleSOP(this)"><span class="sn">PHASE 1</span><div><div class="st">Months 1–3: 1 post/week focused on cornerstone content</div><div class="sw">Build the foundation. Every post targets a primary keyword.</div></div><span class="sop-tog">+</span></div><div class="sop-bd"><ul><li><strong>Goal:</strong> Publish the 10 priority posts from the SOV section. One per week, in order of keyword priority.</li><li><strong>Length:</strong> No post under 800 words. Cornerstone posts 1200–2000 words.</li><li><strong>Internal linking:</strong> From Post 2 onwards, every post links back to Post 1 and at least one other published post.</li><li><strong>Notes:</strong> 2–3 per week. Use to tease upcoming pieces and react to industry news.</li></ul><div class="why-box">Google takes 4–8 weeks to fully index and rank new content. Consistency in Month 1–3 accelerates this process.</div></div></div>
+        <div class="sop-step"><div class="sop-hd" onclick="toggleSOP(this)"><span class="sn">PHASE 2</span><div><div class="st">Months 4–6: 2 posts/week — expand topic depth</div><div class="sw">Accelerate topical authority by expanding pillar coverage.</div></div><span class="sop-tog">+</span></div><div class="sop-bd"><ul><li><strong>Mix:</strong> One cornerstone quality piece (1000+ words) + one shorter reactive piece (600–800 words) per week.</li><li><strong>Guest editors:</strong> Introduce at this stage if the workflow is ready — increases output without adding core team load.</li><li><strong>Update old posts:</strong> Go back to Phase 1 posts and add internal links to new content. Signals freshness to Google.</li></ul><div class="why-box">By Month 4, first keyword rankings start appearing. Use Google Search Console to see which posts generate impressions, and double down on those topics.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     DISTRIBUTION
+════════════════════════════════════════════ -->
+<section class="sec" id="distribution">
+  <div class="quick-view">
+    <div class="adhd-section">
+      <div class="adhd-hero"><div class="ah-icon">📡</div><h3>Write once. Distribute everywhere. 3 steps after every post.</h3><p>Substack is the source. LinkedIn, Notes, and press are the distribution. Every channel points back to the Substack URL.</p></div>
+      <div class="action-list">
+        <div class="action-item critical"><div class="ai-dot dot-red"></div><div class="ai-body"><strong>① Publish on Substack</strong><span>The canonical URL. This is what everyone links to. Set it, forget it — it's permanent.</span></div><span class="ai-time time-now">Publish</span></div>
+        <div class="action-item major"><div class="ai-dot dot-amber"></div><div class="ai-body"><strong>② 24–48 hrs later: LinkedIn post (tease + link in first comment)</strong><span>Post first 2–3 paragraphs as native LinkedIn text. CTA: "Full piece — link in first comment." Then comment the link immediately. LinkedIn's algo treats this as native text (higher reach) while still driving traffic.</span></div><span class="ai-time time-week">+24–48 hrs</span></div>
+        <div class="action-item major"><div class="ai-dot dot-amber"></div><div class="ai-body"><strong>③ Same day: 1-sentence Note on Substack</strong><span>Pick the sharpest line from the post. Post it as a Note with a "read the full piece" line. This is how non-subscribers discover the content.</span></div><span class="ai-time time-now">Same day</span></div>
+        <div class="action-item info"><div class="ai-dot dot-blue"></div><div class="ai-body"><strong>+ Data posts: pitch to press as a source</strong><span>Email 5 journalists covering AI/commerce with the data as a resource. 1 media backlink = more ranking power than 50 internal links.</span></div><span class="ai-time time-later">Per data post</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-view">
+    <div class="sec-head"><div class="sec-eyebrow">Operations</div><h2>Distribution <em>SOPs</em></h2><p class="sec-sub">Substack is the source. Here's how every piece flows out to every other channel.</p></div>
+    <div class="sec-body">
+      <div class="callout ct"><strong>The distribution principle:</strong> Write once, publish on Substack, distribute everywhere. Every channel points back to the canonical Substack URL — concentrating SEO authority and giving a single source of truth for all Glance thought leadership.</div>
+      <div class="dist-flow">
+        <div class="dist-row"><div class="dist-src"><span class="di">📝</span><div class="dl">Post Published</div></div><div class="dist-arr">→</div><div class="dist-chs"><div class="dist-ch">💼 LinkedIn teaser + link in comment</div><div class="dist-ch">💬 Substack Note (1-sentence hook)</div><div class="dist-ch">🐦 Twitter/X thread</div></div></div>
+        <div class="dist-row"><div class="dist-src"><span class="di">📊</span><div class="dl">Data Story</div></div><div class="dist-arr">→</div><div class="dist-chs"><div class="dist-ch">📰 Press pitch (data as news hook)</div><div class="dist-ch">💼 LinkedIn carousel</div><div class="dist-ch">📧 Brief to brand partners</div></div></div>
+        <div class="dist-row"><div class="dist-src"><span class="di">📅</span><div class="dl">Annual Report</div></div><div class="dist-arr">→</div><div class="dist-chs"><div class="dist-ch">📰 Full media distribution</div><div class="dist-ch">💼 LinkedIn campaign series</div><div class="dist-ch">🤝 Brand partner brief</div><div class="dist-ch">📊 Investor summary</div></div></div>
+      </div>
+      <div class="callout" style="margin-top:20px;"><strong>LinkedIn SOP:</strong> Post first 2–3 paragraphs as native text. End with "Full piece — link in first comment." Then immediately comment the Substack link. Publish the LinkedIn post 24–48 hours after the Substack post — prevents LinkedIn engagement cannibalising the Substack indexing window. Personal profiles get 3–5× more reach than company pages. Use personal profiles for distribution, always pointing back to the Substack URL.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SHARE OF VOICE GROWTH
+════════════════════════════════════════════ -->
+<section class="sec" id="growth">
+  <div class="quick-view">
+    <div class="adhd-section">
+      <div class="adhd-hero"><div class="ah-icon">📈</div><h3>5 tactics. Ranked by impact. Start at the top.</h3><p>Forget subscriber counts. These are the metrics that matter: keyword rankings, backlinks, media citations.</p></div>
+      <div class="action-list">
+        <div class="action-item teal" style="border-left-color:var(--teal);"><div class="ai-dot dot-teal"></div><div class="ai-body"><strong>Every post links to 2+ other Glance posts</strong><span>Internal linking builds topical authority. Google rewards it. Do this on every post, every time.</span></div><span class="ai-time time-always">Every post</span></div>
+        <div class="action-item teal" style="border-left-color:var(--teal);"><div class="ai-dot dot-teal"></div><div class="ai-body"><strong>Pitch data posts to 5 journalists after publish</strong><span>One backlink from a credible outlet = more SEO power than 50 internal links. This is the highest-leverage growth lever.</span></div><span class="ai-time time-week">Per data post</span></div>
+        <div class="action-item major"><div class="ai-dot dot-amber"></div><div class="ai-body"><strong>Set up 3+ reciprocal recommendations</strong><span>Find adjacent Substack newsletters. Agree to recommend each other. Passive subscriber growth, costs nothing, compounding over time.</span></div><span class="ai-time time-week">Month 1–2</span></div>
+        <div class="action-item major"><div class="ai-dot dot-amber"></div><div class="ai-body"><strong>Connect Google Search Console to the Substack</strong><span>Settings → SEO. Check monthly: which posts get search impressions. Double down on those topics with follow-up pieces.</span></div><span class="ai-time time-week">Setup once</span></div>
+        <div class="action-item info"><div class="ai-dot dot-blue"></div><div class="ai-body"><strong>Update cornerstone post monthly</strong><span>Refresh the "What is Agentic Commerce?" post with new data/examples each month. Date-stamp the update. Fresh content holds rankings.</span></div><span class="ai-time time-always">Monthly</span></div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:16px;">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:12px;">What to measure (not subscribers)</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+          <div style="text-align:center;padding:12px;"><div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--teal);">Top 3</div><div style="font-size:11px;color:var(--muted);">Google rank for "agentic commerce" · Target: within 6 months</div></div>
+          <div style="text-align:center;padding:12px;"><div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--teal);">+20%</div><div style="font-size:11px;color:var(--muted);">Monthly search impressions growth · Track in GSC</div></div>
+          <div style="text-align:center;padding:12px;"><div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--teal);">2+</div><div style="font-size:11px;color:var(--muted);">Media citations per quarter · When press cites you, that's peak SOV</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-view">
+    <div class="sec-head"><div class="sec-eyebrow">Operations</div><h2>Share of Voice <em>Growth</em></h2><p class="sec-sub">Reframed around owning the category conversation, not subscriber counts.</p></div>
+    <div class="sec-body">
+      <table class="sov-table" style="margin-bottom:24px;">
+        <thead><tr><th>Tactic</th><th>What it does for SOV</th><th>Impact</th><th>When</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Internal linking strategy</strong></td><td>Every post links to 2+ other Glance posts. Builds topical authority clusters Google rewards.</td><td><span class="impact ih">High SEO</span></td><td>Every post</td></tr>
+          <tr><td><strong>Backlink outreach for data posts</strong></td><td>Email 5 journalists or analysts after publishing a data story. 1 backlink from credible outlet = more ranking power than 50 internal links.</td><td><span class="impact ih">High SEO</span></td><td>Per data post</td></tr>
+          <tr><td><strong>Notes engagement cadence</strong></td><td>2–3 Notes/week keeps Glance visible in Substack feed. Restacking industry writers builds reciprocity.</td><td><span class="impact im">Discovery</span></td><td>Ongoing</td></tr>
+          <tr><td><strong>Reciprocal recommendations</strong></td><td>5–8 adjacent newsletters recommend each other. Passive SOV growth.</td><td><span class="impact im">Reach</span></td><td>Month 1–2</td></tr>
+          <tr><td><strong>Google Search Console</strong></td><td>Connect Substack to GSC. Monitor search impressions monthly — double down on topics that generate them.</td><td><span class="impact ih">Intelligence</span></td><td>Monthly</td></tr>
+          <tr><td><strong>Update cornerstone content monthly</strong></td><td>Refresh signals freshness to Google and pushes rankings up. "Last updated" dates matter.</td><td><span class="impact ih">High SEO</span></td><td>Monthly</td></tr>
+          <tr><td><strong>Pitch Substack posts to media as sources</strong></td><td>When pitching journalists, include Glance's Substack as research resources. Getting cited = backlink + direct SOV.</td><td><span class="impact ih">Credibility</span></td><td>Ongoing</td></tr>
+        </tbody>
+      </table>
+      <div class="metrics-grid">
+        <div class="metric-card"><div class="mi">🔍</div><div class="ml">Keyword Rankings</div><div class="mt">Top 3</div><div class="mn">Target: Glance ranks in top 3 for "agentic commerce" within 6 months of consistent publishing.</div></div>
+        <div class="metric-card"><div class="mi">📈</div><div class="ml">Search Impressions</div><div class="mt">+20%/mo</div><div class="mn">Track via Google Search Console. Monthly growth = growing category presence.</div></div>
+        <div class="metric-card"><div class="mi">🔗</div><div class="ml">Inbound Backlinks</div><div class="mt">5+/month</div><div class="mn">Track via Ahrefs or free Moz tools. Each backlink from a credible domain = direct ranking improvement.</div></div>
+        <div class="metric-card"><div class="mi">📰</div><div class="ml">Media Citations</div><div class="mt">2+/quarter</div><div class="mn">When journalists cite Glance's Substack as a source, that's peak SOV — you've become a category reference.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     GUEST EDITORS
+════════════════════════════════════════════ -->
+<section class="sec" id="guest">
+  <div class="quick-view">
+    <div class="adhd-section">
+      <div class="adhd-hero" style="background:rgba(123,94,167,.08);border-color:rgba(123,94,167,.25);">
+        <div class="ah-icon">🔮</div>
+        <h3 style="color:#7B5EA7;">Not yet. Come back in Month 4.</h3>
+        <p>Don't activate guest editors until you have 3 months of consistent solo publishing. Focus on building the foundation first. When you're ready — here's the play.</p>
+      </div>
+      <div class="action-list">
+        <div class="action-item" style="border-left-color:#7B5EA7;"><div class="ai-dot" style="background:#7B5EA7;width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px;"></div><div class="ai-body"><strong>Target: Substack writers with 1K–10K subscribers in adjacent spaces</strong><span>Commerce, AI, retail, lifestyle-tech. They promote the post to their audience. You get the SEO authority (because the post lives on your domain).</span></div></div>
+        <div class="action-item" style="border-left-color:#7B5EA7;"><div class="ai-dot" style="background:#7B5EA7;width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px;"></div><div class="ai-body"><strong>Always send the editorial brief before they write a word</strong><span>Topic, target keyword, word count (700–1000), deadline (7 days before publish), approval rounds (2 max), what they get (byline, bio, link, LinkedIn shoutout).</span></div></div>
+        <div class="action-item" style="border-left-color:#7B5EA7;"><div class="ai-dot" style="background:#7B5EA7;width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px;"></div><div class="ai-body"><strong>Glance always maintains final editorial control</strong><span>Guests write. You edit, approve, and ensure the piece uses the right category language and links to cornerstone content. No exceptions, including brand partners.</span></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-view">
+    <div class="sec-head"><div class="sec-eyebrow">Phase 2</div><h2>Guest Editors <em>&amp; Collabs</em></h2><p class="sec-sub">Prepare the framework now — activate after 3 months of consistent solo publishing.</p></div>
+    <div class="sec-body">
+      <div class="phase2-banner"><span style="font-size:22px;flex-shrink:0;">🔮</span><div><h4>Activate in Phase 2 only</h4><p>Guest editors on a publishing platform (vs. a newsletter) have a different value proposition: they bring their own audience to a post that permanently lives on Glance's domain — contributing to topical authority, not just filling an inbox. The SEO value of a well-credentialed guest byline is real and lasting.</p></div></div>
+      <div class="card-grid">
+        <div class="card"><div class="ci">🎯</div><h3>Who to Invite</h3><p>Industry voices whose audience overlaps with Glance's target readers: commerce execs, AI researchers, retail analysts. Their byline = credibility + backlink from their own promotion.</p></div>
+        <div class="card"><div class="ci">📄</div><h3>Brief Essentials</h3><p>Topic, target keyword, word count, deadline, approval rounds, and what the guest gets: byline, bio, link, co-promotion on Notes and LinkedIn from the Glance account.</p></div>
+        <div class="card"><div class="ci">🔗</div><h3>SEO Value of Guest Posts</h3><p>When the guest promotes the post to their network, inbound links accumulate on Glance's domain — not theirs. The publishing platform model means Glance captures all SEO authority from external promotion.</p></div>
+        <div class="card"><div class="ci">⚖️</div><h3>Editorial Control</h3><p>Glance maintains final edit rights on all guest content. Ensure every piece uses the right category language, links to cornerstone content, and meets publishing standards.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+// ─── MODE TOGGLE ─────────────────────────
+function setMode(m) {
+  document.body.className = 'mode-' + m;
+  localStorage.setItem('glance-mode', m);
+  document.querySelector('.detail-btn').classList.toggle('active', m === 'detail');
+  document.querySelector('.quick-btn').classList.toggle('active', m === 'quick');
+}
+(function(){
+  const saved = localStorage.getItem('glance-mode') || 'detail';
+  setMode(saved);
+})();
+
+// ─── PROGRESS BAR ────────────────────────
+const main = document.getElementById('mainScroll');
+main.addEventListener('scroll', () => {
+  const pct = (main.scrollTop / (main.scrollHeight - main.clientHeight)) * 100;
+  document.getElementById('pb').style.width = pct + '%';
+});
+
+// ─── INTERACTIVE TOGGLES ─────────────────
+function toggleF(h) {
+  const b = h.nextElementSibling, t = h.querySelector('.f-tog');
+  const o = b.classList.toggle('open');
+  t.textContent = o ? '−' : '+';
+}
+function toggleSOP(h) {
+  const b = h.nextElementSibling, t = h.querySelector('.sop-tog');
+  const o = b.classList.toggle('open');
+  t.textContent = o ? '−' : '+';
+}
+function toggleC(item) {
+  const cb = item.querySelector('input');
+  setTimeout(() => item.classList.toggle('done', cb.checked), 10);
+}
+function toggleAC(item) {
+  const cb = item.querySelector('input');
+  setTimeout(() => item.classList.toggle('done', cb.checked), 10);
+}
+function togglePC(item) {
+  const cb = item.querySelector('input');
+  setTimeout(() => item.classList.toggle('done', cb.checked), 10);
+}
+
+// ─── NAV ACTIVE + SCROLL SPY ─────────────
+function setActive(el) {
+  document.querySelectorAll('.nav-a').forEach(n => n.classList.remove('active'));
+  el.classList.add('active');
+}
+const sections = ['gap','design','mandate','prelaunch','brandpage','ecosystem','sov','pillars','formats','cadence','distribution','growth','guest'];
+const navMap = {};
+sections.forEach(id => {
+  const a = document.querySelector(`.nav-a[href="#${id}"]`);
+  if (a) navMap[id] = a;
+});
+main.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top < 200) cur = id;
+  });
+  if (cur && navMap[cur]) {
+    document.querySelectorAll('.nav-a').forEach(n => n.classList.remove('active'));
+    navMap[cur].classList.add('active');
+  }
+});
+document.querySelectorAll('.nav-a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const el = document.querySelector(a.getAttribute('href'));
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
