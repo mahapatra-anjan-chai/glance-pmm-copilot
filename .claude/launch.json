@@ -1,0 +1,25 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Dashboard (Python)",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "output", "--no-clipboard"],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "Dashboard (npx serve)",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "output", "--no-clipboard"],
+      "port": 3001,
+      "autoPort": true
+    },
+    {
+      "name": "Agent Runner",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["trend_scout_runner.py"],
+      "port": null
+    }
+  ]
+}

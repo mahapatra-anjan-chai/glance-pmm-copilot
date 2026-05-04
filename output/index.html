@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glance Editorial Intelligence — Week of Apr 28, 2026</title>
+<style>
+  :root {
+    --bg: #f4f5f7;
+    --surface: #ffffff;
+    --surface2: #f0f1f5;
+    --border: #e2e4ea;
+    --border-strong: #c8cbd6;
+    --accent: #5b50f0;
+    --accent2: #e53935;
+    --accent3: #e67e00;
+    --accent4: #2a7d45;
+    --text: #1a1b2e;
+    --text-muted: #6b6e85;
+    --text-light: #9497ac;
+    --high: #c62828;
+    --medium: #e67e00;
+    --p1: #5b50f0;
+    --p2: #2a7d45;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.05);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.5; }
+
+  /* HEADER */
+  .header { background: #fff; border-bottom: 1px solid var(--border); padding: 22px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: var(--shadow-sm); }
+  .header-left { display: flex; align-items: center; gap: 14px; }
+  .logo { width: 38px; height: 38px; background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; color: #fff; box-shadow: 0 2px 8px rgba(91,80,240,.35); }
+  .header-title { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-sub { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+  .header-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+  .meta-chip { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 6px 16px; font-size: 13px; color: var(--text-muted); cursor: pointer; transition: background .15s, border-color .15s, color .15s; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+  .meta-chip:hover { background: #ede9fe; border-color: #c4b5fd; color: #5b21b6; }
+  .meta-chip span { color: var(--text); font-weight: 700; }
+
+  /* LAYOUT */
+  .page-body { display: flex; min-height: calc(100vh - 120px); }
+
+  /* SIDEBAR */
+  .sidebar { width: 220px; flex-shrink: 0; background: #fff; border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 20px 12px; gap: 4px; transition: width .22s ease, padding .22s ease; overflow: hidden; box-shadow: var(--shadow-sm); position: sticky; top: 0; height: calc(100vh - 120px); overflow-y: auto; }
+  .sidebar.collapsed { width: 56px; padding: 20px 8px; }
+  .sidebar-group-label { font-size: 10px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--border-strong); padding: 12px 8px 5px; white-space: nowrap; overflow: hidden; transition: opacity .15s; }
+  .sidebar.collapsed .sidebar-group-label { opacity: 0; pointer-events: none; }
+  .sidebar-divider { height: 1px; background: var(--border); margin: 6px 4px; }
+  .tab-btn { background: none; border: none; border-radius: 8px; padding: 9px 10px; font-size: 13px; font-weight: 500; color: var(--text-muted); cursor: pointer; white-space: nowrap; transition: all .15s; display: flex; align-items: center; gap: 9px; width: 100%; text-align: left; overflow: hidden; }
+  .tab-btn:hover { color: var(--text); background: var(--surface2); }
+  .tab-btn.active { color: var(--accent); background: #ede9fe; font-weight: 700; }
+  .tab-btn.history-btn { color: var(--accent3); }
+  .tab-btn.history-btn:hover { background: #fff8f0; }
+  .tab-btn.history-btn.active { color: var(--accent3); background: #fff3e0; font-weight: 700; }
+  .tab-btn-icon { font-size: 16px; flex-shrink: 0; width: 20px; text-align: center; }
+  .tab-btn-label { flex: 1; overflow: hidden; text-overflow: ellipsis; transition: opacity .15s, max-width .22s; }
+  .sidebar.collapsed .tab-btn-label { opacity: 0; max-width: 0; }
+  .tab-btn-mini { display: none; font-size: 9px; font-weight: 600; color: var(--text-muted); text-align: center; letter-spacing: 0.2px; line-height: 1; margin-top: 1px; white-space: nowrap; max-width: 40px; overflow: hidden; text-overflow: ellipsis; }
+  .sidebar.collapsed .tab-btn { flex-direction: column; align-items: center; gap: 3px; padding: 8px 4px; }
+  .sidebar.collapsed .tab-btn-mini { display: block; }
+  .tab-number { display: inline-block; background: var(--surface2); border-radius: 10px; padding: 1px 7px; font-size: 10px; font-weight: 700; color: var(--text-muted); flex-shrink: 0; transition: opacity .15s; }
+  .sidebar.collapsed .tab-number { opacity: 0; display: none; }
+  .tab-btn.active .tab-number { background: #c4b5fd; color: #4c1d95; }
+  .tab-btn.history-btn.active .tab-number { background: #fed7aa; color: #9a3412; }
+
+  /* BURGER */
+  .burger-btn { background: none; border: none; border-radius: 8px; padding: 8px; cursor: pointer; color: var(--text-muted); display: flex; align-items: center; justify-content: center; transition: background .15s; margin-bottom: 8px; align-self: flex-start; }
+  .burger-btn:hover { background: var(--surface2); color: var(--text); }
+
+  /* MAIN CONTENT */
+  .main-content { flex: 1; min-width: 0; overflow-x: hidden; }
+
+  /* WEEK ON WEEK */
+  .wow-run { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px; margin-bottom: 20px; box-shadow: var(--shadow-sm); }
+  .wow-run-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
+  .wow-run-week { font-size: 18px; font-weight: 700; color: var(--text); }
+  .wow-run-badge { background: #ede9fe; color: #5b21b6; border: 1px solid #c4b5fd; border-radius: 6px; padding: 3px 10px; font-size: 12px; font-weight: 600; }
+  .wow-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; margin-bottom: 24px; }
+  .wow-stat { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 14px; text-align: center; }
+  .wow-stat-num { font-size: 30px; font-weight: 900; color: var(--accent); line-height: 1; }
+  .wow-stat-label { font-size: 11px; color: var(--text-muted); margin-top: 5px; font-weight: 500; }
+  .wow-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .wow-col-title { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+  .wow-idea { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 14px; border-left: 3px solid var(--accent); }
+  .wow-idea-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 6px; line-height: 1.4; }
+  .wow-query-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .wow-query-item { background: #f0effe; border: 1px solid #d4d0fb; border-radius: 6px; padding: 8px 10px; font-size: 12px; font-family: 'SF Mono', monospace; color: #4338ca; display: flex; align-items: center; gap: 8px; }
+  .wow-query-item::before { content: '🔑'; font-size: 11px; }
+  .wow-whitespace-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .wow-whitespace-item { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 13px; color: var(--text-muted); display: flex; align-items: flex-start; gap: 8px; }
+  .wow-whitespace-item::before { content: '🕳'; font-size: 11px; flex-shrink: 0; margin-top: 2px; }
+  .wow-empty { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+  .wow-empty-icon { font-size: 48px; margin-bottom: 16px; }
+  .wow-empty-title { font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .wow-empty-sub { font-size: 14px; line-height: 1.6; }
+  .wow-timeline { display: flex; align-items: flex-start; gap: 0; margin-bottom: 32px; overflow-x: auto; padding-bottom: 4px; }
+  .wow-timeline-item { display: flex; flex-direction: column; align-items: center; min-width: 120px; }
+  .wow-timeline-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 3px solid #fff; box-shadow: 0 0 0 2px var(--accent); z-index: 1; }
+  .wow-timeline-line { flex: 1; height: 2px; background: var(--border); min-width: 40px; margin-top: 7px; }
+  .wow-timeline-label { font-size: 11px; color: var(--text-muted); margin-top: 8px; white-space: nowrap; }
+  .wow-timeline-label.active { color: var(--accent); font-weight: 700; }
+
+  /* PANELS */
+  .panel { display: none; padding: 32px 36px; max-width: 1100px; }
+  .panel.active { display: block; }
+
+  /* SECTION */
+  .section-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; margin-bottom: 14px; box-shadow: var(--shadow-sm); transition: box-shadow .2s, border-color .2s; }
+  .card:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+
+  /* BADGES */
+  .badge { display: inline-block; border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 700; letter-spacing: .3px; text-transform: uppercase; }
+  .badge-commerce { background: #ede9fe; color: #5b21b6; border: 1px solid #c4b5fd; }
+  .badge-tech { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+  .badge-market { background: #fef9c3; color: #854d0e; border: 1px solid #fde047; }
+  .badge-trends { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+  .badge-high { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+  .badge-medium { background: #fff7ed; color: #9a3412; border: 1px solid #fdba74; }
+  .badge-p1 { background: #ede9fe; color: #5b21b6; border: 1px solid #c4b5fd; }
+  .badge-p2 { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+
+  /* SCORE BAR */
+  .score-bar { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+  .score-track { flex: 1; height: 5px; background: var(--surface2); border-radius: 3px; }
+  .score-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--accent), #8b5cf6); }
+  .score-label { font-size: 12px; font-weight: 700; color: var(--text-muted); min-width: 28px; text-align: right; }
+
+  /* TREND CARDS */
+  .trend-card { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start; }
+  .trend-card-left { display: flex; flex-direction: column; gap: 8px; }
+  .trend-title { font-size: 16px; font-weight: 600; color: var(--text); line-height: 1.4; }
+  .trend-source { font-size: 12px; color: var(--text-light); font-weight: 500; }
+  .trend-summary { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+  .trend-why { font-size: 13px; color: #4338ca; font-style: italic; margin-top: 4px; border-left: 2px solid var(--accent); padding-left: 10px; background: #f5f3ff; border-radius: 0 4px 4px 0; padding: 8px 12px; }
+
+  /* GEO TABLE */
+  .geo-section { margin-bottom: 36px; }
+  .geo-table { width: 100%; border-collapse: collapse; }
+  .geo-table th { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-light); text-align: left; padding: 10px 14px; border-bottom: 2px solid var(--border); background: var(--surface2); }
+  .geo-table th:first-child { border-radius: 8px 0 0 0; }
+  .geo-table th:last-child { border-radius: 0 8px 0 0; }
+  .geo-table td { padding: 13px 14px; border-bottom: 1px solid var(--border); font-size: 13px; vertical-align: top; line-height: 1.6; color: var(--text-muted); }
+  .geo-table tr:last-child td { border-bottom: none; }
+  .geo-table tr:hover td { background: #f5f3ff; }
+  .geo-table .query-cell { font-weight: 600; color: var(--text); font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; }
+  .geo-table .owner-cell { color: var(--text-muted); max-width: 200px; }
+  .geo-table .angle-cell { color: var(--text-muted); max-width: 300px; }
+  .volume-high { color: #c62828; font-weight: 700; background: #fee2e2; padding: 1px 6px; border-radius: 4px; font-size: 11px; }
+  .volume-medium { color: #9a3412; font-weight: 700; background: #fff7ed; padding: 1px 6px; border-radius: 4px; font-size: 11px; }
+  .volume-low { color: #166534; font-weight: 700; background: #dcfce7; padding: 1px 6px; border-radius: 4px; font-size: 11px; }
+  .export-btn { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 9px 18px; font-size: 13px; font-weight: 600; cursor: pointer; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(91,80,240,.3); }
+  .export-btn:hover { background: #4a3fd8; }
+
+  /* COMPETITOR */
+  .whitespace-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .whitespace-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; box-shadow: var(--shadow-sm); }
+  .whitespace-angle { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .whitespace-why { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; line-height: 1.6; }
+  .whitespace-insider { font-size: 13px; color: #4338ca; background: #f5f3ff; border-radius: 6px; padding: 10px 14px; border-left: 3px solid var(--accent); line-height: 1.6; }
+  .momentum-list { display: flex; flex-direction: column; gap: 10px; }
+  .momentum-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; display: flex; align-items: flex-start; gap: 14px; box-shadow: var(--shadow-sm); }
+  .momentum-rec { display: inline-block; border-radius: 4px; padding: 3px 8px; font-size: 11px; font-weight: 700; white-space: nowrap; margin-top: 4px; }
+  .rec-respond { background: #dcfce7; color: #166534; }
+  .rec-avoid { background: #fee2e2; color: #991b1b; }
+  .rec-lean { background: #ede9fe; color: #5b21b6; }
+  .momentum-count { background: #f5f3ff; border: 2px solid #c4b5fd; border-radius: 10px; padding: 8px 10px; font-size: 22px; font-weight: 900; color: var(--accent); min-width: 62px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1px; flex-shrink: 0; }
+  .momentum-count-label { font-size: 9px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #9480e8; line-height: 1; }
+  .substacks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 16px; }
+  .substack-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px; box-shadow: var(--shadow-sm); }
+  .substack-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .substack-posts { font-size: 12px; color: var(--text-muted); }
+  .substack-name-link { text-decoration: none; color: inherit; display: block; }
+  .substack-name-link:hover .substack-name { color: var(--accent); }
+  .source-link { color: var(--text-light); font-weight: 500; font-size: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; }
+  .source-link:hover { color: var(--accent); text-decoration: underline; }
+
+  /* CALENDAR */
+  .cal-timeline { display: flex; flex-direction: column; gap: 0; }
+  .cal-day-group { margin-bottom: 24px; }
+  .cal-date { font-size: 11px; font-weight: 700; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; padding-left: 16px; border-left: 3px solid var(--border-strong); }
+  .cal-event { display: grid; grid-template-columns: 110px 1fr; gap: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 8px; align-items: start; box-shadow: var(--shadow-sm); }
+  .cal-event.high-rel { border-left: 3px solid var(--accent); }
+  .cal-event-type { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-align: center; width: fit-content; }
+  .type-conference { background: #ede9fe; color: #5b21b6; }
+  .type-launch { background: #dcfce7; color: #166534; }
+  .type-earnings { background: #fef9c3; color: #854d0e; }
+  .type-seasonal { background: #fee2e2; color: #991b1b; }
+  .type-cultural { background: #fff7ed; color: #9a3412; }
+  .cal-event-name { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .cal-event-hook { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  .cal-event-pillar { margin-top: 8px; }
+
+  /* ARTICLE IDEAS */
+  .idea-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px; margin-bottom: 20px; position: relative; overflow: hidden; box-shadow: var(--shadow-sm); }
+  .idea-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+  .idea-card.high-priority::before { background: linear-gradient(90deg, var(--accent), #8b5cf6); }
+  .idea-card.medium-priority::before { background: var(--accent3); }
+  .idea-rank { position: absolute; top: 20px; right: 24px; font-size: 52px; font-weight: 900; color: rgba(91,80,240,.06); line-height: 1; }
+  .idea-header { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  .idea-title { font-size: 19px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 10px; max-width: 90%; letter-spacing: -0.2px; }
+  .idea-hook { font-size: 15px; color: #4338ca; font-style: italic; line-height: 1.7; border-left: 3px solid var(--accent); padding: 10px 16px; margin-bottom: 20px; background: #f5f3ff; border-radius: 0 6px 6px 0; }
+  .idea-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .idea-field { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+  .idea-field-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-light); margin-bottom: 5px; }
+  .idea-field-value { font-size: 13px; color: var(--text); line-height: 1.5; }
+  .idea-insider { background: #f5f3ff; border: 1px solid #c4b5fd; border-radius: 8px; padding: 14px 16px; }
+  .idea-insider-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .idea-insider-text { font-size: 14px; color: #3730a3; line-height: 1.7; }
+  .copy-hook-btn { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 7px 14px; font-size: 12px; color: var(--text-muted); cursor: pointer; transition: all .2s; font-weight: 500; }
+  .copy-hook-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .copy-hook-btn.copied { background: #166534; color: #fff; border-color: #166534; }
+  .idea-actions { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+
+  /* IDEA STATS ROW */
+  .idea-stats-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .idea-stat-chip { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; display: flex; flex-direction: column; gap: 2px; min-width: 110px; }
+  .idea-stat-chip .stat-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-light); }
+  .idea-stat-chip .stat-val { font-size: 16px; font-weight: 800; color: var(--accent); line-height: 1.2; }
+
+  /* IDEA COLLAPSIBLE SECTIONS */
+  .idea-section { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+  .idea-section-toggle { display: flex; align-items: center; justify-content: space-between; padding: 13px 16px; font-size: 13px; font-weight: 600; color: var(--text); cursor: pointer; user-select: none; background: var(--surface2); transition: background .15s; }
+  .idea-section-toggle:hover { background: #ece9fd; }
+  .idea-section-toggle .toggle-arrow { font-size: 12px; color: var(--text-muted); transition: transform .2s; }
+  .idea-section-toggle.open .toggle-arrow { transform: rotate(180deg); }
+  .idea-section-body { display: none; padding: 16px 18px; background: var(--surface); }
+  .idea-section-body.open { display: block; }
+
+  /* OUTLINE */
+  .idea-outline-list { list-style: none; display: flex; flex-direction: column; gap: 8px; counter-reset: outline-counter; }
+  .idea-outline-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: var(--text); line-height: 1.5; counter-increment: outline-counter; }
+  .idea-outline-list li::before { content: counter(outline-counter); min-width: 24px; height: 24px; background: var(--accent); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .idea-outline-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+  /* DRAFT CONTENT */
+  .idea-draft-text { font-size: 14px; color: var(--text); line-height: 1.85; }
+  .idea-draft-text p { margin-bottom: 16px; }
+  .idea-draft-text p:last-child { margin-bottom: 0; }
+
+  /* CTA */
+  .idea-cta { background: linear-gradient(135deg, #f5f3ff 0%, #eef2ff 100%); border: 1px solid #c4b5fd; border-radius: 10px; padding: 14px 16px; margin-top: 4px; }
+  .idea-cta-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .idea-cta-text { font-size: 13px; color: #3730a3; line-height: 1.65; font-style: italic; }
+
+  /* PLAYBOOK PILLAR REFERENCE */
+  .playbook-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 28px; }
+  .pb-pillar { border-radius: 12px; padding: 18px 20px; border-top: 3px solid; }
+  .pb-pillar.p-amber { background: #fffbf0; border-top-color: #f0a030; }
+  .pb-pillar.p-blue  { background: #f0f5ff; border-top-color: #3a7ed8; }
+  .pb-pillar.p-teal  { background: #f0fafa; border-top-color: #2abfbf; }
+  .pb-pillar-num { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 5px; }
+  .pb-pillar.p-amber .pb-pillar-num { color: #b87800; }
+  .pb-pillar.p-blue  .pb-pillar-num { color: #1e5aa8; }
+  .pb-pillar.p-teal  .pb-pillar-num { color: #0e8c8c; }
+  .pb-pillar-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+  .pb-pillar-desc { font-size: 12px; color: var(--text-muted); line-height: 1.55; margin-bottom: 8px; }
+  .pb-pillar-topics { font-size: 11px; color: var(--text-light); line-height: 1.6; }
+
+  /* PLAYBOOK PILLAR BADGE ON IDEA CARDS */
+  .pb-badge { display: inline-flex; align-items: center; gap: 5px; border-radius: 20px; padding: 3px 10px; font-size: 11px; font-weight: 700; border: 1px solid; }
+  .pb-badge.amber { background: #fff8e6; color: #92600a; border-color: #fcd77a; }
+  .pb-badge.blue  { background: #eff4ff; color: #1e4da0; border-color: #93b4f5; }
+  .pb-badge.teal  { background: #eefafa; color: #0a7070; border-color: #7dd8d8; }
+
+  /* GEO KEYWORD TIER BADGE */
+  .geo-tier { display: inline-flex; align-items: center; gap: 4px; border-radius: 20px; padding: 3px 10px; font-size: 11px; font-weight: 700; border: 1px solid; }
+  .geo-tier.own    { background: #fff7ed; color: #9a3412; border-color: #fdba74; }
+  .geo-tier.contest{ background: #eff6ff; color: #1d4ed8; border-color: #93c5fd; }
+  .geo-tier.monitor{ background: #f0fdf4; color: #166534; border-color: #86efac; }
+
+  /* PILLAR GROUP HEADER */
+  .pillar-group-header { display: flex; align-items: center; gap: 12px; margin: 28px 0 14px; }
+  .pillar-group-header::before { content: ''; height: 2px; flex: 1; border-radius: 2px; }
+  .pillar-group-header.amber::before { background: linear-gradient(90deg, #f0a030, transparent); }
+  .pillar-group-header.blue::before  { background: linear-gradient(90deg, #3a7ed8, transparent); }
+  .pillar-group-header.teal::before  { background: linear-gradient(90deg, #2abfbf, transparent); }
+  .pillar-group-header span { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; white-space: nowrap; }
+  .pillar-group-header.amber span { color: #92600a; }
+  .pillar-group-header.blue span  { color: #1e4da0; }
+  .pillar-group-header.teal span  { color: #0a7070; }
+
+  /* QA BANNER */
+  .qa-banner { background: #f0fdf4; border: 1px solid #86efac; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .qa-dot { width: 10px; height: 10px; background: #16a34a; border-radius: 50%; flex-shrink: 0; }
+  .qa-text { font-size: 13px; color: #166534; }
+
+  /* ONBOARDING OVERLAY */
+  .onboarding { position: fixed; inset: 0; background: #0f0f1a; z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; transition: opacity .4s ease; }
+  .onboarding.hidden { opacity: 0; pointer-events: none; }
+  .onboarding-logo { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+  .onboarding-logo-mark { width: 48px; height: 48px; background: linear-gradient(135deg, #5b50f0, #8b5cf6); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 22px; color: #fff; box-shadow: 0 4px 20px rgba(91,80,240,.4); }
+  .onboarding-logo-name { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.4px; }
+  .onboarding-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #5b50f0; margin-bottom: 24px; }
+  .onboarding-heading { font-size: 32px; font-weight: 800; color: #fff; text-align: center; letter-spacing: -0.5px; margin-bottom: 8px; line-height: 1.2; }
+  .onboarding-sub { font-size: 15px; color: #9497ac; text-align: center; margin-bottom: 48px; line-height: 1.6; max-width: 480px; }
+  .channel-grid { display: grid; grid-template-columns: repeat(4, 220px); gap: 16px; }
+  .channel-card { background: #1a1b2e; border: 1px solid #2a2b45; border-radius: 18px; padding: 32px 24px; display: flex; flex-direction: column; align-items: center; gap: 14px; position: relative; transition: all .2s ease; }
+  .channel-card.active { cursor: pointer; border-color: #3d3880; }
+  .channel-card.active:hover { background: #1e1f38; border-color: #5b50f0; box-shadow: 0 0 0 1px #5b50f0, 0 8px 32px rgba(91,80,240,.25); transform: translateY(-2px); }
+  .channel-card.inactive { opacity: 0.45; cursor: not-allowed; filter: grayscale(0.3); }
+  .channel-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; }
+  .channel-name { font-size: 16px; font-weight: 700; color: #fff; }
+  .channel-desc { font-size: 12px; color: #6b6e85; text-align: center; line-height: 1.5; }
+  .coming-soon-badge { position: absolute; top: 14px; right: 14px; background: #2a2b45; border: 1px solid #3d3880; color: #6b6e85; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; border-radius: 20px; padding: 3px 10px; }
+  .channel-card.active .channel-cta { background: #5b50f0; color: #fff; border: none; border-radius: 10px; padding: 10px 24px; font-size: 13px; font-weight: 700; cursor: pointer; margin-top: 4px; transition: background .15s; width: 100%; }
+  .channel-card.active .channel-cta:hover { background: #4a3fd8; }
+  @media (max-width: 960px) { .channel-grid { grid-template-columns: repeat(2, 1fr); max-width: 480px; } }
+  @media (max-width: 540px) { .channel-grid { grid-template-columns: 1fr; max-width: 280px; } .onboarding-heading { font-size: 24px; } }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .header { padding: 16px 20px; }
+    .panel { padding: 20px 16px; }
+    .page-body { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; flex-direction: row; flex-wrap: wrap; padding: 8px 12px; position: static; border-right: none; border-bottom: 1px solid var(--border); }
+    .sidebar.collapsed { width: 100%; }
+    .sidebar-group-label { display: none; }
+    .sidebar-divider { display: none; }
+    .tab-btn { padding: 6px 10px; font-size: 12px; width: auto; }
+    .trend-card { grid-template-columns: 1fr; }
+    .cal-event { grid-template-columns: 1fr; }
+    .wow-cols { grid-template-columns: 1fr; }
+    .geo-table .owner-cell, .geo-table .angle-cell { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ONBOARDING OVERLAY -->
+<div class="onboarding" id="onboarding">
+  <div class="onboarding-logo">
+    <div class="onboarding-logo-mark">G</div>
+    <div class="onboarding-logo-name">Glance PMM Channel Co-Pilot</div>
+  </div>
+  <div class="onboarding-eyebrow">Content Strategy &nbsp;|&nbsp; Powered by PMM Agentic Framework</div>
+  <div class="onboarding-heading">Which channel are you<br>creating content for?</div>
+  <div class="onboarding-sub">Select a channel to load your weekly editorial intelligence dashboard — trends, competitor signals, GEO keywords, and AI-generated article ideas, tailored to that platform.</div>
+  <div class="channel-grid">
+
+    <!-- SUBSTACK -->
+    <div class="channel-card active" onclick="enterDashboard()">
+      <div class="channel-icon" style="background:#fff1eb">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="#FF6719"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+      </div>
+      <div class="channel-name">Substack</div>
+      <div class="channel-desc">Long-form newsletters, thought leadership, editorial deep-dives</div>
+      <button class="channel-cta">Open Dashboard →</button>
+    </div>
+
+    <!-- LINKEDIN -->
+    <div class="channel-card inactive" id="channel-linkedin">
+      <span class="coming-soon-badge">Coming Soon</span>
+      <div class="channel-icon" style="background:#e8f0fe">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </div>
+      <div class="channel-name">LinkedIn</div>
+      <div class="channel-desc">Professional posts, carousels, thought-leader content</div>
+    </div>
+
+    <!-- X / TWITTER -->
+    <div class="channel-card inactive" id="channel-x">
+      <span class="coming-soon-badge">Coming Soon</span>
+      <div class="channel-icon" style="background:#f0f0f0">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="#000"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </div>
+      <div class="channel-name">X (Twitter)</div>
+      <div class="channel-desc">Threads, hooks, real-time commentary, viral formats</div>
+    </div>
+
+    <!-- REDDIT -->
+    <div class="channel-card inactive" id="channel-reddit">
+      <span class="coming-soon-badge">Coming Soon</span>
+      <div class="channel-icon" style="background:#fff1eb">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="#FF4500"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+      </div>
+      <div class="channel-name">Reddit</div>
+      <div class="channel-desc">Community posts, AMAs, subreddit-native content strategy</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">G</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <div class="header-title">Glance Editorial Intelligence</div>
+        <span style="background:#FF6719;color:#fff;border-radius:6px;padding:3px 10px;font-size:12px;font-weight:700;letter-spacing:0.2px;display:inline-flex;align-items:center;gap:5px"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg> Substack Strategy</span>
+      </div>
+      <div class="header-sub">Weekly editorial intelligence for Glance's Substack — Week of April 28, 2026</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <a class="meta-chip" onclick="showTab('trends',document.querySelector('.tab-btn'))">📡 Trends scored: <span>5</span></a>
+    <a class="meta-chip" onclick="showTab('sov',document.querySelectorAll('.tab-btn')[1])">🔑 GEO queries: <span>12</span></a>
+    <a class="meta-chip" onclick="showTab('competitor',document.querySelectorAll('.tab-btn')[2])">🔭 Substacks analysed: <span>20</span></a>
+    <a class="meta-chip" onclick="showTab('calendar',document.querySelectorAll('.tab-btn')[3])">📅 Events tracked: <span>15</span></a>
+    <a class="meta-chip" style="cursor:default" onclick="">QA: <span style="color:#16a34a">✓ Passed</span></a>
+  </div>
+</div>
+
+<div style="background:#f8f7ff;border-bottom:1px solid #e2e0fb;padding:6px 40px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+  <span style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#b0b3c6;white-space:nowrap">Agent Pipeline</span>
+  <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+      <span style="background:#ede9fe;color:#5b21b6;border:1px solid #c4b5fd;border-radius:20px;padding:3px 10px;font-weight:600;font-size:11px;white-space:nowrap">📡 Trend Scout</span>
+      <span style="font-size:10px;color:#b0b3c6;white-space:nowrap">Sonnet 4.6 + Gemini</span>
+    </div>
+    <span style="color:#d4d6e0;margin-bottom:14px;font-size:12px">→</span>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+      <span style="background:#ede9fe;color:#5b21b6;border:1px solid #c4b5fd;border-radius:20px;padding:3px 10px;font-weight:600;font-size:11px;white-space:nowrap">🔑 SOV Monitor</span>
+      <span style="font-size:10px;color:#b0b3c6;white-space:nowrap">Sonnet 4.6</span>
+    </div>
+    <span style="color:#d4d6e0;margin-bottom:14px;font-size:12px">→</span>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+      <span style="background:#ede9fe;color:#5b21b6;border:1px solid #c4b5fd;border-radius:20px;padding:3px 10px;font-weight:600;font-size:11px;white-space:nowrap">🔭 Competitor Pulse</span>
+      <span style="font-size:10px;color:#b0b3c6;white-space:nowrap">Sonnet 4.6</span>
+    </div>
+    <span style="color:#d4d6e0;margin-bottom:14px;font-size:12px">→</span>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+      <span style="background:#e0f2fe;color:#075985;border:1px solid #7dd3fc;border-radius:20px;padding:3px 10px;font-weight:600;font-size:11px;white-space:nowrap">📅 Calendar Agent</span>
+      <span style="font-size:10px;color:#b0b3c6;white-space:nowrap">Haiku 4.5</span>
+    </div>
+    <span style="color:#d4d6e0;margin-bottom:14px;font-size:12px">→</span>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+      <span style="background:#fce7f3;color:#9d174d;border:1px solid #f9a8d4;border-radius:20px;padding:3px 10px;font-weight:600;font-size:11px;white-space:nowrap">🧠 Orchestrator</span>
+      <span style="font-size:10px;color:#b0b3c6;white-space:nowrap">Opus 4.7</span>
+    </div>
+    <span style="color:#d4d6e0;margin-bottom:14px;font-size:12px">→</span>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+      <span style="background:#dcfce7;color:#166534;border:1px solid #86efac;border-radius:20px;padding:3px 10px;font-weight:600;font-size:11px;white-space:nowrap">✅ QA Checker</span>
+      <span style="font-size:10px;color:#b0b3c6;white-space:nowrap">Sonnet 4.6</span>
+    </div>
+  </div>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:6px;flex-shrink:0">
+    <span style="background:#fef9c3;color:#854d0e;border:1px solid #fde047;border-radius:20px;padding:3px 10px;font-weight:600;font-size:10px;white-space:nowrap">✦ Gemini 2.0 Flash · Vertex AI</span>
+  </div>
+</div>
+
+<div class="page-body">
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-group-label">Intelligence</div>
+  <button class="tab-btn active" onclick="showTab('trends',this)"><span class="tab-btn-icon">📡</span><span class="tab-btn-label">Trends</span><span class="tab-number">5</span><span class="tab-btn-mini">Trends</span></button>
+  <button class="tab-btn" onclick="showTab('sov',this)"><span class="tab-btn-icon">🔑</span><span class="tab-btn-label">GEO Keywords</span><span class="tab-number">12</span><span class="tab-btn-mini">GEO</span></button>
+  <button class="tab-btn" onclick="showTab('competitor',this)"><span class="tab-btn-icon">🔭</span><span class="tab-btn-label">Competitor Pulse</span><span class="tab-number">20</span><span class="tab-btn-mini">Competitors</span></button>
+  <div class="sidebar-divider"></div>
+  <div class="sidebar-group-label">Strategy</div>
+  <button class="tab-btn" onclick="showTab('calendar',this)"><span class="tab-btn-icon">📅</span><span class="tab-btn-label">Calendar</span><span class="tab-number">15</span><span class="tab-btn-mini">Calendar</span></button>
+  <button class="tab-btn" onclick="showTab('ideas',this)"><span class="tab-btn-icon">✍️</span><span class="tab-btn-label">Article Ideas</span><span class="tab-number">5</span><span class="tab-btn-mini">Ideas</span></button>
+  <div class="sidebar-divider"></div>
+  <button class="tab-btn history-btn" onclick="showTab('wow',this)"><span class="tab-btn-icon">📈</span><span class="tab-btn-label">Week on Week</span><span class="tab-number">1</span><span class="tab-btn-mini">WoW</span></button>
+</nav>
+
+<div class="main-content">
+<!-- TREND SCOUT -->
+<div id="tab-trends" class="panel active">
+  <div class="qa-banner"><div class="qa-dot"></div><div class="qa-text">Grounded via Gemini 2.0 Flash + Vertex AI Google Search — Apr 28, 2026 · QA: all 5 trends scored and tagged ✓ · Sorted by relevance score ↓</div></div>
+  <p class="section-title">Top 5 Trending Conversations — Agentic Commerce · AI Shopping · Ambient Surfaces · sorted by relevance ↓</p>
+
+  <!-- #1 — Score 10 -->
+  <div class="card" style="border-color:rgba(108,99,255,.4)">
+    <div class="trend-card">
+      <div class="trend-card-left">
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="badge badge-commerce">The Commerce Shift</span><span style="background:#ede9fe;color:#5b21b6;border:1px solid #c4b5fd;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700">🔥 Top Signal</span></div>
+        <div class="trend-title">Skye Reimagines iPhone Home Screen as AI Agent Layer</div>
+        <div class="trend-source"><a href="https://startupfortune.com" target="_blank" rel="noopener" class="source-link">Startup Fortune ↗</a></div>
+        <div class="trend-summary">Skye, an AI agentic home screen, raised $3.6M to replace static icons with proactive intelligence, surfacing context like meeting prep and health alerts. It turns widgets into an ambient AI layer acting on your life — validating the ambient computing thesis Glance has built at 175M-device scale.</div>
+        <div class="trend-why">This directly validates Glance's lockscreen-centric approach to agentic commerce and signals competitive awareness — Glance's equivalent is already deployed at 48× Skye's addressable scale.</div>
+      </div>
+      <div>
+        <div class="score-bar" style="flex-direction:column;align-items:flex-end;gap:4px">
+          <div style="font-size:24px;font-weight:900;color:var(--accent2)">10</div>
+          <div style="font-size:10px;color:var(--text-muted)">/10 relevance</div>
+        </div>
+        <div class="score-bar" style="width:80px"><div class="score-track"><div class="score-fill" style="width:100%;background:var(--accent2)"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #2 — Score 9 -->
+  <div class="card">
+    <div class="trend-card">
+      <div class="trend-card-left">
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="badge badge-commerce">The Commerce Shift</span></div>
+        <div class="trend-title">AI Agents Reshape E-commerce: Agentic Shopping Becomes Mainstream</div>
+        <div class="trend-source"><a href="https://explodingtopics.com" target="_blank" rel="noopener" class="source-link">Exploding Topics ↗</a> / <a href="https://www.semrush.com/blog/" target="_blank" rel="noopener" class="source-link">Semrush ↗</a></div>
+        <div class="trend-summary">AI agents are increasingly trusted by consumers to select products, with surveys indicating agentic shopping is the next big shift in consumer behavior. E-commerce brands are now marketing to AI algorithms, necessitating strategies like answer engine optimization and agentic checkout modules.</div>
+        <div class="trend-why">Glance needs to optimize lockscreen content and APIs for AI shopping agents to facilitate seamless, AI-driven purchases directly from the lockscreen.</div>
+      </div>
+      <div>
+        <div class="score-bar" style="flex-direction:column;align-items:flex-end;gap:4px">
+          <div style="font-size:24px;font-weight:900;color:var(--accent)">9</div>
+          <div style="font-size:10px;color:var(--text-muted)">/10 relevance</div>
+        </div>
+        <div class="score-bar" style="width:80px"><div class="score-track"><div class="score-fill" style="width:90%"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #3 — Score 8 -->
+  <div class="card">
+    <div class="trend-card">
+      <div class="trend-card-left">
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="badge badge-tech">Tech Depth</span></div>
+        <div class="trend-title">Shoplazza Launches AI-Native Commerce OS with Unified AI Agents</div>
+        <div class="trend-source"><a href="https://www.prnewswire.com" target="_blank" rel="noopener" class="source-link">PR Newswire ↗</a></div>
+        <div class="trend-summary">Shoplazza launched the first AI-native commerce operating system with AI agents for the entire e-commerce lifecycle, including store creation, content production, and marketing. The platform uses AI Store Builder to generate fully functional storefronts from natural language and AdValet AI advertising agent to automate campaigns.</div>
+        <div class="trend-why">Glance can explore partnerships with AI-native platforms like Shoplazza to offer merchants seamless integration with lockscreen commerce, leveraging their AI for store creation.</div>
+      </div>
+      <div>
+        <div class="score-bar" style="flex-direction:column;align-items:flex-end;gap:4px">
+          <div style="font-size:24px;font-weight:900;color:var(--accent)">8</div>
+          <div style="font-size:10px;color:var(--text-muted)">/10 relevance</div>
+        </div>
+        <div class="score-bar" style="width:80px"><div class="score-track"><div class="score-fill" style="width:80%"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #4 — Score 7 -->
+  <div class="card">
+    <div class="trend-card">
+      <div class="trend-card-left">
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="badge badge-trends">Trends & Culture</span></div>
+        <div class="trend-title">Virtual Try-On Goes Chat-Native: AI Styling via Selfies</div>
+        <div class="trend-source"><a href="https://fashionweekonline.com" target="_blank" rel="noopener" class="source-link">FashionWeekOnline ↗</a></div>
+        <div class="trend-summary">Virtual try-on is becoming a default expectation, with Google expanding AI try-on to work from selfies, generating studio-like images across product catalogs. Users are increasingly using conversational flows for shopping, with major platforms rolling out agentic commerce standards and "buy buttons" inside AI chat experiences.</div>
+        <div class="trend-why">Glance can integrate VTON capabilities into its lockscreen commerce platform, allowing users to try on clothing using selfies directly from the lockscreen via Gemini agents.</div>
+      </div>
+      <div>
+        <div class="score-bar" style="flex-direction:column;align-items:flex-end;gap:4px">
+          <div style="font-size:24px;font-weight:900;color:var(--accent)">7</div>
+          <div style="font-size:10px;color:var(--text-muted)">/10 relevance</div>
+        </div>
+        <div class="score-bar" style="width:80px"><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #5 — Score 7 -->
+  <div class="card">
+    <div class="trend-card">
+      <div class="trend-card-left">
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="badge badge-market">Market Intelligence</span></div>
+        <div class="trend-title">Ant International Expands Agentic Commerce in Asia with AI-Driven Payments</div>
+        <div class="trend-source"><a href="https://fintechnews.sg" target="_blank" rel="noopener" class="source-link">Fintech News Singapore ↗</a></div>
+        <div class="trend-summary">Agentic commerce is rapidly expanding across Asia, prompting Ant International to introduce new payment and AI tools for global merchants. Digital wallets are expected to become the primary payment method for agentic commerce, driven by their adoption within regional superapps and real-time payment networks.</div>
+        <div class="trend-why">Glance should prioritize partnerships with digital wallets and payment providers popular in Asia to facilitate seamless transactions within its lockscreen commerce platform.</div>
+      </div>
+      <div>
+        <div class="score-bar" style="flex-direction:column;align-items:flex-end;gap:4px">
+          <div style="font-size:24px;font-weight:900;color:var(--accent)">7</div>
+          <div style="font-size:10px;color:var(--text-muted)">/10 relevance</div>
+        </div>
+        <div class="score-bar" style="width:80px"><div class="score-track"><div class="score-fill" style="width:70%"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SOV MONITOR -->
+<div id="tab-sov" class="panel">
+  <div class="qa-banner"><div class="qa-dot"></div><div class="qa-text">Web-search grounded · 7 unexplored queries (P1 priority) · 5 high-volume opportunities · QA: all columns present ✓</div></div>
+
+  <div style="margin-bottom:20px">
+    <button class="export-btn" onclick="downloadCSV()">⬇ Download OptimiseGEO.csv</button>
+  </div>
+
+  <div class="geo-section">
+    <p class="section-title">📊 High-Volume GEO Queries — Already trending, Glance should compete</p>
+    <div class="card" style="padding:0;overflow:auto">
+      <table class="geo-table">
+        <thead>
+          <tr>
+            <th>Query</th>
+            <th>Volume</th>
+            <th>Priority</th>
+            <th>Current Owner</th>
+            <th>Glance Angle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="query-cell">"agentic commerce what brands need to know 2026"</td>
+            <td><span class="volume-high">High</span></td>
+            <td><span class="badge badge-p1">P1</span></td>
+            <td class="owner-cell">HBR, eMarketer, Modern Retail — all merchant POV</td>
+            <td class="angle-cell">Missing supply-side view: brands plugging into 175M lockscreens</td>
+          </tr>
+          <tr>
+            <td class="query-cell">"zero-click buying AI agents"</td>
+            <td><span class="volume-high">High</span></td>
+            <td><span class="badge badge-p1">P1</span></td>
+            <td class="owner-cell">Retail Brew, commercetools — all theoretical, no live case study</td>
+            <td class="angle-cell">Glance IS zero-click commerce — live production case study</td>
+          </tr>
+          <tr>
+            <td class="query-cell">"conversational commerce fashion 2026"</td>
+            <td><span class="volume-high">High</span></td>
+            <td><span class="badge badge-p2">P2</span></td>
+            <td class="owner-cell">Gorgias, BigCommerce — no VTON + chat integration story</td>
+            <td class="angle-cell">Gemini chat → VTON → purchase loop is unique to Glance</td>
+          </tr>
+          <tr>
+            <td class="query-cell">"generative AI ecommerce personalization platform"</td>
+            <td><span class="volume-high">High</span></td>
+            <td><span class="badge badge-p2">P2</span></td>
+            <td class="owner-cell">Salesforce, Bloomreach — enterprise SaaS only</td>
+            <td class="angle-cell">Selfie → AI outfit → shoppable feed: gen-AI personalization no SaaS can match</td>
+          </tr>
+          <tr>
+            <td class="query-cell">"best AI shopping agent android 2026"</td>
+            <td><span class="volume-high">High</span></td>
+            <td><span class="badge badge-p2">P2</span></td>
+            <td class="owner-cell">App-store roundups — all downloaded app framing</td>
+            <td class="angle-cell">Embedded vs downloaded: Glance reframes the category</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="geo-section">
+    <p class="section-title">🕳 Unexplored GEO Queries — Zero Glance presence, high ownership opportunity</p>
+    <div class="card" style="padding:0;overflow:auto">
+      <table class="geo-table">
+        <thead>
+          <tr>
+            <th>Query</th>
+            <th>Volume</th>
+            <th>Priority</th>
+            <th>Current Owner</th>
+            <th>Glance Angle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="query-cell">"how does AI personalize lockscreen content"</td>
+            <td><span class="volume-medium">Med</span></td>
+            <td><span class="badge badge-p1">P1</span></td>
+            <td class="owner-cell">Nasscom, Medium — no authoritative brand</td>
+            <td class="angle-cell">5-sub-agent D0 architecture first-person explainer at 175M device scale</td>
+          </tr>
+          <tr>
+            <td class="query-cell">"agentic commerce platform comparison 2026"</td>
+            <td><span class="volume-high">High</span></td>
+            <td><span class="badge badge-p1">P1</span></td>
+            <td class="owner-cell">Shopify, Digitalapplied.com matrix — no device-native layer</td>
+            <td class="angle-cell">Only OEM pre-install platform not on any comparison guide</td>
+          </tr>
+          <tr>
+            <td class="query-cell">"what are Zapps in AI commerce"</td>
+            <td><span class="volume-low">Low</span></td>
+            <td><span class="badge badge-p1">P1</span></td>
+            <td class="owner-cell" style="color:var(--accent2)">⚡ Total vacuum — unrelated companies rank</td>
+            <td class="angle-cell">Glance invented Zapps — zero-competition definitional authority</td>
+          </tr>
+          <tr>
+            <td class="query-cell">"D0 personalization engine ecommerce"</td>
+            <td><span class="volume-low">Low</span></td>
+            <td><span class="badge badge-p1">P1</span></td>
+            <td class="owner-cell" style="color:var(--accent2)">⚡ Total vacuum — term undefined externally</td>
+            <td class="angle-cell">Glance can create this industry term and own it forever</td>
+          </tr>
+          <tr>
+            <td class="query-cell">"pre-installed AI shopping assistant Android OEM"</td>
+            <td><span class="volume-medium">Med</span></td>
+            <td><span class="badge badge-p1">P1</span></td>
+            <td class="owner-cell">Play Store listings, roundups — no brand narrative</td>
+            <td class="angle-cell">Only OEM-layer player — Samsung partnership as proof point</td>
+          </tr>
+          <tr>
+            <td class="query-cell">"virtual try-on embedded widget android"</td>
+            <td><span class="volume-medium">Med</span></td>
+            <td><span class="badge badge-p2">P2</span></td>
+            <td class="owner-cell">Glamar.io, ARCore docs — technical guides only</td>
+            <td class="angle-cell">First editorial account of Gemini VTON at OS widget layer</td>
+          </tr>
+          <tr>
+            <td class="query-cell">"ambient commerce vs traditional ecommerce"</td>
+            <td><span class="volume-medium">Med</span></td>
+            <td><span class="badge badge-p2">P2</span></td>
+            <td class="owner-cell">IoT retail definitions from 2023-24 — no AI-first mobile view</td>
+            <td class="angle-cell">Reframe lockscreen as the ultimate ambient commerce surface</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="background:rgba(108,99,255,.05);border-color:rgba(108,99,255,.2)">
+    <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px">KEY INSIGHT</div>
+    <div style="font-size:14px;color:var(--text-muted);line-height:1.7">Glance has strong product differentiation (OEM pre-install, D0 personalisation, VTON at widget layer, 5-agent orchestrator) but lacks authoritative Substack editorial that GEO engines cite. <strong style="color:var(--text)">Highest-priority gaps are definitional queries</strong> (Zapps, D0, pre-installed OEM) where Glance is the only possible authoritative source, and the <strong style="color:var(--text)">zero-click / agentic commerce cluster</strong> where Glance has a live product story that all current editorial owners lack.</div>
+  </div>
+</div>
+
+<!-- COMPETITOR PULSE -->
+<div id="tab-competitor" class="panel">
+  <div class="qa-banner"><div class="qa-dot"></div><div class="qa-text">20 Substacks analysed · 8 whitespace angles confirmed · 8 momentum angles tracked · QA: all angles specific and grounded ✓</div></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:36px" class="two-col">
+
+    <div>
+      <p class="section-title">🕳 Whitespace Angles — Zero coverage in past 28 days</p>
+      <ul class="whitespace-list">
+        <li class="whitespace-item">
+          <div class="whitespace-angle">Lockscreen as Commerce Surface: The Zero-Scroll Moment</div>
+          <div class="whitespace-why">Zero newsletters mention lockscreen commerce or pre-intent shopping surfaces. All coverage assumes post-intent query.</div>
+          <div class="whitespace-insider">Glance's D0 feed generates collections before the user has intent — fundamentally different from every agent discussed.</div>
+        </li>
+        <li class="whitespace-item">
+          <div class="whitespace-angle">Multi-Agent Orchestration for Personalised Fashion</div>
+          <div class="whitespace-why">Agent architecture coverage is horizontal (enterprise, coding). No domain-specific orchestrator for fashion has been mapped.</div>
+          <div class="whitespace-insider">5 sub-agents → Orchestrator → personalised collections: publishable production case study Interconnects readers want.</div>
+        </li>
+        <li class="whitespace-item">
+          <div class="whitespace-angle">VTON at OS Scale: Beyond the App</div>
+          <div class="whitespace-why">VTON coverage is uniformly in-app/in-browser. Zero-install OS-level VTON via Gemini agents not discussed anywhere.</div>
+          <div class="whitespace-insider">"Why VTON adoption stalls at 8% in-app but could reach 60%+ when it's zero-install and surface-agnostic."</div>
+        </li>
+        <li class="whitespace-item">
+          <div class="whitespace-angle">Pre-Installed Commerce: The Distribution Moat Ignored</div>
+          <div class="whitespace-why">Protocol wars newsletters all frame distribution as post-install. OEM-layer pre-installation is invisible to every analyst.</div>
+          <div class="whitespace-insider">Snapchat CEO said "distribution is the most important moat" — Glance has it, no one is saying it.</div>
+        </li>
+        <li class="whitespace-item">
+          <div class="whitespace-angle">Zapps: The Third Form Factor</div>
+          <div class="whitespace-why">Commerce coverage is binary: chat or storefront. Mini-app branded commerce units without app install are absent.</div>
+          <div class="whitespace-insider">Glance invented Zapps. Zero search competition. First-mover editorial becomes the canonical GEO reference.</div>
+        </li>
+        <li class="whitespace-item">
+          <div class="whitespace-angle">TV Commerce: The 65-Inch Surface Nobody Discusses</div>
+          <div class="whitespace-why">CTV commerce = shoppable ads. AI-native commerce widgets on smart TVs are completely absent from discourse.</div>
+          <div class="whitespace-insider">"The living room TV is agentic commerce's next frontier." Glance already has this surface.</div>
+        </li>
+        <li class="whitespace-item">
+          <div class="whitespace-angle">D0 Personalization: Ambient Context > Behavioral History</div>
+          <div class="whitespace-why">All personalization discourse assumes cold start is solved over time. Multi-signal day-zero inference is unchallenged.</div>
+          <div class="whitespace-insider">Weather + occasion + trends = better than 6 months of click history. Glance runs this in production.</div>
+        </li>
+        <li class="whitespace-item">
+          <div class="whitespace-angle">Brand AI Store: AI Channels Without Big Tech Intermediaries</div>
+          <div class="whitespace-why">Brand integration coverage: brands entering ChatGPT/Gemini. No one covers brands building their own AI commerce channels.</div>
+          <div class="whitespace-insider">"What if brands didn't have to go through ChatGPT?" Glance Brand AI Store is the answer.</div>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="section-title">📈 Momentum Angles — Covered by 3+ Substacks</p>
+      <div class="momentum-list">
+        <div class="momentum-item">
+          <div class="momentum-count">5<span class="momentum-count-label">substacks</span></div>
+          <div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Payment Protocol Wars: UCP vs ACP vs AP2</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px">Agentic Commerce Frontier, ACReview, Robonomics, Optoforesight, Bizwise</div>
+            <span class="momentum-rec rec-respond">Respond with unique angle</span>
+            <div style="font-size:12px;color:#b0b0c8;margin-top:6px">Glance's OEM trust model is fundamentally different — hardware decision vs per-session permission.</div>
+          </div>
+        </div>
+        <div class="momentum-item">
+          <div class="momentum-count">6<span class="momentum-count-label">substacks</span></div>
+          <div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Big Retail into ChatGPT/Gemini (Sephora, Gap, Walmart)</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px">ACFrontier, RetailBoss, Digital Runway, All Things Fashion Tech, Modern Retail + 1</div>
+            <span class="momentum-rec rec-avoid">Avoid crowded</span>
+            <div style="font-size:12px;color:#b0b0c8;margin-top:6px">Reframe instead: Glance enables these same brands to reach users before they open any app.</div>
+          </div>
+        </div>
+        <div class="momentum-item">
+          <div class="momentum-count">4<span class="momentum-count-label">substacks</span></div>
+          <div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Virtual Try-On as Conversion Tool</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px">All Things Fashion Tech, Digital Runway, RetailBoss, ACReview</div>
+            <span class="momentum-rec rec-respond">Respond with unique angle</span>
+            <div style="font-size:12px;color:#b0b0c8;margin-top:6px">VTON fails because of 7-step funnel. OS-level VTON with zero install is Glance's counter-narrative.</div>
+          </div>
+        </div>
+        <div class="momentum-item">
+          <div class="momentum-count">4<span class="momentum-count-label">substacks</span></div>
+          <div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">AI Agent Trust & Consumer Consent</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px">ACReview, ACFrontier, Next Futures, Optoforesight</div>
+            <span class="momentum-rec rec-lean">Lean in</span>
+            <div style="font-size:12px;color:#b0b0c8;margin-top:6px">OEM trust model: trust is a hardware purchase decision, not a per-session permission grant.</div>
+          </div>
+        </div>
+        <div class="momentum-item">
+          <div class="momentum-count">4<span class="momentum-count-label">substacks</span></div>
+          <div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Discovery Surface Shift (AI traffic +393% YoY)</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px">ACFrontier, ACReview, Modern Retail, Robonomics</div>
+            <span class="momentum-rec rec-lean">Lean in</span>
+            <div style="font-size:12px;color:#b0b0c8;margin-top:6px">Dark AI: lockscreen-originated commerce is invisible to all analytics tools — Glance can address the attribution blind spot.</div>
+          </div>
+        </div>
+        <div class="momentum-item">
+          <div class="momentum-count">3<span class="momentum-count-label">substacks</span></div>
+          <div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Wearable AI Commerce (Ray-Ban Meta, AI Glasses)</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px">All Things Fashion Tech, Digital Runway, Stratechery</div>
+            <span class="momentum-rec rec-lean">Lean in</span>
+            <div style="font-size:12px;color:#b0b0c8;margin-top:6px">Glance's multi-surface thesis (lockscreen + TV + chat) is the 175M-device proof-of-concept for ambient commerce.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-title">20 Substacks Analysed</p>
+  <div class="substacks-grid" id="substacks-grid"></div>
+</div>
+
+<!-- CALENDAR -->
+<div id="tab-calendar" class="panel">
+  <div class="qa-banner"><div class="qa-dot"></div><div class="qa-text">15 events · Apr 28 – May 28, 2026 · All sourced from live web search · High-relevance events highlighted ✓</div></div>
+  <div class="cal-timeline" id="cal-timeline"></div>
+</div>
+
+<!-- WEEK ON WEEK -->
+<div id="tab-wow" class="panel">
+  <div class="qa-banner" style="background:#fff8f0;border-color:#fdba74">
+    <div class="qa-dot" style="background:var(--accent3)"></div>
+    <div class="qa-text" style="color:#9a3412">Each weekly run is saved to <code style="background:#fff;border:1px solid var(--border);padding:1px 6px;border-radius:4px;color:var(--text)">output/runs/YYYY-MM-DD/</code> and aggregated in <code style="background:#fff;border:1px solid var(--border);padding:1px 6px;border-radius:4px;color:var(--text)">history.json</code>. Run again next Monday to see week-on-week comparisons.</div>
+  </div>
+  <div id="wow-runs"></div>
+</div>
+
+<!-- ARTICLE IDEAS -->
+<div id="tab-ideas" class="panel">
+  <div class="qa-banner"><div class="qa-dot"></div><div class="qa-text">5 ranked ideas · Structured against Glance Substack Playbook 2026 pillars · GEO keyword tiers mapped · QA passed ✓</div></div>
+
+  <p class="section-title">Content Pillars — Glance Substack Playbook 2026</p>
+  <div class="playbook-pillars">
+    <div class="pb-pillar p-amber">
+      <div class="pb-pillar-num">Pillar 01 · Amber</div>
+      <div class="pb-pillar-name">The Technology of Commerce</div>
+      <div class="pb-pillar-desc">How agentic AI, multi-agent systems, contextual signals, and user modelling change how commerce works.</div>
+      <div class="pb-pillar-topics">Agentic commerce explainers · AI orchestration · VTON · User model design · D0 personalisation · Sub-agent architecture</div>
+    </div>
+    <div class="pb-pillar p-blue">
+      <div class="pb-pillar-num">Pillar 02 · Blue</div>
+      <div class="pb-pillar-name">The Business of Commerce</div>
+      <div class="pb-pillar-desc">What agentic commerce means for brands, retailers, and OEM partners — ROI, positioning, and strategic shifts.</div>
+      <div class="pb-pillar-topics">Brand partner playbooks · Commerce trends · OEM distribution · Retail AI adoption · Category creation · Industry data</div>
+    </div>
+    <div class="pb-pillar p-teal">
+      <div class="pb-pillar-num">Pillar 03 · Teal</div>
+      <div class="pb-pillar-name">The Human Experience of Commerce</div>
+      <div class="pb-pillar-desc">How real people shop, style, and discover products in an AI-assisted world.</div>
+      <div class="pb-pillar-topics">Consumer behaviour shifts · Style and identity · Shopping psychology · Behind-the-build stories · Cultural moments</div>
+    </div>
+  </div>
+
+  <p class="section-title" style="margin-top:8px">GEO Keyword Tiers</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px">
+    <span class="geo-tier own">🎯 Own Now — low competition, high Glance authority</span>
+    <span class="geo-tier contest">⚔️ Contest — adjacent, moderate competition</span>
+    <span class="geo-tier monitor">👁 Monitor — high volume, high competition</span>
+  </div>
+
+  <div id="ideas-container"></div>
+</div>
+
+</div><!-- /main-content -->
+</div><!-- /page-body -->
+
+<script>
+// ── CHANNEL REDIRECT CONFIG ───────────────────────────────────────────────────
+// When you deploy a new tool, paste its Vercel URL here. The card will
+// automatically become clickable and lose its "Coming Soon" state on next load.
+const CHANNEL_URLS = {
+  linkedin: '', // e.g. 'https://glance-linkedin-copilot.vercel.app'
+  x:        '', // e.g. 'https://glance-x-copilot.vercel.app'
+  reddit:   '', // e.g. 'https://glance-reddit-copilot.vercel.app'
+};
+
+function initChannelCards() {
+  const map = [
+    { key: 'linkedin', cardId: 'channel-linkedin' },
+    { key: 'x',        cardId: 'channel-x'        },
+    { key: 'reddit',   cardId: 'channel-reddit'   },
+  ];
+  map.forEach(({ key, cardId }) => {
+    const url = CHANNEL_URLS[key];
+    if (!url) return;
+    const card = document.getElementById(cardId);
+    if (!card) return;
+    card.classList.remove('inactive');
+    card.classList.add('active');
+    card.style.cursor = 'pointer';
+    card.onclick = () => window.open(url, '_blank');
+    const badge = card.querySelector('.coming-soon-badge');
+    if (badge) badge.remove();
+    const cta = document.createElement('button');
+    cta.className = 'channel-cta';
+    cta.textContent = 'Open Dashboard →';
+    card.appendChild(cta);
+  });
+}
+
+// ── DATA ──────────────────────────────────────────────────────────────────────
+const SUBSTACKS = [
+  {name:"The Agentic Commerce Frontier",domain:"AgenticCommerce",posts:5,url:"https://agentcommerce.substack.com",subs:"~5K–15K"},
+  {name:"Agentic Commerce Review",domain:"AgenticCommerce",posts:6,url:"https://agenticcommercereview.substack.com",subs:"~2K–8K"},
+  {name:"Next Futures",domain:"AgenticCommerce",posts:4,url:"https://nextfutures.substack.com",subs:"Unknown"},
+  {name:"Robonomics",domain:"AgenticCommerce",posts:1,url:"https://robonomics.substack.com",subs:"Unknown"},
+  {name:"Bizwise",domain:"AgenticCommerce",posts:1,url:"https://bizwise.substack.com",subs:"~2K–8K"},
+  {name:"Optoforesight",domain:"AgenticCommerce",posts:1,url:"https://optoforesight.substack.com",subs:"~3K–10K"},
+  {name:"Interconnects (Nathan Lambert)",domain:"AI",posts:6,url:"https://www.interconnects.ai",subs:"~50K–100K"},
+  {name:"Ben's Bites",domain:"AI",posts:5,url:"https://www.bensbites.com",subs:"~500K+"},
+  {name:"AI Supremacy",domain:"AI",posts:3,url:"https://www.ai-supremacy.com",subs:"~250K"},
+  {name:"State of AI (Nathan Benaich)",domain:"AI",posts:2,url:"https://nathanbenaich.substack.com",subs:"~100K+"},
+  {name:"AI Agents Simplified",domain:"AI",posts:4,url:"https://aiagentssimplified.substack.com",subs:"~10K–30K"},
+  {name:"Lenny's Newsletter",domain:"AI",posts:6,url:"https://www.lennysnewsletter.com",subs:"~700K+"},
+  {name:"Stratechery (Ben Thompson)",domain:"AI",posts:6,url:"https://stratechery.com",subs:"~200K+"},
+  {name:"The Rundown AI",domain:"AI",posts:3,url:"https://www.therundown.ai",subs:"~2M+"},
+  {name:"Prof G Media (Scott Galloway)",domain:"AI",posts:3,url:"https://www.profgmedia.com",subs:"~500K+"},
+  {name:"RetailBoss",domain:"EcommerceTech",posts:3,url:"https://retailboss.substack.com",subs:"~10K–25K"},
+  {name:"All Things Fashion Tech",domain:"EcommerceTech",posts:6,url:"https://allthingsfashiontech.substack.com",subs:"~5K–20K"},
+  {name:"The Digital Runway",domain:"EcommerceTech",posts:1,url:"https://thedigitalrunway.substack.com",subs:"~5K–15K"},
+  {name:"Kit Campoy Retail",domain:"EcommerceTech",posts:5,url:"https://kitcampoy.substack.com",subs:"~5K–15K"},
+  {name:"Modern Retail",domain:"EcommerceTech",posts:5,url:"https://www.modernretail.co",subs:"~50K+"}
+];
+
+const EVENTS = [
+  {name:"Amazon Q1 2026 Earnings",date:"2026-04-29",type:"Earnings",relevance:"High",hook:"Amazon's AWS + advertising revenue reveals how AI infrastructure is reshaping the commerce stack — direct signal for Glance's agentic positioning.",pillar:"Market Intelligence"},
+  {name:"Shopify Q1 2026 Earnings",date:"2026-05-05",type:"Earnings",relevance:"High",hook:"Shopify's UCP and AI Mode integrations make this the live benchmark for where agentic commerce revenue is actually flowing.",pillar:"Market Intelligence"},
+  {name:"AI+ Expo — Washington D.C.",date:"2026-05-07",type:"Conference",relevance:"Medium",hook:"20,000 government and industry leaders on AI policy — timely angle for Glance to address responsible agentic commerce and on-device AI regulation.",pillar:"Tech Depth"},
+  {name:"Mother's Day (US & Canada)",date:"2026-05-10",type:"Seasonal",relevance:"High",hook:"$34B+ in annual Mother's Day spend — explore how AI-native lockscreen discovery surfaces intent-driven gifting before shoppers open an app.",pillar:"Trends & Culture"},
+  {name:"The Android Show: I/O Edition",date:"2026-05-12",type:"Launch",relevance:"High",hook:"Android 17 and deeper Gemini integration announced — publish real-time analysis of what each feature means for pre-installed AI commerce on 175M+ Android devices.",pillar:"Tech Depth"},
+  {name:"eTail Connect East — Miami",date:"2026-05-12",type:"Conference",relevance:"Medium",hook:"75 of North America's top e-commerce executives in closed-door sessions — Glance's perspective on what senior retail leaders are prioritising in agentic AI.",pillar:"The Commerce Shift"},
+  {name:"AI Council 2026 — San Francisco",date:"2026-05-12",type:"Conference",relevance:"Medium",hook:"1,500+ engineers and founders across 10 AI tracks — ideal for Glance to publish a technical deep-dive on building agentic commerce on constrained mobile hardware.",pillar:"Tech Depth"},
+  {name:"Pulse eCommerce Summit — UK",date:"2026-05-13",type:"Conference",relevance:"Medium",hook:"UK's largest ecommerce conference for fashion brands — map cross-border commerce trends against Glance's India and emerging-market playbook.",pillar:"The Commerce Shift"},
+  {name:"Retail MediaX Europe — London",date:"2026-05-14",type:"Conference",relevance:"Medium",hook:"European retail media leaders on measurement — frame Glance's lockscreen ad surface as a next-generation retail media channel that captures demand before search intent forms.",pillar:"The Commerce Shift"},
+  {name:"Minneapolis eCommerce Summit",date:"2026-05-14",type:"Conference",relevance:"Medium",hook:"How mid-market US retailers are adopting AI commerce tools that compete with or complement Glance's lockscreen model.",pillar:"Market Intelligence"},
+  {name:"Google I/O 2026 — Mountain View",date:"2026-05-19",type:"Conference",relevance:"High",hook:"Android 17, Gemini agent updates on the world's biggest developer stage — translate every Google AI announcement into commerce implications for Glance's 175M Android install base.",pillar:"Tech Depth"},
+  {name:"Walmart FY2027 Q1 Earnings",date:"2026-05-21",type:"Earnings",relevance:"High",hook:"Walmart's omnichannel AI metrics are the clearest indicator of how legacy retail is closing the gap on pure-play ecommerce — key context for the Commerce Shift narrative.",pillar:"Market Intelligence"},
+  {name:"Memorial Day Shopping Season",date:"2026-05-23",type:"Seasonal",relevance:"Medium",hook:"Peak deal traffic across Amazon, Target, and Walmart — case study for how AI-surfaced discovery changes impulse commerce behaviour.",pillar:"Trends & Culture"},
+  {name:"Memorial Day (US Federal Holiday)",date:"2026-05-25",type:"Cultural",relevance:"Medium",hook:"Data-led piece on AI-driven personalisation during high-velocity retail windows, showing how Glance's lockscreen captures demand intent that app-based commerce misses.",pillar:"The Commerce Shift"},
+  {name:"Memorial Day Weekend Retail Wrap",date:"2026-05-27",type:"Cultural",relevance:"Medium",hook:"Post-Memorial Day data drop on AI-driven discovery during the weekend's peak deal traffic — anchor a data piece on how lockscreen commerce captures impulse demand app stores miss.",pillar:"The Commerce Shift"}
+];
+
+const IDEAS = [
+  {
+    rank: 1, priority: "HIGH", pillar: "The Commerce Shift", persona: "product",
+    playbookPillar: "amber", playbookPillarName: "The Technology of Commerce",
+    geoTier: "own",
+    geoQuery: "how does AI personalize lockscreen content",
+    calHook: "Android Show: I/O Edition — May 12, 2026",
+    title: "The Last Uncaptured Commerce Moment: How Glance's 5-Agent D0 Feed Sells Before You Unlock Your Phone",
+    hook: "Every agentic commerce article you've read this year describes AI that waits for you to ask — Glance's D0 feed has already assembled your personalised fashion collection before you touch the screen.",
+    keyStats: [{label:"Devices",val:"175M+"},{label:"Sub-agents",val:"5"},{label:"Lockscreen glances/day",val:"~96"},{label:"OEM partners",val:"Samsung + Motorola"}],
+    outline: [
+      "The Attention Gap: Why Every Commerce Platform Gets There Too Late",
+      "Inside Glance's D0 Feed: Meet the 5 Sub-Agents and What Each Contributes",
+      "How the Orchestrator Assembles a Shoppable Collection Before Intent Forms",
+      "What This Architecture Means for Fashion Brands and Their Customer Acquisition Stack",
+      "The Zero-Scroll Future: Structural Implications for the Commerce Industry"
+    ],
+    intro: `There is a precise moment that every e-commerce platform misses. It happens approximately 96 times per day — the moment a person reaches for their phone, and before they've decided to do anything with it. For the past decade, the commerce industry has optimised for everything that happens after that moment: the search query, the product page, the cart. Glance is the first platform that has optimised for the moment itself.\n\nGlance's D0 (Day-Zero) feed doesn't wait for a user to express intent. It begins work before the phone is unlocked. Five specialist sub-agents — Weather, Trends, Occasion, Physical Stylist, and Lifestyle Detective — run in parallel every morning, each contributing a signal vector to a central Orchestrator that generates a personalised shoppable fashion collection. The collection is waiting on the lockscreen when the user glances at their phone. No query. No scroll. No funnel. Just a curated discovery moment that the user has not yet thought to request.`,
+    body: `The architecture is significant not just as a product achievement, but as a proof of concept for a claim the industry has been theorising for years: that ambient context can outperform behavioral history as a personalisation signal. The Weather agent provides environmental context — recommending a puffer jacket on a 4°C morning is categorically different from the same recommendation on a 22°C afternoon. The Trends agent injects recency, surfacing what is actually being searched for and worn in the user's city this week. The Occasion agent scans the calendar — a Mother's Day gift collection served three days ahead of the holiday requires zero browsing history to be commercially relevant. The Physical Stylist agent applies body-type and fit inference. The Lifestyle Detective synthesises device usage patterns to build a taste profile on day zero.\n\nFor brands, this represents a fundamentally different integration question. The traditional e-commerce integration is downstream: a brand waits for a user to arrive, then presents product. A Glance integration is upstream: a brand's product appears in a personalised collection before the user has formed any conscious shopping intent. The implications for customer acquisition cost, discovery reach, and attribution are structural — not incremental. Brands that treat Glance as another ad placement are missing the larger point: the lockscreen is not a channel within the existing commerce stack. It is a new layer that sits above the entire existing stack.`,
+    insider: "Glance is the only platform on earth that can describe, from live production data, how 5 specialist sub-agents (Weather, Trends, Occasion, Physical Stylist, Lifestyle Detective) feed a real-time orchestrator to generate personalised shoppable fashion collections before a user has formed purchase intent — on 175M Samsung and Motorola devices daily.",
+    whitespace: "Lockscreen as Commerce Surface — zero Substack coverage of pre-intent shopping surfaces",
+    cta: "Follow Glance Editorial Intelligence on Substack for weekly deep-dives on the agentic commerce architectures reshaping how 175 million Android users discover and buy. Next week: how the Orchestrator handles conflicting sub-agent signals in real-time."
+  },
+  {
+    rank: 2, priority: "HIGH", pillar: "Tech Depth", persona: "tech",
+    playbookPillar: "blue", playbookPillarName: "The Business of Commerce",
+    geoTier: "own",
+    geoQuery: "zero-click buying AI agents",
+    calHook: "Shopify Q1 2026 Earnings — May 5, 2026",
+    title: "Zero-Click Is Already Live: What Glance's Lockscreen Commerce Teaches the Agentic Payment Protocol Wars",
+    hook: "While Stripe, Visa, and Mastercard compete to build the infrastructure for zero-click buying, Glance has been quietly running it in production on 175 million Android devices — and the trust model looks nothing like what any of the protocol papers describe.",
+    keyStats: [{label:"Devices",val:"175M+"},{label:"Checkout time",val:"<15 sec"},{label:"Trust model",val:"OEM-layer"},{label:"Auth type",val:"Hardware, not session"}],
+    outline: [
+      "The Protocol Wars: What Stripe, Visa, and Mastercard Are Actually Fighting Over",
+      "Zero-Click in Production: The Glance Lockscreen Purchase Sequence",
+      "The Trust Architecture Nobody in the Protocol Papers Has Modelled",
+      "OEM-Layer Trust vs. Per-Session Permission: Why the Comparison Frameworks Break Down",
+      "What Brands Building for Agentic Commerce Should Actually Prioritise in 2026"
+    ],
+    intro: `In the past six months, Retail Brew, commercetools, and half a dozen venture-backed startups have declared 2026 the year of zero-click buying. The framing is usually the same: AI agents will eventually become authorised to make purchases on users' behalf, if only the payment protocol standards committees can agree on how authorisation should work. The language is speculative. The timelines are vague. The case studies are hypothetical.\n\nGlance has been running zero-click commerce in production for two years on 175 million Android devices. The lockscreen feed surfaces a curated product collection. The user taps. A one-tap checkout flow — integrated with UPI, digital wallets, and card-on-file — completes the purchase. No browser tab. No app switch. No cart abandonment event. The entire sequence takes under 15 seconds. The protocol question that dominates agentic commerce discourse — how does an AI agent get authorised to transact on a user's behalf? — has an answer in Glance's model that none of the payment standards debates have incorporated: the authorisation is baked into the device purchase.`,
+    body: `Every agentic commerce protocol paper (Anthropic's MCP, the FIDO Alliance's payment standards, Visa's Account to Account frameworks) assumes that AI agent authorisation is a runtime event — a permission that must be granted per session, per agent, per merchant. The mental model is structurally identical to OAuth. The user grants a scope, the agent operates within it, and the user can revoke access at any time. This is correct and reasonable for agents that a user consciously chooses to install and run. It is not the model Glance operates.\n\nGlance's commerce agent functions at the OEM layer. When a consumer purchases a Samsung Galaxy device with Glance pre-installed, the commerce agent is part of the device contract — not an app they chose to download and not a permission they granted to a third-party AI. The trust topology is different in kind, not just in degree. It is more analogous to a banking app pre-installed by a carrier than to a ChatGPT plugin. The brands that understand this distinction are building their agentic commerce presence at the device layer rather than the application layer — and the distribution advantage they are compounding is not one that a ChatGPT integration or a Gemini shopping agent can replicate.`,
+    insider: "Retail Brew declared 2026 'The Year of Zero-Click Buying.' Glance can publish a first-person account of zero-click mechanics already in production: a one-tap purchase path on 175M lockscreens where the commerce agent is placed by OEM agreement — making trust a hardware decision, not a per-session permission grant.",
+    whitespace: "Pre-Installed AI Commerce: The Distribution Moat Every Protocol Wars Newsletter Ignores",
+    cta: "This is part 1 of Glance's series on agentic commerce infrastructure. Next: The payment protocol wars don't model OEM-layer trust — here's the gap in every standards body's framework, and why it matters for brands spending on agentic commerce in 2026."
+  },
+  {
+    rank: 3, priority: "HIGH", pillar: "Tech Depth", persona: "product",
+    playbookPillar: "amber", playbookPillarName: "The Technology of Commerce",
+    geoTier: "own",
+    geoQuery: "what are Zapps in AI commerce",
+    calHook: "Google I/O 2026 — May 19, 2026",
+    title: "Defining Zapps: The Third Form Factor in Agentic Commerce (Beyond Chat and Storefront)",
+    hook: "There is a third way to do agentic commerce that nobody in the protocol wars is discussing — not a chat window, not a storefront, but a branded interactive commerce unit that lives inside your lockscreen before you've decided to shop.",
+    keyStats: [{label:"Form factors in discourse",val:"2 (Chat + Store)"},{label:"Install required",val:"None"},{label:"Surfaces",val:"Lockscreen + TV"},{label:"GEO competition",val:"Zero"}],
+    outline: [
+      "The Binary Trap: Why All Agentic Commerce Gets Mapped to Chat or Storefront",
+      "What Zapps Are: A Precise Definition of the Third Form Factor",
+      "Technical Architecture: How Zapps Render on Lockscreen Without Installation",
+      "Zapps vs. WeChat Mini Programs vs. PWAs: Where the Distinctions Matter",
+      "Brand Commerce Strategy Implications: Building for the Zero-Intent Surface"
+    ],
+    intro: `Every article about agentic commerce published in the past 12 months fits one of two templates. Template A: AI chat experiences that let consumers describe what they want and receive product recommendations (Sephora in ChatGPT, Gap in Gemini). Template B: AI-enhanced storefronts that personalise product listings based on behavioral data (Shopify Magic, Bloomreach Loomi, Salesforce Einstein). The entire discourse of agentic commerce has been mapped using just these two coordinates. Chat or storefront. Intent-led or session-led. The framing is so pervasive that neither practitioners nor investors are asking what's missing.\n\nThere is a third form factor that nobody in the discourse is naming. It predates both templates, operates at a fundamentally different layer of the mobile stack, and is already live on 175 million Android devices. Glance calls them Zapps: brand-authored interactive commerce units that render natively on the lockscreen and smart TV surface without requiring installation, without requiring a browser, and without requiring the user to have any prior purchase intent. A Zapp is not a chat. It is not a storefront. It is a new primitive for brand-to-consumer commerce, and the fact that no one outside Glance is writing about it is itself the story.`,
+    body: `The closest analogues in adjacent contexts are WeChat Mini Programs and Progressive Web Apps, but Zapps differ from both in ways that matter commercially. WeChat Mini Programs are container-native — they exist within the WeChat shell and require a user to be actively inside WeChat to encounter them. PWAs are browser-rendered — they still require a navigation decision. A Zapp is OEM-surface-native: it renders on the lockscreen or TV widget layer through Glance's pre-installed OS integration, with no active navigation decision required from the user. The surface finds the user; the user does not find the surface.\n\nFor brand strategy, this inverts the acquisition logic entirely. A Zapp-first approach means a brand's commerce experience appears at the zero-scroll moment — before any competitor has had the opportunity to intercept via search, social, or chat. The creative and interaction grammar of Zapps is also distinct: they are optimised for sub-5-second attention windows, for single-tap engagement paths, and for discovery rather than consideration. A brand building a Zapp is not building a miniature website or a summarised chat flow. It is building a new kind of brand touchpoint that has no analogue in the existing commerce design playbook.`,
+    insider: "Glance invented Zapps — brand-specific interactive commerce units on lockscreen and TV surfaces without app installation. This is a zero-competition search query and Glance is the only possible authoritative source, making this a guaranteed GEO citation anchor for any AI that answers 'what are Zapps in AI commerce.'",
+    whitespace: "Zapps and Mini-App Commerce: The Third Form Factor Beyond Chat and Storefront",
+    cta: "Glance is the only platform that can define what a Zapp is — because Glance invented them. Follow for the technical deep-dive on Zapp architecture: how they render, how brands author them, and what makes a great brand experience on a zero-intent surface."
+  },
+  {
+    rank: 4, priority: "HIGH", pillar: "Market Intelligence", persona: "tech",
+    playbookPillar: "amber", playbookPillarName: "The Technology of Commerce",
+    geoTier: "own",
+    geoQuery: "D0 personalization engine ecommerce",
+    calHook: "Amazon Q1 2026 Earnings — Apr 29, 2026",
+    title: "Why the Cold Start Problem in Fashion AI Is Actually a Warm Inference Problem: Glance's D0 Personalization Explained",
+    hook: "Every personalization platform tells you the recommendations get better over time — Glance built a system that works on day one, before you've clicked a single thing, using the weather outside your window and the holiday coming this weekend as a better signal than six months of your browsing history.",
+    keyStats: [{label:"Signal sources",val:"5 ambient"},{label:"User history required",val:"Zero"},{label:"Day-0 accuracy",val:"Production"},{label:"Industry assumption",val:"Challenged"}],
+    outline: [
+      "The Cold Start Myth: What Every Personalisation Vendor Gets Wrong About Day Zero",
+      "Glance's D0 Signal Stack: Five Ambient Proxies for Taste That Require No Behavioral Data",
+      "Day-Zero Accuracy vs. Six-Month Behavioral Accuracy: A Counterintuitive Production Result",
+      "The Occasion–Weather–Trend Triangle: Why Contextual Signals Outperform Clickstream for Discovery",
+      "Implications for the $12B Personalisation Platform Industry"
+    ],
+    intro: `Ask any personalisation vendor how they handle the cold start problem — the moment a new user arrives with zero behavioral history — and you will hear one of two answers. Answer A: collaborative filtering (show the new user what similar users liked). Answer B: onboarding quiz (ask the user to express preferences explicitly). Both share the same premise: cold start is a data scarcity problem, and the solution is to acquire user data as quickly as possible to escape it. Every major CDP, DXP, and recommendation engine on the market is built on this premise.\n\nGlance's D0 personalisation architecture begins from a different premise. On the first morning that a new Samsung or Motorola device is activated, before the user has clicked a single product or completed any onboarding, the Weather agent already knows it is 3°C and raining in Chicago. The Occasion agent already knows that Thanksgiving is in three weeks. The Trends agent already knows that trench coats are trending in Illinois based on regional search signals from this week. These three signals alone produce a commercially relevant fashion collection — one that would outperform, on a preference-accuracy basis, six months of purchase history from a user who bought their last jacket during a heatwave in July.`,
+    body: `The critical insight in Glance's D0 architecture is that ambient context is a high-quality proxy for taste, and for many discovery-mode commerce use cases, a better one than behavioral history. Behavioral history tells you what someone bought or clicked under conditions that may no longer apply. Ambient context tells you what someone needs right now, given what the world looks like today. A user's six-month browsing history cannot account for the fact that they just moved from Miami to Minneapolis. The Weather agent corrects for this automatically on Day Zero, without any explicit update from the user.\n\nThe implications extend beyond Glance's immediate product. The personalisation industry has invested heavily — CDP infrastructure, identity graphs, data clean rooms, behavioral analytics platforms — all premised on the assumption that more historical data produces better recommendations. Glance's D0 production results suggest a competing thesis: small, real-time ambient signal stacks may outperform large historical behavioral datasets for the specific case of zero-intent discovery-mode commerce. This is a commercially significant claim that every major enterprise personalisation vendor should be required to address. None of them have, because none of them have the device-layer integration required to operate ambient signals at production scale. D0 is also an unclaimed industry term — Glance can define it, own it, and make it the canonical reference point for a new category of personalisation infrastructure.`,
+    insider: "Every personalization vendor assumes the cold start problem is solved by accumulating behavioral data over time. Glance runs a production system on 175M devices that generates relevant fashion collections on Day Zero before any behavioral data exists, using five ambient context signals as proxy variables. D0 is a new industry-category term Glance can claim in a zero-competition search space.",
+    whitespace: "D0 Personalization: Why First-Day Data Beats Accumulated Behavioral History",
+    cta: "D0 is a new industry term. Glance is its author. Follow for the technical explainer on how each sub-agent contributes to the D0 collection — and the production accuracy comparison against behavioral baseline models from incumbent personalisation platforms."
+  },
+  {
+    rank: 5, priority: "MEDIUM", pillar: "Trends & Culture", persona: "marketing",
+    playbookPillar: "teal", playbookPillarName: "The Human Experience of Commerce",
+    geoTier: "contest",
+    geoQuery: "virtual try-on embedded widget android",
+    calHook: "Mother's Day (US & Canada) — May 10, 2026",
+    title: "VTON Beyond the App: How Gemini-Powered Virtual Try-On at OS Level Fixes Fashion Commerce's Biggest Adoption Problem",
+    hook: "Virtual try-on has been fashion tech's most-promised, least-used feature for five years — not because the technology isn't good enough, but because you have to download an app, create an account, and navigate four menus before you can try on a jacket you found on a lockscreen.",
+    keyStats: [{label:"Consumer interest",val:"60–70%"},{label:"Actual VTON adoption",val:"~8%"},{label:"Traditional funnel steps",val:"7"},{label:"Glance funnel steps",val:"0 install + 1 tap"}],
+    outline: [
+      "The Try-On Gap: Why 60% Consumer Interest Produces 8% Actual Adoption",
+      "The Seven-Step Problem: How In-App VTON Creates Its Own Abandonment Cliff",
+      "Gemini VTON at the OS Layer: How Glance's Conversational Try-On Works",
+      "Zero-Install Try-On: The Selfie-to-Styled-Image-to-Purchase Flow",
+      "What Fashion Brands Should Reconsider Before Investing in Standalone VTON Apps"
+    ],
+    intro: `Virtual try-on is fashion tech's most discussed and least adopted feature. Consumer research consistently shows that 60–70% of online fashion shoppers say they would use virtual try-on if the experience were available. Actual VTON usage rates across deployed features sit at approximately 8%. The gap between stated consumer interest and actual adoption is not a technology problem. Google's Imagen-based try-on and the underlying diffusion model capabilities are genuinely impressive — a consumer who encounters a good VTON experience typically rates it highly. The gap is a funnel problem, and it is almost entirely self-inflicted by the way the industry has chosen to deploy the technology.\n\nTo use virtual try-on on Levi's website, a consumer must: navigate to the website, find a specific product page, locate the try-on button (which is typically below the fold), grant camera permissions, upload or capture a photo, wait for the rendering process to complete, and then decide whether the result warrants adding to cart. Seven steps. For a consumer who encountered the product on a lockscreen discovery feed and has not yet formed explicit purchase intent, asking them to complete a seven-step activation flow is structurally equivalent to asking them to opt in to a full conversion funnel. Most don't. The 8% who complete the flow are already highly purchase-motivated — exactly the consumers who would have converted without VTON anyway. The technology is not solving the problem it claims to solve.`,
+    body: `Glance's implementation of Gemini-powered VTON operates at a fundamentally different layer of the mobile stack. The experience begins inside Glance's agentic chat surface — a Gemini-powered conversational agent that is pre-installed on Samsung devices as part of the Glance platform. A user can say 'show me how that jacket looks on me' without leaving the chat surface. The Gemini agent invokes the VTON capability, uses a selfie captured during onboarding or prompts a quick camera capture, runs the diffusion model inference through Gemini's multimodal pipeline, and returns a styled image of the user wearing the garment — all within the same conversational thread. No navigation to an external URL. No app switch. No new account creation.\n\nThe zero-install architecture changes the economics of VTON adoption at the population level. A standalone VTON feature in a fashion brand's app requires a consumer to (a) have the app installed, (b) be navigating within the app, and (c) discover the VTON entry point. Three attrition events before the feature is used. On Glance's platform, a consumer encounters the item in their lockscreen feed, initiates a Gemini conversation, and tries it on within the same session. The funnel collapse is structural: from seven steps to a single conversational prompt. For Mother's Day gift shopping — where a consumer is browsing for someone else and comparison-shopping across styles — the conversational try-on flow creates a qualitatively different kind of purchase confidence that no storefront experience can replicate.`,
+    insider: "While Levi's 'Imagine on Me' and Gap AI fit require users to navigate to a retailer's app or website, Glance's VTON operates via Gemini agents within an agentic chat surface pre-installed on Samsung and Motorola devices — zero install, zero navigation, zero funnel. First editorial account of VTON at the OS widget layer.",
+    whitespace: "Virtual Try-On at OS Scale: VTON Beyond the App",
+    cta: "VTON adoption is a funnel problem, not a technology problem. Follow Glance Editorial Intelligence for the data on how OS-layer try-on changes conversion rates — and what fashion brands should know before committing budget to standalone VTON app features in 2026."
+  }
+];
+
+const CSV_DATA = `query,type,volume_tier,current_owner,glance_angle,priority
+"how does AI personalize lockscreen content",unexplored,Medium,"Nasscom community posts, Medium/Vocal.media articles, generic AI blogs — no authoritative brand","Glance can own this with a first-person technical explainer covering its 5-sub-agent D0 architecture powering real-time lockscreen personalisation at 175M device scale.",P1
+"agentic commerce platform comparison 2026",unexplored,High,"Shopify blog, BigCommerce, Digitalapplied.com — all SaaS/platform vendors, none covering device-native pre-installed agents","Glance is the only agentic commerce platform pre-installed at the OEM layer rather than added post-purchase — a differentiated angle no comparison guide currently covers.",P1
+"what are Zapps in AI commerce",unexplored,Low,"No authoritative source exists; searches return Zapcom (unrelated), Zapp grocery delivery, and generic AI tools — total whitespace","Glance invented Zapps as mini-agentic commerce apps living on the lockscreen; a definitional explainer from the originator would immediately own this zero-competition query.",P1
+"D0 personalization engine ecommerce",unexplored,Low,"Bloomreach, Dynamic Yield, Constructor.io, Braze — all generic personalization platform vendors; no result defines D0 specifically","Glance can define D0 (Day-Zero) personalisation as an industry concept establishing thought leadership in a completely unclaimed search space.",P1
+"virtual try-on embedded widget android",unexplored,Medium,"Glamar.io, Mobidev.biz, ARCore developer docs, GitHub repos — technical build guides only","Glance can publish a case study showing Gemini-powered VTON embedded natively in the Samsung lockscreen.",P2
+"ambient commerce vs traditional ecommerce",unexplored,Medium,"Verdict.co.uk, Retail Insight Network — IoT/sensor retail definitions from 2023-24, no AI-first mobile perspective","Glance can reframe ambient commerce around the lockscreen as the ultimate ambient surface.",P2
+"pre-installed AI shopping assistant Android OEM",unexplored,Medium,"Google Play listings, Ringly.io roundups — no editorial brand narrative from any OEM-layer player","Glance is the only AI shopping assistant pre-installed at the Samsung OEM layer for 175M+ devices.",P1
+"agentic commerce what brands need to know 2026",high_volume,High,"HBR (Feb 2026), eMarketer, Modern Retail, Shopify blog, BigCommerce — all brand/merchant POV","Glance can contribute the missing supply-side view: how brands plug into an agentic feed already on 175M lockscreens.",P1
+"zero-click buying AI agents",high_volume,High,"Retail Brew, Stellagent.ai, ACI Infotech, commercetools — all theoretical or merchant-side","Glance's lockscreen feed is the closest real-world zero-click case study available.",P1
+"conversational commerce fashion 2026",high_volume,High,"LinkedIn Pulse, Gorgias State of Report, BigCommerce — no fashion-tech player with VTON + chat","Glance's Gemini-powered chat agent with embedded VTON closes the loop from conversation to try-on to purchase.",P2
+"generative AI ecommerce personalization platform",high_volume,High,"Salesforce, Bloomreach, Ringly.io — enterprise SaaS focus only","Glance's on-device generative pipeline (selfie → AI outfit → shoppable feed) is a concrete gen-AI personalisation story.",P2
+"best AI shopping agent android 2026",high_volume,High,"Google Play listings, getstream.io roundups — app-store comparison framing only","A Glance-authored breakdown of embedded vs downloaded AI shopping agents would rank authoritatively.",P2`;
+
+// ── RENDER ────────────────────────────────────────────────────────────────────
+function pillarBadge(p) {
+  const map = {"The Commerce Shift":"commerce","Tech Depth":"tech","Market Intelligence":"market","Trends & Culture":"trends"};
+  return `<span class="badge badge-${map[p]||'commerce'}">${p}</span>`;
+}
+
+function domainColor(d) {
+  const map = {
+    "AI":             {bg:"#ede9fe",color:"#5b21b6",border:"#c4b5fd"},
+    "AgenticCommerce":{bg:"#dcfce7",color:"#166534",border:"#86efac"},
+    "EcommerceTech":  {bg:"#fef9c3",color:"#854d0e",border:"#fde047"}
+  };
+  return map[d] || {bg:"#f0f1f5",color:"#1a1b2e",border:"#e2e4ea"};
+}
+
+// Render substacks
+document.getElementById('substacks-grid').innerHTML = SUBSTACKS.map(s => {
+  const dc = domainColor(s.domain);
+  return `
+  <div class="substack-card">
+    <a href="${s.url}" target="_blank" rel="noopener" class="substack-name-link">
+      <div class="substack-name">${s.name} <span style="font-size:11px;color:var(--accent)">↗</span></div>
+    </a>
+    <div style="margin-bottom:6px"><span style="font-size:11px;padding:2px 7px;border-radius:4px;background:${dc.bg};color:${dc.color};border:1px solid ${dc.border}">${s.domain}</span></div>
+    <div class="substack-posts">${s.posts} post${s.posts!==1?'s':''} in 28 days · ${s.subs} subs</div>
+  </div>`;
+}).join('');
+
+// Render calendar
+const byDate = {};
+EVENTS.forEach(e => { if(!byDate[e.date]) byDate[e.date]=[];  byDate[e.date].push(e); });
+const typeClass = {Conference:'type-conference',Launch:'type-launch',Earnings:'type-earnings',Seasonal:'type-seasonal',Cultural:'type-cultural'};
+document.getElementById('cal-timeline').innerHTML = Object.keys(byDate).sort().map(d => {
+  const dt = new Date(d+'T00:00:00');
+  const label = dt.toLocaleDateString('en-US',{weekday:'short',month:'long',day:'numeric',year:'numeric'});
+  const evs = byDate[d];
+  return `<div class="cal-day-group">
+    <div class="cal-date">${label}</div>
+    ${evs.map(e=>`<div class="cal-event ${e.relevance==='High'?'high-rel':''}">
+      <div>
+        <div class="cal-event-type ${typeClass[e.type]||''}">${e.type}</div>
+        ${e.relevance==='High'?`<div style="margin-top:6px;font-size:11px;color:var(--accent);font-weight:700">★ HIGH</div>`:''}
+      </div>
+      <div>
+        <div class="cal-event-name">${e.name}</div>
+        <div class="cal-event-hook">${e.hook}</div>
+        <div class="cal-event-pillar" style="margin-top:8px">${pillarBadge(e.pillar)}</div>
+      </div>
+    </div>`).join('')}
+  </div>`;
+}).join('');
+
+// Render article ideas — grouped by playbook pillar
+function renderIdeaCard(idea) {
+  const priClass = idea.priority==='HIGH'?'high-priority':'medium-priority';
+  const pbColors = {amber:'#f0a030',blue:'#3a7ed8',teal:'#2abfbf'};
+  const tierLabel = {own:'🎯 Own Now',contest:'⚔️ Contest',monitor:'👁 Monitor'};
+  const statsHtml = idea.keyStats.map(s =>
+    `<div class="idea-stat-chip"><span class="stat-label">${s.label}</span><span class="stat-val">${s.val}</span></div>`
+  ).join('');
+  const outlineHtml = idea.outline.map(o => `<li>${o}</li>`).join('');
+  const draftHtml = [...idea.intro.split('\n\n'), ...idea.body.split('\n\n')]
+    .filter(p => p.trim()).map(p => `<p>${p.trim()}</p>`).join('');
+  return `<div class="idea-card ${priClass}" style="border-left:3px solid ${pbColors[idea.playbookPillar]}">
+    <div class="idea-rank">${idea.rank}</div>
+    <div class="idea-header">
+      <span class="badge badge-${idea.priority.toLowerCase()}">${idea.priority}</span>
+      <span class="pb-badge ${idea.playbookPillar}">${idea.playbookPillarName}</span>
+      <span class="geo-tier ${idea.geoTier}">${tierLabel[idea.geoTier]}</span>
+      <span class="badge" style="background:var(--surface2);color:var(--text-muted);border:1px solid var(--border)">${idea.persona}</span>
+    </div>
+    <div class="idea-title">${idea.title}</div>
+    <div class="idea-hook">${idea.hook}</div>
+
+    <div class="idea-stats-row">${statsHtml}</div>
+
+    <div class="idea-grid">
+      <div class="idea-field">
+        <div class="idea-field-label">GEO Query</div>
+        <div class="idea-field-value" style="font-family:monospace;font-size:12px;color:#6c63ff">"${idea.geoQuery}"</div>
+      </div>
+      <div class="idea-field">
+        <div class="idea-field-label">Calendar Hook</div>
+        <div class="idea-field-value">${idea.calHook}</div>
+      </div>
+      <div class="idea-field">
+        <div class="idea-field-label">Whitespace Filled</div>
+        <div class="idea-field-value">${idea.whitespace}</div>
+      </div>
+    </div>
+
+    <div class="idea-section">
+      <div class="idea-section-toggle open" onclick="toggleSection(this)">
+        📋 Article Outline <span class="toggle-arrow">▾</span>
+      </div>
+      <div class="idea-section-body open">
+        <ol class="idea-outline-list">${outlineHtml}</ol>
+      </div>
+    </div>
+
+    <div class="idea-section">
+      <div class="idea-section-toggle open" onclick="toggleSection(this)">
+        ✍️ Draft Content — Ready to Publish on Substack <span class="toggle-arrow">▾</span>
+      </div>
+      <div class="idea-section-body open">
+        <div class="idea-draft-text">${draftHtml}</div>
+      </div>
+    </div>
+
+    <div class="idea-insider">
+      <div class="idea-insider-label">Glance Insider Angle — What Only We Can Say</div>
+      <div class="idea-insider-text">${idea.insider}</div>
+    </div>
+
+    <div class="idea-cta">
+      <div class="idea-cta-label">Suggested Closing CTA</div>
+      <div class="idea-cta-text">${idea.cta}</div>
+    </div>
+
+    <div class="idea-actions">
+      <button class="copy-hook-btn" onclick="copyHook(this, ${JSON.stringify(idea.hook)})">Copy Opening Hook</button>
+      <button class="copy-hook-btn" onclick="copyHook(this, ${JSON.stringify(idea.intro + '\n\n' + idea.body)})">Copy Draft Body</button>
+      <button class="copy-hook-btn" onclick="copyHook(this, ${JSON.stringify(idea.cta)})">Copy CTA</button>
+    </div>
+  </div>`;
+}
+
+const PILLAR_GROUPS = [
+  { key: 'amber', label: 'Pillar 01 — The Technology of Commerce', color: '#f0a030' },
+  { key: 'blue',  label: 'Pillar 02 — The Business of Commerce',   color: '#3a7ed8' },
+  { key: 'teal',  label: 'Pillar 03 — The Human Experience of Commerce', color: '#2abfbf' }
+];
+
+document.getElementById('ideas-container').innerHTML = PILLAR_GROUPS.map(group => {
+  const groupIdeas = IDEAS.filter(i => i.playbookPillar === group.key);
+  if (!groupIdeas.length) return '';
+  return `
+    <div class="pillar-group-header ${group.key}">
+      <span style="color:${group.color}">${group.label}</span>
+    </div>
+    ${groupIdeas.map(renderIdeaCard).join('')}`;
+}).join('');
+
+// ── WEEK ON WEEK DATA ─────────────────────────────────────────────────────────
+const HISTORY = [
+  {
+    week: "2026-04-28", label: "Apr 28, 2026", current: true,
+    stats: { trends: 5, geo_queries: 12, unexplored: 7, high_volume: 5, substacks: 20, whitespace: 8, events: 15, ideas: 5 },
+    top_idea: { title: "The Last Uncaptured Commerce Moment: How Glance's 5-Agent D0 Feed Sells Before You Unlock Your Phone", pillar: "The Commerce Shift", priority: "HIGH" },
+    top_trend: { title: "Skye Reimagines iPhone Home Screen as AI Agent Layer", score: 10 },
+    top_event: "Google I/O 2026 — May 19, 2026",
+    p1_queries: ["how does AI personalize lockscreen content","agentic commerce platform comparison 2026","what are Zapps in AI commerce","D0 personalization engine ecommerce","pre-installed AI shopping assistant Android OEM","agentic commerce what brands need to know 2026","zero-click buying AI agents"],
+    whitespace: ["Lockscreen as Commerce Surface: The Zero-Scroll Moment","Zapps: The Third Form Factor Beyond Chat and Storefront","D0 Personalization: Why First-Day Data Beats Behavioral History","TV Commerce: The Largest Ambient Surface Nobody Discusses","Pre-Installed AI Commerce: The Distribution Moat Ignored","VTON at OS Scale: Beyond the App","Multi-Agent Orchestration for Personalised Fashion","Brand AI Store: AI-Native Channels Without Big Tech Intermediaries"]
+  }
+];
+
+function renderWoW() {
+  const container = document.getElementById('wow-runs');
+  if (!HISTORY.length) { container.innerHTML = '<div class="wow-empty"><div class="wow-empty-icon">📊</div><div class="wow-empty-title">No history yet</div><div class="wow-empty-sub">Run the pipeline weekly to start seeing trends over time.</div></div>'; return; }
+
+  // Timeline
+  const tlHtml = `<div class="wow-timeline">${HISTORY.map((r,i) => `
+    <div class="wow-timeline-item">
+      <div style="display:flex;align-items:center;width:100%">
+        ${i>0?'<div class="wow-timeline-line"></div>':''}
+        <div class="wow-timeline-dot" style="${r.current?'background:var(--accent2);width:18px;height:18px':''}"></div>
+        ${i<HISTORY.length-1?'<div class="wow-timeline-line"></div>':''}
+      </div>
+      <div class="wow-timeline-label ${r.current?'active':''}">${r.label}${r.current?' ← now':''}</div>
+    </div>`).join('')}</div>`;
+
+  const runsHtml = [...HISTORY].reverse().map(r => `
+    <div class="wow-run" ${r.current?'style="border-color:rgba(108,99,255,.4)"':''}>
+      <div class="wow-run-header">
+        <div>
+          <div class="wow-run-week">Week of ${r.label}</div>
+          <div style="font-size:13px;color:var(--text-muted);margin-top:3px">Saved to output/runs/${r.week}/</div>
+        </div>
+        ${r.current?'<span class="wow-run-badge">Current week</span>':''}
+      </div>
+      <div class="wow-stats">
+        <div class="wow-stat"><div class="wow-stat-num">${r.stats.trends}</div><div class="wow-stat-label">Trends scored</div></div>
+        <div class="wow-stat"><div class="wow-stat-num" style="color:var(--accent2)">${r.stats.ideas}</div><div class="wow-stat-label">Article ideas</div></div>
+        <div class="wow-stat"><div class="wow-stat-num" style="color:var(--accent4)">${r.stats.unexplored}</div><div class="wow-stat-label">Unexplored GEO</div></div>
+        <div class="wow-stat"><div class="wow-stat-num" style="color:var(--accent3)">${r.stats.high_volume}</div><div class="wow-stat-label">High-vol GEO</div></div>
+        <div class="wow-stat"><div class="wow-stat-num">${r.stats.substacks}</div><div class="wow-stat-label">Substacks</div></div>
+        <div class="wow-stat"><div class="wow-stat-num" style="color:var(--accent2)">${r.stats.whitespace}</div><div class="wow-stat-label">Whitespace angles</div></div>
+      </div>
+      <div class="wow-cols">
+        <div>
+          <div class="wow-col-title">🏆 Top article idea</div>
+          <div class="wow-idea">
+            <div class="wow-idea-title">${r.top_idea.title}</div>
+            <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">${pillarBadge(r.top_idea.pillar)}<span class="badge badge-high">${r.top_idea.priority}</span></div>
+          </div>
+          <div style="margin-top:14px">
+            <div class="wow-col-title">📡 Top trend signal</div>
+            <div class="wow-idea" style="border-left-color:var(--accent2)">
+              <div class="wow-idea-title">${r.top_trend.title}</div>
+              <div style="font-size:13px;color:var(--accent2);font-weight:700;margin-top:6px">Relevance score: ${r.top_trend.score}/10</div>
+            </div>
+          </div>
+          <div style="margin-top:14px">
+            <div class="wow-col-title">📅 Key calendar hook</div>
+            <div class="wow-idea" style="border-left-color:var(--accent3)">
+              <div class="wow-idea-title">${r.top_event}</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="wow-col-title">🔑 P1 GEO queries this week</div>
+          <ul class="wow-query-list">${r.p1_queries.map(q=>`<li class="wow-query-item">"${q}"</li>`).join('')}</ul>
+          <div style="margin-top:14px">
+            <div class="wow-col-title">🕳 Whitespace angles discovered</div>
+            <ul class="wow-whitespace-list">${r.whitespace.map(w=>`<li class="wow-whitespace-item">${w}</li>`).join('')}</ul>
+          </div>
+        </div>
+      </div>
+    </div>`).join('');
+
+  container.innerHTML = tlHtml + runsHtml;
+}
+
+// ── INTERACTIONS ──────────────────────────────────────────────────────────────
+function showTab(name, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  if (btn) btn.classList.add('active');
+  if (name === 'wow') renderWoW();
+}
+
+function copyHook(btn, text) {
+  navigator.clipboard.writeText(text).then(()=>{
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(()=>{ btn.textContent='Copy Opening Hook'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+function downloadCSV() {
+  const blob = new Blob([CSV_DATA], {type:'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'OptimiseGEO.csv';
+  a.click();
+}
+
+function toggleSection(toggle) {
+  const body = toggle.nextElementSibling;
+  const isOpen = toggle.classList.contains('open');
+  toggle.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('collapsed');
+}
+
+function enterDashboard() {
+  const overlay = document.getElementById('onboarding');
+  overlay.classList.add('hidden');
+  setTimeout(() => { overlay.style.display = 'none'; }, 420);
+}
+
+document.addEventListener('DOMContentLoaded', initChannelCards);
+</script>
+</body>
+</html>

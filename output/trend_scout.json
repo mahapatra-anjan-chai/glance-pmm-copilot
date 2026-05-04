@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-04-28",
+  "trends": [
+    {
+      "title": "AI Agents Reshape E-commerce: Agentic Shopping Becomes Mainstream",
+      "source": "Exploding Topics / Semrush",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAFjAAM3N61cvf7hjrguq7WmEBHLQahcw2vdWM2MuG2B7DjNTYFpvoiygGskUcCM4LlfoZteqE35-F5GE79rWFhf-SGLziWcYNF8Qwi8l4g4y3eJX11Ga0YNdcfWS5VrfzRgJjDv0DnkfW4HbRtaMmlb9b4uPb",
+      "summary": "AI agents are increasingly trusted by consumers to select products, with surveys indicating agentic shopping is the next big shift in consumer behavior. E-commerce brands are now marketing to AI algorithms, necessitating strategies like answer engine optimization and agentic checkout modules to ensure AI engines can find, understand, and buy from their brand.",
+      "pillar_score": 9,
+      "pillar_tag": "The Commerce Shift",
+      "why_relevant": "Glance needs to optimize lockscreen content and APIs for AI shopping agents to facilitate seamless, AI-driven purchases directly from the lockscreen."
+    },
+    {
+      "title": "Virtual Try-On Goes Chat-Native: AI Styling via Selfies",
+      "source": "FashionWeekOnline",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGG614O5fiRdzQBF_EPUGigtHeIE89mccSlcxiHG2C65GSQYrM821RRB3XyXYJBaEl0Kn_GB_WjLdgcjB76UbfpRyXXAL1JQCAhpBj9H79YpBHvOvs0SoSJboF-8GmAb5vgPq--sm4Irpw2387FwkVqfDHg7VHsli7bUBCJO1XEuntYu2k=",
+      "summary": "Virtual try-on is becoming a default expectation, with Google expanding AI try-on to work from selfies, generating studio-like images across product catalogs. Users are increasingly using conversational flows for shopping, with major platforms rolling out agentic commerce standards and \"buy buttons\" inside AI chat experiences.",
+      "pillar_score": 7,
+      "pillar_tag": "Trends & Culture",
+      "why_relevant": "Glance can integrate virtual try-on capabilities into its lockscreen commerce platform, allowing users to try on clothing and accessories using their selfies directly from the lockscreen."
+    },
+    {
+      "title": "Shoplazza Launches AI-Native Commerce OS with Unified AI Agents",
+      "source": "PR Newswire",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmfW4fhqNsqXd9pv_9DG2ZoZjt_A-89iXUbTMJFVCOIKSeKmc-AHJ4WvkAS-ERPede55-P71Qhk5bSuH52kFahykRU1a3SCXjfICivxCLk2cftOY0rkUVoNrIWPYBog2LKNDimzx9ZD_Vj-_2ghtqENr3qZQcOEe90C34alEzLLRp-BqEPzURMilA1B8EZbCGrOYOIskhGnYVfDMZ4U1q0cT2I9aQMlVLzW_38T-2g-ycXhJ5IbfESZx0NWACxrUKEpEhKZFzoYmItQqx9BQIDTeZRaB_0DoNYbQRG",
+      "summary": "Shoplazza launched the first AI-native commerce operating system with AI agents for the entire e-commerce lifecycle, including store creation, content production, and marketing. The platform uses AI Store Builder to generate fully functional storefronts from natural language input and AdValet, an AI advertising agent, to automate campaign execution.",
+      "pillar_score": 8,
+      "pillar_tag": "Tech Depth",
+      "why_relevant": "Glance can explore partnerships with AI-native platforms like Shoplazza to offer merchants seamless integration with lockscreen commerce, leveraging their AI capabilities for store creation and marketing."
+    },
+    {
+      "title": "Ant International Expands Agentic Commerce in Asia with AI-Driven Payments",
+      "source": "Fintech News Singapore",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEF7U77zsj47BHvRE7Az2iPWVRpDR7Hq0itAbh0v9rGglJxDd9XV2RwaQ0c3fa9AAxuW5Br__zvagnw92kSFNldNng7apMGSIzU8ErqTRcqmZHdrM6djha-RbBm-T-cK8gjst30to0PSRGV6wR5iywHP9V_KrnnO5503B2IrIE=",
+      "summary": "Agentic commerce is rapidly expanding across Asia, prompting Ant International to introduce new payment and AI tools for global merchants. Digital wallets are expected to become the primary payment method for agentic commerce, driven by their adoption within regional superapps and real-time payment networks.",
+      "pillar_score": 7,
+      "pillar_tag": "Market Intelligence",
+      "why_relevant": "Glance should prioritize partnerships with digital wallets and payment providers popular in Asia to facilitate seamless transactions within its lockscreen commerce platform."
+    },
+    {
+      "title": "Skye Reimagines iPhone Home Screen as AI Agent Layer",
+      "source": "Startup Fortune",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJxrnKBlxIU7LhAO9xGIFOaUaCPAmpAuLpqVe5C4263VMVYUO68WpmQE-STjio3QJSe5W8dtxqblraHT5Rrl_6MdIsmyGikrTJq40BgDjoyyWngJ34ESnmk3kAqGPrFapF6ttR-Kw3KB6tSvWc2lG4hCENJSDQMBoCK6lbX3xNrUatSCLQnhOVDRQ=",
+      "summary": "Skye, an AI agentic home screen, raised $3.6 million to replace static icons with proactive intelligence, surfacing context like meeting prep and health alerts. It turns widgets into an ambient AI layer acting on your life, drafting emails and flagging suspicious charges.",
+      "pillar_score": 10,
+      "pillar_tag": "The Commerce Shift",
+      "why_relevant": "This highlights the growing trend of AI-powered ambient computing on mobile devices, validating Glance's lockscreen-centric approach to agentic commerce."
+    }
+  ]
+}

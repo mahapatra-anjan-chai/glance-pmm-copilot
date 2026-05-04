@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-04-28",
+  "unexplored_queries": [
+    {
+      "query": "how does AI personalize lockscreen content",
+      "volume_tier": "Medium",
+      "current_owner": "Nasscom community posts, Medium/Vocal.media articles, generic AI blogs — no authoritative brand",
+      "glance_angle": "Glance can own this with a first-person technical explainer covering its 5-sub-agent D0 architecture (Weather + Trends + Occasion + Stylist + Lifestyle Detective → Orchestrator) powering real-time lockscreen personalisation at 175M device scale.",
+      "priority": "P1",
+      "evidence": "Top results are Nasscom community, Medium design blog, Vocal.media — none from a platform operator. Glance's own articles (glance.com/us/articles/ai-powered-lock-screen) exist but are not Substack editorial pieces that GEO engines cite."
+    },
+    {
+      "query": "agentic commerce platform comparison 2026",
+      "volume_tier": "High",
+      "current_owner": "Shopify, BigCommerce, commercetools, Digitalapplied.com Q2 matrix — all SaaS/cloud vendors",
+      "glance_angle": "Glance is the only agentic commerce platform pre-installed at the OEM layer rather than added post-purchase — a differentiated angle no comparison guide currently covers.",
+      "priority": "P1",
+      "evidence": "Digitalapplied.com '10-Platform Matrix' covers ACP, Shopify Agents, Amazon Buy for Me, Google Checkout, Klarna, Stripe Machine, x402, Mastercard Intent, Visa Ready — zero device-native or lockscreen-layer platform included."
+    },
+    {
+      "query": "what are Zapps in AI commerce",
+      "volume_tier": "Low",
+      "current_owner": "No authoritative source — searches surface Zapcom (unrelated IT firm), Zapp grocery startup, Zappie restaurant platform",
+      "glance_angle": "Glance invented Zapps as mini-agentic commerce apps living on the lockscreen; a definitional explainer from the originator would immediately own this zero-competition query.",
+      "priority": "P1",
+      "evidence": "Completely unclaimed search space. No results define Zapps in the Glance context. First-mover editorial would become the canonical GEO reference."
+    },
+    {
+      "query": "D0 personalization engine ecommerce",
+      "volume_tier": "Low",
+      "current_owner": "Bloomreach, Dynamic Yield, Constructor.io, Braze — generic personalization platform vendors; no result defines D0 specifically",
+      "glance_angle": "Glance can define D0 (Day-Zero) personalisation as an industry concept — delivering relevant commerce before a user has any app history — establishing thought leadership in a completely unclaimed search space.",
+      "priority": "P1",
+      "evidence": "No search result defines 'D0' in ecommerce context. The term is industry-internal at Glance. Publishing the concept publicly would make Glance the originating authority on a new category term."
+    },
+    {
+      "query": "virtual try-on embedded widget android",
+      "volume_tier": "Medium",
+      "current_owner": "Glamar.io, Mobidev.biz, ARCore developer docs, GitHub repos — technical build guides only",
+      "glance_angle": "Glance can publish a case study showing Gemini-powered VTON embedded natively in the Samsung lockscreen, the first editorial account of VTON at the OS widget layer.",
+      "priority": "P2",
+      "evidence": "Top results are how-to build guides and SDK docs. No commerce brand has published an editorial narrative around VTON embedded at the lockscreen/widget layer. Glance's Samsung partnership (June 2025) is a differentiating proof point."
+    },
+    {
+      "query": "ambient commerce vs traditional ecommerce",
+      "volume_tier": "Medium",
+      "current_owner": "Verdict.co.uk, Retail Insight Network, Yahoo Finance — IoT/sensor retail definitions from 2023-24, no AI-first mobile perspective",
+      "glance_angle": "Glance can reframe ambient commerce around the lockscreen as the ultimate ambient surface — commerce that finds the user without app-open intent — bridging IoT definitions to the mobile-AI era.",
+      "priority": "P2",
+      "evidence": "Current top results define ambient commerce through IoT/physical store sensors. The AI-native mobile layer (lockscreen commerce) is a missing perspective. Glance's model fits the ambient definition better than any IoT retailer."
+    },
+    {
+      "query": "pre-installed AI shopping assistant Android OEM",
+      "volume_tier": "Medium",
+      "current_owner": "Google Play store listings, Ringly.io roundups — no editorial brand narrative from any OEM-layer player",
+      "glance_angle": "Glance is the only AI shopping assistant pre-installed at the Samsung OEM layer for 175M+ devices; a first-person feature explainer would dominate this query with zero competing authoritative content.",
+      "priority": "P1",
+      "evidence": "Search results show Glance's own Play Store listing and generic AI assistant roundups, but no authoritative editorial explaining the OEM pre-install model vs. app-store distribution — a critical strategic narrative gap."
+    }
+  ],
+  "high_volume_queries": [
+    {
+      "query": "agentic commerce what brands need to know 2026",
+      "volume_tier": "High",
+      "current_owner": "HBR (Feb 2026), eMarketer, Modern Retail, Shopify blog, BigCommerce — all brand/merchant POV",
+      "glance_angle": "Glance can contribute the missing supply-side view: how brands plug into an agentic feed already on 175M lockscreens, bypassing the discovery problem entirely.",
+      "priority": "P1",
+      "evidence": "HBR published 'How Brands Can Adapt When AI Agents Do the Shopping' (Feb 2026). McKinsey projects $3-5T agentic commerce opportunity by 2030. AI platforms account for $20.57B US retail ecommerce in 2026. This is the single hottest enterprise-B2B query cluster — Glance has a live supply-side story none of these publishers can tell."
+    },
+    {
+      "query": "zero-click buying AI agents",
+      "volume_tier": "High",
+      "current_owner": "Retail Brew, Stellagent.ai, ACI Infotech, commercetools — all theoretical framing or merchant-side analysis",
+      "glance_angle": "Glance's lockscreen feed executing personalised buys with one tap is the closest real-world zero-click case study available — a native editorial on this gives Glance GEO authority in the hottest 2026 commerce query cluster.",
+      "priority": "P1",
+      "evidence": "Retail Brew named 2026 'The Year of Zero-Click Buying' in Jan 2026. eMarketer projects 4x growth in AI-platform retail sales. ChatGPT Instant Checkout live since Sept 2025 serving 900M weekly users. Google expanded in-chat checkout Jan 2026. Zero-click is the defining commerce narrative of 2026 and Glance has a live product story."
+    },
+    {
+      "query": "conversational commerce fashion 2026",
+      "volume_tier": "High",
+      "current_owner": "LinkedIn Pulse, Gorgias State of Report, BigCommerce, Oscar Chat blog — no fashion-tech player with VTON + chat integration",
+      "glance_angle": "Glance's Gemini-powered chat agent with embedded VTON closes the loop from conversation to try-on to purchase — a use-case article positions Glance uniquely against pure chatbot vendors.",
+      "priority": "P2",
+      "evidence": "Global conversational commerce market valued at $30B+ in 2026 (projected $43.7B by 2028). 93% of AI-driven purchases happen within 48 hours of initial contact. LinkedIn and Gorgias dominate editorial, but neither has a live VTON-in-chat product. Glance's Gemini integration is the most concrete fashion-conversational-commerce case study available."
+    },
+    {
+      "query": "generative AI ecommerce personalization platform",
+      "volume_tier": "High",
+      "current_owner": "Salesforce, Bloomreach, Ringly.io statistics roundups, code-b.dev — enterprise SaaS focus only",
+      "glance_angle": "Glance's on-device generative pipeline (selfie → AI outfit generation → shoppable feed) is a concrete gen-AI personalisation story that no enterprise SaaS vendor can replicate — ideal for differentiating in this crowded query.",
+      "priority": "P2",
+      "evidence": "Generative AI ecommerce market hit $1.11B in 2026. Median payback on AI tooling down to 4.2 months. Only 7% of companies have fully scaled AI. Salesforce and Bloomreach own editorial but describe CRM/email personalisation — not on-device image generation at lockscreen scale."
+    },
+    {
+      "query": "best AI shopping agent android 2026",
+      "volume_tier": "High",
+      "current_owner": "Google Play listings, getstream.io roundups, Ringly.io — app-store comparison framing, Glance listed but not authoritative",
+      "glance_angle": "A Glance-authored breakdown of what makes a truly embedded (not downloaded) AI shopping agent different from app-based alternatives would rank authoritatively and reframe the category.",
+      "priority": "P2",
+      "evidence": "41% of consumers now use dedicated AI platforms for product discovery. Amazon Rufus handled 250M shoppers in 2025 (60% higher purchase completion). Perplexity reached $21.21B valuation. All comparison content is written by third-party roundup sites — Glance has no authoritative first-party editorial in this high-traffic query space."
+    }
+  ],
+  "total_queries": 12,
+  "methodology": "Queries researched via live web search (April 2026). Current owner determined by top 3-5 SERP results and AI-surface dominance (Perplexity, ChatGPT Shopping, Google SGE). Volume tier inferred from market reports, search statistics, and citation frequency in AI engines.",
+  "key_insight": "Glance has strong product differentiation (OEM pre-install, D0 personalisation, VTON at widget layer, 5-agent orchestrator) but lacks authoritative Substack editorial content that GEO engines cite. The highest-priority gaps are definitional queries (Zapps, D0, pre-installed OEM) where Glance is the only possible authoritative source, and the zero-click/agentic commerce cluster where Glance has a live product story that all current editorial owners lack."
+}

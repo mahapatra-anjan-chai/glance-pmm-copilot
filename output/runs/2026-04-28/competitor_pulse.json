@@ -1,0 +1,439 @@
+{
+  "generated_at": "2026-04-28",
+  "substacks_analysed": [
+    {
+      "name": "The Agentic Commerce Frontier",
+      "url": "https://agentcommerce.substack.com",
+      "domain": "AgenticCommerce",
+      "approximate_subscribers": "unknown — specialist newsletter, ~5K–15K est.",
+      "primary_focus": "Weekly tracker of agentic commerce infrastructure, payment protocols, merchant readiness, and trust frameworks",
+      "recent_posts": [
+        "The Agentic Commerce Frontier | April 21–26 2026: UCP council expansion (Amazon, Meta, Microsoft, Salesforce, Stripe join); Alipay AI Pay for autonomous agents; Adyen acquires Talon.One for €750M; Fime FACT trust framework; Ulta+Google agentic checkout",
+        "The Agentic Commerce Frontier | April 14–20 2026: AmEx ACE Developer Kit; Mastercard+Lobster verifiable agent payments; Nevermined + Visa Intelligent Commerce; Adobe retail data showing AI traffic +393% YoY and 42% better conversion; regional governance divergence US/EU/APAC",
+        "The Agentic Commerce Frontier | April 7–13 2026: Visa Intelligent Commerce Connect launch; Tesco AI assistant trial (meal planning focus); Frasers Group 25% conversion lift; fraud spike — agentic traffic +450%, bot attacks +59%; consumer adoption 'low and stagnant'; 75% distrust sponsored AI recs",
+        "The Agentic Commerce Frontier | March 25–April 7 2026: Stripe+Meta Facebook-native checkout; Gap conversational checkout in Google Gemini; Shopify merchants selling via ChatGPT/Copilot/Gemini; Mastercard+UnionPay live agentic transactions; OpenAI product discovery side-by-side; loyalty delegation interest at 70%",
+        "The Agentic Commerce Ecosystem Map — March 31 2026 UPDATE: ecosystem spanning trust, identity, ads, discovery, operations, agent marketplaces; new entrants Tailed AI, Minivet AI, Truvera IQ, Prove, Goodie, Pencil, MadgicX"
+      ],
+      "post_count_last_28_days": 5
+    },
+    {
+      "name": "Agentic Commerce Review",
+      "url": "https://agenticcommercereview.substack.com",
+      "domain": "AgenticCommerce",
+      "approximate_subscribers": "unknown — emerging newsletter, ~2K–8K est.",
+      "primary_focus": "Executive-level analysis of AI in ecommerce, consumer trust, payment infrastructure, and the new shopping funnel",
+      "recent_posts": [
+        "AI in Ecommerce in 2026: The New Shopping Funnel (April 9): Three simultaneous shifts — AI-powered discovery, agentic payment protocols, AI customer service; McKinsey projects $1T in US B2C agentic commerce by 2030; 37% of US AI users start product searches on AI tools",
+        "The Trust Gap (April 8): 82% of consumers prefer human customer support yet AI satisfaction scores approach parity; gap between stated preference and revealed behavior",
+        "Where AI Agents Actually Work (April 7): Anthropic data — software engineering ~50% of all agentic tool calls; customer service and commerce remain in single digits despite technical capability",
+        "Agentic Payment Infrastructure (April 3): AP2/TAP/UCP protocol comparison; OpenAI failed Instant Checkout contrasted with protocol-first approach",
+        "The Consent Economy (April 2): Consumer willingness to delegate purchasing — reluctance nearly halved in five months; demand for bounded delegation with budget caps and category restrictions",
+        "Dark AI (April 1): Attribution blind spot — 50% of consumers use AI for product research yet <1% of traffic tagged as AI-referred in analytics"
+      ],
+      "post_count_last_28_days": 6
+    },
+    {
+      "name": "Next Futures",
+      "url": "https://nextfutures.substack.com",
+      "domain": "AgenticCommerce",
+      "approximate_subscribers": "unknown — general futures/strategy newsletter",
+      "primary_focus": "AI and future-of-work strategy with periodic commerce coverage",
+      "recent_posts": [
+        "Agentic Commerce: Why Value and Trust May Become the New Scorecard of Business (April 15): AI agents reshape ecommerce by prioritizing measurable value over marketing; outcome-driven organization required; trust as infrastructure (reliability, transparency, capability, humanity)",
+        "From Mood Board to Move-In: AI's Growing Role in Home Renovation (April 22): AI as DIY project companion — concept development, materials recommendations, troubleshooting",
+        "The Toggle Tax (April 8): Workplace productivity loss from app switching — workers toggle 1,200+ times daily; 23-minute recovery time after interruption",
+        "Looking Forward and Backward: AI and Memory (April 1): AI-reconstructed personal memories; therapeutic dementia applications; risks of manufactured nostalgia"
+      ],
+      "post_count_last_28_days": 4
+    },
+    {
+      "name": "Robonomics",
+      "url": "https://robonomics.substack.com",
+      "domain": "AgenticCommerce",
+      "approximate_subscribers": "unknown — crypto/autonomy-focused newsletter",
+      "primary_focus": "Agentic commerce through a decentralized/crypto lens; B2B applications; buyer power shifts",
+      "recent_posts": [
+        "Agentic Commerce | 2026.03 (March 2026): Amazon Rufus — $10B+ incremental annualized sales, 250M users; Shopify AI orders up 15x since Jan 2025; Alibaba Accio 1M to 2M users; B2B sourcing as near-term agentic sweet spot; PayPal displacement risk from OS-native payment rails"
+      ],
+      "post_count_last_28_days": 1
+    },
+    {
+      "name": "Interconnects (Nathan Lambert)",
+      "url": "https://www.interconnects.ai",
+      "domain": "AI",
+      "approximate_subscribers": "~50K–100K est. (active technical AI community)",
+      "primary_focus": "LLM post-training, open vs closed model dynamics, AI research and policy",
+      "recent_posts": [
+        "Reading today's open-closed performance gap (April 20): Nuance in open vs closed benchmarks; Gemini 3 benchmark strength vs deployment relevance gap",
+        "My bets on open models, mid-2026 (April 15): 12 beliefs on open/closed model landscape; Chinese labs face funding difficulties; US models gain 2027 momentum",
+        "What I've been building: ATOM Report, post-training course, finishing my book (April 14): Open language model ecosystem measurement; RLHF book pre-order; post-training lecture series",
+        "The inevitable need for an open model consortium (April 11): Consortium funding model for near-frontier open models; Nvidia Nemotron as early attempt",
+        "Claude Mythos and misguided open-weight fearmongering (April 9): Cybersecurity capability assessment vs blanket open model restrictions",
+        "Gemma 4 and what makes an open model succeed (April 3): Licensing, tooling stability, fine-tuneability as success factors beyond benchmark performance"
+      ],
+      "post_count_last_28_days": 6
+    },
+    {
+      "name": "Ben's Bites",
+      "url": "https://www.bensbites.com",
+      "domain": "AI",
+      "approximate_subscribers": "~500K+ (major AI newsletter, moved off Substack)",
+      "primary_focus": "Daily AI news and tool releases — broad coverage of model releases, products, agents",
+      "recent_posts": [
+        "ChatGPT's Nano Banana (April 23): ChatGPT Images 2.0 — no-typo text rendering, UI screenshot generation, personalized styling recommendations",
+        "That's my designer – Claude (April 21): Anthropic Claude Design with Opus 4.7 — canvas interface, wireframes, prototypes",
+        "My cheatsheet for a clean context (April 16): Context window management; Claude Code routines for scheduled agent execution",
+        "Big lab leaks (April 14): Claude Cowork GA; OpenAI tiered compute plans; enterprise demand for 'headless' SaaS optimized for agent integration",
+        "Anthropic built a model too risky to release (April 9): Claude Mythos — 77.8% SWE-bench Pro; Project Glasswing $100M cybersecurity coalition"
+      ],
+      "post_count_last_28_days": 5
+    },
+    {
+      "name": "AI Supremacy (Michael Spencer)",
+      "url": "https://www.ai-supremacy.com",
+      "domain": "AI",
+      "approximate_subscribers": "~250K est.",
+      "primary_focus": "AI market trends, Big Tech analysis, future of work, enterprise AI",
+      "recent_posts": [
+        "Massive Layoffs, Meta Surveillance, DeepSeek-V4 in AI News (April 24): Meta mandatory data harvesting for AI training; DeepSeek-V4 developments; industry layoffs",
+        "Why Cursor is the Enterprise AI Darkhorse of Generative AI (April 22): Cursor-SpaceX partnership; agent-first interface; parallel AI development architecture",
+        "Summary of the AI Index Report 2026 (April 20): Stanford AI Index infographics; funding trends; capability vs governance gap"
+      ],
+      "post_count_last_28_days": 3
+    },
+    {
+      "name": "State of AI (Nathan Benaich)",
+      "url": "https://nathanbenaich.substack.com",
+      "domain": "AI",
+      "approximate_subscribers": "~100K+ est.",
+      "primary_focus": "Quarterly/periodic deep-dive on AI research, funding, geopolitics, and startup ecosystem",
+      "recent_posts": [
+        "State of AI: April 2026 Newsletter (April 19): US-China AI tensions; Anthropic revenue $14B→$19B; Chinese 'industrial-scale' model distillation campaigns; Iran strike on AWS data centers; GLM-5.1 at 94.6% frontier performance at 1/15th price; RAAIS 2026 speakers announced",
+        "Announcing RAAIS 2026 headline speakers (April 19): RAAIS 2026 June 12 London; speakers from Google DeepMind, Odyssey, Starcloud across frontier AI, open-ended agents, world models"
+      ],
+      "post_count_last_28_days": 2
+    },
+    {
+      "name": "AI Agents Simplified",
+      "url": "https://aiagentssimplified.substack.com",
+      "domain": "AI",
+      "approximate_subscribers": "~10K–30K est.",
+      "primary_focus": "Practical AI agent architecture, use cases, and tutorials",
+      "recent_posts": [
+        "Claude and the New Wave of AI (April 24): Claude Opus 4.7, Google Lyria 3, GLM-5.1 for extended autonomous task execution; models increasingly agentic, multimodal, safety-aware",
+        "2026's Q1 AI Updates (April 24): GPT-5.4 launch, ChatGPT ads, Apple-Google Gemini-Siri partnership, mobile AI revenue tripling to $5B, Claude Code agentic OS design",
+        "AI Agent Teams (April 22): Multi-agent architecture — 7 roles: Doer, Planner, Tool Operator, Learner, Feedback/Critic, Supervisor, Presenter",
+        "How AI Agents Helped Me Build a CDN in 3.5 Days (April 17): CDN-Folk project — distributed decision-making systems; AI agent-accelerated architecture design"
+      ],
+      "post_count_last_28_days": 4
+    },
+    {
+      "name": "Lenny's Newsletter",
+      "url": "https://www.lennysnewsletter.com",
+      "domain": "AI",
+      "approximate_subscribers": "~700K+ est. (top product/AI newsletter)",
+      "primary_focus": "Product management, AI-native product building, startup growth",
+      "recent_posts": [
+        "This week on How I AI: GPT 5.5, Claude Design, GPT Images 2.0 (April 27): Weekly AI tool reviews including personalized styling recommendations from ChatGPT Images 2.0",
+        "From a $6.90 newsletter to $3M API: How a non-coder built Memelord (April 27): Agentic marketing product; vibe-coding for marketers",
+        "Snapchat CEO: Why distribution has become the most important moat (April 26): Distribution > software innovation; hardware as last sustainable competitive moat",
+        "GPT 5.5 just did what no other model could (April 23): Autonomous multi-hour workflows; hardware reverse-engineering; premium AI ROI",
+        "How Anthropic's product team moves faster than anyone else (April 23): Claude Code PM philosophy; AI-native shipping cadence",
+        "What Claude Design is actually good for (April 22): Design systems as first-class citizens; traditional tools maintain iteration advantages"
+      ],
+      "post_count_last_28_days": 6
+    },
+    {
+      "name": "Stratechery (Ben Thompson)",
+      "url": "https://stratechery.com",
+      "domain": "AI",
+      "approximate_subscribers": "~200K+ est. (premium tech strategy)",
+      "primary_focus": "Tech strategy, platform economics, AI infrastructure, Big Tech analysis",
+      "recent_posts": [
+        "AI Hardware, Meta Display, Redefining VR and AR (April 27): Meta Ray-Ban Display hands-on; AR/VR reassessment",
+        "An Interview with Google Cloud CEO Thomas Kurian About the Agentic Moment (April 23): Google's enterprise AI agent shift; cloud security integration; competitive positioning",
+        "John Ternus and Apple's Hardware-Defined Future, SpaceXAI and Cursor (April 22): Apple hardware differentiation under new CEO; AI landscape implications",
+        "Tim Cook's Impeccable Timing (April 21): Cook's 15-year Apple tenure retrospective",
+        "TSMC Earnings, New N3 Fabs, The Nvidia Ramp (April 20): AI infrastructure economics; skepticism on AI-driven growth narratives",
+        "2026.17: He Came, He Saw, He Cooked (April 24): Tim Cook departure, SpaceX-Cursor, semiconductor geopolitics"
+      ],
+      "post_count_last_28_days": 6
+    },
+    {
+      "name": "RetailBoss",
+      "url": "https://retailboss.substack.com",
+      "domain": "EcommerceTech",
+      "approximate_subscribers": "~10K–25K est.",
+      "primary_focus": "Retail AI news, DTC brand strategies, weekly retail digest",
+      "recent_posts": [
+        "This Week in Retail: Nike Returns to SoHo, Revolve Bets on Agentic AI, Kering Reshapes Its Board (April 24): Revolve Q1 — owned brands, agentic AI, physical stores as growth pillars; Nike SoHo 'adaptable editorial platform'; Kering board restructuring",
+        "This Week in Retail: Hermès Opens Brick Workshop in Normandie, Miu Miu Opens a Literary Club (April 26): Milan Design Week — craft investment, geographic expansion, cultural programming in luxury retail",
+        "Shoptalk Spring 2026: Sephora Goes ChatGPT, Gap Inc. Bets on AI Fit, Reddit+Shopify, FedEx (March/April): Gap AI fit recommendations + conversational checkout; Sephora in ChatGPT; Reddit-Shopify integration for community-driven product discovery"
+      ],
+      "post_count_last_28_days": 3
+    },
+    {
+      "name": "All Things Fashion Tech",
+      "url": "https://allthingsfashiontech.substack.com",
+      "domain": "EcommerceTech",
+      "approximate_subscribers": "~5K–20K est.",
+      "primary_focus": "Fashion tech, virtual try-on, AI in apparel retail, wearables",
+      "recent_posts": [
+        "One Size Doesn't Fit All in Eyewear (April 27): French startup Visages — proper eyewear fit for customers via AI",
+        "Curated Commerce: Beaded, Embroidered & Embellished (April 26): Seasonal trend report — craft-led surface decoration dominant across fashion capitals",
+        "Who Is Swan Beauty? (April 25): AI-powered vanity mirror startup by Colby Mitchell; acquired luxury retailer Cos Bar; $795/device launch Jan 2026",
+        "Legacy Brands Are Fully Embracing AI (April 13): Gap — first fashion checkout in Google Gemini; Levi's 'Imagine on Me' generative virtual try-on; Macy's 'Ask Macy's' (Gemini-powered) 4.75x spend lift; Frasers Group 'Ask Frasers'; unspun domestic automated apparel hubs",
+        "Gucci AI Glasses Coming 2027, Meta Moved into 5th Avenue (April 19): Kering+Google Android XR Gucci glasses 2027; Meta Lab flagship 5th Avenue; Meta fashion hires (Williams, Travis Scott, A$AP Rocky)",
+        "Jennie Just Chose Ray-Ban Meta Over Gentle Monster (April 13): BLACKPINK Jennie as global Ray-Ban Meta ambassador; cultural distribution as key factor for AI glasses adoption"
+      ],
+      "post_count_last_28_days": 6
+    },
+    {
+      "name": "The Digital Runway",
+      "url": "https://thedigitalrunway.substack.com",
+      "domain": "EcommerceTech",
+      "approximate_subscribers": "~5K–15K est.",
+      "primary_focus": "Fashion tech, AI in retail, wearable tech, consumer shopping trends",
+      "recent_posts": [
+        "5 AI Shopping Trends from Shoptalk 2026 You Need to Know (April 2026): Sephora inside ChatGPT; Gap first fashion checkout in Google Gemini; Walmart AI agent across platforms; Google vs OpenAI divergence — 'brands choosing Google want to own the transaction, brands choosing ChatGPT want to own the conversation'; Bold Metrics for sizing; only 12 Shopify merchants adopted OpenAI Instant Checkout"
+      ],
+      "post_count_last_28_days": 1
+    },
+    {
+      "name": "Kit Campoy Retail",
+      "url": "https://kitcampoy.substack.com",
+      "domain": "EcommerceTech",
+      "approximate_subscribers": "~5K–15K est.",
+      "primary_focus": "Frontline retail operations, retail leadership, conference analysis",
+      "recent_posts": [
+        "Shoptalk 2026 — What I Heard, What it Meant, and What Nobody Said Out Loud (March 31): Physical stores as experiential destinations; Dutch Bros and Glossier people-first strategies; AI and loyalty trends; frontline team prioritization",
+        "Your Lean Operating Budgets are Actually Just Broken (April 23): Retail payroll unsustainability; 200-hour weekly store operations; understaffing human toll",
+        "What Are Retail Leaders Not Saying? (April 25): Payroll constraints, private equity loyalty impact, leadership burnout",
+        "The Private Equity Rescue is a Problem in Retail (April 16): PE takeover harm via debt loading; Toys R Us case study",
+        "Can We Talk About What's Actually Wrong With Retail Conferences? (April 9): Conference keynote accountability gap; lack of genuine problem-solving"
+      ],
+      "post_count_last_28_days": 5
+    },
+    {
+      "name": "Prof G Media (Scott Galloway)",
+      "url": "https://www.profgmedia.com",
+      "domain": "AI",
+      "approximate_subscribers": "~500K+ est.",
+      "primary_focus": "Business strategy, Big Tech critique, geopolitics, markets",
+      "recent_posts": [
+        "The U.S. vs China AI Battle Is Getting Ugly (April 28): US-China AI model theft; DeepSeek; Wall Street China financial exposure",
+        "SpaceX's $60 Billion AI Bet (April 27): SpaceX AI acquisition pre-IPO; Iran war market impacts",
+        "The Longevity Economy Is Built for the Rich (April 27): GLP-1 and peptide access inequality"
+      ],
+      "post_count_last_28_days": 3
+    },
+    {
+      "name": "Modern Retail",
+      "url": "https://www.modernretail.co",
+      "domain": "EcommerceTech",
+      "approximate_subscribers": "~50K+ est. (industry trade publication)",
+      "primary_focus": "Original retail journalism — Amazon impact, DTC, retail media, omnichannel",
+      "recent_posts": [
+        "Why Agentic Storefronts Are the Future of Commerce (April 23): Google and Microsoft integrating AI agents into search, browsing, checkout; predictive commerce",
+        "Williams-Sonoma Relaunches Dormify (April 27): 3D bed visualizer; omnichannel pickup; Gen Z digital shopping",
+        "Starbucks Ends Coffee Loop Rewards Pilot (April 24): Six-month loyalty program test discontinuation",
+        "How Urban Outfitters Co-Creates Campaigns With Gen Z (April 28): Gen Z co-creation vs marketing-at; digital saturation engagement strategies",
+        "Quip's Latest Ad Wasn't AI-Generated (April 28): Hyper-stylized practical effects triggering AI assumptions"
+      ],
+      "post_count_last_28_days": 5
+    },
+    {
+      "name": "2PM (Web Smith)",
+      "url": "https://2pml.com",
+      "domain": "EcommerceTech",
+      "approximate_subscribers": "~30K–50K est.",
+      "primary_focus": "Commerce-media intersection, brand strategy, DTC structural trends",
+      "recent_posts": [
+        "The Drop Economy (April 17): Palantir merch store as brand-equity vehicle; answer engine optimization; scarcity mechanics; Shopify-powered narrative vocabulary; CEO-centric messaging compound effect on stock performance"
+      ],
+      "post_count_last_28_days": 1
+    },
+    {
+      "name": "Bizwise / AI Commerce is Breaking Things",
+      "url": "https://bizwise.substack.com",
+      "domain": "AgenticCommerce",
+      "approximate_subscribers": "~2K–8K est.",
+      "primary_focus": "AI commerce disruption analysis for operators and founders",
+      "recent_posts": [
+        "AI Commerce Is Breaking Things (And That's the Point) (April 2026): AI commerce disruption as intentional deconstruction of legacy models; emphasis on operators adapting vs resisting"
+      ],
+      "post_count_last_28_days": 1
+    },
+    {
+      "name": "Optoforesight",
+      "url": "https://optoforesight.substack.com",
+      "domain": "AgenticCommerce",
+      "approximate_subscribers": "~3K–10K est.",
+      "primary_focus": "Investment and strategic analysis of agentic commerce, retail platform dynamics",
+      "recent_posts": [
+        "Agentic Commerce: How META, SHOP and WMT Are Shaping the Future of Online Shopping (March–April 2026): Meta, Shopify, Walmart competitive positioning in agentic commerce; discovery layer control as strategic moat; advertising revenue implications"
+      ],
+      "post_count_last_28_days": 1
+    },
+    {
+      "name": "The Rundown AI",
+      "url": "https://www.therundown.ai",
+      "domain": "AI",
+      "approximate_subscribers": "~2M+ (largest AI newsletter by subscribers)",
+      "primary_focus": "Daily AI news digest — model releases, tools, products for a broad audience",
+      "recent_posts": [
+        "Anthropic's new AI is too powerful for the world (April 8): Claude Mythos Preview — Project Glasswing; $100M credits for cybersecurity coalition; vulnerability discovery capabilities",
+        "OpenAI's 'Spud' dethrones Claude on the frontier (April 2026): GPT-5.5 Pro capabilities for autonomous multi-hour workflows",
+        "DeepSeek resurfaces with cheap, capable V4 (April 2026): DeepSeek-V4 competitive positioning; open-source dynamics"
+      ],
+      "post_count_last_28_days": 3
+    }
+  ],
+  "whitespace_angles": [
+    {
+      "angle": "Lockscreen as Commerce Surface: The Zero-Scroll Moment",
+      "why_whitespace": "Zero Substack newsletters in the 28-day corpus mention lockscreen commerce, ambient pre-app commerce, or shopping surfaces that activate before the user opens an app. All coverage assumes the user has already launched an app, chat interface, or browser. The concept of commerce triggered by device idle state — weather-aware outfit surfacing, occasion-triggered gift prompts, trend-reactive fashion drops on the lockscreen — is completely absent.",
+      "glance_insider_take": "Glance operates on 175M+ Android lockscreens. The D0 feed's five sub-agents (Weather, Trends, Occasion, Physical Stylist, Lifestyle Detective) generate shoppable fashion collections before the user has intent. This is pre-intent commerce — fundamentally different from every agent commerce model being discussed (which all require the user to query first). Glance can publish: 'The last uncaptured commerce moment: the 3 seconds before you unlock your phone.'"
+    },
+    {
+      "angle": "Multi-Agent Orchestration for Personalised Fashion: The Sub-Agent Architecture Nobody Is Mapping",
+      "why_whitespace": "AI agent architecture discussions (Interconnects, AI Agents Simplified, Lenny's Newsletter) focus on enterprise orchestration, coding agents, and horizontal task decomposition. Agentic commerce newsletters (Agentic Commerce Frontier, Agentic Commerce Review) focus on payment protocols and merchant storefronts. No newsletter has published a deep-dive on domain-specific agent orchestrators for fashion — where context signals from multiple sub-agents (weather API, trending styles, personal occasion data, body profile, lifestyle patterns) are fused by an orchestrator to generate a personalised product recommendation.",
+      "glance_insider_take": "Glance runs exactly this architecture in production at scale: 5 specialist sub-agents feeding an orchestrator that produces daily personalised fashion collections for 175M users. This is a publishable technical case study on fashion-vertical agentic orchestration — the kind of real-world deployment data the Interconnects and AI Agents Simplified audiences are hungry for."
+    },
+    {
+      "angle": "Virtual Try-On at OS Scale: VTON Beyond the App",
+      "why_whitespace": "VTON coverage exists (All Things Fashion Tech, The Digital Runway) but is uniformly framed as an in-app or in-browser feature — a retailer's tool on their own site or within a chat interface. Nobody has written about VTON embedded at the operating system level, accessible across any surface (lockscreen, agentic chat, TV widget) without app installation, or about what VTON looks like when powered by Gemini agents at device-native speed.",
+      "glance_insider_take": "Glance's VTON via Gemini agents operates outside the app paradigm entirely. Users can try on fashion items within an agentic chat surface that is pre-installed on the device. The angle: 'Why VTON adoption stalls at 8% in-app but could reach 60%+ when it's zero-install and surface-agnostic.' Directly addresses the merchant readiness gap (66/100 machine readability score flagged by Adobe) with a device-first counter-narrative."
+    },
+    {
+      "angle": "Pre-Installed AI Commerce: The Distribution Moat Every Protocol Wars Newsletter Ignores",
+      "why_whitespace": "Every newsletter covering the UCP/ACP/AP2 protocol wars (Agentic Commerce Frontier, Agentic Commerce Review, Robonomics) frames discovery as a problem to be solved by app integrations, search integrations, or chat integrations — all requiring the user to install, activate, or query. None address the category of AI commerce that is pre-installed by OEM agreement at the OS level, removing both the app-install and the query barriers. The Snapchat CEO's comment in Lenny's Newsletter ('distribution is now the most important moat') points directly at this gap without naming it.",
+      "glance_insider_take": "Glance has what every protocol builder is trying to construct post-hoc: guaranteed D0 distribution. At device activation, Glance is already live on 175M screens. The content angle: 'Why the real winner of the agentic commerce wars might not be the best protocol — it might be whoever already lives on the screen before the user opens anything.' This directly engages the Snapchat CEO distribution thesis with a concrete counterexample."
+    },
+    {
+      "angle": "Zapps and Mini-App Commerce: The Third Form Factor Beyond Chat and Storefront",
+      "why_whitespace": "Agentic commerce coverage is binary: either chat-based (ChatGPT/Gemini storefronts) or protocol-based (UCP, agentic storefronts). No newsletter has covered mini-app-style commerce experiences (branded lightweight apps that launch within a feed or widget without full app install) as a distinct interaction model. The concept of Zapps — brand-specific interactive commerce units that run inside a host surface — is completely absent from the discourse.",
+      "glance_insider_take": "Glance's Zapps allow brands to deploy interactive commerce units directly on lockscreen and TV surfaces. This is a third interaction paradigm for agentic commerce that sits between the 'full app' and 'pure chat' models being debated. Publishable angle: 'Beyond chat and storefront: the mini-app layer that makes agentic commerce work on non-keyboard surfaces.'"
+    },
+    {
+      "angle": "TV and Connected-Screen Commerce: The Largest Ambient Surface Nobody Discusses",
+      "why_whitespace": "Modern Retail, All Things Fashion Tech, The Digital Runway, and Agentic Commerce Frontier all focus on mobile and desktop as the primary commerce surfaces. Connected TV (CTV) as a commerce surface is mentioned only in the context of shoppable TV ads (not AI-native agentic commerce). No newsletter covers AI-orchestrated commerce widgets on smart TVs — where passive viewing time could trigger contextually relevant product recommendations.",
+      "glance_insider_take": "Glance's TV widgets bring AI commerce to the largest screen in the home. At a moment when all discourse centers on phone-first agentic commerce, Glance is quietly building the ambient TV commerce layer. Content angle: 'The 65-inch commerce surface everyone forgot: why the living room TV is agentic commerce's next frontier.'"
+    },
+    {
+      "angle": "D0 Personalization: Why First-Day Data Beats Accumulated Behavioral History",
+      "why_whitespace": "Personalization coverage (Agentic Commerce Review's 'consent economy,' Agentic Commerce Frontier's loyalty integration data) universally assumes personalization improves over time as behavioral data accumulates. No newsletter has challenged this model by arguing that multi-signal inference at device activation (D0) — using weather, occasion, trending context, physical data, and lifestyle signals as proxy variables — can outperform weeks of accumulated click history for fashion recommendation.",
+      "glance_insider_take": "Glance's D0 feed generates relevant fashion collections on day zero of device use, before any explicit behavioral data exists. This is counter to every 'cold start problem' narrative in commerce AI. Publishable angle: 'Why the cold start problem in commerce AI is actually a warm inference problem — and how ambient context signals solve it without surveillance.'"
+    },
+    {
+      "angle": "Brand AI Store: AI-Native Brand Channels Beyond Retail Storefronts",
+      "why_whitespace": "Brand commerce integration coverage focuses on retailers building checkout inside ChatGPT, Gemini, or Copilot (Sephora, Gap, Walmart). No newsletter covers the inverse model: brands building their own AI-native discovery and commerce channels that are not dependent on Big Tech chat platforms as the distribution intermediary.",
+      "glance_insider_take": "Glance's Brand AI Store gives brands a direct AI commerce channel on the device surface, bypassing both traditional retail storefronts and the ChatGPT/Gemini intermediaries. Content angle: 'What if brands didn't have to go through ChatGPT? The case for AI-native brand channels that live on the device, not the cloud.'"
+    }
+  ],
+  "momentum_angles": [
+    {
+      "angle": "Payment Protocol Wars: UCP vs ACP vs AP2 — Infrastructure Standardization for Agent Commerce",
+      "substack_count": 5,
+      "substacks_covering": [
+        "The Agentic Commerce Frontier",
+        "Agentic Commerce Review",
+        "Robonomics",
+        "Optoforesight",
+        "Bizwise"
+      ],
+      "summary": "Every agentic commerce newsletter is covering the emergence of competing payment and commerce protocols (Universal Commerce Protocol, Agentic Commerce Protocol, AP2) as the infrastructure layer enabling AI agents to transact. Big platforms (Amazon, Meta, Microsoft, Salesforce, Stripe) joining the UCP Tech Council in April 2026 signals industry convergence. Fraud is a concurrent theme — agentic traffic up 450%, bot attacks up 59%.",
+      "recommendation": "respond_with_unique_angle",
+      "glance_angle": "Glance can respond with an insider angle on what payment delegation looks like when the agent already lives on the device — the trust model is fundamentally different when the commerce surface is pre-installed vs when an external agent requests payment permission. This avoids the crowded protocol-comparison space while contributing novel first-principles thinking."
+    },
+    {
+      "angle": "Big Retail AI Integration: Sephora/Gap/Walmart Moving Into ChatGPT and Gemini",
+      "substack_count": 6,
+      "substacks_covering": [
+        "The Agentic Commerce Frontier",
+        "Agentic Commerce Review",
+        "RetailBoss",
+        "The Digital Runway",
+        "All Things Fashion Tech",
+        "Modern Retail"
+      ],
+      "summary": "The dominant retail story of April 2026 is major brands integrating AI commerce: Sephora in ChatGPT, Gap as first fashion brand in Google Gemini checkout, Walmart deploying proprietary agents across platforms. This is the most covered angle in the corpus. Adobe data (AI traffic +393% YoY, 42% better conversion for AI-referred visitors) provides the quantitative fuel.",
+      "recommendation": "avoid_crowded",
+      "glance_angle": "This space is saturated. Glance should not publish 'X brand joins ChatGPT commerce' content. The opportunity is to reframe: while these brands race to enter chat platforms, Glance enables the same brands to reach users before they open any app. Position as the pre-query commerce layer vs post-query chat commerce."
+    },
+    {
+      "angle": "Virtual Try-On as Fashion Commerce Conversion Tool",
+      "substack_count": 4,
+      "substacks_covering": [
+        "All Things Fashion Tech",
+        "The Digital Runway",
+        "RetailBoss",
+        "Agentic Commerce Review"
+      ],
+      "summary": "VTON coverage is accelerating: Levi's 'Imagine on Me' generative try-on, Nvidia+Catches Realfit physics-based try-on, Bold Metrics sizing AI, Gap AI fit recommendations. Framing is consistently in-app or in-browser. The conversion benefit is well-documented but VTON adoption rates remain low due to friction of accessing the feature.",
+      "recommendation": "respond_with_unique_angle",
+      "glance_angle": "Glance's VTON operates via Gemini agents within agentic chat that is pre-installed — zero-install, zero-friction. Respond to the VTON momentum with: 'The reason VTON hasn't reached mainstream adoption isn't the technology — it's the 7-step funnel to reach it. Here's what VTON looks like at OS level with zero-install access.'"
+    },
+    {
+      "angle": "AI Agent Trust and Consumer Consent Architecture",
+      "substack_count": 4,
+      "substacks_covering": [
+        "Agentic Commerce Review",
+        "The Agentic Commerce Frontier",
+        "Next Futures",
+        "Optoforesight"
+      ],
+      "summary": "Consumer willingness to delegate purchases to AI is growing (reluctance nearly halved in 5 months) but bounded — consumers want budget caps, category restrictions, and revocable permission. Trust frameworks (Fime FACT, Mastercard verifiable approval, AmEx ACE) are emerging as infrastructure. 75% distrust sponsored recommendations from AI agents.",
+      "recommendation": "lean_in",
+      "glance_angle": "Glance's pre-installed model creates a distinct trust dynamic: the commerce agent is placed by the OEM at device manufacture, making the trust decision a hardware purchase decision rather than a per-app permission grant. This is fundamentally different from 'delegated purchasing' and worthy of a standalone explainer."
+    },
+    {
+      "angle": "Discovery Surface Shift: AI Traffic Outperforming Traditional Channels",
+      "substack_count": 4,
+      "substacks_covering": [
+        "The Agentic Commerce Frontier",
+        "Agentic Commerce Review",
+        "Modern Retail",
+        "Robonomics"
+      ],
+      "summary": "Adobe's Q1 2026 data (AI traffic to US retail +393% YoY; AI-referred visitors converting 42% better) is being cited across multiple newsletters. Simultaneously, the 'dark AI' attribution blind spot (50% of product research via AI but <1% tagged as AI-referred in analytics) creates a measurement crisis for retailers. Shopify reported AI-driven orders up 15x since Jan 2025.",
+      "recommendation": "lean_in",
+      "glance_angle": "Glance can contribute a data-forward angle on lockscreen-originated commerce: what does attribution look like when the discovery happens before the user opens any tracked surface? The 'dark AI' problem is even more pronounced for ambient/pre-app commerce. Glance can turn this measurement challenge into a thought-leadership narrative about why first-party device-level signals are the answer."
+    },
+    {
+      "angle": "Wearable AI Commerce: Ray-Ban Meta, AI Glasses, and Fashion-Tech Convergence",
+      "substack_count": 3,
+      "substacks_covering": [
+        "All Things Fashion Tech",
+        "The Digital Runway",
+        "Stratechery"
+      ],
+      "summary": "AI glasses are gaining mainstream fashion credibility: Jennie (BLACKPINK) as Ray-Ban Meta ambassador, Gucci x Google AI glasses announced for 2027, Meta opening 5th Avenue flagship. Stratechery's Ben Thompson tried Meta Ray-Ban Display. The cultural distribution angle (fashion runway as key adoption driver) is emerging.",
+      "recommendation": "lean_in",
+      "glance_angle": "Glance's multi-surface model (lockscreen + TV + agentic chat) parallels the wearables story — commerce moving to ambient, always-on surfaces. Glance can contribute a 'surfaces, not apps' framing that contextualizes wearable AI commerce within a broader ambient computing thesis, with Glance as the proof-of-concept at 175M scale."
+    },
+    {
+      "angle": "Open vs Closed AI Model Performance Gap and Commercial Implications",
+      "substack_count": 3,
+      "substacks_covering": [
+        "Interconnects",
+        "AI Supremacy",
+        "State of AI"
+      ],
+      "summary": "The open vs closed model debate is accelerating: Gemma 4, GLM-5.1 at 1/15th frontier cost, Claude Mythos too powerful to release. Chinese labs face funding headwinds; US open models gain enterprise traction. This is primarily an AI-infrastructure story with downstream commerce implications for which models will power agentic commerce at scale.",
+      "recommendation": "avoid_crowded",
+      "glance_angle": "Not a Glance priority for content. This is an infra/research debate. However, Glance's use of Gemini agents for VTON and commerce orchestration provides a practical perspective — not on which model wins, but on what on-device model performance requirements look like for real-time fashion personalization at 175M scale."
+    },
+    {
+      "angle": "Retail Payroll, Leadership Authenticity, and the Gap Between Conference Keynotes and Reality",
+      "substack_count": 2,
+      "substacks_covering": [
+        "Kit Campoy Retail",
+        "Modern Retail"
+      ],
+      "summary": "A counter-narrative to the AI-optimism consensus: frontline retail is understaffed, payroll math is broken, and conference rhetoric about 'delight' and 'connection' obscures systemic operational failure. Relevant context: AI commerce efficiency claims may be undermined by the human infrastructure required to fulfil orders.",
+      "recommendation": "avoid_crowded",
+      "glance_angle": "Not directly relevant to Glance's content strategy. However, the 'gap between promise and reality' angle in retail parallels useful caution against overpromising agentic commerce transformation timelines."
+    }
+  ]
+}

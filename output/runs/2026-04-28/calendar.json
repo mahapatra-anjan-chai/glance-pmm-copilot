@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-04-28",
+  "window": "2026-04-28 to 2026-05-28",
+  "events": [
+    {
+      "name": "Amazon Q1 2026 Earnings Release",
+      "date": "2026-04-29",
+      "type": "Earnings",
+      "relevance": "High",
+      "content_hook": "Amazon's AWS + advertising revenue numbers reveal how AI infrastructure investment is reshaping the commerce stack — direct signal for Glance's agentic commerce positioning.",
+      "pillar": "Market Intelligence"
+    },
+    {
+      "name": "Shopify Q1 2026 Earnings Release",
+      "date": "2026-05-05",
+      "type": "Earnings",
+      "relevance": "High",
+      "content_hook": "Shopify's Universal Commerce Protocol and AI Mode integrations make this earnings call a live benchmark for where agentic commerce revenue is actually flowing.",
+      "pillar": "Market Intelligence"
+    },
+    {
+      "name": "Mother's Day (US & Canada)",
+      "date": "2026-05-10",
+      "type": "Seasonal",
+      "relevance": "High",
+      "content_hook": "With $34B+ in annual Mother's Day spend, explore how AI-native lock-screen discovery on Glance surfaces intent-driven gifting moments before shoppers even open an app.",
+      "pillar": "Trends & Culture"
+    },
+    {
+      "name": "AI+ Expo — Washington D.C.",
+      "date": "2026-05-07",
+      "type": "Conference",
+      "relevance": "Medium",
+      "content_hook": "20,000 government and industry leaders convening on AI policy — a timely angle for Glance to address responsible agentic commerce and on-device AI regulation.",
+      "pillar": "Tech Depth"
+    },
+    {
+      "name": "The Android Show: I/O Edition (Google)",
+      "date": "2026-05-12",
+      "type": "Launch",
+      "relevance": "High",
+      "content_hook": "Android 17 and deeper Gemini integration announced a week before I/O — Glance should publish real-time analysis of what each feature means for pre-installed AI commerce on 175M+ Android devices.",
+      "pillar": "Tech Depth"
+    },
+    {
+      "name": "eTail Connect East — Miami",
+      "date": "2026-05-12",
+      "type": "Conference",
+      "relevance": "Medium",
+      "content_hook": "75 of North America's top e-commerce executives in closed-door sessions — use this as a peg to publish Glance's perspective on what senior retail leaders are prioritising in the age of agentic AI.",
+      "pillar": "The Commerce Shift"
+    },
+    {
+      "name": "Pulse eCommerce Summit — UK",
+      "date": "2026-05-13",
+      "type": "Conference",
+      "relevance": "Medium",
+      "content_hook": "The UK's largest ecommerce conference for fashion and lifestyle brands spotlights cross-border commerce trends Glance can map against its India and emerging-market playbook.",
+      "pillar": "The Commerce Shift"
+    },
+    {
+      "name": "Minneapolis eCommerce Summit",
+      "date": "2026-05-14",
+      "type": "Conference",
+      "relevance": "Medium",
+      "content_hook": "Largest regional ecommerce event in the Midwest — a data point for how mid-market US retailers are adopting AI commerce tools that compete with or complement Glance's lock-screen model.",
+      "pillar": "Market Intelligence"
+    },
+    {
+      "name": "Retail MediaX Europe — London",
+      "date": "2026-05-14",
+      "type": "Conference",
+      "relevance": "Medium",
+      "content_hook": "European retail media leaders tackling strategy and measurement — frame Glance's lock-screen ad surface as a next-generation retail media channel that reaches users before search intent forms.",
+      "pillar": "The Commerce Shift"
+    },
+    {
+      "name": "AI Council 2026 — San Francisco",
+      "date": "2026-05-12",
+      "type": "Conference",
+      "relevance": "Medium",
+      "content_hook": "1,500+ engineers and founders across 10 AI tracks — ideal moment for Glance to publish a technical deep-dive on building agentic commerce pipelines on constrained mobile hardware.",
+      "pillar": "Tech Depth"
+    },
+    {
+      "name": "Google I/O 2026 — Mountain View",
+      "date": "2026-05-19",
+      "type": "Conference",
+      "relevance": "High",
+      "content_hook": "Android 17, Gemini agent updates, and cross-device AI announced on the world's biggest developer stage — Glance is uniquely positioned to translate every Google AI announcement into commerce implications for its 175M Android install base.",
+      "pillar": "Tech Depth"
+    },
+    {
+      "name": "Walmart FY2027 Q1 Earnings Release",
+      "date": "2026-05-21",
+      "type": "Earnings",
+      "relevance": "High",
+      "content_hook": "Walmart's omnichannel AI and advertising growth metrics are the clearest indicator of how legacy retail is closing the gap on pure-play ecommerce — key context for Glance's Commerce Shift narrative.",
+      "pillar": "Market Intelligence"
+    },
+    {
+      "name": "Memorial Day Weekend Shopping Season (US)",
+      "date": "2026-05-23",
+      "type": "Seasonal",
+      "relevance": "Medium",
+      "content_hook": "The unofficial start of US summer retail, with peak deal traffic across Amazon, Target, and Walmart — use this as a case study for how AI-surfaced discovery changes impulse commerce behaviour.",
+      "pillar": "Trends & Culture"
+    },
+    {
+      "name": "Memorial Day (US Federal Holiday)",
+      "date": "2026-05-25",
+      "type": "Cultural",
+      "relevance": "Medium",
+      "content_hook": "Anchor a data-led piece on AI-driven personalisation during high-velocity retail windows, showing how Glance's lock-screen surface captures demand intent that app-based commerce misses.",
+      "pillar": "The Commerce Shift"
+    },
+    {
+      "name": "IPL 2026 Qualifier 1",
+      "date": "2026-05-26",
+      "type": "Cultural",
+      "relevance": "High",
+      "content_hook": "With 500M+ Indians watching IPL playoffs, this is Glance's home-court moment — publish content on how live-sport cultural moments drive real-time commerce spikes on Android lock screens in India.",
+      "pillar": "Trends & Culture"
+    }
+  ]
+}

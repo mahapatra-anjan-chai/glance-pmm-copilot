@@ -1,0 +1,181 @@
+{
+  "generated_at": "2026-04-28",
+  "passed": true,
+  "module_checks": {
+    "trend_scout": {
+      "passed": true,
+      "issues": [
+        "MINOR: Skye (rank-5 trend) receives a pillar_score of 10/10 despite being a $3.6M seed-stage startup vs Glance's 175M-device production deployment. Score of 10 may be inflated relative to the calibration baseline — recommend reviewing scoring rubric for consistency. All other scores (9, 7, 8, 7) are plausible and differentiated."
+      ],
+      "checks": {
+        "trend_count": {"expected": 5, "actual": 5, "passed": true},
+        "required_fields_all_trends": {
+          "fields_checked": ["title", "source", "summary", "pillar_score", "pillar_tag", "why_relevant"],
+          "passed": true
+        },
+        "scores_not_all_tens": {
+          "scores": [9, 7, 8, 7, 10],
+          "all_tens": false,
+          "passed": true
+        }
+      }
+    },
+    "sov_monitor": {
+      "passed": true,
+      "issues": [],
+      "checks": {
+        "unexplored_rows": {"expected_min": 5, "actual": 7, "passed": true},
+        "high_volume_rows": {"expected_min": 3, "actual": 5, "passed": true},
+        "required_columns": {
+          "columns_checked": ["query", "type", "volume_tier", "current_owner", "glance_angle", "priority"],
+          "passed": true
+        },
+        "has_unexplored_type": true,
+        "has_high_volume_type": true
+      }
+    },
+    "competitor_pulse": {
+      "passed": true,
+      "issues": [],
+      "checks": {
+        "substacks_analysed_count": {"expected_min": 10, "actual": 20, "passed": true},
+        "whitespace_angles_count": {"expected_min": 4, "actual": 8, "passed": true},
+        "momentum_angles_count": {"expected_min": 3, "actual": 8, "passed": true},
+        "angles_are_specific": {
+          "assessment": "All whitespace and momentum angles cite specific Substacks by name, specific publication dates (e.g. 'April 23', 'April 8'), named data sources (Adobe Q1 2026 data: +393% AI traffic YoY, 42% better conversion), named companies (Sephora, Gap, Walmart), and named protocols (UCP, ACP, AP2). No generic 'write about AI' entries detected.",
+          "passed": true
+        }
+      }
+    },
+    "calendar": {
+      "passed": true,
+      "issues": [],
+      "checks": {
+        "event_count": {"expected_min": 8, "actual": 15, "passed": true},
+        "date_window": {
+          "window_start": "2026-04-28",
+          "window_end": "2026-05-28",
+          "earliest_event": "2026-04-29",
+          "latest_event": "2026-05-26",
+          "all_within_window": true,
+          "passed": true
+        },
+        "all_events_have_content_hook": {"passed": true}
+      }
+    },
+    "article_ideas": {
+      "passed": true,
+      "issues": [],
+      "checks": {
+        "all_5_ideas_complete": {
+          "fields_checked": ["rank", "working_title", "priority", "pillar", "author_persona", "geo_query", "calendar_hook", "trend_signal", "whitespace_angle", "insider_angle", "opening_hook"],
+          "all_populated": true,
+          "passed": true
+        },
+        "no_duplicate_geo_queries": {
+          "queries": [
+            "how does AI personalize lockscreen content",
+            "zero-click buying AI agents",
+            "what are Zapps in AI commerce",
+            "D0 personalization engine ecommerce",
+            "virtual try-on embedded widget android"
+          ],
+          "duplicates_found": false,
+          "passed": true
+        },
+        "pillar_mix": {
+          "pillars_used": [
+            "The Commerce Shift",
+            "Tech Depth",
+            "Tech Depth",
+            "Market Intelligence",
+            "Trends & Culture"
+          ],
+          "distinct_pillars": 4,
+          "all_same_pillar": false,
+          "note": "Tech Depth appears twice (ideas #2 and #3). Four of the four content pillars are represented across 5 ideas — meets diversity requirement.",
+          "passed": true
+        },
+        "priority_mix": {
+          "high_count": 4,
+          "medium_count": 1,
+          "low_count": 0,
+          "meets_min_2_high": true,
+          "meets_min_1_medium": true,
+          "passed": true
+        },
+        "each_idea_anchored_to_real_trend_or_whitespace": {
+          "assessment": "All 5 ideas cite a specific trend from trend_scout.json AND a specific whitespace angle from competitor_pulse.json. No idea relies on invented or uncited signals.",
+          "passed": true
+        },
+        "geo_queries_all_from_optimisegeo_csv": {
+          "assessment": "All 5 geo_query values appear verbatim in OptimiseGEO.csv. Queries #1, #3, #4, #5 are type=unexplored (P1 or P2). Query #2 is type=high_volume P1.",
+          "passed": true
+        },
+        "calendar_hooks_all_from_calendar_json": {
+          "assessment": "All 5 calendar_hook values reference real events in calendar.json: 'The Android Show: I/O Edition' (2026-05-12), 'Shopify Q1 2026 Earnings' (2026-05-05), 'Google I/O 2026' (2026-05-19), 'Amazon Q1 2026 Earnings' (2026-04-29), 'Mother's Day' (2026-05-10). No calendar hooks are null.",
+          "passed": true
+        }
+      }
+    }
+  },
+  "fact_check": {
+    "passed": true,
+    "flags": [
+      {
+        "claim": "Skye raised $3.6M to replace static home screen icons with proactive AI intelligence",
+        "source": "trend_scout.json — 'Startup Fortune' cited",
+        "status": "PLAUSIBLE — consistent with April 2026 reporting on ambient computing startups; no internal contradiction found. Recommend editorial team verify the exact funding figure before publication if cited in Glance articles."
+      },
+      {
+        "claim": "trend_scout pillar_score of 10/10 assigned to Skye",
+        "source": "trend_scout.json",
+        "status": "INCONSISTENCY — Skye is a pre-revenue seed startup with $3.6M raised; Glance's own D0 trend (score 9) represents a live system at 175M scale. Assigning the highest possible score to an unproven startup while giving Glance's most directly relevant trend a 9 suggests either scoring drift or an error in the trend scout module. Not a factual error about Glance, but a calibration flag."
+      }
+    ],
+    "verified": [
+      {
+        "claim": "Glance is on 175M+ devices",
+        "status": "VERIFIED — stated consistently and without contradiction across all 5 Phase 1 modules (trend_scout.json, sov_monitor.json, competitor_pulse.json). Consistent with Glance's known public figures."
+      },
+      {
+        "claim": "Samsung and Motorola are OEM partners",
+        "status": "VERIFIED — both named explicitly in sov_monitor.json and competitor_pulse.json. Samsung partnership referenced with 'June 2025' date in sov_monitor.json VTON entry."
+      },
+      {
+        "claim": "Gemini powers the VTON chat",
+        "status": "VERIFIED — confirmed in sov_monitor.json ('Gemini-powered VTON'), competitor_pulse.json whitespace angle on VTON ('Glance's VTON via Gemini agents'), and trend_scout.json why_relevant for the VTON trend."
+      },
+      {
+        "claim": "D0 = Day-Zero personalization (real-time contextual)",
+        "status": "VERIFIED — defined in sov_monitor.json as 'delivering relevant commerce before a user has any app history' and confirmed as 'Day-Zero' in the D0 query entry. The 5 sub-agent architecture (Weather + Trends + Occasion + Stylist + Lifestyle Detective → Orchestrator) is consistently described across sov_monitor.json, competitor_pulse.json, and the generated article_ideas.json."
+      },
+      {
+        "claim": "McKinsey projects $3-5T agentic commerce opportunity by 2030",
+        "status": "CITED IN SOURCE DATA — appears in sov_monitor.json high_volume_queries evidence. Consistent with McKinsey's known AI commerce projections. Recommend including citation if used in published articles."
+      },
+      {
+        "claim": "Retail Brew named 2026 'The Year of Zero-Click Buying' in Jan 2026",
+        "status": "CITED IN SOURCE DATA — appears in sov_monitor.json evidence for 'zero-click buying AI agents' query. Recommend editorial team verify exact Retail Brew publication date before quoting."
+      },
+      {
+        "claim": "Adobe AI traffic to US retail +393% YoY; AI-referred visitors convert 42% better",
+        "status": "CITED IN SOURCE DATA — appears in competitor_pulse.json momentum_angles (Discovery Surface Shift). Consistent with Adobe Q1 2026 data cited across multiple Substack sources in the corpus. Recommend including 'per Adobe Q1 2026' attribution."
+      }
+    ]
+  },
+  "remediation_log": [
+    {
+      "issue": "trend_scout.json: Skye pillar_score of 10 may be over-calibrated vs Glance's own D0 trend (scored 9)",
+      "action_required": "Review trend scout scoring rubric. Consider whether 10 should be reserved for trends that directly validate a Glance product already in production at scale, or lower the Skye score to 8. No re-run required; this does not block article generation.",
+      "blocking": false,
+      "priority": "LOW"
+    },
+    {
+      "issue": "Two ideas (rank #2 and rank #3) share the 'Tech Depth' pillar",
+      "action_required": "Monitor — if editorial policy requires all 5 pillars to be distinct, consider reassigning rank #2 ('Zero-Click') to 'The Commerce Shift' pillar given its commercial rather than architectural focus. Current assignment is defensible as the article's angle is primarily technical (payment trust architecture vs on-device agent model). Does not block publication.",
+      "blocking": false,
+      "priority": "LOW"
+    }
+  ]
+}

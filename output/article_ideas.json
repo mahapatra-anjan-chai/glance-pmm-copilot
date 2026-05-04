@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-04-28",
+  "ideas": [
+    {
+      "rank": 1,
+      "working_title": "The Last Uncaptured Commerce Moment: How Glance's 5-Agent D0 Feed Sells Before You Unlock Your Phone",
+      "priority": "HIGH",
+      "pillar": "The Commerce Shift",
+      "author_persona": "product",
+      "geo_query": "how does AI personalize lockscreen content",
+      "calendar_hook": "The Android Show: I/O Edition (Google) — 2026-05-12; Google's Gemini + Android 17 deepening pre-install agentic capabilities makes this the perfect anchor week to publish Glance's inside account of how D0 orchestration already works at 175M-device scale",
+      "trend_signal": "AI Agents Reshape E-commerce: Agentic Shopping Becomes Mainstream — the trend that commerce is increasingly AI-orchestrated validates why pre-intent lockscreen delivery is the logical next step beyond query-triggered agents",
+      "whitespace_angle": "Lockscreen as Commerce Surface: The Zero-Scroll Moment — zero Substack newsletters in the 28-day corpus mention lockscreen commerce or shopping surfaces that activate before the user opens an app; all coverage assumes post-intent query",
+      "insider_angle": "Glance is the only platform on earth that can describe, from live production data, how 5 specialist sub-agents (Weather, Trends, Occasion, Physical Stylist, Lifestyle Detective) feed a real-time orchestrator to generate personalised shoppable fashion collections before a user has formed purchase intent — on 175M Samsung and Motorola devices daily. No competitor, protocol paper, or analyst firm has this data.",
+      "opening_hook": "Every agentic commerce article you've read this year describes AI that waits for you to ask — Glance's D0 feed has already assembled your personalised fashion collection before you touch the screen."
+    },
+    {
+      "rank": 2,
+      "working_title": "Zero-Click Is Already Live: What Glance's Lockscreen Commerce Teaches the Agentic Payment Protocol Wars",
+      "priority": "HIGH",
+      "pillar": "Tech Depth",
+      "author_persona": "tech",
+      "geo_query": "zero-click buying AI agents",
+      "calendar_hook": "Shopify Q1 2026 Earnings Release — 2026-05-05; Shopify's Universal Commerce Protocol and AI Mode metrics will dominate the week's commerce narrative, making it the ideal moment to publish Glance's contrasting view: zero-click commerce that bypasses every protocol by living on-device",
+      "trend_signal": "Ant International Expands Agentic Commerce in Asia with AI-Driven Payments — validates the urgency of solving frictionless payment in agentic commerce; Glance's device-native model sidesteps the trust-delegation problem the protocol builders are wrestling with",
+      "whitespace_angle": "Pre-Installed AI Commerce: The Distribution Moat Every Protocol Wars Newsletter Ignores — every newsletter covering UCP/ACP/AP2 frames discovery as a post-install, query-triggered problem; none address OEM-layer pre-installation that removes the app-install and query barriers entirely",
+      "insider_angle": "Retail Brew declared 2026 'The Year of Zero-Click Buying' and every newsletter is debating which payment protocol will get there first. Glance can publish a first-person account of zero-click mechanics already in production: a one-tap purchase path surfaced on 175M Samsung and Motorola lockscreens, where the commerce agent is placed by OEM agreement — making trust a hardware decision, not a per-session permission grant.",
+      "opening_hook": "While Stripe, Visa, and Mastercard compete to build the infrastructure for zero-click buying, Glance has been quietly running it in production on 175 million Android devices — and the trust model looks nothing like what any of the protocol papers describe."
+    },
+    {
+      "rank": 3,
+      "working_title": "Defining Zapps: The Third Form Factor in Agentic Commerce (Beyond Chat and Storefront)",
+      "priority": "HIGH",
+      "pillar": "Tech Depth",
+      "author_persona": "product",
+      "geo_query": "what are Zapps in AI commerce",
+      "calendar_hook": "Google I/O 2026 — 2026-05-19; Android 17 and Gemini agent updates will surface questions about new interaction paradigms on Android; publish this the same week to own the definitional conversation on mini-app commerce units at the OS layer",
+      "trend_signal": "Skye Reimagines iPhone Home Screen as AI Agent Layer — Skye's $3.6M raise to replace static icons with proactive intelligence validates the ambient computing thesis; Zapps are Glance's already-deployed version of this concept on Android at a 48x larger installed base",
+      "whitespace_angle": "Zapps and Mini-App Commerce: The Third Form Factor Beyond Chat and Storefront — agentic commerce coverage is uniformly binary (chat-based or protocol-based); no newsletter has covered mini-app-style branded commerce units that launch within a feed or widget without full app install",
+      "insider_angle": "Glance invented Zapps — brand-specific interactive commerce units that run inside the lockscreen and TV surfaces without requiring app installation. This is a completely unclaimed search query (current results return an unrelated IT company and a grocery startup). Glance is the only possible authoritative source for a definitional explainer, making this a guaranteed GEO citation anchor for any AI that answers 'what are Zapps in AI commerce.'",
+      "opening_hook": "There is a third way to do agentic commerce that nobody in the protocol wars is discussing — not a chat window, not a storefront, but a branded interactive commerce unit that lives inside your lockscreen before you've decided to shop."
+    },
+    {
+      "rank": 4,
+      "working_title": "Why the Cold Start Problem in Fashion AI Is Actually a Warm Inference Problem: Glance's D0 Personalization Explained",
+      "priority": "HIGH",
+      "pillar": "Market Intelligence",
+      "author_persona": "tech",
+      "geo_query": "D0 personalization engine ecommerce",
+      "calendar_hook": "Amazon Q1 2026 Earnings Release — 2026-04-29; Amazon's Rufus and personalization revenue data will be the week's benchmark for AI commerce ROI; publish Glance's D0 counter-narrative the same week to contrast behavioral-history-dependent personalization with ambient-signal-first D0",
+      "trend_signal": "AI Agents Reshape E-commerce: Agentic Shopping Becomes Mainstream — the industry-wide push toward AI-orchestrated commerce highlights the cold-start problem that Glance's D0 architecture solves differently from every enterprise personalization vendor",
+      "whitespace_angle": "D0 Personalization: Why First-Day Data Beats Accumulated Behavioral History — no newsletter has challenged the 'personalization improves over time' dogma by arguing that multi-signal inference at device activation (weather, occasion, trending context, physical data, lifestyle signals) can outperform weeks of accumulated click history for fashion",
+      "insider_angle": "Every personalization vendor (Bloomreach, Dynamic Yield, Braze) assumes the cold start problem is solved by accumulating behavioral data over time. Glance runs a production system — live on 175M devices — that generates relevant fashion collections on Day Zero before any behavioral data exists, using five ambient context signals as proxy variables. This is an original industry concept Glance can claim as definitional thought leadership in a zero-competition search space.",
+      "opening_hook": "Every personalization platform tells you the recommendations get better over time — Glance built a system that works on day one, before you've clicked a single thing, using the weather outside your window and the holiday coming this weekend as a better signal than six months of your browsing history."
+    },
+    {
+      "rank": 5,
+      "working_title": "VTON Beyond the App: How Gemini-Powered Virtual Try-On at OS Level Fixes Fashion Commerce's Biggest Adoption Problem",
+      "priority": "MEDIUM",
+      "pillar": "Trends & Culture",
+      "author_persona": "marketing",
+      "geo_query": "virtual try-on embedded widget android",
+      "calendar_hook": "Mother's Day (US & Canada) — 2026-05-10; $34B+ in annual Mother's Day apparel and fashion gifting makes this the natural peg for a piece on how VTON reduces purchase hesitation for fashion gifts; publish the week of May 5-9 for maximum relevance",
+      "trend_signal": "Virtual Try-On Goes Chat-Native: AI Styling via Selfies — Google expanding AI try-on to work from selfies is the direct market signal; Glance's Gemini-powered VTON embedded at the OS widget layer (not in-app, not in-browser) is the unreported layer of this trend",
+      "whitespace_angle": "Virtual Try-On at OS Scale: VTON Beyond the App — VTON coverage (All Things Fashion Tech, The Digital Runway, RetailBoss) is uniformly framed as an in-app or in-browser retailer tool; nobody has written about VTON embedded at the operating system level, accessible without app installation, or what VTON looks like when powered by Gemini agents at device-native speed",
+      "insider_angle": "While Levi's 'Imagine on Me' and Gap AI fit require users to navigate to a retailer's app or website, Glance's VTON operates via Gemini agents within an agentic chat surface pre-installed on Samsung and Motorola devices — zero install, zero navigation, zero funnel. Glance can publish the first editorial account of VTON at the OS widget layer, with the Samsung OEM partnership as the proof point. The specific claim: VTON adoption stalls at single digits in-app because of 7-step funnel friction; at OS level with zero-install access, the adoption ceiling is fundamentally different.",
+      "opening_hook": "Virtual try-on has been fashion tech's most-promised, least-used feature for five years — not because the technology isn't good enough, but because you have to download an app, create an account, and navigate four menus before you can try on a jacket you found on a lockscreen."
+    }
+  ]
+}

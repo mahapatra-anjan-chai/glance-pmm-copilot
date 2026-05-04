@@ -1,0 +1,47 @@
+{
+  "runs": [
+    {
+      "week": "2026-04-28",
+      "label": "Week of Apr 28, 2026",
+      "stats": {
+        "trends": 5,
+        "geo_queries": 12,
+        "unexplored_queries": 7,
+        "high_volume_queries": 5,
+        "substacks_analysed": 20,
+        "whitespace_angles": 8,
+        "momentum_angles": 8,
+        "events": 15,
+        "article_ideas": 5
+      },
+      "top_idea": {
+        "title": "The Last Uncaptured Commerce Moment: How Glance's 5-Agent D0 Feed Sells Before You Unlock Your Phone",
+        "pillar": "The Commerce Shift",
+        "priority": "HIGH",
+        "geo_query": "how does AI personalize lockscreen content"
+      },
+      "top_trend": {
+        "title": "Skye Reimagines iPhone Home Screen as AI Agent Layer",
+        "score": 10,
+        "pillar": "The Commerce Shift"
+      },
+      "new_whitespace": [
+        "Lockscreen as Commerce Surface: The Zero-Scroll Moment",
+        "Zapps and Mini-App Commerce: The Third Form Factor",
+        "D0 Personalization: Why First-Day Data Beats Behavioral History",
+        "TV and Connected-Screen Commerce: The Largest Ambient Surface"
+      ],
+      "p1_geo_queries": [
+        "how does AI personalize lockscreen content",
+        "agentic commerce platform comparison 2026",
+        "what are Zapps in AI commerce",
+        "D0 personalization engine ecommerce",
+        "pre-installed AI shopping assistant Android OEM",
+        "agentic commerce what brands need to know 2026",
+        "zero-click buying AI agents"
+      ],
+      "key_calendar_event": "Google I/O 2026 — May 19, 2026",
+      "run_path": "runs/2026-04-28"
+    }
+  ]
+}
