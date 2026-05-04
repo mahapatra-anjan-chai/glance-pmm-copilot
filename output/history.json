@@ -42,6 +42,48 @@
       ],
       "key_calendar_event": "Google I/O 2026 — May 19, 2026",
       "run_path": "runs/2026-04-28"
+    },
+    {
+      "week": "2026-04-30",
+      "label": "Week of Apr 30, 2026",
+      "stats": {
+        "trends": 5,
+        "geo_queries": 14,
+        "unexplored_queries": 8,
+        "high_volume_queries": 6,
+        "substacks_analysed": 9,
+        "whitespace_angles": 8,
+        "momentum_angles": 6,
+        "events": 12,
+        "article_ideas": 5
+      },
+      "top_idea": {
+        "title": "D0 Commerce: The Activation Window That Begins Before You Open an App",
+        "pillar": "The Commerce Shift",
+        "priority": "HIGH",
+        "geo_query": "lockscreen shopping AI before you open an app"
+      },
+      "top_trend": {
+        "title": "Google Kills Doppl, Folds Virtual Try-On Directly Into Search and Shopping Results",
+        "score": 10,
+        "pillar": "The Commerce Shift"
+      },
+      "new_whitespace": [
+        "The OEM Trust Layer: Why Pre-Installed AI Commerce Beats App-Downloaded Commerce",
+        "D0 Commerce: The Monetization Window Nobody Knows Exists",
+        "VTON as Conversion Infrastructure, Not a Novelty Feature",
+        "Zapps: The Mini-App Layer That Makes the Lock Screen a Platform",
+        "The Sponsored Prompt Problem: Native Lockscreen Commerce vs Chat Ads"
+      ],
+      "p1_geo_queries": [
+        "lockscreen shopping AI before you open an app",
+        "what are Zapps in AI commerce",
+        "D0 personalization engine ecommerce cold start",
+        "agentic commerce platform pre-installed OEM Android",
+        "AI fashion stylist lockscreen Android"
+      ],
+      "key_calendar_event": "Google I/O 2026 — May 19, 2026",
+      "run_path": "runs/2026-04-30"
     }
   ]
 }

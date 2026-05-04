@@ -47,13 +47,6 @@
       "content_hook": "Retail media and advertising tech conference in London; Glance can discuss AI-powered commerce advertising platforms."
     },
     {
-      "name": "NRF Protect Annual Conference",
-      "date": "2026-05-17",
-      "type": "Conference",
-      "relevance": "Medium",
-      "content_hook": "NRF-hosted conference on retail security and loss prevention; discuss how AI agents can balance commerce innovation with security."
-    },
-    {
       "name": "Google I/O 2026",
       "date": "2026-05-19",
       "type": "Launch",
@@ -87,6 +80,13 @@
       "type": "Conference",
       "relevance": "Medium",
       "content_hook": "NYC-based AI summit focused on regulated industries; potential insights on responsible AI deployment in commerce."
+    },
+    {
+      "name": "NRF Protect Annual Conference",
+      "date": "2026-05-17",
+      "type": "Conference",
+      "relevance": "Medium",
+      "content_hook": "NRF-hosted conference on retail security and loss prevention; discuss how AI agents can balance commerce innovation with security."
     }
   ]
 }
