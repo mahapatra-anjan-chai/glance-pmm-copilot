@@ -411,6 +411,10 @@
 
 <div class="header">
   <div class="header-left">
+    <button onclick="goHome()" title="Switch channel" style="background:none;border:1px solid var(--border);border-radius:8px;padding:6px 10px;cursor:pointer;color:var(--text-muted);font-size:13px;display:flex;align-items:center;gap:6px;transition:all .15s;flex-shrink:0" onmouseover="this.style.background='var(--surface-hover)';this.style.color='var(--text)'" onmouseout="this.style.background='none';this.style.color='var(--text-muted)'">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Channels
+    </button>
     <div class="logo">G</div>
     <div>
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
@@ -1473,6 +1477,18 @@ function enterDashboard() {
     loader.style.transition = 'opacity .4s ease';
     setTimeout(() => { loader.style.display = 'none'; loader.style.opacity = ''; loader.style.transition = ''; }, 420);
   }, TOTAL_MS);
+}
+
+function goHome() {
+  // Reset agent loader steps so they replay fresh next time
+  document.getElementById('agent-steps').innerHTML = '';
+  document.getElementById('loader-progress-bar').style.width = '0%';
+  document.getElementById('loader-pct').textContent = '0%';
+  document.getElementById('loader-status-text').textContent = 'Initialising agents…';
+  // Show onboarding
+  const onboarding = document.getElementById('onboarding');
+  onboarding.style.display = 'flex';
+  requestAnimationFrame(() => { onboarding.classList.remove('hidden'); });
 }
 
 function toggleCheck(label, id) {
