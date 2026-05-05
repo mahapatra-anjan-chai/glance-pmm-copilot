@@ -293,7 +293,7 @@
   .qa-text { font-size: 13px; color: #166534; }
 
   /* ONBOARDING OVERLAY */
-  .onboarding { position: fixed; inset: 0; background: #0f0f1a; z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; transition: opacity .4s ease; }
+  .onboarding { position: fixed; inset: 0; background: #0f0f1a; z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; transition: opacity .4s ease; overflow-y: auto; }
   .onboarding.hidden { opacity: 0; pointer-events: none; }
   .onboarding-logo { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
   .onboarding-logo-mark { width: 48px; height: 48px; background: linear-gradient(135deg, #5b50f0, #8b5cf6); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 22px; color: #fff; box-shadow: 0 4px 20px rgba(91,80,240,.4); }
@@ -407,6 +407,33 @@
     </div>
 
   </div>
+
+  <!-- SOV REPORT WIDGET — distinct from channel cards -->
+  <div style="width:100%;max-width:760px;margin-top:28px;padding:0 4px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+      <div style="flex:1;height:1px;background:rgba(255,255,255,0.08)"></div>
+      <span style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b6f8a">Reports & Intelligence</span>
+      <div style="flex:1;height:1px;background:rgba(255,255,255,0.08)"></div>
+    </div>
+    <a href="https://glance-sov-report.vercel.app/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,#0d1f1f 0%,#0a1a2e 100%);border:1px solid rgba(45,212,191,0.3);border-radius:16px;padding:20px 24px;text-decoration:none;cursor:pointer;transition:all .2s ease;position:relative;overflow:hidden" onmouseover="this.style.borderColor='rgba(45,212,191,0.7)';this.style.boxShadow='0 0 0 1px rgba(45,212,191,0.4),0 8px 32px rgba(13,148,136,0.2)'" onmouseout="this.style.borderColor='rgba(45,212,191,0.3)';this.style.boxShadow='none'">
+      <div style="position:absolute;top:-30px;right:-30px;width:140px;height:140px;background:radial-gradient(circle,rgba(13,148,136,0.15) 0%,transparent 70%);pointer-events:none"></div>
+      <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#0d9488,#0891b2);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px rgba(13,148,136,0.4)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <span style="font-size:15px;font-weight:700;color:#f0fdfa;letter-spacing:-0.2px">Share of Voice Report</span>
+          <span style="font-size:10px;font-weight:700;letter-spacing:.08em;background:rgba(13,148,136,0.2);color:#2dd4bf;border:1px solid rgba(45,212,191,0.3);border-radius:20px;padding:2px 9px">Q4 2025 vs Q1 2026</span>
+        </div>
+        <div style="font-size:12.5px;color:#94a3b8;line-height:1.5">Glance in the agentic shopping conversation — 13,187 records · 21 platforms · 15 brands · 32 hashtags</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;background:rgba(13,148,136,0.15);border:1px solid rgba(45,212,191,0.25);border-radius:8px;padding:8px 14px">
+        <span style="font-size:12px;font-weight:600;color:#2dd4bf;white-space:nowrap">View Report</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </div>
+    </a>
+  </div>
+
 </div>
 
 <div class="header">
