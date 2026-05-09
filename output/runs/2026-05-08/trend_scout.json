@@ -1,0 +1,61 @@
+{
+  "run_date": "2026-05-08",
+  "agent": "Trend Scout",
+  "trends": [
+    {
+      "rank": 1,
+      "title": "Stripe Upgrades Link Wallet to Let Autonomous AI Agents Shop on Your Behalf",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/30/stripe-link-digital-wallet-ai-agents-shopping/",
+      "date": "2026-04-30",
+      "summary": "Stripe unveiled a major update to its Link digital wallet at Stripe Sessions 2026, enabling autonomous AI agents to make purchases on behalf of users with configurable approval flows, spending limits, and one-time virtual cards for each transaction. A user connects payment details to Link, defines what an agent is permitted to buy, and the agent requests per-transaction authorization — establishing the first mainstream consent-and-control layer for agent-initiated commerce across 288 new product launches.",
+      "pillar": "The Commerce Shift",
+      "relevance_score": 9,
+      "glance_angle": "Stripe Link solves the payment-authorization layer for agent commerce, but it still requires the user to open an app and configure an agent. Glance's D0 feed operates at zero-UI — the lockscreen surfaces intent-matched products before the user picks up the phone. Integrating Stripe's ACP token flow into Glance's agentic checkout would let a shopper tap-to-buy a recommendation they never consciously searched for, making Glance the only surface where the entire discovery-to-purchase arc is ambient."
+    },
+    {
+      "rank": 2,
+      "title": "Wayfair Declares 'Be Everywhere' Agentic Commerce Strategy Across ChatGPT, Perplexity, and Google",
+      "source": "Digital Commerce 360",
+      "url": "https://www.digitalcommerce360.com/2026/05/05/wayfair-agentic-ai-commerce/amp/",
+      "date": "2026-05-05",
+      "summary": "Wayfair's CEO confirmed the retailer is simultaneously integrated with ChatGPT, Perplexity, and Google's Universal Commerce Protocol, describing its strategy as wanting 'to be everywhere' in agentic AI commerce rather than betting on a single platform. The company is also deploying internal agentic AI to autonomously enrich and correct product attributes across tens of thousands of catalog items, compressing what was previously a manual localization operation into an automated pipeline.",
+      "pillar": "Market Intelligence",
+      "relevance_score": 8,
+      "glance_angle": "Wayfair's multi-agent distribution strategy confirms that the 2026 retail battleground is not a single AI assistant but whichever surface has the user's attention at zero intent moment. Glance is the only player pre-installed on 175M+ lockscreens — Wayfair integrating into Glance's D0 feed would reach users who haven't yet opened ChatGPT or Google, placing Wayfair recommendations at the true top of the discovery funnel before any pull-based agent is invoked."
+    },
+    {
+      "rank": 3,
+      "title": "American Express Launches ACE Developer Kit with Industry-First AI Agent Purchase Protection",
+      "source": "Digital Commerce 360 / American Express Newsroom",
+      "url": "https://www.digitalcommerce360.com/2026/04/14/american-express-agentic-commerce-developer-kit-purchase-protection/",
+      "date": "2026-04-14",
+      "summary": "American Express debuted its Agentic Commerce Experiences (ACE) developer kit, providing a five-component framework — agent registration, account enablement, intent intelligence, payment credentials, and cart context — that allows developers to embed Amex cards directly into AI-driven transactions with full tokenized security. Alongside the kit, Amex introduced Amex Agent Purchase Protection, an industry-first commitment to cover card member purchases made by registered AI agents, removing a key trust barrier that has slowed mainstream adoption of autonomous checkout.",
+      "pillar": "Tech Depth",
+      "relevance_score": 8,
+      "glance_angle": "The ACE 'intent intelligence' component — where the agent signals purchase intent before checkout — maps precisely to Glance's D0 Orchestrator model, which already aggregates intent signals from five parallel sub-agents (Weather, Trends, Occasion, Physical Stylist, Lifestyle Detective). Glance could expose an ACE-compatible intent feed that lets Amex-registered agents seamlessly complete purchases surfaced on the lockscreen, creating a trust-sealed ambient checkout loop no other discovery surface can replicate."
+    },
+    {
+      "rank": 4,
+      "title": "Amazon vs. Perplexity Injunction Sets Legal Precedent for Who Controls AI Agent Access to Retail Platforms",
+      "source": "GeekWire / PYMNTS",
+      "url": "https://www.geekwire.com/2026/judge-blocks-perplexitys-ai-bot-from-shopping-on-amazon-in-early-test-of-agentic-commerce/",
+      "date": "2026-03-10",
+      "summary": "A federal judge granted Amazon a preliminary injunction blocking Perplexity's Comet AI browser from accessing password-protected Amazon pages on behalf of customers, ruling that user permission does not equal platform authorization under the Computer Fraud and Abuse Act. As of May 2026, Perplexity's April 1 appeal remains active before the Ninth Circuit, with the Software & Information Industry Association filing an amicus brief supporting Amazon — a decision that could define whether retailers can unilaterally wall off third-party shopping agents and reshape the entire agentic commerce ecosystem.",
+      "pillar": "Market Intelligence",
+      "relevance_score": 7,
+      "glance_angle": "The Amazon ruling exposes the fragility of third-party agent models that must negotiate — or litigate — access to every retailer's platform. Glance's approach is structurally different: brands integrate directly into the D0 feed as first-party Brand AI Store partners, meaning no scraping, no unauthorized access, and no legal exposure. As the court battle chills third-party agent growth, Glance's consent-first brand partnership model becomes a governance-safe alternative for retailers who want agentic discovery without the CFAA risk."
+    },
+    {
+      "rank": 5,
+      "title": "Google Shopping AI Mode Expands with Agentic Checkout and Generative Virtual Try-On Across 10+ Countries",
+      "source": "Google Blog / TechCrunch",
+      "url": "https://blog.google/products-and-platforms/products/shopping/google-shopping-ai-mode-virtual-try-on-update/",
+      "date": "2026-05-06",
+      "summary": "Google updated its Shopping AI Mode to include a right-panel product discovery engine that runs simultaneous query fan-out across criteria dimensions, paired with an agentic checkout flow now live in the US, UK, India, Japan, Canada, Australia, and six more markets for logged-in users. The virtual try-on feature, powered by a custom image-generation model trained on body shape, fabric drape, and material stretch, now accepts user selfies to render personalized garment previews — extending the try-before-you-buy experience from fashion product pages into Search and Google Images.",
+      "pillar": "Trends & Culture",
+      "relevance_score": 9,
+      "glance_angle": "Google's try-on requires the user to open Search, upload a selfie, and actively browse — a high-friction flow suited to deliberate shoppers. Glance's Physical Stylist sub-agent already knows a user's inferred body type, style preferences, and purchase history from the lockscreen context layer. Glance could deliver a zero-upload virtual try-on card — 'This kurta would suit you based on your saved style' — directly on the lockscreen before the user ever opens a browser, collapsing Google's multi-step try-on into a single ambient swipe."
+    }
+  ]
+}

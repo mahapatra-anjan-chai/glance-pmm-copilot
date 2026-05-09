@@ -1,0 +1,37 @@
+{
+  "run_date": "2026-05-08",
+  "agent": "QA Checker",
+  "passed": true,
+  "checks": {
+    "trend_scout": {
+      "count": 5,
+      "all_scored": true,
+      "all_pillared": true,
+      "status": "PASS"
+    },
+    "sov_monitor": {
+      "unexplored": 10,
+      "high_volume": 7,
+      "status": "PASS"
+    },
+    "competitor_pulse": {
+      "whitespace_angles": 6,
+      "momentum_angles": 3,
+      "generic_check": "PASS",
+      "status": "PASS"
+    },
+    "calendar": {
+      "events": 10,
+      "status": "PASS"
+    },
+    "article_ideas": {
+      "count": 5,
+      "all_fields_populated": true,
+      "high_priority": 2,
+      "medium_priority": 3,
+      "pillars_covered": 4,
+      "status": "PASS"
+    }
+  },
+  "issues": []
+}

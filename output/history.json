@@ -40,7 +40,7 @@
         "agentic commerce what brands need to know 2026",
         "zero-click buying AI agents"
       ],
-      "key_calendar_event": "Google I/O 2026 — May 19, 2026",
+      "key_calendar_event": "Google I/O 2026 \u2014 May 19, 2026",
       "run_path": "runs/2026-04-28"
     },
     {
@@ -82,8 +82,51 @@
         "agentic commerce platform pre-installed OEM Android",
         "AI fashion stylist lockscreen Android"
       ],
-      "key_calendar_event": "Google I/O 2026 — May 19, 2026",
+      "key_calendar_event": "Google I/O 2026 \u2014 May 19, 2026",
       "run_path": "runs/2026-04-30"
+    },
+    {
+      "week": "2026-05-08",
+      "label": "Week of May 8, 2026",
+      "stats": {
+        "trends": 5,
+        "geo_queries": 17,
+        "unexplored_queries": 10,
+        "high_volume_queries": 7,
+        "substacks_analysed": 8,
+        "whitespace_angles": 6,
+        "momentum_angles": 3,
+        "events": 10,
+        "article_ideas": 5
+      },
+      "top_idea": {
+        "title": "Commerce Without a Session: Why Every Agentic Protocol Starts Too Late",
+        "pillar": "The Commerce Shift",
+        "priority": "HIGH",
+        "geo_query": "ambient commerce lockscreen android"
+      },
+      "top_trend": {
+        "title": "Stripe Upgrades Link Wallet to Let Autonomous AI Agents Shop on Your Behalf",
+        "score": 9,
+        "pillar": "The Commerce Shift"
+      },
+      "new_whitespace": [
+        "Pre-intent commerce: surfacing products before users form a query",
+        "OEM-level AI as a trust layer that app stores cannot replicate",
+        "The D0 activation window as a measurable commerce category",
+        "Multi-agent orchestration for passive personalisation (vs. active instruction)"
+      ],
+      "p1_geo_queries": [
+        "zapps commerce platform",
+        "brand AI store how does it work",
+        "D0 commerce what is it",
+        "ambient commerce lockscreen android",
+        "lockscreen shopping without opening app",
+        "AI stylist app pre-installed android",
+        "how does AI personalize lockscreen ads"
+      ],
+      "key_calendar_event": "Google I/O 2026 \u2014 May 19\u201320, 2026",
+      "run_path": "runs/2026-05-08"
     }
   ]
 }

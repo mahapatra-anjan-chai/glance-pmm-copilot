@@ -1,0 +1,232 @@
+{
+  "run_date": "2026-05-08",
+  "agent": "Orchestrator",
+  "model": "claude-opus-4-7",
+  "ideas": [
+    {
+      "rank": 1,
+      "priority": "HIGH",
+      "pillar": "The Commerce Shift",
+      "playbookPillar": "amber",
+      "playbookPillarName": "Technology of Commerce",
+      "persona": "gtm",
+      "geoTier": "own",
+      "geoQuery": "ambient commerce lockscreen android",
+      "calHook": "The Android Show, May 12 — Google pre-I/O mobile AI announcements",
+      "title": "Commerce Without a Session: Why Every Agentic Protocol Starts Too Late",
+      "hook": "Stripe Link, Google UCP, and OpenAI ACP all share the same invisible assumption: that commerce begins when a user opens an app. Glance's D0 feed runs on 175M devices before anyone opens anything.",
+      "keyStats": [
+        "175M+ Android devices with Glance pre-installed at the OEM layer (Samsung, Motorola)",
+        "D0 window: 5 sub-agents resolve product context before the first app is opened",
+        "Zero Toggle Tax: the entire discovery-to-purchase arc executes on the surface the user is already looking at"
+      ],
+      "outline": [
+        {
+          "section": "The shared blind spot in every agentic commerce protocol",
+          "detail": "UCP, ACP, and Stripe Link Wallet all require a user to initiate a session — open ChatGPT, load Google Shopping AI Mode, or configure a Stripe agent. The window before any of these sessions exists is structurally unaddressed. This is D0."
+        },
+        {
+          "section": "What D0 actually is — and why it's a commerce category, not a metric",
+          "detail": "D0 is the activation window between device wake and first app open. On 175M+ Glance-enabled Android devices, this window is owned: 5 passive sub-agents (Weather, Trends, Occasion, Physical Stylist, Lifestyle Detective) resolve product context before a single tap. No user prompt. No session token. No CFAA exposure."
+        },
+        {
+          "section": "Stripe Sessions 2026: 288 products, one missing surface",
+          "detail": "Stripe's April 30 launch of Link Wallet for autonomous agents is the most sophisticated payment authorization layer built for agentic commerce. It solves consent, spending limits, and one-time virtual cards. What it cannot solve: the moment before the user decides to shop. That moment belongs to the lockscreen."
+        },
+        {
+          "section": "Google UCP and the aggregator playbook",
+          "detail": "Ben Thompson's Stratechery framing of UCP as 'Google running its classic aggregator playbook' is correct — but aggregation theory assumes competition is a click away. On a Glance lockscreen, there is no click. Discovery is ambient, passive, and pre-intent. The aggregation game changes entirely when the surface is pre-installed at the factory."
+        },
+        {
+          "section": "What The Android Show (May 12) signals for D0",
+          "detail": "Google's pre-I/O mobile AI announcements will almost certainly expand Android's ambient intelligence APIs. Every incremental step in Android's background AI capability makes D0 surfaces more powerful — and makes the OEM layer a more valuable distribution channel for commerce."
+        },
+        {
+          "section": "The brand implication: first-party lockscreen partnerships vs. protocol integration",
+          "detail": "Wayfair's 'be everywhere' agentic strategy (ChatGPT + Perplexity + Google UCP simultaneously) shows brands understand multi-surface distribution is the game. The Glance Brand AI Store offers something none of those channels can: a first-party, pre-consent, zero-scraping D0 surface with no CFAA exposure. Commerce without a session starts here."
+        }
+      ],
+      "intro": "Last week, Stripe launched 288 products at Stripe Sessions 2026. The headline was Link Wallet for AI agents — a consent-gated payment credential layer that lets autonomous agents shop on behalf of users with configurable spending limits and one-time virtual cards. It is genuinely the most sophisticated infrastructure built for agentic commerce to date.\n\nAnd it starts too late.\n\nLink Wallet, Google's Universal Commerce Protocol, and OpenAI's Agentic Commerce Protocol all share a structural assumption: that commerce begins when a user opens an app and delegates a task to an agent. This is a reasonable assumption if you build software. It is a wrong assumption if you build surfaces.\n\nGlance runs on 175M+ Android devices pre-installed at the OEM layer. When a user lifts their phone, five sub-agents have already run — Weather, Trends, Occasion, Physical Stylist, Lifestyle Detective — and an Orchestrator has resolved which products belong on the screen that's about to be seen. No app open. No session token. No prompt. This is D0 commerce: the activation window that every agentic protocol is built to ignore."
+    },
+    {
+      "rank": 2,
+      "priority": "HIGH",
+      "pillar": "Trends & Culture",
+      "playbookPillar": "teal",
+      "playbookPillarName": "Culture & Taste",
+      "persona": "product",
+      "geoTier": "own",
+      "geoQuery": "virtual try-on embedded widget android",
+      "calHook": "Google I/O 2026, May 19–20 — generative VTON expansion to 10+ markets",
+      "title": "Zero-Upload Try-On: How the Lockscreen Beats Google Shopping at Its Own Feature",
+      "hook": "Google's VTON expansion to 10+ markets on May 6 requires a selfie, a search, and an open browser — Glance's Physical Stylist sub-agent already knows your body type and delivers a try-on card before you open Google.",
+      "keyStats": [
+        "Google VTON: requires selfie upload + active Search query + browser session",
+        "Glance VTON: powered by Gemini + Imagen, triggered by Physical Stylist sub-agent at device wake — zero upload, zero query",
+        "175M+ pre-installed Android devices means Glance VTON reaches users upstream of every Google Shopping session"
+      ],
+      "outline": [
+        {
+          "section": "What Google's VTON expansion actually launched",
+          "detail": "Google Shopping AI Mode's May 6 update brings generative try-on to 10+ markets with a custom image-generation model trained on body shape, fabric drape, and material stretch. Users upload a selfie, browse a product, and see a rendered preview. It is impressive product engineering."
+        },
+        {
+          "section": "The friction stack Google cannot eliminate",
+          "detail": "To use Google VTON: open Google app → navigate to Shopping → search for a product → select an item → tap try-on → upload selfie → wait for render. Seven steps minimum. Every step is a drop-off. The selfie upload alone will block a meaningful percentage of users who won't share biometric data with a search engine."
+        },
+        {
+          "section": "How Glance's Physical Stylist sub-agent works",
+          "detail": "Glance's Physical Stylist is one of five D0 sub-agents that run passively at device wake. It infers body type, style preferences, and occasion context from device signals, purchase history, and time-of-day context — without requiring a photo upload. When the Orchestrator resolves the final lockscreen card, Gemini + Imagen renders a personalised try-on preview using the inferred profile. Zero upload. Zero query."
+        },
+        {
+          "section": "The moment that matters: before Search opens",
+          "detail": "When a user lifts their phone on a Tuesday morning and sees a kurta rendered in their inferred skin tone and build, that is a commerce moment that happens before Google Shopping exists in the session. The try-on experience is ambient, contextual, and delivered to a user who has not yet decided to shop — which is precisely where the highest-quality purchase intent lives."
+        },
+        {
+          "section": "What Google I/O 2026 (May 19) will likely announce",
+          "detail": "Google I/O 2026 is expected to include Gemini 4.0, expanded Android XR capabilities, and further UCP integrations. Any upgrade to Gemini's image generation directly benefits Glance's VTON pipeline, since Glance's Physical Stylist is already Gemini-native. The competitive gap may widen in Glance's favour as Google's own model improves."
+        },
+        {
+          "section": "The brand playbook: why fashion partners should care",
+          "detail": "For fashion brands, the question is not 'should we enable VTON?' — it's 'who sees the try-on first?' A brand whose products are surfaced in Glance's D0 VTON card gets first-touch engagement before the user opens Google, Instagram, or any other discovery surface. That's a structural advantage that no Google Shopping integration can replicate."
+        }
+      ],
+      "intro": "On May 6, Google expanded its generative virtual try-on feature to 10+ markets. The technical achievement is real: a custom image-generation model trained on body shape, fabric drape, and material stretch that renders personalized garment previews from a user selfie. Fashion journalists called it a step change. Commerce analysts called it a conversion catalyst.\n\nIt is both of those things. And it requires the user to open Google, navigate to Shopping AI Mode, find a product, tap try-on, upload a selfie, and wait.\n\nGlance's lockscreen does something different. Glance's Physical Stylist sub-agent runs at device wake — before the user has opened any app — and infers body type, style preferences, and occasion context from passive device signals. When the Orchestrator resolves the final lockscreen card, Gemini and Imagen render a try-on preview using the inferred profile. No selfie. No search. No Google.\n\nThe competitive moment isn't which try-on is more accurate. It's which try-on the user sees first. On 175M+ pre-installed Android devices, that moment belongs to the lockscreen."
+    },
+    {
+      "rank": 3,
+      "priority": "MEDIUM",
+      "pillar": "The Commerce Shift",
+      "playbookPillar": "amber",
+      "playbookPillarName": "Technology of Commerce",
+      "persona": "marketing",
+      "geoTier": "own",
+      "geoQuery": "D0 commerce what is it",
+      "calHook": "AINext Conference Las Vegas, May 21–22",
+      "title": "D0 Commerce: A Definition, a Framework, and the KPIs You're Not Measuring Yet",
+      "hook": "D-1 is the day before someone decides to shop. D+1 is when they convert. D0 is the moment every marketing model pretends doesn't exist — and where Glance operates at scale.",
+      "keyStats": [
+        "D0 = the activation window between device wake and first app open, spanning ~3–12 seconds on average",
+        "5 sub-agents run in this window on every Glance-enabled device: Weather, Trends, Occasion, Physical Stylist, Lifestyle Detective",
+        "175M+ devices means D0 is not a product feature — it's a measurable commerce category with its own funnel"
+      ],
+      "outline": [
+        {
+          "section": "Why marketing models skip D0",
+          "detail": "The standard marketing funnel begins at awareness, which in digital commerce means a search query, a social scroll, or an ad impression. All of these require the user to have already opened an app. D0 — the 3–12 seconds between device wake and first app open — is not tracked, not attributed, and not optimised. It is structurally invisible to every existing measurement framework."
+        },
+        {
+          "section": "The D-1 / D0 / D+1 framework",
+          "detail": "D-1: passive context accumulation (device signals, time-of-day, calendar, weather, recent purchase history). D0: the lockscreen activation moment — sub-agents resolve, Orchestrator renders a commerce card. D+1: app-open, session, browse, checkout. Current measurement captures D+1 almost exclusively. D-1 context is partially captured by CDP tools. D0 is uncaptured entirely."
+        },
+        {
+          "section": "What D0 KPIs look like",
+          "detail": "First-surface impression rate: what percentage of device wakes surface a commerce card. Ambient CTR: taps on lockscreen commerce cards as a share of impressions (no comparable metric in existing frameworks). D0-to-session latency: how quickly a lockscreen impression converts to an app-open event. Pre-intent conversion: purchases completed within the lockscreen surface without an app open."
+        },
+        {
+          "section": "How to build a D0 measurement layer",
+          "detail": "D0 measurement requires instrumentation at the OEM layer — which is precisely where Glance operates. Because Glance is pre-installed and not dependent on app-level SDKs, it can instrument the D0 window with native device signals unavailable to any app-based measurement tool. This is a structural data advantage that CDP and MMP vendors cannot replicate."
+        },
+        {
+          "section": "AINext Las Vegas (May 21–22): D0 in the agentic AI conversation",
+          "detail": "AINext's cross-sector agentic AI agenda will feature extensive discussion of how AI agents change attribution and measurement. The D0 framework gives Glance a concrete, defensible contribution to this conversation: a new funnel stage with native instrumentation that pre-dates any agent session."
+        },
+        {
+          "section": "The CMO ask: start tracking what you're missing",
+          "detail": "Every CMO running attribution models in 2026 has a D0 gap they cannot see. Glance partners can access D0 analytics as a first-party data layer. The competitive advantage isn't just the lockscreen surface — it's the measurement infrastructure that makes the pre-intent window visible for the first time."
+        }
+      ],
+      "intro": "D-1 is the day before someone decides they want something. D+1 is when they convert. Marketing has built an entire industry around optimising the journey from D-1 to D+1 — ad targeting, product pages, checkout flows, abandoned cart sequences.\n\nD0 is the moment in between. It lasts about 3 to 12 seconds. It happens every time a user lifts their phone. And it is invisible to every measurement framework in existence.\n\nOn 175M+ Android devices with Glance pre-installed, D0 is not invisible. It is instrumented. When a device wakes, five sub-agents run in parallel — Weather, Trends, Occasion, Physical Stylist, Lifestyle Detective — and an Orchestrator resolves which commerce card belongs on the screen the user is about to see. This is commerce that happens before awareness, before intent, and before any measurement tool starts tracking.\n\nThis piece introduces the D0 framework: what the window is, what KPIs would measure it, and why the brands that start tracking it in 2026 will have a structural data advantage over every competitor still building attribution models around app-open events."
+    },
+    {
+      "rank": 4,
+      "priority": "MEDIUM",
+      "pillar": "Tech Depth",
+      "playbookPillar": "blue",
+      "playbookPillarName": "Tech & Architecture",
+      "persona": "tech",
+      "geoTier": "own",
+      "geoQuery": "AI stylist app pre-installed android",
+      "calHook": "Google I/O 2026, May 19–20 — Gemini 4.0 and Android AI architecture announcements",
+      "title": "Five Sub-Agents, One Wake: The Architecture Behind Glance's Passive Commerce Intelligence",
+      "hook": "Every agentic commerce system in 2026 is triggered by a user instruction. Glance's D0 stack is triggered by a device-wake event — no instruction, no session, no prompt.",
+      "keyStats": [
+        "5 parallel sub-agents: Weather, Trends, Occasion, Physical Stylist, Lifestyle Detective — each resolving context before device unlock",
+        "Orchestrator layer merges sub-agent signals into a ranked product card within the D0 latency budget (~200ms for lockscreen render)",
+        "OEM pre-consent means the entire pipeline runs without triggering any app-permission prompt — unavailable to any Play Store app"
+      ],
+      "outline": [
+        {
+          "section": "Why device-wake is a different trigger than a user prompt",
+          "detail": "LangChain, AutoGPT, and every agentic framework in active deployment in 2026 begins with a user instruction. The architecture is: receive prompt → plan → execute tools → synthesize response. Glance's D0 architecture inverts this: device-wake event → sub-agents run in parallel → Orchestrator synthesizes → surface renders. The user never provides a prompt. The system must infer intent from context alone."
+        },
+        {
+          "section": "The five sub-agents and their signal domains",
+          "detail": "Weather Agent: ambient temperature, precipitation, UV index — maps to fabric weight, layering, accessory needs. Trends Agent: real-time fashion and cultural signal index — maps to trending styles, viral products. Occasion Agent: calendar, time-of-day, location context — maps to dress codes, event type. Physical Stylist Agent: inferred body type, size range, colour palette from device history — enables VTON without selfie. Lifestyle Detective Agent: purchase history, brand affinity, price tier — enables personalisation without explicit preference input."
+        },
+        {
+          "section": "The Orchestrator: latency budget and ranking logic",
+          "detail": "The Orchestrator receives parallel signal payloads from all five sub-agents and must resolve a ranked product card within the D0 latency budget — approximately 200ms before the lockscreen render deadline. This is not an LLM generation task; it is a constrained multi-signal fusion problem. The Orchestrator uses a learned ranking model that weights sub-agent signals by real-time confidence scores and historical conversion correlation."
+        },
+        {
+          "section": "OEM pre-consent: the architectural constraint that creates the moat",
+          "detail": "Every sub-agent in the D0 pipeline relies on signals that require device-level permission: calendar access, location context, on-device purchase history, body-type inference from gallery. On any app-installed platform, these permissions trigger explicit user prompts. On Glance, which is pre-installed at the OEM layer during device manufacture, the consent framework is negotiated once at the OS level. No Play Store app can replicate this without a separate permission flow that will block a significant portion of users."
+        },
+        {
+          "section": "Gemini 4.0 at I/O (May 19): what a model upgrade means for the D0 stack",
+          "detail": "Google I/O 2026 is expected to announce Gemini 4.0 with improved multimodal and reasoning capabilities. Glance's Physical Stylist and Lifestyle Detective agents are Gemini-native. A Gemini 4.0 upgrade directly improves the inference quality of both agents — better body-type inference, more accurate occasion context, richer style signal extraction. Unlike app-based VTON competitors, Glance benefits from model upgrades without any deployment cycle."
+        },
+        {
+          "section": "What this architecture means for builders",
+          "detail": "The D0 stack is not replicable by any app-layer agent. The trigger (device-wake), the permission layer (OEM pre-consent), and the latency constraint (200ms render budget) are all hardware-platform constraints. Any brand or developer building agentic commerce on top of UCP or ACP is building in D+1 space. The D0 window is structurally owned by whoever is pre-installed. That is currently Glance on 175M+ Android devices."
+        }
+      ],
+      "intro": "In 2026, the most advanced agentic commerce systems work like this: a user opens ChatGPT and says 'find me a birthday gift under $100 for my sister who likes hiking.' The agent plans, searches, compares, and returns ranked options. This is pull-based agentic commerce — sophisticated, useful, and dependent on the user knowing they want to shop.\n\nGlance's D0 architecture works differently. When a user lifts their Android device, five sub-agents run in parallel: Weather, Trends, Occasion, Physical Stylist, Lifestyle Detective. Each resolves a domain of purchase context — fabric weight for the forecast, trending styles from the cultural index, dress codes from the calendar, preferred fits from device history. The Orchestrator merges these signals into a ranked product card within a 200ms render budget. By the time the user sees their lockscreen, the commerce recommendation has already been made.\n\nNo prompt. No session. No permission popup. Just a product that is relevant to a user who has not yet decided to shop.\n\nThis piece is a technical deep-dive into the architecture that makes passive commerce intelligence possible — and why OEM pre-install is the only deployment context in which this stack can run."
+    },
+    {
+      "rank": 5,
+      "priority": "MEDIUM",
+      "pillar": "Market Intelligence",
+      "playbookPillar": "purple",
+      "playbookPillarName": "Market & Competitive Intel",
+      "persona": "gtm",
+      "geoTier": "own",
+      "geoQuery": "brand AI store how does it work",
+      "calHook": "CRM & Loyalty Summit Frisco TX, June 1–3 / Amazon vs. Perplexity Ninth Circuit appeal (ongoing)",
+      "title": "Brand AI Store vs. brand.ai: Why the SERP Is Wrong and What Glance's Model Actually Means for Brands",
+      "hook": "Search for 'brand AI store how does it work' and you'll find brand.ai — a SaaS for brand asset management. Glance's Brand AI Store is something entirely different: a first-party AI-personalised storefront deployed directly on 175M Android lockscreens.",
+      "keyStats": [
+        "brand.ai (the SaaS) dominates the 'brand AI store' SERP — Glance's Brand AI Store has zero organic coverage despite being the only scaled lockscreen commerce surface",
+        "Wayfair's CEO confirmed May 2026: integrating with ChatGPT, Perplexity, and Google UCP simultaneously — all three require app-open sessions and face CFAA exposure",
+        "Amazon vs. Perplexity Ninth Circuit appeal (ongoing): ruling could make third-party agent access to retail platforms legally untenable — Glance's first-party model is structurally immune"
+      ],
+      "outline": [
+        {
+          "section": "The SERP problem: what 'Brand AI Store' means today",
+          "detail": "The query 'brand AI store how does it work' currently returns results dominated by brand.ai — a brand asset management SaaS that helps companies maintain logo consistency and style guide compliance. It has nothing to do with lockscreen commerce. This SERP gap represents a major GEO whitespace: Glance's Brand AI Store, which enables brands to deploy AI-personalised storefronts on Android lockscreens, has no organic content explaining what it is or how it works."
+        },
+        {
+          "section": "What Glance's Brand AI Store actually is",
+          "detail": "Brand AI Store is Glance's platform for brands to deploy a persistent, AI-personalised commerce presence on the Android lockscreen. Instead of waiting for a user to search or open an app, a Brand AI Store surfaces product recommendations, try-on experiences, and promotional cards into the D0 window — tailored by the five sub-agents to the specific user's context at the moment of device wake. Brands access this through Glance's first-party partnership model, with no scraping, no CFAA exposure, and no dependency on UCP or ACP protocol adoption."
+        },
+        {
+          "section": "The legal landscape: why first-party matters more in 2026",
+          "detail": "Amazon's preliminary injunction against Perplexity's Comet AI browser (March 2026) established that user permission to use a third-party agent does not constitute platform authorization under the Computer Fraud and Abuse Act. The Ninth Circuit appeal remains active. If Amazon prevails, every third-party agentic commerce model that relies on scraping or bot-based access faces existential legal risk. Glance's Brand AI Store is built on direct brand partnerships — there is no scraping, no unauthorized access, and no CFAA exposure."
+        },
+        {
+          "section": "Wayfair's 'be everywhere' strategy and where Glance fits",
+          "detail": "Wayfair's CEO confirmed in May 2026 that the brand is simultaneously integrated with ChatGPT, Perplexity, and Google UCP — the 'be everywhere' model. This is the right instinct. What's missing from Wayfair's everywhere strategy is the surface that reaches users before any of those integrations activate: the lockscreen. A Glance Brand AI Store integration puts Wayfair recommendations into the D0 window before the user opens ChatGPT, Perplexity, or Google."
+        },
+        {
+          "section": "CRM & Loyalty Summit angle (June 1–3, Frisco TX): lockscreen as retention surface",
+          "detail": "Brand AI Store is not just a discovery tool — it is a retention surface. For brands attending the CRM & Loyalty Summit, the lockscreen represents a touchpoint that can surface loyalty rewards, personalised re-engagement offers, and post-purchase content without requiring the user to open the brand's app. In a world where app open rates are declining and push notification fatigue is high, the lockscreen is the highest-attention retention channel that doesn't require an opt-in."
+        },
+        {
+          "section": "How to build a Brand AI Store: the onboarding path",
+          "detail": "Brand AI Store integration involves three layers: product catalog API connection (Glance indexes brand inventory for sub-agent resolution), creative asset onboarding (lockscreen-optimized product imagery and VTON-ready garment assets), and campaign parameter configuration (audience targeting, contextual triggers, budget allocation). The partnership model is first-party and direct — brands work with Glance's brand solutions team, not through a self-serve ad platform."
+        }
+      ],
+      "intro": "If you search for 'Brand AI Store how does it work' right now, you will find brand.ai — a San Francisco SaaS company that helps marketing teams manage logos, fonts, and brand guidelines. It is a fine product. It has nothing to do with what Glance has built.\n\nGlance's Brand AI Store is a platform for deploying an AI-personalised brand presence directly on Android lockscreens. Not in an app. Not behind a search query. On the screen a user sees when they lift their phone — before they have opened anything, formed any intent, or interacted with any other platform.\n\nThe SERP gap is a symptom of a broader narrative gap. In a week when Wayfair's CEO confirmed simultaneous integrations with ChatGPT, Perplexity, and Google UCP, and while Amazon's lawyers argue before the Ninth Circuit that user permission doesn't equal platform authorization, Glance's first-party Brand AI Store model sits in a structurally different position: pre-installed, consent-first, CFAA-immune, and operating upstream of every protocol the rest of the industry is building.\n\nThis piece explains what a Brand AI Store is, how it differs from every other agentic commerce integration a brand can pursue in 2026, and why the legal landscape makes the first-party model increasingly valuable."
+    }
+  ]
+}

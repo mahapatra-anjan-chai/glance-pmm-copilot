@@ -1,0 +1,110 @@
+{
+  "run_date": "2026-05-08",
+  "agent": "SOV Monitor",
+  "unexplored": [
+    {
+      "query": "zapps commerce platform",
+      "current_owner": "none — results return unrelated wholesale/chip/delivery brands; Glance's 'Zapps' surface has zero organic coverage",
+      "glance_angle": "Define Zapps as Glance's native mini-app commerce layer embedded on the lockscreen — explain how brands build zero-install transactional experiences via Zapps, with real brand examples and integration specs",
+      "priority": "HIGH"
+    },
+    {
+      "query": "brand AI store how does it work",
+      "current_owner": "brand.ai (brand-management SaaS) dominates; Glance's 'Brand AI Store' surface is entirely absent from SERPs",
+      "glance_angle": "Publish a dedicated explainer on Glance's Brand AI Store — how brands deploy AI-personalized storefronts directly on 175M+ Android lockscreens, covering the selfie-to-VTON funnel, brand onboarding, and conversion data",
+      "priority": "HIGH"
+    },
+    {
+      "query": "D0 commerce what is it",
+      "current_owner": "none — results return D2C, d-commerce (digital commerce), and dCommerce definitions; 'D0' as a concept (day-zero, instant-at-device-boot commerce) is completely unclaimed",
+      "glance_angle": "Coin and own 'D0 Commerce' as the category for commerce that happens before a user opens any app — lockscreen-triggered, AI-personalized, zero-friction transactions; position Glance as the D0 platform",
+      "priority": "HIGH"
+    },
+    {
+      "query": "ambient commerce lockscreen android",
+      "current_owner": "none — results return generic Android ambient display/AOD technical threads; no commerce-oriented content exists",
+      "glance_angle": "Write the definitive piece on 'ambient commerce' — always-on, contextual product discovery surfaced passively on the Android lockscreen without user search intent; frame Glance as the only scaled ambient commerce platform",
+      "priority": "HIGH"
+    },
+    {
+      "query": "lockscreen shopping without opening app",
+      "current_owner": "none authoritative — results are generic how-to articles about iOS/Android lock screen shortcuts and widgets; no brand owns the commerce-specific angle",
+      "glance_angle": "Own the intent: explain how Glance enables complete purchase flows (browse → VTON → add-to-cart → checkout) on the lockscreen without unlocking or opening any retailer app, with UX screenshots and conversion benchmarks",
+      "priority": "HIGH"
+    },
+    {
+      "query": "AI stylist app pre-installed android",
+      "current_owner": "none — results list downloadable apps (Aiuta, Dressly, StyleDNA) from the Play Store; pre-installed AI stylist on Android is an unclaimed category",
+      "glance_angle": "Position Glance AI as the only AI stylist pre-installed on 175M+ Android devices at the OEM level — no download required; contrast with Play Store apps and highlight VTON + personalized feed as the native advantage",
+      "priority": "HIGH"
+    },
+    {
+      "query": "how does AI personalize lockscreen ads",
+      "current_owner": "partial — Glance.com appears in results alongside Oreate AI blog, Medium, 9to5Google Samsung coverage; no single authoritative explainer dominates; Glance is present but not owning the narrative",
+      "glance_angle": "Publish a deep-dive technical + consumer explainer on Glance's personalization stack: how on-device signals, Gemini/Imagen integration, selfie-based VTON, and real-time context (weather, location, trends) combine to deliver hyper-relevant lockscreen commerce ads",
+      "priority": "MED"
+    },
+    {
+      "query": "virtual try-on embedded widget android",
+      "current_owner": "none — results split between Elfsight web widgets (website embeds, not Android-native) and generic Android widget developer docs; native VTON as an Android widget is unclaimed",
+      "glance_angle": "Explain Glance's VTON implementation as a native Android surface — how it differs from web-based try-on widgets, the technical architecture (on-device AI + Imagen), and merchant integration path for fashion brands",
+      "priority": "MED"
+    },
+    {
+      "query": "conversational commerce vs agentic commerce difference",
+      "current_owner": "contested — ContactPigeon blog, Forrester, Shopify, and Alhena.ai all have content; no single authoritative voice dominates; mostly B2B SaaS perspective",
+      "glance_angle": "Enter the debate from Glance's device-native angle: conversational commerce = intent-driven chat; agentic commerce = autonomous AI acting on the lockscreen before intent forms; Glance as the bridge between passive discovery and agentic checkout",
+      "priority": "MED"
+    },
+    {
+      "query": "agentic commerce platform comparison 2026",
+      "current_owner": "contested — BigCommerce, Kore.ai, DigitalApplied, Rierino, Swell all have comparison content; none includes Glance; coverage skews toward chatbot/CRM tools not device-embedded platforms",
+      "glance_angle": "Publish Glance's take on the agentic commerce landscape as the only OEM-embedded player — compare Glance's lockscreen-native approach against ChatGPT shopping, Perplexity Comet, Shopify Agents, and Amazon Rufus across dimensions like reach, friction, and D0 discovery",
+      "priority": "MED"
+    }
+  ],
+  "high_volume": [
+    {
+      "query": "best AI shopping assistant 2026",
+      "volume_tier": "High",
+      "current_owner": "multiple — eesel AI, QuickPick.ai, Ringly.io, GetStream, Tolstoy, Bayezon all have listicle content; Amazon Rufus, Shopify AI, Adobe Commerce named as top platforms; Glance absent from all lists",
+      "glance_angle": "Get Glance into the conversation: the only AI shopping assistant that reaches users before they open a browser — pre-installed, lockscreen-native, VTON-enabled; pitch to listicle authors and publish Glance's own 'best AI shopping assistants' piece that includes and contextualizes itself"
+    },
+    {
+      "query": "agentic commerce examples",
+      "volume_tier": "High",
+      "current_owner": "multiple — McKinsey, BigCommerce, commercetools, JPMorgan, HUMAN Security all have authoritative content; examples skew toward ChatGPT, Amazon Rufus, Google AI Mode, Shopify Agents; Glance not mentioned",
+      "glance_angle": "Publish a concrete Glance use-case library: fashion brand running VTON-on-lockscreen with 40%+ add-to-cart uplift; Brand AI Store enabling zero-click discovery; Zapps enabling D0 checkout — real numbers, real flows, distinct from chat-based examples"
+    },
+    {
+      "query": "virtual try-on AI fashion app",
+      "volume_tier": "High",
+      "current_owner": "multiple — FASHN.ai, FitRoom, Fashion Diffusion, Krea.ai, ASOS, Google Try-On dominate; nightjar.so and camclo3d have comparison roundups; Glance's VTON absent from all comparisons",
+      "glance_angle": "Differentiate Glance VTON as lockscreen-native and pre-installed vs. app-download or web-based tools — highlight Samsung partnership, Gemini/Imagen backend, 400+ brand catalog, and passive discovery angle (no search intent required)"
+    },
+    {
+      "query": "AI personalized shopping feed",
+      "volume_tier": "High",
+      "current_owner": "partial — Glance.com blog appears in top results ('The Personalized Shopping App That Knows Your Style'); eMarketer, Gap Inc., Envive.ai, Willowcommerce also present; Glance has a foothold but no dominant position",
+      "glance_angle": "Double down on existing presence: publish data-rich content on Glance's feed personalization engine — real-time context signals (weather, location, trends), on-device learning, VTON integration, and measurable outcomes (CTR, conversion lift, brand ROI)"
+    },
+    {
+      "query": "how does ChatGPT shopping work",
+      "volume_tier": "High",
+      "current_owner": "OpenAI — openai.com, CNBC, MacRumors, HubSpot, AdventurePPC dominate; very well-owned by OpenAI content and tech press; Glance has no presence",
+      "glance_angle": "Use comparative GEO strategy: publish 'ChatGPT Shopping vs. Glance AI Commerce — what's the difference?' — position ChatGPT as intent-driven search commerce vs. Glance as passive, pre-intent, device-native commerce; target the long tail of users researching AI shopping options"
+    },
+    {
+      "query": "Perplexity shopping agent review",
+      "volume_tier": "High",
+      "current_owner": "contested — CNBC, PYMNTS, Klaviyo, Engadget, Envive.ai, Brytesoft cover Perplexity Comet extensively including the Amazon injunction story; highly contested and newsworthy",
+      "glance_angle": "Ride the news cycle: publish opinion/analysis content positioning Glance as the friction-free alternative — while Perplexity fights legal battles for web access, Glance is already embedded at the device level with OEM partnerships and brand consents pre-established"
+    },
+    {
+      "query": "AI commerce trends 2026",
+      "volume_tier": "High",
+      "current_owner": "multiple — commercetools, DigitalCommerce360, SearchEngineLand, Indatalabs, InsiderOne, AnchorGroup all have authoritative trend pieces; broad competitive field with no single owner",
+      "glance_angle": "Publish Glance's annual 'Commerce Shift' trend report: introduce D0 commerce, ambient discovery, and device-native agentic commerce as the underreported trends; include proprietary data from 175M device deployments to differentiate from generic analyst takes"
+    }
+  ]
+}

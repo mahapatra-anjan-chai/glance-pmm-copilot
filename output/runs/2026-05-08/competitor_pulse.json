@@ -1,0 +1,98 @@
+{
+  "run_date": "2026-05-08",
+  "agent": "Competitor Pulse",
+  "publications_scanned": [
+    "The Agentic Commerce Frontier (agentcommerce.substack.com)",
+    "AI Ad Economy (aiadeconomy.substack.com)",
+    "Stratechery (stratechery.com)",
+    "Agentic Commerce Lab (agenticcommercelab.substack.com)",
+    "Lenny's Newsletter (lennysnewsletter.com)",
+    "Robonomics (robonomics.substack.com)",
+    "Fast Company (fastcompany.com)",
+    "eMarketer (emarketer.com)"
+  ],
+  "whitespace_angles": [
+    {
+      "angle": "Pre-intent commerce: surfacing products before users form a query",
+      "why_glance": "Every major publication covers agentic commerce as pull-based — user opens ChatGPT/Perplexity and asks. Nobody has published the counterargument that the most powerful commerce surface is pre-intent: before the user decides to shop. Glance's D0 feed operates in this window at scale across 175M devices.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "OEM-level AI as a trust layer that app stores cannot replicate",
+      "why_glance": "Stratechery and The Agentic Commerce Frontier both cover UCP and ACP protocols (Google/OpenAI respectively) but treat OEM-embedded surfaces as an afterthought. No one has written about OEM pre-consent — how Glance bypasses app-install friction by being baked into the OS layer at the factory.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "The D0 activation window as a measurable commerce category",
+      "why_glance": "Commerce content universally frames the funnel as starting at search or app-open. The window between device wake and first app-open (D0) is unaddressed in any major publication. Glance can coin and own this category with device-scale data.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Multi-agent orchestration for passive personalisation (vs. active instruction)",
+      "why_glance": "Coverage of multi-agent systems focuses on task automation (book a flight, buy a product on command). The Glance architecture — 5 passive sub-agents (Weather, Trends, Occasion, Physical Stylist, Lifestyle Detective) that run without user instruction — is architecturally distinct and uncovered.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "What UCP and ACP miss: commerce without a session",
+      "why_glance": "Both Google's Universal Commerce Protocol and OpenAI's Agentic Commerce Protocol assume a user-initiated session. Lockscreen commerce has no session — only ambient signal. Glance is the only scaled platform that can write this counterpoint with real data.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "angle": "Virtual try-on as infrastructure, not a feature",
+      "why_glance": "Google's Doppl shutdown and VTON integration into Search has been covered as a feature story. Nobody has written the infrastructure argument: that VTON is a conversion layer that belongs to whoever controls the surface seen first. Glance surfaces it on the lockscreen before Search.",
+      "urgency": "MEDIUM"
+    }
+  ],
+  "momentum_angles": [
+    {
+      "angle": "Agentic checkout and autonomous purchase completion",
+      "publications_covering": ["The Agentic Commerce Frontier", "Stratechery", "AI Ad Economy", "Fast Company"],
+      "coverage_summary": "Stripe Sessions launch (288 products), UCP protocol rollout, and Amazon vs. Perplexity legal battle are driving heavy coverage of who controls the checkout layer in agentic commerce.",
+      "glance_counter_angle": "Checkout is the last mile. Glance owns the first mile — discovery that happens before users form purchase intent. The checkout protocol war matters less if the discovery surface is owned."
+    },
+    {
+      "angle": "Protocol wars: Google UCP vs. OpenAI ACP",
+      "publications_covering": ["Stratechery", "eMarketer", "The Agentic Commerce Frontier", "Fast Company"],
+      "coverage_summary": "Ben Thompson's 'Apple and Gemini, Foundation vs. Aggregation, Universal Commerce Protocol' piece framed UCP as Google running its classic playbook. OpenAI's ACP is positioned as the challenger. Both require app-open to function.",
+      "glance_counter_angle": "Glance doesn't need either protocol at the discovery layer. The lockscreen surface operates upstream of both UCP and ACP sessions."
+    },
+    {
+      "angle": "Agentic commerce hype vs. reality",
+      "publications_covering": ["AI Ad Economy (Andrew Lipsman)", "eMarketer", "Robonomics"],
+      "coverage_summary": "Debra Williamson and Andrew Lipsman are pushing back on inflated AI commerce stats — Adobe's 693% Gen AI traffic spike is actually 0.1% to 0.6% of total traffic. Reality-check framing is gaining traction.",
+      "glance_counter_angle": "Glance can lead a data-backed counter: 175M pre-installed devices isn't a traffic spike, it's structural distribution. The distinction between pull AI (ChatGPT shopping) and push AI (D0 lockscreen) sidesteps the hype critique entirely."
+    }
+  ],
+  "per_publication_summary": [
+    {
+      "name": "The Agentic Commerce Frontier",
+      "recent_focus": "Infrastructure standardization (UCP, ACP), payment authorization for AI agents, merchant tooling, Wayfair's multi-platform strategy",
+      "notable_post": "Apr 21–26 issue: deep-dive on how payment networks (Stripe, Amex, Visa) are preparing for agent-mediated purchases at scale",
+      "gap_vs_glance": "Covers merchant-side and protocol-side extensively. Zero coverage of OEM-embedded surfaces, lockscreen discovery, or pre-intent commerce."
+    },
+    {
+      "name": "AI Ad Economy (Debra Williamson / Andrew Lipsman)",
+      "recent_focus": "Reality-checking agentic commerce claims, retail media threat analysis, ad measurement in AI surfaces",
+      "notable_post": "Agentic Commerce Reality Check: debunks Adobe 693% Gen AI traffic stat as misleading (0.1% → 0.6% share)",
+      "gap_vs_glance": "Strong on measurement critique but no coverage of ambient/passive surfaces. Glance's pre-install distribution doesn't fit the 'traffic spike' narrative they're critiquing."
+    },
+    {
+      "name": "Stratechery (Ben Thompson)",
+      "recent_focus": "Aggregation theory in the AI era, Google UCP as classic aggregator playbook, Apple + Gemini tensions, opportunity cost of compute",
+      "notable_post": "'Apple and Gemini, Foundation vs. Aggregation, Universal Commerce Protocol' — frames UCP as Google's attempt to extend aggregation to agentic era",
+      "gap_vs_glance": "Thompson's aggregation theory framework is perfect for a Glance counterpoint: OEM pre-install is a different aggregation vector than search or app stores — one Thompson has never addressed."
+    },
+    {
+      "name": "Lenny's Newsletter",
+      "recent_focus": "AI product growth playbooks, team structure for AI companies, the new growth loops in 0-to-1 AI products",
+      "notable_post": "Elena Verna on Lovable hitting $200M ARR with 100 employees — the new AI growth playbook",
+      "gap_vs_glance": "GTM and growth content for SaaS/app companies. No coverage of hardware/OEM distribution as a growth channel or the lockscreen as a product surface."
+    },
+    {
+      "name": "Fast Company",
+      "recent_focus": "Google/OpenAI race for agentic commerce, 'Shop til you bot' framing of autonomous shopping agents",
+      "notable_post": "'Shop til you bot: Google, OpenAI, and the race to build agentic commerce' — overview of competing protocols",
+      "gap_vs_glance": "Frames the race as Google vs. OpenAI. Glance is the third competitor that neither protocol covers: embedded, pre-intent, OEM-distributed."
+    }
+  ]
+}
