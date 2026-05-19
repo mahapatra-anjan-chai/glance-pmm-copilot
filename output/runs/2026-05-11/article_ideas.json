@@ -1,0 +1,217 @@
+{
+  "run_date": "2026-05-11",
+  "agent": "Orchestrator",
+  "model": "claude-opus-4-7",
+  "ideas": [
+    {
+      "rank": 1,
+      "priority": "HIGH",
+      "pillar": "The Commerce Shift",
+      "persona": "gtm",
+      "geoQuery": "agentic checkout without app how does it work",
+      "calHook": "Google I/O 2026, May 19–20 — UCP Buy Button live in Search/AI Mode; The Lead Summit NYC May 20–21",
+      "title": "Amazon's 'Buy for Me' Requires Amazon to Be Open. Glance's Lockscreen Doesn't.",
+      "hook": "Amazon just killed Rufus and launched 'Alexa for Shopping' with fully autonomous Buy-for-Me — but every single agentic checkout in 2026 still requires the user to open an app first, which is precisely the window Glance owns.",
+      "keyStats": [
+        "Amazon's 'Buy for Me', Google UCP, and Stripe Agentic Suite all require an active app session to initiate — none can surface a purchase before the first app opens",
+        "Glance's D0 feed runs on 175M+ Android devices between device-wake and first-app-open, intercepting the consumer before Amazon, Google, or any agentic protocol activates",
+        "OpenAI quietly paused Instant Checkout in May 2026 — citing trust calibration failures — while Glance's lockscreen card shows the user the product before any tap is required, making it structurally higher-trust than background checkout"
+      ],
+      "outline": [
+        {
+          "section": "The week agentic commerce became real — and still started too late",
+          "detail": "Amazon's Alexa for Shopping unification, Google UCP going live in AI Mode with Amazon/Meta/Microsoft/Salesforce added to the coalition, and Stripe's 250M-wallet Agentic Commerce Suite all landed within days of each other. Commerce is unambiguously agentic now. But every single system on this list begins at the same moment: the instant a user opens an app. That moment is not the beginning of the purchase journey."
+        },
+        {
+          "section": "Why OpenAI paused Instant Checkout — and what it reveals",
+          "detail": "OpenAI paused Instant Checkout in early May 2026 after trust calibration failures. The problem: users couldn't see what an AI agent was purchasing on their behalf until the transaction was complete. This is not a fixable UX problem within the chatbot paradigm — it is a structural limitation of background agentic checkout. The D0 lockscreen card inverts this: the user sees the product recommendation before any tap is required. Trust is built into the surface, not bolted on afterward."
+        },
+        {
+          "section": "The UCP coalition's missing member: the OEM layer",
+          "detail": "The Universal Commerce Protocol now includes Google, Shopify, Wayfair, Amazon, Meta, Microsoft, Salesforce — every major platform and app layer. What's absent is any OEM-embedded surface. UCP by design requires a browser or app session to exist. Glance operates below that layer entirely: pre-installed at device manufacture, it needs no protocol membership to surface products and no app-open event to begin the discovery sequence."
+        },
+        {
+          "section": "Glance's D0 angle: the purchase moment before any agent activates",
+          "detail": "When a user lifts their Samsung or Motorola device, Glance's five sub-agents have already run — Weather, Trends, Occasion, Physical Stylist, Lifestyle Detective — and the Orchestrator has resolved a commerce card before the lock screen renders. This is commerce that precedes Amazon's Alexa session, Google's AI Mode query, and Stripe's payment token flow. D0 is not a competing agentic checkout — it is the discovery surface upstream of every checkout in the stack."
+        },
+        {
+          "section": "Google I/O (May 19–20): the best week to publish this argument",
+          "detail": "Google I/O will be wall-to-wall UCP Buy Button coverage, Gemini 4.0 shopping integrations, and agentic booking in AI Mode. Every tech publication will frame this as the arrival of ambient commerce. The Glance counter-angle — that ambient commerce actually requires no query, no search bar, and no app open — is at peak contrast against the I/O narrative. This is the publication window."
+        },
+        {
+          "section": "The GTM implication: where brands should be investing before I/O hype peaks",
+          "detail": "Brands attending The Lead Summit (May 20–21, NYC) will be inundated with UCP integration pitches from Shopify and Google partners. The Glance positioning is differentiated: lockscreen placement puts your brand in the D0 window before any UCP session begins. First-party, no CFAA exposure, OEM-distributed to 175M devices. The integration pitch isn't 'instead of UCP' — it's 'what happens before UCP.'"
+        }
+      ],
+      "intro": "On May 7, Amazon killed Rufus. In its place: Alexa for Shopping, an agent embedded in the Amazon search bar that completes purchases autonomously via 'Buy for Me' — drawing on stored payment credentials, 12 months of price history, and real-time deal intelligence. The same week, Google activated its Universal Commerce Protocol in AI Mode with Amazon, Meta, Microsoft, and Salesforce added to the coalition. Stripe's 250M-wallet Agentic Commerce Suite gave every AI agent a payment credential layer.\n\nAgentic commerce is no longer a thesis. It is a live infrastructure stack.\n\nAnd then OpenAI paused Instant Checkout. The trust calibration failed: users couldn't see what their agent was buying until it was bought. What 'more gradual approach' means: users need to see the product before the agent acts.\n\nGlance has been doing this for two years. On 175M+ Android devices, a lockscreen commerce card surfaces before the user opens any app — before Amazon Alexa activates, before Google AI Mode launches, before any agent session begins. The product is visible. The user taps. The agent executes. This is D0 commerce: structurally higher-trust than background checkout, and earlier than every agentic protocol built in 2026."
+    },
+    {
+      "rank": 2,
+      "priority": "HIGH",
+      "pillar": "Market Intelligence",
+      "persona": "marketing",
+      "geoQuery": "AI shopping agents ignore discounts scarcity tactics what works instead",
+      "calHook": "Google I/O 2026, May 19–20 — AI Mode shopping goes mainstream; eTail Connect Miami May 12–14",
+      "title": "HBR Just Proved Your Ad Playbook Is Dead. Here's What Glance's Sub-Agents Already Know.",
+      "hook": "Harvard Business Review tested scarcity timers, countdown clocks, and bundle pricing against GPT-5 and Gemini 2.5 Pro — only star ratings and raw price moved the needle, which is exactly what Glance's five contextual sub-agents have been optimising for since day one.",
+      "keyStats": [
+        "HBR study (May 2026): 8 classic e-commerce persuasion tactics tested across GPT-4.1-mini, GPT-5, Gemini 2.5 Pro — only star ratings and raw price reliably shifted AI agent purchase decisions",
+        "Advanced reasoning models in the HBR study actively penalized overt persuasion signals — scarcity timers and strike-through pricing backfired, reducing selection probability",
+        "Glance's D0 Orchestrator ranks products by contextual relevance signals (weather, occasion, lifestyle), not manufactured urgency — structurally aligned with what AI agents actually respond to"
+      ],
+      "outline": [
+        {
+          "section": "What HBR actually tested — and why the results matter now",
+          "detail": "The Sabbah-Acar study ran thousands of simulated shopping rounds across four leading AI models, testing eight classic e-commerce persuasion tactics: scarcity timers, countdown clocks, strike-through pricing, vouchers, bundle pricing, social proof, authority signals, and reciprocity nudges. The finding was unambiguous: only star ratings and absolute price were consistent predictors of AI agent selection. Every other tactic either had no effect or actively backfired in advanced reasoning models. This is not a niche academic result — it is a structural indictment of the entire performance marketing playbook as applied to AI-mediated commerce."
+        },
+        {
+          "section": "The $X billion question: what happens to ad spend optimised for human psychology?",
+          "detail": "The performance marketing industry is built on persuasion mechanics — urgency, social proof, loss aversion, bundle anchoring. These tactics work on humans because humans have cognitive biases AI models are trained to reason past. As AI agents intermediate an increasing share of purchase decisions — Google AI Mode, Amazon Alexa for Shopping, Meta Hatch — the conversion levers that CMOs have relied on for a decade become noise. The HBR research quantifies what many practitioners suspected: the persuasion-optimised ad stack is misaligned with the agent-mediated shopping stack."
+        },
+        {
+          "section": "What AI agents actually respond to — and why it maps to D0",
+          "detail": "Star ratings and raw price are objective quality signals. They are not manufactured urgency. They are not relative anchoring. They are the two inputs an AI agent can evaluate without being susceptible to cognitive bias exploitation. Glance's D0 Orchestrator works on exactly this principle: five sub-agents resolve contextual relevance (is this product appropriate for today's weather, this user's lifestyle, this occasion?) before surfacing a card. The ranking signal is context-fit, not urgency engineering. The HBR result validates this approach from first principles."
+        },
+        {
+          "section": "The eTail Connect Miami angle: what senior retail leaders should take to their CMO",
+          "detail": "eTail Connect Miami (May 12–14) brings senior retail and ecommerce leaders together in an invite-only format. The HBR finding is the most actionable research brief to emerge from May's commerce news cycle. The practical implication: brands must restructure their product data and creative strategy around objective quality signals — not persuasion tactics — for any AI-mediated surface. Glance's Brand AI Store onboarding process already prioritises this: brands submit curated product assets with genuine quality metadata, not ad-copy persuasion overlays."
+        },
+        {
+          "section": "The contextual signal stack vs. the persuasion stack: a practitioner's comparison",
+          "detail": "Traditional performance marketing stack: Ad impression → persuasion trigger (scarcity, urgency) → click → product page → conversion. Glance D0 stack: Device wake → 5 sub-agents resolve contextual fit (weather + trends + occasion + lifestyle + physical) → Orchestrator ranks by relevance → lockscreen card surfaces correct product to correct user at correct moment. No persuasion mechanics. No manufactured urgency. The right product for the right context — which is exactly what the HBR models selected."
+        },
+        {
+          "section": "What brands should do before Google I/O makes this the dominant commerce surface",
+          "detail": "Google I/O (May 19–20) will accelerate AI Mode adoption. As AI agents intermediate more shopping sessions, the brands with agent-optimised product signals will win placement and conversion. The practical action list: audit your product catalog for genuine quality signals (authentic reviews, accurate specifications, real price transparency), retire manufactured urgency tactics from AI-destined surfaces, and evaluate first-party lockscreen presence on Glance — where the ranking algorithm is already built around contextual relevance, not persuasion mechanics."
+        }
+      ],
+      "intro": "Harvard Business Review just published peer-reviewed research that should be taped to the wall of every performance marketing team in commerce. Jafar Sabbah and Oguz Acar tested eight widely deployed e-commerce persuasion tactics — scarcity timers, countdown clocks, strike-through pricing, bundle anchoring, social proof — against GPT-4.1-mini, GPT-5, Gemini 2.5 Pro, and Gemini 2.5 Flash Lite across thousands of simulated shopping rounds.\n\nThe verdict: only star ratings and raw price moved the needle. Every other tactic was noise. Advanced reasoning models actively penalized persuasion signals — scarcity timers and strike-through pricing reduced selection probability.\n\nThis is a structural finding about how AI agents make purchase decisions — arriving exactly as Amazon Alexa for Shopping, Google UCP in AI Mode, and Meta's Instagram Shopping Assistant are about to intermediate a meaningful share of consumer commerce. The persuasion-optimised ad stack CMOs have refined for a decade is misaligned with the agent-mediated stack going mainstream in 2026.\n\nGlance's D0 Orchestrator has been built around this principle from the start: five sub-agents resolve contextual relevance — weather, trends, occasion, lifestyle, physical fit — not manufactured urgency. The HBR research didn't validate Glance's architecture. It gave us peer-reviewed language to explain why it works."
+    },
+    {
+      "rank": 3,
+      "priority": "MEDIUM",
+      "pillar": "Tech Depth",
+      "persona": "tech",
+      "geoQuery": "how does AI agent trust work without app permissions",
+      "calHook": "Google I/O 2026, May 19–20 — Android AI architecture; AINext Conference Las Vegas May 21–22",
+      "title": "FIDO Is Building Agent Trust Frameworks. Glance Doesn't Need One.",
+      "hook": "FIDO Alliance and Experian are constructing credential registration layers so AI agents can prove identity before acting on behalf of users — a trust infrastructure problem that Glance's OEM pre-consent model solved at device manufacture, without any agent needing to register.",
+      "keyStats": [
+        "FIDO Alliance Agent Trust framework (2026): requires AI agents to register credentials, prove identity, and obtain per-action authorization before completing any user-delegated commerce task — adding a registration layer that every agent platform must implement",
+        "Glance's OEM pre-consent is negotiated once at device manufacture with Samsung and Motorola, before any user interaction — no agent registration protocol is required because the consent framework exists at the OS layer, not the app layer",
+        "UCP's trust model requires per-session user authorization; Glance's lockscreen card is visible to the user before any tap is required, making the consent moment structurally transparent rather than delegated"
+      ],
+      "outline": [
+        {
+          "section": "Why agent trust is the unsolved problem of agentic commerce",
+          "detail": "Every agentic commerce system in 2026 faces the same structural question: how does a platform know that an AI agent is authorized to act on behalf of a specific user? Amazon's 'Buy for Me' solved it by keeping everything within Amazon's own authenticated session. Stripe's Agentic Commerce Suite solved it with Shared Payment Tokens and one-time virtual cards. OpenAI failed to solve it with Instant Checkout — which is why that product is paused. FIDO Alliance is now building the industry-wide answer: a credential registration framework that lets agents prove identity and receive per-action authorization across any platform."
+        },
+        {
+          "section": "What FIDO's Agent Trust framework actually proposes",
+          "detail": "FIDO's 2026 Agent Trust specification requires AI agents to obtain registered credentials (analogous to passkeys, but for agent identity), receive explicit user delegation for defined action scopes, and re-authorize for sensitive actions above a risk threshold. Experian is building a complementary agent credit-scoring layer. The resulting architecture is theoretically sound and practically necessary for cross-platform agent commerce — but it imposes a registration burden on every agent developer and a delegation interaction on every user session. It is a correct solution to the app-layer trust problem."
+        },
+        {
+          "section": "Why the FIDO problem doesn't exist at the OEM layer",
+          "detail": "FIDO Agent Trust is solving for an agent that arrives after the device is in the user's hands — installed via app store, configured via user consent flow, authorized via per-session delegation. Glance's OEM pre-install is negotiated before the device reaches the user. Consent is established between Glance, the OEM (Samsung, Motorola), and the device at manufacture. There is no app-layer agent to register, no per-session delegation to obtain, and no FIDO credential to issue. The trust layer is the OEM relationship itself — a form of consent infrastructure that no post-install agent platform can replicate."
+        },
+        {
+          "section": "Stripe Issuing for Agents: solving payment auth, not commerce discovery",
+          "detail": "Stripe's 'Issuing for Agents' product — one-time virtual cards issued to AI agents with configurable spending limits — is the most elegant solution to the payment authorization problem in the FIDO-adjacent space. An agent receives a card credential, makes a purchase, and the card expires. No raw card data. No unlimited authorization. Stripe has solved the payment leg of agent trust. What Stripe cannot solve: whether the agent should have initiated the purchase in the first place. On Glance's lockscreen, the user sees the product recommendation before any transaction token is issued — the 'should this purchase happen?' decision remains with the human. Stripe's credential layer executes after the human approves."
+        },
+        {
+          "section": "The architecture comparison: delegated trust vs. ambient consent",
+          "detail": "FIDO/Stripe/UCP model: User delegates authority to agent (per-session) → Agent proves identity (FIDO credential) → Agent executes action (Stripe virtual card) → Platform logs and audits. Glance D0 model: OEM consent established at manufacture → Device wake triggers sub-agents (no user prompt, no delegation event) → Orchestrator renders commerce card (user sees product) → User taps to approve (explicit, visible action) → Zapp or checkout executes. The Glance model never requires agent identity credentials because the pipeline is pre-authorized at the OEM layer and requires explicit user confirmation before any transaction."
+        },
+        {
+          "section": "What Google I/O's Android AI announcements mean for the trust landscape",
+          "detail": "Google I/O 2026 will announce expanded Android AI background APIs, Gemini Spark as a '24/7 personal agent,' and deeper OS-level AI integration. Every incremental expansion of Android's background AI capability raises the question of which layer holds the trust anchor — the app layer (where FIDO registration applies) or the OS layer (where OEM pre-consent applies). As Google pushes more AI into Android's system layer, the OEM-consent model Glance already uses becomes more architecturally coherent, not less. Glance is already operating in the trust model that Android's roadmap is converging toward."
+        }
+      ],
+      "intro": "In early 2026, FIDO Alliance published a draft specification for Agent Trust — a credential framework that lets AI agents prove their identity and receive scoped authorization before acting on behalf of users. Experian announced a complementary agent scoring layer. Stripe launched Issuing for Agents: one-time virtual cards issued to AI agent identities with configurable spending limits. The agentic commerce industry is building trust infrastructure in earnest.\n\nGlance doesn't need any of it.\n\nNot because Glance solved trust better — but because Glance's trust architecture exists in a different layer of the stack. OEM pre-consent is negotiated with Samsung and Motorola at device manufacture. It is an OS-layer agreement that predates any user interaction. No agent to register. No FIDO credential to issue. No per-session delegation. The consent framework lives in the factory relationship between Glance, the OEM, and the device.\n\nWhen Glance's D0 sub-agents run at device wake and surface a commerce card on the lockscreen, they operate under a consent architecture the FIDO framework was never designed to address — because FIDO assumes the agent arrives post-install, post-user, post-session. Glance arrives at manufacture."
+    },
+    {
+      "rank": 4,
+      "priority": "MEDIUM",
+      "pillar": "Tech Depth",
+      "persona": "product",
+      "geoQuery": "agentic commerce platform for brands how is it different from Shopify",
+      "calHook": "Shopify Q1 2026 Earnings ($101B GMV, Agentic Storefronts dashboard); AINext Conference Las Vegas May 21–22",
+      "title": "Shopify Hit $101B GMV and Launched Agentic Storefronts. It Still Can't Reach Users Before They Open a Browser.",
+      "hook": "Shopify's new Agentic Storefronts dashboard lets merchants track ChatGPT and Copilot-attributed sales — but every Shopify storefront, agentic or otherwise, requires a browser session to exist first, which is the structural gap Glance's lockscreen fills upstream.",
+      "keyStats": [
+        "Shopify Q1 2026: $101B GMV (+35% YoY), second consecutive quarter above the $100B threshold; Agentic Storefronts dashboard now tracks ChatGPT/Copilot/Google AI Mode-attributed sales as a formal channel",
+        "Shopify's Agentic Storefronts requires UCP integration, a browser or app session, and an active user query — none of which exist in the D0 window that precedes every Shopify session",
+        "Glance's Brand AI Store onboarding bypasses catalog AI-readiness bottlenecks entirely — brands submit curated assets directly, avoiding the <1% LLM-ready product page threshold that is blocking most Shopify merchants from agentic channel attribution"
+      ],
+      "outline": [
+        {
+          "section": "What Shopify's $101B quarter actually signals for agentic commerce",
+          "detail": "Shopify's Q1 2026 results established two things simultaneously: that the platform is the dominant infrastructure layer for mid-market and DTC commerce at scale, and that AI-attributed sales are now a formal measurement category. The Agentic Storefronts dashboard lets Shopify merchants see which sales came from ChatGPT, Microsoft Copilot, and Google AI Mode — treating agent channels as a distinct traffic source. This is the moment agentic commerce attribution became operationally real for mainstream brands."
+        },
+        {
+          "section": "The catalog data quality problem Shopify merchants don't know they have",
+          "detail": "The Agentic Commerce Frontier newsletter found that fewer than 1% of product pages currently meet LLM-ready thresholds — structured data, semantic consistency, agent-parseable specifications. Most Shopify merchants are entirely invisible to AI agents not because of distribution gaps but because their product catalog is not structured for machine comprehension. Feedonomics, ReFiBuy, and a wave of catalog AI-readiness tools are now chasing this problem. Glance's Brand AI Store sidesteps it entirely: brands submit curated product assets directly, with no LLM parsing of legacy product pages required."
+        },
+        {
+          "section": "Where Shopify's agentic stack ends and Glance's begins",
+          "detail": "Shopify's agentic commerce stack — UCP integration, Agentic Storefronts dashboard, ChatGPT/Copilot/Google referral tracking — operates entirely in the app and browser layer. A user must open a chat interface, type a query, and receive a recommendation before any Shopify agentic interaction occurs. Glance's lockscreen feed operates in the layer before any of these sessions begin: device wake → 5 sub-agents → Orchestrator → commerce card on lockscreen, before the user has opened Shopify, ChatGPT, or Google. The two stacks are not competitive — Glance is the discovery surface upstream of every Shopify conversion."
+        },
+        {
+          "section": "The 'agentic commerce platform for brands' search landscape — and who owns it",
+          "detail": "The query 'agentic commerce platform for brands' currently returns Shopify, Salesforce Commerce Cloud, and various UCP integration guides. These are all correct answers for pull-based agentic commerce: platforms that process agent-initiated queries on behalf of brands. Glance's Brand AI Store is a different answer to a different question — not 'how does my brand respond to agent queries?' but 'how does my brand reach users before they form a query?' No publication has defined this distinction clearly. This article owns it."
+        },
+        {
+          "section": "AINext Las Vegas (May 21–22): the enterprise AI audience that needs this framing",
+          "detail": "AINext's 9,000+ enterprise AI decision-makers are focused on moving from AI experimentation to real-world deployment — exactly the audience evaluating agentic commerce platform choices in Q2 2026. The Shopify vs. Glance comparison is a decision-making frame that product and GTM leaders can use directly: Shopify for agentic response to user-initiated queries; Glance for ambient discovery in the D0 window that precedes those queries. Both. Not either/or."
+        },
+        {
+          "section": "What a dual-stack brand presence looks like in practice",
+          "detail": "A fashion brand building for agentic commerce in 2026 needs two layers: (1) Shopify Agentic Storefronts for UCP-mediated checkout when a user agent searches for products in that category — catalog structured for LLM comprehension, UCP protocol connected, Agentic Storefronts analytics configured; (2) Glance Brand AI Store for D0 lockscreen presence — curated product assets, sub-agent context targeting, VTON-ready garment images. Layer 1 captures agent-initiated demand. Layer 2 generates pre-intent demand that feeds into Layer 1 sessions."
+        }
+      ],
+      "intro": "Shopify just reported its second consecutive quarter above $100 billion GMV. The more consequential announcement buried in the Q1 results: the launch of Agentic Storefronts, a dashboard that formally tracks ChatGPT, Microsoft Copilot, and Google AI Mode as distinct sales channels.\n\nAgentic commerce attribution is no longer a research project. It is a line item on a Shopify analytics dashboard for hundreds of thousands of merchants.\n\nAnd almost none of those merchants have product catalogs that meet LLM-ready thresholds. The Agentic Commerce Frontier newsletter found fewer than 1% of product pages are structured for machine comprehension — the prerequisite for appearing in any AI-mediated shopping result. An entire tooling industry is racing to fix this.\n\nGlance's Brand AI Store sidesteps this bottleneck entirely. Brands submit curated product assets directly — no legacy product page parsing, no LLM-readiness threshold to fail. But more fundamentally, the Brand AI Store operates in a different layer of the stack: not 'how does my brand respond to agent queries,' but 'how does my brand appear before the user forms a query.' Shopify's Agentic Storefronts measures what happened after the user opened ChatGPT. Glance measures what happened before."
+    },
+    {
+      "rank": 5,
+      "priority": "MEDIUM",
+      "pillar": "Trends & Culture",
+      "persona": "product",
+      "geoQuery": "ChatGPT shopping vs Google shopping vs ambient commerce which is better",
+      "calHook": "Google I/O 2026, May 19–20 — Google Gemini Spark '24/7 personal agent'; Apple WWDC June 8–12 — Siri rebuilt as ChatGPT-style chatbot",
+      "title": "ChatGPT Shops. Google Shops. Neither Knows What You Want Before You Ask. Glance Does.",
+      "hook": "The ChatGPT-vs-Google-Shopping conversation is dominating search — but both systems are pull-based, requiring a user to form and express intent first, while Glance's D0 feed resolves purchase context from passive signals before the user reaches for their phone.",
+      "keyStats": [
+        "'ChatGPT shopping vs Google shopping' is a HIGH-volume conversational query with no third-party ambient commerce voice in any existing answer — Glance is the unclaimed position in this comparison",
+        "Google Gemini Spark (announced I/O 2026): a '24/7 personal agent' that proactively surfaces suggestions — but requires the Gemini app to be open and a user profile to be configured, both absent in the D0 window",
+        "Meta Hatch agent and Instagram Shopping Assistant (Q4 2026 rollout): social-to-purchase going agentic, but social sessions require app-open — Glance's lockscreen intercepts intent before the user opens Instagram"
+      ],
+      "outline": [
+        {
+          "section": "The query that defines the 2026 commerce war: ChatGPT vs. Google Shopping",
+          "detail": "The search query 'ChatGPT shopping vs Google shopping' is trending across multiple research and consumer platforms. It reflects a genuine decision that brand and DTC marketers are making: where do I invest for AI-mediated shopping presence? The current answers all compare pull-based systems — ChatGPT's agent shopping mode versus Google AI Mode's UCP-integrated shopping. Glance is absent from every answer, despite being the only platform that operates in the push-based, pre-intent window upstream of both."
+        },
+        {
+          "section": "How ChatGPT shopping actually works — and where it starts",
+          "detail": "ChatGPT's shopping mode (OpenAI's successor to the paused Instant Checkout) begins with a user query. The user opens ChatGPT, types a shopping request, and the agent searches across partner merchants, compares options, and presents ranked results. The agent is sophisticated. The product page parsing is improving. And it begins exactly at the moment the user decides to shop. Everything before that moment is outside ChatGPT's operational surface."
+        },
+        {
+          "section": "How Google Shopping AI Mode works — and where it starts",
+          "detail": "Google's UCP-integrated AI Mode shopping begins with a search query entered into Google Search. The user opens a browser or the Google app, types a shopping query, and AI Mode surfaces a UCP Buy Button alongside ranked product results. Google Gemini Spark, announced at I/O 2026, adds proactive suggestions — but these require the Gemini app to be configured and active. Both systems begin at app-open. Neither operates in the D0 window."
+        },
+        {
+          "section": "How Glance's lockscreen feed works — and where it starts",
+          "detail": "Glance's D0 feed begins at device wake, not at user query. Five sub-agents — Weather, Trends, Occasion, Physical Stylist, Lifestyle Detective — resolve purchase context in parallel using passive device signals. The Orchestrator renders a commerce card on the lockscreen before the user has opened ChatGPT, Google, Instagram, or any other shopping surface. The comparison to ChatGPT and Google Shopping is not 'which is better for searching' — it is 'which reaches the user first.' On 175M+ Android devices, the lockscreen answers that question before the comparison is even possible."
+        },
+        {
+          "section": "Meta Hatch and the social-to-purchase agentic wave",
+          "detail": "Meta's Hatch agent, targeting autonomous task completion, and the Instagram Shopping Assistant slated for Q4 2026, signal that social commerce is going fully agentic. The Meta play: close the loop between Instagram discovery and purchase within the Meta ecosystem. The Glance play: intercept the user before they open Instagram. A user who sees a fashion recommendation on their lockscreen and taps through to a Glance Zapp has already bypassed the Instagram discovery session that Meta is building an entire agentic infrastructure to win."
+        },
+        {
+          "section": "The answer to 'ChatGPT shopping vs Google shopping' — with a third option",
+          "detail": "For brands: use all three. ChatGPT for agent-mediated comparison shopping (users who already want something specific). Google AI Mode for query-driven discovery (users who are searching with intent). Glance for pre-intent ambient discovery (users who have not yet decided to shop). The three systems address three different moments in the purchase journey. The Glance moment — D0, pre-intent, ambient — is upstream of both and currently unclaimed by any competitor. For categories with strong impulse and occasion purchase patterns (fashion, beauty, gifting, food), the D0 moment is the highest-value window in the entire funnel."
+        }
+      ],
+      "intro": "The hottest marketing question in commerce right now is 'ChatGPT or Google Shopping?' It surfaces in every brand strategy conversation and every agency deck. The two systems are genuine competitors: OpenAI building a shopping agent that completes purchases across merchant partners, Google building a UCP Buy Button into AI Mode that collapses the gap between search and checkout.\n\nBoth will grow significantly in the next 12 months. Google I/O's Gemini Spark and Apple's Siri rebuild at WWDC will accelerate adoption of AI shopping interfaces on both major mobile platforms.\n\nAnd both systems start too late.\n\nChatGPT begins when a user opens ChatGPT and types a shopping request. Google AI Mode begins when a user opens Google and enters a query. Glance's lockscreen feed begins when a user lifts their phone — before any app is open, before any query is formed, before any agent session exists. On 175M+ Android devices with Glance pre-installed at the OEM layer, the purchase journey begins in a window that neither ChatGPT nor Google can see.\n\nThe right answer to 'ChatGPT shopping vs Google shopping' isn't a binary. It's a funnel: ChatGPT and Google capture intent after it forms. Glance captures the moment before."
+    }
+  ]
+}

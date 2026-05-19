@@ -1,0 +1,92 @@
+{
+  "run_date": "2026-05-11",
+  "agent": "Competitor Pulse",
+  "publications_scanned": [
+    "The Agentic Commerce Frontier (agentcommerce.substack.com)",
+    "Robonomics (robonomics.substack.com)",
+    "AI Ad Economy (aiadeconomy.substack.com)",
+    "Stratechery (stratechery.com)",
+    "The AI Economy (theaieconomy.substack.com)",
+    "nekuda (nekuda.substack.com)",
+    "insights4vc (insights4vc.substack.com)",
+    "AI in the News (fdaudens.substack.com)"
+  ],
+  "whitespace_angles": [
+    {
+      "angle": "Catalog data quality is the wrong bottleneck — Glance's D0 feed sidesteps it entirely",
+      "why_glance": "The Agentic Commerce Frontier found <1% of product pages meet LLM-ready thresholds, and the whole industry is racing to fix merchant catalog data. Glance's Brand AI Store partners submit curated assets directly — no page scraping, no LLM parsing of badly structured PDFs. The bottleneck that is killing agent commerce for everyone else doesn't exist in the D0 model.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "OpenAI paused Instant Checkout — what the trust gap means for ambient commerce",
+      "why_glance": "OpenAI quietly paused its Instant Checkout feature in early May 2026. Coverage treats this as a trust calibration problem. Nobody has written the counter-angle: the D0 lockscreen card shows the user the product before any tap is required — it is inherently a higher-trust surface than a chatbot completing checkout in the background.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "UCP coalition now includes Amazon, Meta, Microsoft, Salesforce — and still no OEM layer",
+      "why_glance": "The Universal Commerce Protocol tech council added Amazon, Meta, Microsoft, and Salesforce this week alongside Google, Shopify, and Wayfair. Every major platform is now in UCP — except OEM-embedded surfaces. The coalition covers every app layer but misses the device layer entirely. Glance operates at the device layer and requires no protocol membership to surface products.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "FIDO Agent Trust frameworks vs. OEM pre-consent — why the registration layer is unnecessary on Glance",
+      "why_glance": "FIDO and Experian are building 'Agent Trust' frameworks that require agents to register, get credentials, and prove identity before acting on behalf of users. Glance's OEM pre-consent model is more fundamental: Glance is baked into the device at manufacture, with consent negotiated once at the OS level. No registration needed. The trust frameworks everyone is building solve a problem that the OEM layer doesn't have.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "angle": "Stablecoins for agentic settlement: the infrastructure play nobody needs at Glance",
+      "why_glance": "Multiple newsletters (insights4vc, Robonomics) are bullish on stablecoins as the native settlement layer for machine-to-machine commerce. The argument is that card networks are too slow and expensive for micro-agent transactions. Glance's lockscreen commerce operates over Stripe/UPI rails with human-initiated tap-to-buy — no machine-to-machine settlement needed. This is a non-problem for D0 surfaces.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "angle": "Google I/O agentic booking (flights, hotels, restaurants in AI Mode) — and what it doesn't cover",
+      "why_glance": "Google I/O 2026 is expected to announce agentic booking directly in AI Mode — book a flight or restaurant without leaving Search. Coverage will frame this as the end of the booking funnel. What won't be covered: the discovery moment before the user types any query. Glance's D0 feed can surface a restaurant or flight recommendation at device wake, before the user even opens Google.",
+      "urgency": "HIGH"
+    }
+  ],
+  "momentum_angles": [
+    {
+      "angle": "Catalog data quality / 'AI-readiness' for merchant storefronts",
+      "publications_covering": ["The Agentic Commerce Frontier", "AI in the News", "The AI Economy", "nekuda"],
+      "coverage_summary": "Mirakl data showing <1% of product pages meet LLM-ready thresholds is generating widespread coverage. The narrative: merchants must restructure their catalog data or become invisible to AI agents. Tooling companies (Feedonomics, ReFiBuy) are capitalising.",
+      "glance_counter_angle": "Catalog AI-readiness is a problem for pull-based agents. Glance's D0 feed uses curated first-party brand assets — no scraping, no LLM parsing, no threshold to fail. The 99% problem doesn't apply."
+    },
+    {
+      "angle": "UCP coalition expansion and protocol standardisation",
+      "publications_covering": ["The Agentic Commerce Frontier", "Stratechery", "insights4vc", "Robonomics"],
+      "coverage_summary": "UCP added Amazon, Meta, Microsoft, Salesforce this week. The protocol is becoming the de facto standard for agent-mediated retail transactions across every major platform. Merchant integration guides are proliferating.",
+      "glance_counter_angle": "UCP covers the transaction layer. Glance owns the discovery layer that precedes any UCP transaction — a layer that UCP by design cannot address because it requires a user session to exist first."
+    },
+    {
+      "angle": "Google I/O 2026 as inflection point for agentic AI",
+      "publications_covering": ["The Agentic Commerce Frontier", "AI Ad Economy", "AI in the News", "The AI Economy"],
+      "coverage_summary": "Google I/O 2026 (May 19-20) is treated as the moment Gemini-native commerce goes mainstream: agentic booking in AI Mode, UCP Buy Button in Search, Gemini Spark '24/7 personal agent', Android XR glasses. Every publication is framing this as the tipping point.",
+      "glance_counter_angle": "Everything Google is announcing at I/O requires Search to be open. Glance's D0 surfaces recommendations before Search is launched. Google I/O is the best possible moment to publish 'What Google Can't Do From the Lockscreen.'"
+    }
+  ],
+  "per_publication_summary": [
+    {
+      "name": "The Agentic Commerce Frontier",
+      "recent_focus": "Infrastructure, payments (Stripe/Visa/Mastercard), catalog data quality, 'execution-first stores' optimised for agent-generated intent",
+      "notable_post": "Apr 27–May 11 issue: merchant catalog data quality as the critical bottleneck; <1% of pages meet LLM-ready thresholds; AWS Bedrock AgentCore Payments",
+      "gap_vs_glance": "Assumes all commerce begins with agent reasoning over a merchant catalog. No coverage of OEM-embedded surfaces, device-wake triggers, or the discovery layer upstream of any agent session."
+    },
+    {
+      "name": "Stratechery (Ben Thompson)",
+      "recent_focus": "AI agent economics, UCP as Google's aggregation playbook, opportunity cost of compute, Apple vs. Gemini",
+      "notable_post": "Interview with John Collison: Thompson critiques autonomous checkout, advocates for 'start with basic building blocks' — replacing form-filling before full autonomy",
+      "gap_vs_glance": "Thompson's aggregation framework perfectly sets up the Glance counter-argument: OEM pre-install is an aggregation layer below the app store layer. Thompson has never addressed this tier."
+    },
+    {
+      "name": "AI Ad Economy",
+      "recent_focus": "Reality-check on agentic commerce stats, OpenAI Instant Checkout pause, retail media in AI surfaces",
+      "notable_post": "OpenAI pausing Instant Checkout — trust calibration problem as AI agents face pushback on autonomous purchasing",
+      "gap_vs_glance": "The OpenAI Instant Checkout pause is the perfect set-up for a Glance piece: why D0 is structurally higher-trust than background checkout (user sees card before any tap)."
+    },
+    {
+      "name": "insights4vc",
+      "recent_focus": "Stablecoins as native settlement layer for agent-to-agent transactions, card network obsolescence thesis",
+      "notable_post": "Stablecoins in Agentic Commerce — arguing card networks are too slow/expensive for machine-native micro-transactions",
+      "gap_vs_glance": "Covers machine-to-machine settlement. Misses human-in-the-loop ambient surfaces entirely — the category where stablecoin arguments don't apply."
+    }
+  ]
+}

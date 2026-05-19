@@ -1,0 +1,61 @@
+{
+  "run_date": "2026-05-11",
+  "agent": "Trend Scout",
+  "trends": [
+    {
+      "rank": 1,
+      "title": "Amazon Kills Rufus, Launches 'Alexa for Shopping' with Full Agentic Buy-for-Me",
+      "source": "CNBC / GeekWire / Modern Retail",
+      "url": "https://www.cnbc.com/2026/05/13/amazon-ditches-rufus-ai-chatbot-in-favor-of-alexa-shopping-agent.html",
+      "date": "2026-05-13",
+      "summary": "Amazon unified its Rufus chatbot and Alexa+ into a single 'Alexa for Shopping' agent embedded directly in the main Amazon search bar, capable of full autonomous purchase completion via a 'Buy for Me' mode that uses stored payment and delivery details. The agent also generates dynamic product comparisons, tracks up to 12 months of price history, and automates deal-finding — signalling that the primary Amazon shopping surface is now a conversational agent, not a keyword search bar.",
+      "pillar": "The Commerce Shift",
+      "relevance_score": 10,
+      "glance_angle": "Glance's lockscreen feed is the only surface that intercepts a consumer before they ever open Amazon. As Amazon collapses discovery and checkout into one ambient agent, Glance's AI Orchestrator — with its parallel Weather, Trends, Occasion, and Lifestyle sub-agents — can surface the right product moment earlier in the intent funnel, at the precise second the user reaches for their phone, before any branded agent captures attention."
+    },
+    {
+      "rank": 2,
+      "title": "Google Unveils Universal Commerce Protocol (UCP) — An Open Standard for Agent-Led Checkout",
+      "source": "Google Blog / Search Engine Land / InfoQ",
+      "url": "https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/",
+      "date": "2026-05-06",
+      "summary": "Building on its January NRF announcement, Google activated UCP in AI Mode and Gemini in May 2026, enabling any merchant connected to the open protocol to complete agentic checkouts directly inside a conversational AI response — with Shopify, Wayfair, Target, and Walmart among 20+ launch partners. UCP is interoperable with MCP, Agent2Agent (A2A), and the Agent Payments Protocol (AP2), making it the de facto infrastructure layer for cross-platform agentic commerce.",
+      "pillar": "Tech Depth",
+      "relevance_score": 9,
+      "glance_angle": "UCP is the plumbing; Glance's lockscreen is the faucet already installed in 175M homes. Because Glance sits at the Android OS layer — below every browser and every app — it can pipe UCP-enabled merchant catalogs directly into the D0 shopping feed without the user ever launching Google. Glance's Physical Stylist and Occasion sub-agents can trigger UCP checkouts at the point of outfit inspiration, collapsing the funnel to zero clicks."
+    },
+    {
+      "rank": 3,
+      "title": "Stripe's Agentic Commerce Suite: 250M Wallets and Virtual Cards for Autonomous AI Agents",
+      "source": "Stripe / TechCrunch",
+      "url": "https://techcrunch.com/2026/04/30/stripe-link-digital-wallet-ai-agents-shopping/",
+      "date": "2026-04-30",
+      "summary": "At Stripe Sessions (April 29, 2026), Stripe launched the Agentic Commerce Suite — connecting 250 million Link wallet users to AI agents via Shared Payment Tokens and one-time virtual cards through a new 'Issuing for Agents' product. Agents can now complete purchases autonomously without ever receiving raw card data, solving the trust and security gap that killed OpenAI's Instant Checkout; Stripe simultaneously announced integration with OpenAI Agents SDK, LangChain, CrewAI, and Vercel AI SDK.",
+      "pillar": "Tech Depth",
+      "relevance_score": 8,
+      "glance_angle": "Payment friction is the last mile killer for ambient commerce. Glance's agentic chat and Zapps surface runs on Android hardware where Stripe's Link wallet can be pre-authorized at device setup — meaning a Glance-initiated 'Buy Now' moment on the lockscreen can complete in a single biometric tap, with no app launch, no cart, no checkout flow. This is the trust layer Glance needs to make its D0 feed transactional, not just inspirational."
+    },
+    {
+      "rank": 4,
+      "title": "HBR Research: Scarcity Timers and Discounts Fail on AI Shopping Agents — Only Ratings and Price Work",
+      "source": "Harvard Business Review",
+      "url": "https://hbr.org/2026/05/research-traditional-marketing-doesnt-work-on-ai-shopping-agents",
+      "date": "2026-05-08",
+      "summary": "A peer-reviewed study by Jafar Sabbah and Oguz Acar, published in HBR May 2026, tested 8 classic e-commerce persuasion tactics (scarcity, countdown timers, strike-through pricing, vouchers, bundles) across GPT-4.1-mini, GPT-5, Gemini 2.5 Pro, and Gemini 2.5 Flash Lite across thousands of simulated shopping rounds — finding that only star ratings and raw price reliably shifted agent selection, while all other tactics produced model-specific noise or backfired. Advanced reasoning models actively penalized overt persuasion signals.",
+      "pillar": "Market Intelligence",
+      "relevance_score": 9,
+      "glance_angle": "Glance's feed is already agent-mediated: the D0 Orchestrator synthesizes sub-agent signals, not human psychology cues. This research validates Glance's architecture — curating products through contextual relevance (occasion, weather, lifestyle) rather than manufactured urgency. As brand budgets shift toward 'agent-optimized' content, Glance's contextual signal stack (5 parallel sub-agents) becomes the most defensible placement in commerce media."
+    },
+    {
+      "rank": 5,
+      "title": "Mobile-VTON: CVPR 2026 Paper Enables High-Fidelity Virtual Try-On Fully Offline on Commodity Android Devices",
+      "source": "arXiv / CVPR 2026 / GitHub (tmllab)",
+      "url": "https://arxiv.org/abs/2603.00947",
+      "date": "2026-05-05",
+      "summary": "Mobile-VTON, accepted at CVPR 2026, demonstrates a modular TGT (TeacherNet-GarmentNet-TryonNet) architecture that matches server-based virtual try-on quality (VITON-HD, DressCode benchmarks at 1024x768) while running entirely on-device without any cloud upload — eliminating the privacy barrier that has blocked mainstream VTON adoption. The system requires only a single selfie and a garment image, making it trivially deployable as a lockscreen or widget-layer experience on existing Android hardware.",
+      "pillar": "Trends & Culture",
+      "relevance_score": 9,
+      "glance_angle": "Glance is pre-installed on 175M Android devices — more VTON-capable endpoints than any retailer or app can reach. Mobile-VTON's offline-first architecture means Glance's Physical Stylist sub-agent can render a photorealistic garment try-on directly on the lockscreen at zero latency and zero privacy cost, converting the idle glance moment into a fitting room. No app install, no cloud upload, no friction — just point, try, buy."
+    }
+  ]
+}

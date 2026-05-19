@@ -127,6 +127,49 @@
       ],
       "key_calendar_event": "Google I/O 2026 \u2014 May 19\u201320, 2026",
       "run_path": "runs/2026-05-08"
+    },
+    {
+      "week": "2026-05-11",
+      "label": "Week of May 11, 2026",
+      "stats": {
+        "trends": 5,
+        "geo_queries": 15,
+        "unexplored_queries": 9,
+        "high_volume_queries": 6,
+        "substacks_analysed": 8,
+        "whitespace_angles": 6,
+        "momentum_angles": 3,
+        "events": 12,
+        "article_ideas": 5
+      },
+      "top_idea": {
+        "title": "Amazon's 'Buy for Me' Requires Amazon to Be Open. Glance's Lockscreen Doesn't.",
+        "pillar": "The Commerce Shift",
+        "priority": "HIGH",
+        "geo_query": "agentic checkout without app how does it work"
+      },
+      "top_trend": {
+        "title": "Amazon Kills Rufus, Launches 'Alexa for Shopping' with Full Agentic Buy-for-Me",
+        "score": 10,
+        "pillar": "The Commerce Shift"
+      },
+      "new_whitespace": [
+        "Catalog data quality is the wrong bottleneck \u2014 Glance's D0 feed sidesteps it entirely",
+        "OpenAI paused Instant Checkout \u2014 what the trust gap means for ambient commerce",
+        "UCP coalition now includes Amazon, Meta, Microsoft, Salesforce \u2014 and still no OEM layer",
+        "FIDO Agent Trust frameworks vs. OEM pre-consent \u2014 why the registration layer is unnecessary on Glance"
+      ],
+      "p1_geo_queries": [
+        "what is D0 commerce",
+        "zapps mini apps lockscreen",
+        "how does lockscreen commerce work",
+        "ambient commerce AI 2026",
+        "agentic checkout without app",
+        "AI shopping before you open an app",
+        "pre-installed AI stylist android"
+      ],
+      "key_calendar_event": "Google I/O 2026 \u2014 May 19\u201320, 2026",
+      "run_path": "runs/2026-05-11"
     }
   ]
 }

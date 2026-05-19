@@ -1,0 +1,103 @@
+{
+  "run_date": "2026-05-11",
+  "agent": "Calendar Agent",
+  "window": "2026-05-11 to 2026-06-11",
+  "events": [
+    {
+      "name": "Google I/O 2026",
+      "date": "2026-05-20",
+      "date_display": "May 20",
+      "type": "Conference",
+      "content_hook": "Gemini Intelligence's agentic grocery-to-cart feature (long-press a list, auto-fill a shopping cart) is the most direct lock-screen commerce signal Glance has seen from Google. Android Auto ordering-while-driving and Googlebook launch give three new Glance surfaces to pitch. Frame Glance as the ambient commerce layer that pre-populates intent before users even open an app.",
+      "priority": "HIGH"
+    },
+    {
+      "name": "AINext Conference Las Vegas",
+      "date": "2026-05-21",
+      "date_display": "May 21–22",
+      "type": "Conference",
+      "content_hook": "9,000 enterprise AI decision-makers in one room focused on moving from AI experimentation to real-world deployment — exactly Glance's story. Opportunity to position Glance's lock-screen as the highest-reach AI surface for agentic commerce demos and brand partnerships discussed at the event.",
+      "priority": "HIGH"
+    },
+    {
+      "name": "Meta Hatch Agent & Instagram Shopping Assistant Reveal",
+      "date": "2026-05-08",
+      "date_display": "Week of May 8",
+      "type": "Launch",
+      "content_hook": "Meta's Hatch AI agent (targeting autonomous task completion) and an Instagram AI shopping assistant slated for Q4 rollout signals that social-to-purchase is going agentic. Glance angle: the lock screen intercepts intent before the user opens Instagram — pitch Glance as the pre-funnel layer that feeds Meta's commerce pipeline.",
+      "priority": "HIGH"
+    },
+    {
+      "name": "Shopify Q1 2026 Earnings",
+      "date": "2026-05-05",
+      "date_display": "May 5",
+      "type": "Earnings",
+      "content_hook": "Shopify's GMV hit $101B (+35% YoY) for the second consecutive quarter above $100B, and the new Agentic Storefronts dashboard lets merchants track ChatGPT/Copilot-attributed sales. Glance content hook: as AI channels become a formal Shopify sales channel, the lock screen is the next frontier — an ambient surface that routes purchase intent before the browser opens.",
+      "priority": "HIGH"
+    },
+    {
+      "name": "Apple WWDC 2026",
+      "date": "2026-06-08",
+      "date_display": "June 8–12",
+      "type": "Conference",
+      "content_hook": "Apple's Siri comeback — rebuilt as a ChatGPT-style chatbot in iOS 27 — sets the stage for AI-native device experiences becoming mainstream. Glance angle: as Apple deepens on-device AI, Android's open ecosystem (where Glance operates) is the more accessible canvas for brands wanting ambient AI commerce. Pre-WWDC content can position Glance as the Android answer to Apple's walled-garden AI.",
+      "priority": "HIGH"
+    },
+    {
+      "name": "RetailX / IRCE 2026",
+      "date": "2026-06-09",
+      "date_display": "June 9–11",
+      "type": "Conference",
+      "content_hook": "IRCE at McCormick Place draws the core US retail buyer and tech vendor audience (CRO, retail media, fulfillment). Coincides with WWDC week, making it a double news cycle. Glance content angle: retail media is moving off the browser and onto the device — the lock screen as a first-party retail media surface with zero cookie dependency.",
+      "priority": "HIGH"
+    },
+    {
+      "name": "The Lead Summit New York",
+      "date": "2026-05-20",
+      "date_display": "May 20–21",
+      "type": "Conference",
+      "content_hook": "2,500+ brand, retail, and DTC leaders meeting in NYC the same day as Google I/O — double news cycle. The Lead Summit focuses on DTC operating models and digital commerce innovation, making it an ideal moment for Glance to publish content on ambient lock-screen discovery as a next-gen DTC acquisition channel.",
+      "priority": "MEDIUM"
+    },
+    {
+      "name": "eTail Connect Miami",
+      "date": "2026-05-12",
+      "date_display": "May 12–14",
+      "type": "Conference",
+      "content_hook": "Invite-only senior retail and ecommerce leader forum in Miami covering personalization and digital transformation. First major retail event in the Glance calendar window — use to publish a thought-leadership piece on lock-screen personalization as the next evolution beyond homepage and app personalization.",
+      "priority": "MEDIUM"
+    },
+    {
+      "name": "Nashville eCom Summit",
+      "date": "2026-06-04",
+      "date_display": "June 4",
+      "type": "Conference",
+      "content_hook": "Regional ecommerce gathering with strong DTC and mid-market brand attendance. Good moment to publish Glance case study content on impulse-to-purchase conversion from the lock screen, targeting brands that rely on discovery-led growth rather than search intent.",
+      "priority": "MEDIUM"
+    },
+    {
+      "name": "Salesforce Connections 2026",
+      "date": "2026-06-20",
+      "date_display": "June 20–22",
+      "type": "Conference",
+      "content_hook": "Salesforce's flagship marketing and commerce event in Chicago anchors the enterprise martech calendar. Just outside the window but worth teasing: Glance's lock-screen data signals (impression → swipe → purchase) map cleanly onto Salesforce Marketing Cloud journey analytics. Content angle: ambient commerce as the missing top-of-funnel for Salesforce Commerce Cloud brands.",
+      "priority": "LOW"
+    },
+    {
+      "name": "Gemini 3.1 Ultra Launch",
+      "date": "2026-05-01",
+      "date_display": "Early May",
+      "type": "Launch",
+      "content_hook": "Google's Gemini 3.1 Ultra — 2M token context window, native multimodal (text/image/audio/video) — signals that on-device AI understanding of rich media content is no longer a research project. Glance hook: a lock screen that can natively interpret product images, video ads, and contextual signals to serve hyper-relevant commerce cards is now technically feasible at scale.",
+      "priority": "MEDIUM"
+    },
+    {
+      "name": "NRF Protect 2026",
+      "date": "2026-06-08",
+      "date_display": "June 8–10",
+      "type": "Conference",
+      "content_hook": "NRF's loss prevention and cybersecurity summit — overlaps with WWDC and IRCE, making it a packed news week. Relevant Glance angle: as retail media moves to device-native surfaces, brand-safe, fraud-resistant inventory on the lock screen (no ad injection, no click fraud) is a compelling pitch to retail security and compliance-minded buyers.",
+      "priority": "LOW"
+    }
+  ]
+}

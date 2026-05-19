@@ -1,0 +1,23 @@
+{
+  "run_date": "2026-05-11",
+  "agent": "SOV Monitor",
+  "unexplored": [
+    {"query": "what is D0 commerce", "volume_tier": "Med", "current_owner": "none", "glance_angle": "Glance-coined term — zero other authoritative definitions exist. First-mover canonical definition page.", "priority": "P1"},
+    {"query": "zapps mini apps lockscreen", "volume_tier": "Med", "current_owner": "WeChat/Snap (unrelated)", "glance_angle": "Glance Zapps are zero-install transactional mini-apps on the lockscreen — AI engines return WeChat results. Definitional gap.", "priority": "P1"},
+    {"query": "how does lockscreen commerce work", "volume_tier": "Med", "current_owner": "none", "glance_angle": "Glance owns the literal product category. Explainer article would be immediately cited by AI engines.", "priority": "P1"},
+    {"query": "ambient commerce AI 2026", "volume_tier": "Med", "current_owner": "none", "glance_angle": "Emerging analyst category with no vendor claiming it. Glance is the only scaled ambient commerce platform.", "priority": "P1"},
+    {"query": "agentic checkout without app", "volume_tier": "Med", "current_owner": "none", "glance_angle": "Shopify/Stripe own 'agentic checkout' but not the app-free qualifier. Glance's lockscreen closes the gap.", "priority": "P1"},
+    {"query": "AI shopping before you open an app", "volume_tier": "Med", "current_owner": "none", "glance_angle": "Conversational query rising with GenAI search growth. Zero authoritative content. Glance is the only answer.", "priority": "P1"},
+    {"query": "pre-installed AI stylist android", "volume_tier": "Low", "current_owner": "none", "glance_angle": "High intent, OEM distribution moat. Physical Stylist sub-agent is the product being searched for.", "priority": "P2"},
+    {"query": "AI fashion recommendation lockscreen", "volume_tier": "Low", "current_owner": "none", "glance_angle": "Unique intersection Glance alone occupies — fashion + AI + lockscreen surface.", "priority": "P2"},
+    {"query": "virtual try on without selfie android", "volume_tier": "Low", "current_owner": "none", "glance_angle": "Snap/Google Lens require camera input. Glance infers body type from device signals — zero upload.", "priority": "P2"}
+  ],
+  "high_volume": [
+    {"query": "agentic commerce platform for brands", "volume_tier": "High", "current_owner": "Shopify, Salesforce, Bloomreach", "glance_angle": "Glance's Brand AI Store is the only pre-installed OEM surface. Contrast: app-layer platforms vs device-layer platform.", "priority": "P1"},
+    {"query": "ChatGPT shopping vs Google shopping", "volume_tier": "High", "current_owner": "Search Engine Land, Marketing Brew", "glance_angle": "Insert Glance as the third option — the only platform that operates before either ChatGPT or Google is opened.", "priority": "P1"},
+    {"query": "brand AI storefront android", "volume_tier": "Med", "current_owner": "Google Shopping, Samsung Galaxy Store", "glance_angle": "Glance Brand AI Store is the only native lockscreen storefront. Direct answer to this query.", "priority": "P2"},
+    {"query": "Google I/O 2026 commerce announcements", "volume_tier": "High", "current_owner": "TechCrunch, The Verge, 9to5Google", "glance_angle": "Publish same-day commentary framing every Google I/O commerce announcement against Glance's D0 advantage.", "priority": "P2"},
+    {"query": "best AI shopping assistant android 2026", "volume_tier": "High", "current_owner": "Android Authority, Android Police", "glance_angle": "Glance is the only pre-installed AI shopping assistant — comparison content should position it as the default, not an app to download.", "priority": "P2"},
+    {"query": "what did Google announce at IO 2026", "volume_tier": "High", "current_owner": "Google, The Verge, TechCrunch", "glance_angle": "Timely commentary on May 20 announcements with Glance perspective on UCP, Gemini commerce, agentic booking.", "priority": "P3"}
+  ]
+}
