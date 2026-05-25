@@ -1,0 +1,61 @@
+{
+  "run_date": "2026-05-25",
+  "agent": "Trend Scout",
+  "trends": [
+    {
+      "rank": 1,
+      "title": "Google Launches Universal Cart + Agents Payment Protocol (AP2) at Google Marketing Live",
+      "source": "Google Blog / Search Engine Land",
+      "url": "https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/",
+      "date": "2026-05-20",
+      "summary": "Google announced the Universal Cart — a cross-merchant, cross-retailer cart powered by the Universal Commerce Protocol (UCP) — that lets shoppers add items from Nike, Sephora, Target, Walmart, Wayfair, and Shopify merchants inside Search, Gemini, YouTube, and Gmail, with checkout via Google Pay. Alongside it, Google launched the Agents Payment Protocol (AP2), enabling AI agents to make secure purchases on behalf of users within user-defined spending limits, starting with Gemini Spark — marking the first major deployment of autonomous AI-initiated payment infrastructure at platform scale.",
+      "pillar": "The Commerce Shift",
+      "relevance_score": 10,
+      "glance_angle": "Glance's lockscreen feed is already the moment of first intent for 175M Android users — before they open any app. UCP + AP2 means Glance's agentic commerce layer (the 5-sub-agent Orchestrator) can now tap a live, cross-merchant cart standard and a payment protocol to execute purchases from the lockscreen itself, without the user ever unlocking. Glance is uniquely positioned as the zero-friction bridge between passive discovery and AP2-powered checkout — something no browser, app, or OS-level player can replicate at idle-screen depth."
+    },
+    {
+      "rank": 2,
+      "title": "Amazon Retires Rufus, Launches 'Alexa for Shopping' — AI Agent That Buys For You",
+      "source": "CNBC / Retail Dive",
+      "url": "https://www.cnbc.com/2026/05/13/amazon-ditches-rufus-ai-chatbot-in-favor-of-alexa-shopping-agent.html",
+      "date": "2026-05-13",
+      "summary": "Amazon discontinued the Rufus chatbot branding and unified it with Alexa+ into 'Alexa for Shopping,' an agentic shopping assistant embedded in Amazon's search bar, app, and Echo Show displays that can monitor prices, compare products side-by-side, and autonomously purchase when items hit user-set price targets or auto-restock household essentials on a schedule. The move signals Amazon's full pivot from conversational Q&A to autonomous action — the assistant doesn't just answer questions, it transacts.",
+      "pillar": "Market Intelligence",
+      "relevance_score": 9,
+      "glance_angle": "Alexa for Shopping is reactive — it requires the user to already be inside Amazon's walled garden. Glance's edge is ambient and pre-intent: the Lifestyle Detective and Physical Stylist sub-agents surface personalized product signals on the lockscreen before a user ever opens Amazon. When Alexa for Shopping executes, Glance has already shaped demand. The strategic question for Glance: can Glance's agentic layer plug into Amazon's price-monitoring and auto-purchase APIs to close the loop from lockscreen discovery to Alexa-triggered fulfillment?"
+    },
+    {
+      "rank": 3,
+      "title": "Klarna Launches Shopping Search App Inside ChatGPT — 100M Products, Live Prices",
+      "source": "Digital Commerce 360 / Business Wire",
+      "url": "https://www.digitalcommerce360.com/2026/05/20/klarna-ai-shopping-search-app-openai-chatgpt/",
+      "date": "2026-05-20",
+      "summary": "Klarna launched its AI-powered Shopping Search app inside ChatGPT on May 20, connecting OpenAI's conversational layer to Klarna's product graph of 100M+ products and 400M listings across 13 markets — enabling natural-language product discovery with live prices, visual results, and availability data directly inside a chat interface, without leaving the conversation. Traffic from AI platforms to retail sites grew 700% in the 2025 holiday season, with AI-referred shoppers converting 31% higher, validating conversational commerce as a structurally dominant channel.",
+      "pillar": "Tech Depth",
+      "relevance_score": 8,
+      "glance_angle": "The Klarna-ChatGPT integration proves that the MCP (Model Context Protocol) server layer is the new commerce distribution primitive — whoever owns the product data graph wins placement in AI conversations. Glance's Brand AI Store already hosts brand-native AI agents; the next step is for Glance to operate its own MCP commerce server that feeds Glance's Orchestrator real-time catalog data from brand partners, making Glance the Klarna-equivalent for ambient, on-device AI commerce — without requiring users to invoke a chatbot."
+    },
+    {
+      "rank": 4,
+      "title": "Meta's Project Hatch and Instagram Agentic Shopping Tool Target TikTok Shop",
+      "source": "The Information / Engadget",
+      "url": "https://www.theinformation.com/articles/meta-building-ai-agent-called-hatch-agentic-shopping-tool-instagram",
+      "date": "2026-05-08",
+      "summary": "Meta is developing two parallel agentic products: an Instagram-native shopping agent that watches Reels and autonomously searches, compares, and completes purchases of featured products; and a broader consumer AI agent codenamed Hatch (powered by Claude Opus 4.6 / Sonnet 4.6) designed to rival OpenClaw for complex multi-step digital tasks. Both are targeting Q4 2026 launch with Hatch testing wrapping up by June, positioning Meta to challenge TikTok Shop's creator-commerce flywheel with an AI-execution layer rather than a pure discovery surface.",
+      "pillar": "The Commerce Shift",
+      "relevance_score": 8,
+      "glance_angle": "Meta's play is Reels-to-purchase — visual social content triggers agentic buying. Glance's lockscreen feed delivers the same 'video/image sees product, AI acts' loop but in a pre-social, pre-app ambient context for 175M devices. Glance can position against Hatch by demonstrating that the lockscreen is a higher-attention, less ad-saturated surface than Instagram for the same impulse-to-agent-action moment — and that Glance's Physical Stylist sub-agent already does what Hatch is building, live today."
+    },
+    {
+      "rank": 5,
+      "title": "Android XR Smart Glasses with Always-On Gemini Signal a Wearable Commerce Surface",
+      "source": "Voice of Emirates / MacRumors",
+      "url": "https://www.voiceofemirates.com/en/science-and-tech/2026/05/24/google-enters-the-smart-glasses-race-android-xr-set-to-redefine-mixed-reality-in-2026/",
+      "date": "2026-05-24",
+      "summary": "At Google I/O 2026, Google confirmed Android XR audio glasses launching in fall 2026 — providing all-day Gemini access via private audio output — alongside Project Aura AR glasses (with Xreal) set for global launch this year, with Google projecting 2M+ units. The glasses give Gemini ambient access to a user's real-world visual context, enabling product identification, real-time price comparison, and conversational purchasing from physical retail environments without touching a phone screen.",
+      "pillar": "Tech Depth",
+      "relevance_score": 7,
+      "glance_angle": "Android XR glasses are the next 'lockscreen' — always-on, pre-app, ambient AI at the point of physical experience. Glance's strategic narrative must evolve: what Glance does for idle phone screens (surfacing AI commerce in zero-effort moments), Android XR glasses will extend to the physical world. Glance should establish its agentic commerce architecture as the OS-level layer that feeds both surfaces — lockscreen and AR glasses — using the same Orchestrator and UCP/AP2 payment rails, making Glance the ambient commerce engine across Google's device ecosystem."
+    }
+  ]
+}

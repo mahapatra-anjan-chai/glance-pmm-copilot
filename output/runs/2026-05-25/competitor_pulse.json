@@ -1,0 +1,92 @@
+{
+  "run_date": "2026-05-25",
+  "agent": "Competitor Pulse",
+  "publications_scanned": [
+    "The Agentic Commerce Frontier (agentcommerce.substack.com)",
+    "AI Ad Economy (aiadeconomy.substack.com)",
+    "Stratechery (stratechery.com)",
+    "UCP Checker Blog (ucpchecker.com)",
+    "Robonomics (robonomics.substack.com)",
+    "The AI Economy (theaieconomy.substack.com)",
+    "insights4vc (insights4vc.substack.com)",
+    "Modern Retail (modernretail.co)"
+  ],
+  "whitespace_angles": [
+    {
+      "angle": "Google's Universal Cart works across Search/Gmail/YouTube/Gemini — but requires all four apps to be open. Glance's D0 runs before any of them launch.",
+      "why_glance": "Every piece of coverage about Google's Universal Cart (the dominant story of the week) treats cross-surface cart as the pinnacle of ambient commerce. Nobody has written the upstream argument: Glance's lockscreen surfaces a product before Search, Gmail, YouTube, or Gemini is open. The 'universal' in Universal Cart still requires a universe of open apps.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "UCP has 5,294 verified stores and is growing 30% month-over-month — and still has zero OEM-embedded participants",
+      "why_glance": "UCP Checker's monthly report shows strong protocol adoption momentum. Every newsletter is covering the growth. Not one has noted that the entire UCP ecosystem operates at the app/web layer — no OEM surface is a UCP participant. Glance's lockscreen sits upstream of every UCP transaction and requires no protocol membership.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Klarna inside ChatGPT, Alexa for Shopping, Meta Hatch — every platform race is about checkout ownership. Nobody is writing about discovery ownership.",
+      "why_glance": "Three major launches this week (Klarna/ChatGPT, Amazon Alexa for Shopping, Meta Hatch) are all racing to own the final step: checkout. Coverage is entirely checkout-centric. The question of who owns product discovery before any of these agents are invoked is structurally absent from every publication.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Android XR glasses with always-on Gemini — another ambient surface Glance already operates on, at 175M scale",
+      "why_glance": "Google's Android XR glasses announcement at I/O generated significant coverage as the next ambient commerce surface. Nobody has noted that Glance already operates an ambient commerce surface at 175M device scale — on the lockscreen. The XR glasses are a future bet; the lockscreen is a present reality.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "angle": "Siri 2.0 (WWDC June 8) will enable voice-initiated commerce on iOS — creating the strongest Android differentiation angle of 2026",
+      "why_glance": "Apple's WWDC is 14 days away. Coverage previewing Siri 2.0 focuses entirely on Apple's own ecosystem. Nobody is pre-writing the Android counter-narrative: Glance's lockscreen delivers the equivalent capability (ambient product discovery, zero-utterance, pre-intent) without requiring a voice command, a wake word, or an iPhone.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Google Marketing Live 2026 announced AI tools for merchants to track brand performance in AI-driven search — Glance's Brand AI Store gives brands first-party D0 analytics that no SERP tool can match",
+      "why_glance": "Google Marketing Live introduced Merchant Center tools to help brands track how they appear in AI Overviews and AI Mode. Every newsletter covered this as a measurement story. Nobody noted that Glance's Brand AI Store already provides first-party D0 analytics — impression rate at device wake, ambient CTR, pre-intent engagement — metrics that are structurally unavailable to any SERP-layer measurement tool.",
+      "urgency": "MEDIUM"
+    }
+  ],
+  "momentum_angles": [
+    {
+      "angle": "Google Universal Cart / cross-surface commerce",
+      "publications_covering": ["The Agentic Commerce Frontier", "Modern Retail", "AI Ad Economy", "UCP Checker Blog", "The AI Economy"],
+      "coverage_summary": "Google's Universal Cart (Search + Gmail + YouTube + Gemini) with UCP and AP2 protocols is the dominant story across every publication. Nike, Sephora, Target, Walmart, Wayfair, Fenty, Steve Madden are live. US summer launch confirmed. UCP ecosystem at 5,294 stores, +30% MoM.",
+      "glance_counter_angle": "Universal Cart is the most powerful cross-surface cart ever built — and it still requires at least one Google surface to be open. Glance's D0 feed operates before Search, Gmail, YouTube, or Gemini launches. The 'universal' in Universal Cart has a prerequisite: app-open."
+    },
+    {
+      "angle": "Platform race to own agentic checkout (Klarna/ChatGPT, Amazon Alexa for Shopping, Meta Hatch)",
+      "publications_covering": ["The Agentic Commerce Frontier", "Stratechery", "Modern Retail", "Robonomics", "insights4vc"],
+      "coverage_summary": "Three platforms launched major agentic checkout products this week. Klarna brought 100M products with live prices into ChatGPT. Amazon retired Rufus and launched Alexa for Shopping with 'Buy for Me'. Meta Hatch is in testing with DoorDash, Reddit, and Outlook integration. Every publication is framing this as the checkout layer war.",
+      "glance_counter_angle": "All three launches are racing to own the last step. Glance owns the first step — product discovery before any of these agents are invoked. The checkout war is a D+1 problem. Glance is the only D0 player."
+    },
+    {
+      "angle": "WWDC 2026 preview / Apple Siri 2.0 commerce capabilities",
+      "publications_covering": ["The AI Economy", "AI Ad Economy", "Modern Retail", "Stratechery"],
+      "coverage_summary": "WWDC June 8 is generating pre-event coverage across all publications. Siri 2.0 with chatbot redesign, multi-step task handling, DoorDash ordering via voice, and third-party AI Extensions (Claude, Gemini) are the expected headlines. Commerce analysts are framing this as Apple finally entering agentic commerce.",
+      "glance_counter_angle": "Siri 2.0 voice commerce requires a wake word, a verbal intent, and an iPhone. Glance's lockscreen delivers ambient product discovery without any of these prerequisites — and on Android, which is the dominant global OS. WWDC is the ideal moment to publish the Android-first ambient commerce counterpoint."
+    }
+  ],
+  "per_publication_summary": [
+    {
+      "name": "The Agentic Commerce Frontier",
+      "recent_focus": "Google I/O Universal Cart + AP2 protocol deep-dive, UCP ecosystem growth (5,294 stores), Amazon Alexa for Shopping launch, checkout layer consolidation",
+      "notable_post": "May 18–25 issue: UCP protocol analysis, Google + Amazon checkout race, AP2 payment protocol mechanics",
+      "gap_vs_glance": "Comprehensive on checkout infrastructure and protocol adoption. Zero coverage of OEM-embedded discovery layer, D0 commerce window, or any surface upstream of app-open."
+    },
+    {
+      "name": "UCP Checker Blog",
+      "recent_focus": "Monthly UCP ecosystem tracker: 5,294 stores, +30% MoM growth, new retailers, protocol compliance scores",
+      "notable_post": "State of Agentic Commerce — May 2026: UCP growth data, AP2 protocol adoption timeline, retailer integration status",
+      "gap_vs_glance": "Exhaustive on UCP participation metrics. Has never noted the absence of OEM-embedded surfaces from the UCP ecosystem — a structural gap Glance fills upstream."
+    },
+    {
+      "name": "Modern Retail",
+      "recent_focus": "Klarna/ChatGPT integration, retailer readiness for agentic commerce, Google Marketing Live merchant tools, brand performance measurement in AI search",
+      "notable_post": "Klarna's ChatGPT plugin brings 100M products with live pricing — 'the most significant commerce-AI integration since ChatGPT launched shopping'",
+      "gap_vs_glance": "Strong on retailer and brand perspective. No coverage of what brands lose by being absent from D0 surfaces — the window before any AI shopping agent is invoked."
+    },
+    {
+      "name": "Stratechery (Ben Thompson)",
+      "recent_focus": "Google I/O as aggregation theory in action (UCP = Google extending its platform), Apple WWDC preview, AI assistant market structure",
+      "notable_post": "Google I/O 2026: Universal Cart as Google's commerce aggregation playbook — same strategy as Android, Chrome, Maps applied to the checkout layer",
+      "gap_vs_glance": "Thompson's aggregation framework is the perfect setup for a Glance rebuttal: OEM pre-install is an aggregation layer below Google's own — one Thompson has still never addressed despite four weeks of adjacent coverage."
+    }
+  ]
+}

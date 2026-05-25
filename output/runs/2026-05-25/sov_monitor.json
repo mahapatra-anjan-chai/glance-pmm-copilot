@@ -1,0 +1,106 @@
+{
+  "run_date": "2026-05-25",
+  "agent": "SOV Monitor",
+  "unexplored": [
+    {
+      "query": "D0 commerce definition",
+      "volume_tier": "Low",
+      "current_owner": "none",
+      "glance_angle": "Glance invented the D0 (Day Zero) commerce concept — commerce that happens before the user opens any app, triggered by passive lock screen presence. Publish the definitive explainer and own this term entirely.",
+      "priority": "P1"
+    },
+    {
+      "query": "pre-intent commerce what is it",
+      "volume_tier": "Low",
+      "current_owner": "none",
+      "glance_angle": "No content exists for this exact phrase. Glance's lock screen model is the canonical pre-intent commerce surface — it intercepts users before search intent forms. Glance should define and own this emerging vocabulary.",
+      "priority": "P1"
+    },
+    {
+      "query": "zapps glance how does it work",
+      "volume_tier": "Low",
+      "current_owner": "none",
+      "glance_angle": "Search returns only OWASP ZAP and a decade-old Zappos product. Glance's Zapps (mini-apps on the lock screen) have zero documented explainer content online. A dedicated how-it-works piece would rank immediately.",
+      "priority": "P1"
+    },
+    {
+      "query": "agentic commerce OEM embedded",
+      "volume_tier": "Low",
+      "current_owner": "none",
+      "glance_angle": "All existing content on agentic commerce covers app-layer or web-layer agents (Gemini, ChatGPT). Zero content addresses OEM-level embedding at the OS/hardware layer — Glance's core differentiator on 175M+ Samsung and Motorola devices. Glance is the only credible author for this angle.",
+      "priority": "P1"
+    },
+    {
+      "query": "lockscreen AI shopping android 2026",
+      "volume_tier": "Med",
+      "current_owner": "androidcentral.com / 9to5google.com",
+      "glance_angle": "Android Central and 9to5Google cover the Samsung-Glance partnership, but the narrative is Samsung-centric, not Glance-centric. Glance should publish first-party authoritative content explaining its own technology to reclaim the brand narrative for this high-relevance query.",
+      "priority": "P1"
+    },
+    {
+      "query": "how does Glance app work",
+      "volume_tier": "Med",
+      "current_owner": "glance.com (partial)",
+      "glance_angle": "Glance's own help pages are thin and fragmented. Third-party explainers (OreateAI, Quora) are filling the vacuum with shallow content. A comprehensive, SEO-optimised first-party deep-dive covering the full stack — lock screen AI, agentic shopping, Zapps, virtual try-on — would consolidate authority.",
+      "priority": "P1"
+    },
+    {
+      "query": "virtual try on android without camera",
+      "volume_tier": "Med",
+      "current_owner": "glamar.io / deorwine.com (generic lists)",
+      "glance_angle": "Existing results list generic try-on apps (FitRoom, Doppl) with no mention of Glance. Glance's selfie-to-style lock screen feature is precisely a camera-optional, generative virtual try-on. A targeted piece positioning Glance AI Looks for this query would capture high-purchase-intent traffic.",
+      "priority": "P2"
+    },
+    {
+      "query": "WWDC 2026 commerce AI what to expect",
+      "volume_tier": "Med",
+      "current_owner": "macrumors.com / eweek.com",
+      "glance_angle": "Coverage is entirely Apple-centric (Siri 2.0, iOS 27 writing tools, Visual Intelligence). No content frames WWDC 2026 through a commerce lens or contrasts Apple's approach with Android-native agentic commerce like Glance. Glance can publish a compare-and-contrast piece positioning its OEM head start against Apple's forthcoming commerce push.",
+      "priority": "P2"
+    }
+  ],
+  "high_volume": [
+    {
+      "query": "what happened at Google I/O 2026 for commerce",
+      "volume_tier": "High",
+      "current_owner": "blog.google / engadget.com / 9to5google.com / rewarx.com",
+      "glance_angle": "Google's Universal Cart and UCP announcements at I/O 2026 validate the agentic commerce shift Glance has been building toward. Glance should publish a rapid-response piece framing these announcements through the lens of what it means for OEM-embedded commerce — positioning Glance as the Android-native complement to Google's web-layer UCP strategy.",
+      "priority": "P1"
+    },
+    {
+      "query": "Gemini agentic shopping how does it work",
+      "volume_tier": "High",
+      "current_owner": "tealium.com / wix.com / azoma.ai / flywheeldigital.com",
+      "glance_angle": "All current explainers treat Gemini agentic shopping as a web/app-layer phenomenon. Glance can publish a differentiated take: how Gemini's UCP compares to lock screen agentic commerce (pre-app, pre-intent), and why OEM-embedded commerce represents the next layer beyond Gemini's reach.",
+      "priority": "P1"
+    },
+    {
+      "query": "Google universal commerce protocol explained",
+      "volume_tier": "High",
+      "current_owner": "developers.google.com / altexsoft.com / digiday.com / smarter-ecommerce.com",
+      "glance_angle": "Google and its developer ecosystem own this term completely. Glance's angle is a strategic response piece: UCP operates at the browser/app layer while Glance operates at the OS layer — together they represent complementary layers of the agentic commerce stack. Target long-tail variants like 'UCP vs OEM commerce' or 'what UCP means for lock screen shopping'.",
+      "priority": "P2"
+    },
+    {
+      "query": "best agentic commerce platform 2026",
+      "volume_tier": "High",
+      "current_owner": "bigcommerce.com / swell.is / kore.ai / alhena.ai",
+      "glance_angle": "All listicles cover web-layer and SaaS platforms (Kore.ai, Stripe ACP, Sierra AI). No list includes an OEM-embedded platform. Glance should publish its own 'Agentic Commerce Platform Landscape 2026' piece that introduces the OEM-embedded category — where Glance is the only credible entrant — and forces the category framing into the conversation.",
+      "priority": "P2"
+    },
+    {
+      "query": "AI shopping agent comparison 2026",
+      "volume_tier": "High",
+      "current_owner": "alhena.ai / insiderone.com / modernretail.co / fastcompany.com",
+      "glance_angle": "Comparisons cover Gemini, ChatGPT, Amazon Rufus, Perplexity. Glance is entirely absent from these rankings. Publishing a Glance-authored comparison that introduces 'ambient/lock screen agents' as a category — alongside intent-based web agents — would inject Glance into a query that currently generates substantial referral traffic.",
+      "priority": "P2"
+    },
+    {
+      "query": "ambient commerce definition",
+      "volume_tier": "High",
+      "current_owner": "verdict.co.uk / retail-insight-network.com / siliconrepublic.com",
+      "glance_angle": "Ambient commerce is currently defined around IoT sensors and cashierless stores (Amazon Go model). Glance represents a fundamentally different — and more scalable — form of ambient commerce: lock screen as always-on commerce surface on 175M devices. Glance should publish a content piece redefining ambient commerce for the mobile-first era and positioning itself as the leading example.",
+      "priority": "P2"
+    }
+  ]
+}

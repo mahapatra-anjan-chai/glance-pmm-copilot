@@ -170,6 +170,49 @@
       ],
       "key_calendar_event": "Google I/O 2026 \u2014 May 19\u201320, 2026",
       "run_path": "runs/2026-05-11"
+    },
+    {
+      "week": "2026-05-25",
+      "label": "Week of May 25, 2026",
+      "stats": {
+        "trends": 5,
+        "geo_queries": 14,
+        "unexplored_queries": 8,
+        "high_volume_queries": 6,
+        "substacks_analysed": 8,
+        "whitespace_angles": 6,
+        "momentum_angles": 3,
+        "events": 10,
+        "article_ideas": 5
+      },
+      "top_idea": {
+        "title": "Google's Universal Cart Is Live. It Still Requires Google to Be Open. Here's What Runs Before It.",
+        "pillar": "The Commerce Shift",
+        "priority": "HIGH",
+        "geo_query": "Google Universal Cart still requires app open what comes before"
+      },
+      "top_trend": {
+        "title": "Google Launches Universal Cart + Agents Payment Protocol (AP2) at Google Marketing Live",
+        "score": 10,
+        "pillar": "The Commerce Shift"
+      },
+      "new_whitespace": [
+        "Google's Universal Cart works across Search/Gmail/YouTube/Gemini \u2014 but requires ",
+        "UCP has 5,294 verified stores and is growing 30% month-over-month \u2014 and still ha",
+        "Klarna inside ChatGPT, Alexa for Shopping, Meta Hatch \u2014 every platform race is a",
+        "Android XR glasses with always-on Gemini \u2014 another ambient surface Glance alread"
+      ],
+      "p1_geo_queries": [
+        "D0 commerce definition",
+        "pre-intent commerce what is it",
+        "zapps glance how does it work",
+        "agentic commerce OEM embedded",
+        "lockscreen AI shopping android 2026",
+        "how does Glance app work",
+        "virtual try on android without camera"
+      ],
+      "key_calendar_event": "Apple WWDC 2026 \u2014 June 8\u201312, 2026",
+      "run_path": "runs/2026-05-25"
     }
   ]
 }

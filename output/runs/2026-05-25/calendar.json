@@ -1,0 +1,117 @@
+{
+  "run_date": "2026-05-25",
+  "agent": "Calendar Agent",
+  "window": "2026-05-25 to 2026-06-25",
+  "events": [
+    {
+      "name": "Apple WWDC 2026",
+      "date": "2026-06-08",
+      "date_display": "June 8–12, 2026",
+      "type": "Developer Conference",
+      "location": "Apple Park, Cupertino, CA (+ online)",
+      "content_hook": "Siri 2.0 powered by Gemini brings voice-first shopping to 1B+ iPhones. iOS 27 sets the stage for lock-screen commerce, real-time product search via voice, and on-device AI personalization. Glance angle: how ambient AI on device changes the moment-of-intent for brands.",
+      "priority": "HIGH",
+      "source_url": "https://developer.apple.com/wwdc26/",
+      "notes": "Keynote June 8 at 10am PT. Siri-Gemini integration, iOS 27, task automation (e.g. voice-ordered food/delivery)."
+    },
+    {
+      "name": "Google I/O 2026",
+      "date": "2026-05-19",
+      "date_display": "May 19–21, 2026 (on-demand through June)",
+      "type": "Developer Conference",
+      "location": "Shoreline Amphitheatre, Mountain View, CA (+ online)",
+      "content_hook": "Google's Universal Cart lets shoppers add items across Search, Gmail, YouTube, and Gemini — the biggest shift to cross-surface shopping intent in years. Gemini 3.5 Flash + AI Overviews in 30%+ more shopping queries by mid-2026 reshapes discovery funnels. Glance angle: what Universal Cart means for retail media and product discovery.",
+      "priority": "HIGH",
+      "source_url": "https://io.google/2026/",
+      "notes": "Universal Cart, Shopping Graph enhancements, AI Overviews in shopping queries. On-demand sessions available May 21 onward."
+    },
+    {
+      "name": "RetailX / IRCE Chicago",
+      "date": "2026-06-09",
+      "date_display": "June 9–11, 2026",
+      "type": "Trade Show / Conference",
+      "location": "McCormick Place, Chicago, IL",
+      "content_hook": "The anchor US ecommerce trade show of summer 2026. Tracks cover retail media, CRO, omni-channel fulfillment, and AI applications. Glance angle: post-show roundup of biggest tech bets retailers are making — and what they reveal about where commerce attention goes next.",
+      "priority": "HIGH",
+      "source_url": "https://retailx.events/",
+      "notes": "Overlaps with NRF Protect (June 8–10) and Apple WWDC (June 8–12) — big week for retail tech."
+    },
+    {
+      "name": "Salesforce Connections 2026",
+      "date": "2026-06-03",
+      "date_display": "June 3–4, 2026 (Bootcamp: May 31–June 2)",
+      "type": "Industry Conference",
+      "location": "McCormick Place West, Chicago, IL",
+      "content_hook": "Salesforce's marquee marketing + commerce event. Expect Agentforce-for-retail announcements, AI-driven CRM and loyalty tooling, and Data Cloud updates for personalization at scale. Glance angle: how AI agents in the CRM stack are rewriting retention and loyalty playbooks.",
+      "priority": "HIGH",
+      "source_url": "https://www.salesforce.com/connections/",
+      "notes": "Date confirmed June 3–4. Also streaming on Salesforce+."
+    },
+    {
+      "name": "CRMC 2026 (CRM & Loyalty Summit)",
+      "date": "2026-06-01",
+      "date_display": "June 1–3, 2026",
+      "type": "Industry Conference",
+      "location": "Omni PGA Frisco Resort, Frisco, TX",
+      "content_hook": "~800 senior retail marketers, CRM leads, and loyalty execs convene on data-driven loyalty, AI personalization, and omnichannel lifecycle marketing. Glance angle: what leading retail brands are betting on for loyalty in an AI-first era.",
+      "priority": "MEDIUM",
+      "source_url": "https://www.thecrmc.com/",
+      "notes": "Highly curated; brand-focused keynotes and breakout sessions on AI and customer lifecycle."
+    },
+    {
+      "name": "NRF Protect 2026",
+      "date": "2026-06-08",
+      "date_display": "June 8–10, 2026",
+      "type": "Industry Conference",
+      "location": "Gaylord Texan Resort, Grapevine, TX",
+      "content_hook": "Loss prevention meets AI: NRF Protect covers retail security, cyber risk, and emerging tech threats. Glance angle: the hidden AI investment retailers are making in fraud and theft prevention — and how it intersects with personalization infrastructure.",
+      "priority": "MEDIUM",
+      "source_url": "https://nrfprotect.nrf.com/",
+      "notes": "Focused on retail loss prevention and cyber risk. Smaller audience but signals enterprise retail AI priorities."
+    },
+    {
+      "name": "CommerceNext Growth Show 2026",
+      "date": "2026-06-23",
+      "date_display": "June 23–24, 2026",
+      "type": "Marketing & Ecommerce Conference",
+      "location": "New York Hilton Midtown, New York City, NY",
+      "content_hook": "Retail and DTC brand marketers focused on customer acquisition, paid media, CRM, retail media networks, and emerging channels. End-of-window capstone event. Glance angle: what retail marketers are betting on for H2 2026 — perfect for a mid-year trend synthesis piece.",
+      "priority": "HIGH",
+      "source_url": "https://growthshow.commercenext.com/",
+      "notes": "Speaker lineup announced April 29. Tracks: paid media, data, creative, retail media networks."
+    },
+    {
+      "name": "Shopify Editions / Platform Updates (Ongoing June 2026)",
+      "date": "2026-06-01",
+      "date_display": "Rolling — June 2026",
+      "type": "Platform Announcement",
+      "location": "Virtual / Online",
+      "content_hook": "Shopify Functions replacing Scripts, Sidekick AI broadly available, Checkout Extensibility v2, and TikTok Shop native integration all live or launching in this window. No single Unite conference — announcements are now rolling. Glance angle: Shopify's infrastructure push is quietly enabling the next generation of AI-native storefronts.",
+      "priority": "MEDIUM",
+      "source_url": "https://www.shopify.com/editions/winter2026",
+      "notes": "Shopify discontinued the traditional Unite conference format; now uses rolling Editions and blog announcements."
+    },
+    {
+      "name": "Google Cloud / AI Follow-Up Content Window",
+      "date": "2026-05-25",
+      "date_display": "May 25 – June 15, 2026 (post-I/O window)",
+      "type": "Content Opportunity Window",
+      "location": "Online / Various",
+      "content_hook": "Google I/O on-demand sessions, Shopping Graph deep-dives, and Gemini API rollouts for merchants go live. Weeks 1–4 post-I/O are highest search intent for 'Google AI shopping', 'Universal Cart', and 'AI Overviews ecommerce'. Glance angle: explainer content on what Universal Cart and Gemini in Search mean for brand discovery strategy.",
+      "priority": "HIGH",
+      "source_url": "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/",
+      "notes": "Not a discrete event but a high-intent content window immediately following Google I/O May 19–21."
+    },
+    {
+      "name": "Nashville eCom Summit 2026",
+      "date": "2026-06-04",
+      "date_display": "June 4, 2026",
+      "type": "Ecommerce Conference",
+      "location": "Nashville, TN",
+      "content_hook": "Emerging DTC and independent ecommerce operators summit. Glance angle: grassroots signal on what mid-market brands are adopting — a useful counter-signal to enterprise-heavy events in the same week.",
+      "priority": "LOW",
+      "source_url": "https://flxpoint.com/blog/ecommerce-retail-trade-shows-you-should-be-attending",
+      "notes": "Smaller regional event; useful for community-level signal."
+    }
+  ]
+}
