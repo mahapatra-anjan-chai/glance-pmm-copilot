@@ -1,0 +1,95 @@
+{
+  "run_date": "2026-06-01",
+  "agent": "Calendar Agent",
+  "window": "2026-06-01 to 2026-06-30",
+  "events": [
+    {
+      "name": "Salesforce Connections 2026",
+      "date": "2026-06-03",
+      "type": "Conference",
+      "description": "Salesforce's annual marketing and commerce conference in Chicago, spotlighting AI-driven CRM, Agentforce, and brand-to-consumer personalization at scale.",
+      "content_hook": "Salesforce's push for AI-personalized storefronts is built for app-open commerce — Glance's D0 lockscreen layer intercepts the moment before any app is opened, surfacing hyper-relevant offers that Salesforce's own agents never reach. The Brand AI Store model lets OEMs and brands own that ambient surface natively.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "WWDC 2026 — Apple Worldwide Developers Conference",
+      "date": "2026-06-08",
+      "type": "Conference",
+      "description": "Apple's annual developer keynote (June 8–12) unveiling iOS 27, macOS 27, and expanded Apple Intelligence features across its closed-ecosystem devices.",
+      "content_hook": "Every WWDC cycle widens the iOS-vs-Android innovation surface: Apple locks AI commerce inside its walled garden while Android's open ecosystem — 175M Glance-enabled devices — lets brands deploy ambient D0 commerce directly on the lockscreen. WWDC is the ideal moment to publish the Android differentiation thesis: more reach, more surfaces, no app required.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "NRF PROTECT 2026",
+      "date": "2026-06-08",
+      "type": "Conference",
+      "description": "National Retail Federation's loss-prevention and enterprise risk conference (June 8–10) at Gaylord Texan Resort, covering retail fraud, digital security, and AI-driven risk tools.",
+      "content_hook": "Retail's fraud conversation is increasingly about agentic checkout and identity verification at zero-click surfaces — a challenge Glance's D0 commerce layer addresses natively by keeping discovery above the transaction layer, reducing fraud surface while enabling brand reach.",
+      "urgency": "LOW"
+    },
+    {
+      "name": "Android 17 Stable Release",
+      "date": "2026-06-10",
+      "type": "Launch",
+      "description": "Google's Android 17 (codename 'Cinnamon Bun') stable release arrives on Pixel devices, bringing new AI, ambient, and lock-screen platform capabilities.",
+      "content_hook": "Android 17 is the platform update Glance's OEM-native commerce layer runs on — new ambient display APIs and AI surface hooks deepen the lockscreen commerce opportunity. This is the moment to publish the 'Android 17 for commerce' angle: what brands and retailers can now reach on 175M+ devices before users ever open an app.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "Amazon Prime Day 2026",
+      "date": "2026-06-17",
+      "type": "Cultural",
+      "description": "Amazon's annual four-day mega-sale event, moved to June for the first time, driving the largest online retail demand spike of the summer across 20+ countries.",
+      "content_hook": "Prime Day is the clearest proof that ambient, always-on discovery wins: shoppers who see deals before they search convert faster. Glance's lockscreen commerce surfaces Prime Day-style deal intent in the D0 moment — before the Amazon app is ever opened — giving brand partners a first-mover advantage in the summer's highest-intent retail window.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "Google Universal Commerce Protocol (UCP) Expansion",
+      "date": "2026-06-15",
+      "type": "Launch",
+      "description": "Google expands its Universal Commerce Protocol to Canada and Australia, bringing AI-powered cross-retailer checkout via Search, Gemini, and YouTube to new markets.",
+      "content_hook": "Google's UCP proves the industry thesis: commerce is collapsing into ambient AI surfaces. Glance's lockscreen is the surface Google can't reach — OEM-native, always-on, pre-app. As UCP expands, Glance's Brand AI Store becomes the complementary D0 layer that captures intent before any Google surface does.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "name": "CommerceNext Growth Show 2026",
+      "date": "2026-06-23",
+      "type": "Conference",
+      "description": "Annual retail and ecommerce marketing conference in New York City (June 23–24) with 2,500+ attendees and 150+ speakers focused on AI in retail, DTC brands, and intelligent commerce.",
+      "content_hook": "CommerceNext's 2026 theme — AI as a practical retail tool — maps directly to Glance's pitch: the AI Intelligent Era starts at D0, on the lockscreen, before brand discovery even begins. Glance should be in the room positioning the Brand AI Store as the missing top-of-funnel layer in every retail AI stack being discussed on stage.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "Meta One Subscription & AI Commerce Launch",
+      "date": "2026-06-01",
+      "type": "Launch",
+      "description": "Meta rolls out 'Meta One' — a new subscription umbrella for creators, businesses, and AI users across Instagram, Facebook, and WhatsApp — monetizing its AI surfaces for the first time.",
+      "content_hook": "Meta monetizing AI surfaces through subscriptions signals the end of free ambient reach for brands inside social apps. Glance's OEM-native lockscreen commerce model is structurally different: brands buy ambient presence on the Android lockscreen directly, with no social feed algorithm, no subscription wall, and no gatekeeper — pure D0 reach at scale.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "name": "Back-to-School Season Opens",
+      "date": "2026-06-22",
+      "type": "Cultural",
+      "description": "The US back-to-school retail season formally opens in the final week of June, with Walmart and major retailers launching supply rollbacks and search traffic spiking 4x for school-related deals.",
+      "content_hook": "Back-to-school 2026 is the first major retail season where agentic AI agents actively compete for purchase intent — but they all operate post-app-open. Glance's lockscreen commerce captures the 'I just saw this' discovery moment before any search or app, making it the ideal D0 surface for back-to-school brand campaigns targeting parents on Android devices.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "name": "OpenAI ChatGPT Agentic Shopping v2 Push",
+      "date": "2026-06-05",
+      "type": "Launch",
+      "description": "OpenAI relaunches its agentic shopping capability inside ChatGPT, partnering with Etsy, Shopify, and Walmart after its Instant Checkout pilot was paused and redesigned.",
+      "content_hook": "OpenAI's second attempt at agentic shopping proves this space is fiercely contested — but every agentic shopping model still requires the user to open an app first. Glance's D0 lockscreen commerce is the only surface that surfaces purchase intent at the zero-moment of truth, before any LLM shopping agent is even invoked.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "name": "Amazon AWS Agentic Shopping Assistant for Retailers",
+      "date": "2026-06-10",
+      "type": "Launch",
+      "description": "Amazon Web Services launches a new managed service letting third-party retailers deploy AI shopping assistants powered by Alexa for Shopping technology within 60 days.",
+      "content_hook": "Amazon's move to white-label its AI commerce stack to third-party retailers accelerates the agentic commerce arms race — but all of these solutions remain inside retailer apps and storefronts. Glance's Brand AI Store offers retailers a complementary D0 surface: ambient, lockscreen-native commerce that reaches Android users before they open any retailer's app or Alexa-powered assistant.",
+      "urgency": "MEDIUM"
+    }
+  ]
+}

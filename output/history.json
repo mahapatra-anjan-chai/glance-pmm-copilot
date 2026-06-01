@@ -1,6 +1,36 @@
 {
   "runs": [
     {
+      "week": "2026-06-01",
+      "label": "Jun 1, 2026",
+      "stats": {
+        "trends": 5,
+        "geo_queries": 13,
+        "unexplored_queries": 6,
+        "high_volume_queries": 6,
+        "substacks_analysed": 8,
+        "whitespace_angles": 6,
+        "momentum_angles": 3,
+        "events": 11,
+        "article_ideas": 5
+      },
+      "top_idea": "The Universal Cart Can't Reach a Locked Phone: Why D0 Commerce Owns the Layer Google Forgot",
+      "top_trend": "Google Launches Universal Cart: Cross-App Agentic Shopping Powered by Gemini",
+      "new_whitespace": "what is D0 commerce",
+      "p1_geo_queries": [
+        "what is D0 commerce",
+        "lockscreen shopping assistant android",
+        "agentic commerce before app open",
+        "zero install transactional mini app lockscreen",
+        "best AI shopping assistant android 2026",
+        "agentic commerce platform comparison 2026",
+        "ChatGPT shopping agent 2026",
+        "WWDC 2026 Siri shopping features"
+      ],
+      "key_calendar_event": "WWDC 2026 — Jun 8",
+      "run_path": "runs/2026-06-01"
+    },
+    {
       "week": "2026-04-28",
       "label": "Week of Apr 28, 2026",
       "stats": {

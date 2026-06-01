@@ -1,0 +1,92 @@
+{
+  "run_date": "2026-06-01",
+  "agent": "SOV Monitor",
+  "unexplored": [
+    {
+      "query": "what is D0 commerce",
+      "volume_tier": "Low",
+      "current_owner": "none",
+      "glance_angle": "Glance can define and own the D0 commerce category — product discovery that fires at device wake (swipe-zero), before any app opens. No authoritative content exists; zero results from media or analysts on this exact term. Glance is the only live D0 commerce platform at scale (175M devices).",
+      "priority": "P1"
+    },
+    {
+      "query": "lockscreen shopping assistant android",
+      "volume_tier": "Med",
+      "current_owner": "partial — 9to5Google covers Samsung/Glance launch; glance.com has thin content",
+      "glance_angle": "Glance is the only native lockscreen shopping assistant pre-installed by OEMs (Samsung, Motorola). Should publish a definitive explainer: how Glance AI surfaces product cards at first glance, with Zapps enabling zero-tap checkout — differentiating from assistant apps that require unlocking.",
+      "priority": "P1"
+    },
+    {
+      "query": "agentic commerce before app open",
+      "volume_tier": "Med",
+      "current_owner": "none — agentic commerce is owned by Criteo, Mastercard, Salesforce, IBM; none address pre-app-open layer",
+      "glance_angle": "Glance occupies the layer below agentic commerce: commerce that fires before any agent or app is invoked. Zapps transact at the lockscreen, eliminating the 'app open' step entirely. Strong whitespace for a thought-leadership piece positioning Glance as the pre-agent commerce layer.",
+      "priority": "P1"
+    },
+    {
+      "query": "OEM native storefront pre-intent analytics android",
+      "volume_tier": "Low",
+      "current_owner": "none",
+      "glance_angle": "Glance's Brand AI Store is the only OEM-embedded storefront with pre-intent signals (device wake data, content engagement before search). No comparable product or content exists. Glance can establish the category definition and own this SERP.",
+      "priority": "P2"
+    },
+    {
+      "query": "physical AI stylist virtual try-on without selfie",
+      "volume_tier": "Low",
+      "current_owner": "none — virtual try-on content (FitRoom, fashn.ai, weshop.ai) all require photo upload",
+      "glance_angle": "Glance's Physical AI Stylist generates try-on recommendations without a selfie, using ambient device context. This is a genuinely novel capability with zero content coverage. A comparison piece ('virtual try-on with vs. without selfie — how lockscreen AI changes the game') would capture early search demand.",
+      "priority": "P2"
+    },
+    {
+      "query": "zero install transactional mini app lockscreen",
+      "volume_tier": "Low",
+      "current_owner": "none — 'Zapps' returns a Linux packaging tool, not Glance's product",
+      "glance_angle": "Glance Zapps are the only zero-install transactional mini-apps running natively on the Android lockscreen. No media, analyst, or tech outlet has covered this concept. Glance should publish a primer on Zapps, defining the category before competitors or journalists frame it incorrectly.",
+      "priority": "P1"
+    }
+  ],
+  "high_volume": [
+    {
+      "query": "best AI shopping assistant android 2026",
+      "volume_tier": "High",
+      "current_owner": "QuickPick.ai, Tidio, eesel AI, hellorep.ai — listicle blogs dominate; Amazon Rufus and Walmart Sparky cited as top consumer picks",
+      "glance_angle": "All ranked tools require the user to open an app. Glance's angle: 'The AI shopping assistant you never have to open — Glance surfaces product recommendations before you reach your home screen.' Pitch a contributed listicle to Android Authority or a standalone comparison post positioning Glance as the D0 layer that precedes all other assistants.",
+      "priority": "P1"
+    },
+    {
+      "query": "agentic commerce platform comparison 2026",
+      "volume_tier": "High",
+      "current_owner": "kore.ai, BigCommerce blog, DigitalApplied, rye.com — 10-platform matrices exist; none include Glance",
+      "glance_angle": "Glance is missing from every agentic commerce platform matrix because it operates at a layer analysts haven't mapped: OEM-embedded, pre-intent, lockscreen-native. Publish a reframe: 'The agentic commerce layer nobody mapped — why D0 commerce sits above ACP and UCP.' Target eMarketer and Modern Retail.",
+      "priority": "P1"
+    },
+    {
+      "query": "ChatGPT shopping agent 2026",
+      "volume_tier": "High",
+      "current_owner": "CNBC, Fast Company, OpenAI blog, Shopify, Modern Retail — heavily covered; Instant Checkout stumbled, now pivoting to retailer apps",
+      "glance_angle": "ChatGPT's shopping agent still requires user initiation inside the ChatGPT app. Glance's counter-angle: 'ChatGPT shopping starts when you open the app. Glance starts when you pick up your phone.' Newsjack OpenAI's Instant Checkout stumble with a post on why lockscreen-native commerce sidesteps the cold-start problem of agent adoption.",
+      "priority": "P1"
+    },
+    {
+      "query": "WWDC 2026 Siri shopping features",
+      "volume_tier": "High",
+      "current_owner": "9to5Mac, Tom's Guide, TechRepublic, Engadget — WWDC keynote June 8; Siri 2.0 with shopping actions expected (Dunkin'/DoorDash ordering cited)",
+      "glance_angle": "As Apple announces Siri shopping (iOS-only, app-open required), Glance can publish a rapid-response piece: 'Siri can now order coffee — Glance has been showing you what to buy before your screen unlocks.' Targets Android users explicitly excluded from Apple's ecosystem; reinforces Glance's OEM Samsung/Motorola distribution.",
+      "priority": "P1"
+    },
+    {
+      "query": "Google vs Apple commerce AI 2026",
+      "volume_tier": "High",
+      "current_owner": "Fast Company, CNBC, Marketing Dive — Google Universal Commerce Protocol vs Apple Siri 2.0 framing dominates; both are post-unlock, app-layer plays",
+      "glance_angle": "Glance's angle: 'Google and Apple are fighting over who controls commerce after you unlock. Glance controls commerce before you unlock.' Position Glance as the third-party OEM layer that operates independently of both ecosystems, with Samsung and Motorola as distribution proof points.",
+      "priority": "P2"
+    },
+    {
+      "query": "ambient commerce how to prepare brand 2026",
+      "volume_tier": "Med",
+      "current_owner": "Azura Magazine owns top result with a brand-prep guide; mixflow.ai, contactpigeon cover ambient AI trends",
+      "glance_angle": "Azura's guide is generic (voice, IoT, wearables). Glance can publish a more specific playbook: 'Ambient commerce on 175M Android lockscreens — a brand guide to D0 placement.' Target CMOs of fashion, FMCG, and electronics brands. Pitch to Retail Dive or publish natively on Substack/LinkedIn with Glance byline.",
+      "priority": "P2"
+    }
+  ]
+}

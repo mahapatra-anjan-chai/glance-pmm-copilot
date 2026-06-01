@@ -1,0 +1,37 @@
+{
+  "run_date": "2026-06-01",
+  "agent": "QA Checker",
+  "passed": true,
+  "checks": {
+    "trend_scout": {
+      "passed": true,
+      "notes": "Exactly 5 trends. All required fields present (title, source, date, summary, relevance_score, pillar, glance_hook). Pillar values all valid: 'The Commerce Shift' (x2), 'Market Intelligence' (x2), 'Tech Depth' (x1). All 5 trends score ≥8 (scores: 10, 9, 9, 8, 8) — exceeds the minimum of 3."
+    },
+    "sov_monitor": {
+      "passed": true,
+      "notes": "6 unexplored queries (≥5 required). 6 high_volume queries (≥3 required). All rows have required fields: query, volume_tier, current_owner, glance_angle, priority. Priority values are exclusively P1 or P2 — no invalid values."
+    },
+    "optimise_geo_csv": {
+      "passed": true,
+      "notes": "13 data rows (excluding header) — exceeds ≥8 minimum. Columns match spec: query, type, volume_tier, current_owner, glance_angle, priority. No empty required fields detected across any row."
+    },
+    "competitor_pulse": {
+      "passed": true,
+      "notes": "6 whitespace_angles (≥5 required). 3 momentum_angles (≥2 required). 4 per_publication_summary entries (≥3 required). All whitespace angles are specific and substantive (reference Google Universal Cart, ChatGPT monetization, Forrester trust data, physical AI try-on mechanics, Klarna BNPL integration, UCP/ACP protocol wars). All urgency values are HIGH (x4) or MEDIUM (x2) — no invalid values."
+    },
+    "calendar": {
+      "passed": true,
+      "notes": "11 events (≥8 required). All events have required fields: name, date, type, description, content_hook, urgency. 5 HIGH urgency events (Salesforce Connections June 3, WWDC 2026 June 8, Android 17 Stable Release June 10, Amazon Prime Day June 17, CommerceNext Growth Show June 23) — exceeds minimum of 2."
+    },
+    "article_ideas": {
+      "passed": true,
+      "notes": "Exactly 5 ideas. All ideas have all 10 required fields: rank, title, priority, pillar, author_persona, geo_query, insider_angle, calendar_hook, opening_hook, why_now. Titles and opening hooks are specific and non-generic. All geo_query values verified in sov_monitor: 'agentic commerce before app open' (unexplored P1), 'WWDC 2026 Siri shopping features' (high_volume P1), 'agentic commerce platform comparison 2026' (high_volume P1), 'physical AI stylist virtual try-on without selfie' (unexplored P2), 'what is D0 commerce' (unexplored P1). All insider angles reference specific Glance products or stats (D0, 175M devices, Zapps, Brand AI Store, Physical AI Stylist, Samsung/Motorola OEM distribution)."
+    },
+    "fact_check": {
+      "passed": true,
+      "notes": "175M devices figure used consistently and correctly throughout all files — no contradictory figures (no '100M' or '200M'). OEM partners Samsung and Motorola cited correctly. Zapps described accurately as zero-install mini-apps. Brand AI Store described as OEM-native/OEM-embedded throughout — never described as a downloaded app. D0 consistently defined as product discovery at device wake before any app opens."
+    }
+  },
+  "issues": [],
+  "summary": "All 7 checks passed. Pipeline outputs are complete, internally consistent, factually accurate against known Glance facts, and cross-referenced correctly (all article_ideas geo_queries verified in sov_monitor). Ready for HTML generation."
+}

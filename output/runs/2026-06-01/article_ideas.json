@@ -1,0 +1,66 @@
+{
+  "run_date": "2026-06-01",
+  "agent": "Orchestrator",
+  "ideas": [
+    {
+      "rank": 1,
+      "title": "The Universal Cart Can't Reach a Locked Phone: Why D0 Commerce Owns the Layer Google Forgot",
+      "priority": "HIGH",
+      "pillar": "The Commerce Shift",
+      "author_persona": "product",
+      "geo_query": "agentic commerce before app open",
+      "insider_angle": "Google's Universal Cart spans Search, Gemini, YouTube, and Gmail — but every one of those surfaces requires the phone to be unlocked and an app running. Glance's D0 commerce layer activates at device wake, before any Google protocol handshake exists. On 175M OEM-preinstalled Android devices, Glance Zapps enable zero-tap transactional moments at the lockscreen — a surface no UCP or AP2 specification has yet defined. Glance isn't competing with the Universal Cart; it feeds intent into it from a layer upstream.",
+      "calendar_hook": "Google UCP expansion to Canada and Australia launches June 15 — the ideal moment to publish the 'Protocol Zero' counter-narrative while UCP is top of mind.",
+      "opening_hook": "Google just announced the most ambitious shopping infrastructure in its history — and it still doesn't work when your phone is locked.",
+      "why_now": "Google Universal Cart dominated Google I/O coverage the week of May 19 and every major commerce publication (Forrester, Modern Retail, The Agentic Commerce Frontier) is framing UCP as the definitive agentic commerce moment — zero outlets have covered the upstream gap Glance occupies, making this the highest-value whitespace window before the narrative calcifies."
+    },
+    {
+      "rank": 2,
+      "title": "Siri Can Now Order Coffee. Glance Has Been Showing You What to Buy Before Your Screen Unlocks.",
+      "priority": "HIGH",
+      "pillar": "Market Intelligence",
+      "author_persona": "GTM",
+      "geo_query": "WWDC 2026 Siri shopping features",
+      "insider_angle": "Apple's Siri 2.0 reboot — debuting at WWDC June 8 — is an iOS-only, app-open-required experience. Glance's D0 model on 175M Samsung and Motorola Android devices operates at a structurally earlier moment: the device wake. Glance doesn't require unlocking, app installation, or Siri invocation. While Apple closes its commerce loop inside its walled garden, Glance's OEM pre-consent gives it device-level trust that no downloaded assistant app — not Siri, not Google Assistant, not ChatGPT — can inherit.",
+      "calendar_hook": "WWDC 2026 keynote is June 8 — 7 days away. A rapid-response piece published same-day or within 24 hours captures the peak search surge on 'WWDC 2026 Siri shopping features' (P1, High volume).",
+      "opening_hook": "On June 8, Apple will announce that Siri can finally order you a coffee — and the entire tech press will call it revolutionary, because they've never picked up a Samsung phone.",
+      "why_now": "WWDC is the single highest-volume tech calendar event of June; sov_monitor confirms 'WWDC 2026 Siri shopping features' is a P1 high-volume query currently owned by 9to5Mac and Engadget — a same-day Glance counter-publish can capture Android-specific search demand that Apple-focused outlets won't serve."
+    },
+    {
+      "rank": 3,
+      "title": "Why 65% of Shoppers Don't Trust AI Checkout — And Why That's Actually Good News for Glance",
+      "priority": "HIGH",
+      "pillar": "The Commerce Shift",
+      "author_persona": "marketing",
+      "geo_query": "agentic commerce platform comparison 2026",
+      "insider_angle": "Forrester data shows 65.5% of U.S. consumers distrust agent-led payments. OpenAI scaled back Instant Checkout after merchant resistance. ChatGPT ad revenue triggers 75% trust erosion. Every platform trying to solve this is solving it with transparency disclosures and opt-in flows — earned trust from a downloaded app. Glance's trust architecture is categorically different: OEM pre-installation by Samsung and Motorola means Glance carries native device-level trust, the highest provenance signal on an Android handset. Glance Zapps inherit that trust. No app-store download can replicate it. This is a structural moat, not a feature.",
+      "calendar_hook": "Salesforce Connections (June 3, Chicago) puts AI-personalized commerce front-and-center for CMOs — publishing 48 hours before the conference primes the exact audience of brand and retail decision-makers who will be in that room.",
+      "opening_hook": "Two out of three American shoppers say they don't trust an AI agent to buy something for them — and every agentic commerce platform is trying to fix that with a terms-of-service update.",
+      "why_now": "The consumer trust crisis in agentic checkout is the dominant story across Forrester, Checkout.com, Modern Retail, and AI Ad Economy this fortnight — competitor_pulse flags it as HIGH urgency whitespace because no publication has yet connected OEM pre-consent to the trust gap that is actively blocking the entire category."
+    },
+    {
+      "rank": 4,
+      "title": "Virtual Try-On Has Always Lived Inside the Funnel. Glance Moves It to the Moment You Pick Up Your Phone.",
+      "priority": "HIGH",
+      "pillar": "Trends & Culture",
+      "author_persona": "product",
+      "geo_query": "physical AI stylist virtual try-on without selfie",
+      "insider_angle": "Modern Retail and fashion tech outlets cite virtual try-on driving 40% fewer returns and 25% higher conversion — but every published case study (Nike, Sephora, Warby Parker) places try-on inside an open app, mid-funnel. Glance's Physical AI Stylist operates at D0 product discovery: it surfaces personalized outfit and product recommendations at device wake, without requiring a selfie or an open session. It infers style context from ambient device signals. No other try-on platform operates pre-consideration, before brand intent has formed. Glance doesn't just reduce returns; it creates the purchase impulse before the brand even enters the user's mind.",
+      "calendar_hook": "Amazon Prime Day moves to June 17 this year — fashion and apparel brands ramp spend weeks ahead. A piece timed to early June reaches brand partners while Prime Day campaign planning windows are still open.",
+      "opening_hook": "Every virtual try-on demo you've ever seen starts the same way: open the app, upload a selfie, wait. Glance's AI stylist starts when you pick up your phone — and it already knows your style.",
+      "why_now": "sov_monitor confirms 'physical AI stylist virtual try-on without selfie' is a P2 query with zero current owner — combined with competitor_pulse's HIGH-urgency flag on try-on as a conversion and returns story no one has told at the D0 layer, and Prime Day brand spend heating up, this week is the optimal window to plant the category-defining piece."
+    },
+    {
+      "rank": 5,
+      "title": "What Is D0 Commerce? The Discovery Layer That Fires Before Your First App Opens",
+      "priority": "HIGH",
+      "pillar": "Tech Depth",
+      "author_persona": "tech",
+      "geo_query": "what is D0 commerce",
+      "insider_angle": "D0 commerce is a category Glance invented and is the only company operating at scale: product discovery triggered at device wake (swipe-zero), before any app — Google, Amazon, Siri, ChatGPT — is running. On 175M OEM-preinstalled Android devices, Glance's D0 feed surfaces shoppable content, Zapps (zero-install transactional mini-apps), and Brand AI Store placements in the moment of highest ambient attention. sov_monitor confirms zero authoritative content exists on this term — no analyst, no media outlet, no competitor has defined it. This is Glance's category-creation moment: publish the definitive explainer and own the SERP before any competitor, journalist, or analyst frames it first.",
+      "calendar_hook": "Android 17 stable release on June 10 (new ambient display APIs and lockscreen platform hooks) makes this the ideal publishing window — 'D0 commerce on Android 17' is both a category explainer and a timely platform story.",
+      "opening_hook": "There's a moment every ecommerce platform has been trying to reach — the exact second a consumer is open to discovery, with zero friction between impulse and purchase. That moment isn't on TikTok. It isn't on Amazon. It's on the lockscreen, and it's called D0.",
+      "why_now": "sov_monitor marks 'what is D0 commerce' as P1 with no current owner — Glance has a narrow window to publish the category-defining piece before the term gets co-opted by analysts covering Google I/O's UCP framing or agentic commerce protocol coverage, which is accelerating rapidly this week."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "run_date": "2026-06-01",
+  "agent": "Trend Scout",
+  "trends": [
+    {
+      "title": "Google Launches Universal Cart: Cross-App Agentic Shopping Powered by Gemini",
+      "source": "Google Blog / TechCrunch",
+      "date": "2026-05-19",
+      "summary": "At Google I/O 2026, Google introduced Universal Cart — an AI-powered shopping cart that persists across Search, Gemini, YouTube, and Gmail. Built on the Universal Commerce Protocol (UCP) and Agent Payments Protocol (AP2), it lets Gemini autonomously find deals, track price drops, check restocks, and complete purchases with user-defined guardrails. Rollout begins with major merchants including Nike, Sephora, Target, Walmart, and Shopify stores in the US this summer.",
+      "relevance_score": 10,
+      "pillar": "The Commerce Shift",
+      "glance_hook": "Google is building ambient commerce across every screen — Glance has already solved this for the one screen users see first: the lockscreen, where D0 discovery happens before a single app is opened."
+    },
+    {
+      "title": "Amazon Kills Rufus, Launches Alexa for Shopping as Full Agentic Commerce Agent",
+      "source": "CNBC / GeekWire",
+      "date": "2026-05-13",
+      "summary": "Amazon retired its Rufus chatbot (used by 300M+ customers, driving ~$12B in incremental sales) and replaced it with Alexa for Shopping — a true agentic assistant that can execute multi-step purchase flows, compare products, set price-drop alerts, and now complete purchases outside the Amazon marketplace via a new AWS service offered to third-party retailers. The move signals Amazon's shift from chatbot assistance to autonomous commerce execution.",
+      "relevance_score": 9,
+      "pillar": "Market Intelligence",
+      "glance_hook": "As Amazon bets on agentic checkout within its walled garden, Glance's Zapps offer brands a parallel D0 commerce surface on 175M devices — without requiring consumers to open Amazon or any app at all."
+    },
+    {
+      "title": "Apple Preps Siri 2.0 and Always-On Agent Mode Ahead of WWDC 2026 (June 8)",
+      "source": "TechRepublic / Macworld / Tom's Guide",
+      "date": "2026-05-26",
+      "summary": "Pre-WWDC leaks confirm iOS 27 will debut a rebuilt Siri with full chatbot capabilities, screen awareness, cross-app task execution, and a standalone Siri app — positioning it as an 'always-on agent' rather than a voice trigger. Siri is expected to handle commerce tasks like grocery ordering and restaurant bookings autonomously. WWDC keynote is June 8, with new developer tools for integrating Siri and Visual Intelligence into third-party apps also expected.",
+      "relevance_score": 9,
+      "pillar": "Market Intelligence",
+      "glance_hook": "Apple's Siri reboot aims to make iOS the ambient commerce platform — but it still requires unlocking and opening an app; Glance's lockscreen-native D0 model beats every app-centric assistant to the moment of intent."
+    },
+    {
+      "title": "OpenAI x Jony Ive Screenless Ambient Device Confirmed for H2 2026",
+      "source": "CNBC / Built In / Introl Blog",
+      "date": "2026-05-20",
+      "summary": "OpenAI confirmed its screenless, voice-first hardware device — developed with Jony Ive's io Products (acquired for ~$6.5B) — will launch in H2 2026. Codenamed 'Project Gumdrop', the pocket-sized device uses a context-aware camera array and high-fidelity microphones to deliver ambient AI that perceives surroundings without a display, challenging the smartphone paradigm with a calm-computing philosophy.",
+      "relevance_score": 8,
+      "pillar": "Tech Depth",
+      "glance_hook": "OpenAI is betting billions on screenless ambient AI — validating Glance's core thesis that the next commerce frontier is pre-app and context-first, though Glance wins without asking users to carry a second device."
+    },
+    {
+      "title": "Meta Builds AI Shopping Agent for Instagram, Targets Q4 2026 Launch",
+      "source": "The Information / DigiTimes / YourStory",
+      "date": "2026-05-07",
+      "summary": "Meta is developing an AI shopping agent internally codenamed 'Hatch' that would let Instagram users browse, compare, and purchase products autonomously within the app — directly challenging Google Shopping, Amazon, and TikTok Shop. The agent is slated for launch before Q4 2026 and reflects Meta's broader push to turn Meta AI into a built-in shopping engine across its 3B+ user social graph.",
+      "relevance_score": 8,
+      "pillar": "The Commerce Shift",
+      "glance_hook": "Meta's social-graph shopping agent competes for the same impulse-buy moment Glance owns on the lockscreen — but Glance's Physical AI Stylist delivers personalized product discovery before users ever reach Instagram."
+    }
+  ]
+}

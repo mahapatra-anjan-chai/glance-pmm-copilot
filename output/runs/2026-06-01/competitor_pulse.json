@@ -1,0 +1,108 @@
+{
+  "run_date": "2026-06-01",
+  "agent": "Competitor Pulse",
+  "publications_scanned": [
+    "The Agentic Commerce Frontier (agentcommerce.substack.com)",
+    "AI Ad Economy (aiadeconomy.substack.com)",
+    "Stratechery (stratechery.com)",
+    "insights4vc (insights4vc.substack.com)",
+    "Modern Retail (modernretail.co)",
+    "Forrester Agentic Commerce Blog (forrester.com)",
+    "PaymentsDive (paymentsdive.com)",
+    "Fast Company / GeekWire agentic commerce coverage"
+  ],
+  "whitespace_angles": [
+    {
+      "angle": "Google Universal Cart owns the rails — but still requires an app or browser session open",
+      "why_glance": "Every publication this week covered Google I/O's Universal Cart (spanning Search, Gemini, YouTube, Gmail) as the definitive agentic commerce moment. Zero coverage of the upstream gap: Universal Cart is useless when the phone is locked. Glance operates at D0 — the moment before any Google surface exists — giving it a structural position no protocol (UCP, ACP) can yet address. The narrative Glance should own: 'Universal Cart is the best checkout experience inside the walled garden. Glance is the discovery layer that exists before any wall appears.'",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "ChatGPT ads rollout and the monetization compression event",
+      "why_glance": "The AI Ad Economy's top post ('The AI Monetization Shift') and Stratechery's Eric Seufert interview both frame ChatGPT's $2.5B ad revenue trajectory as the defining monetization story of 2026. Coverage universally focuses on conversation-based ad placement inside open apps. No one is discussing the zero-session ad surface: Glance's lockscreen delivers brand impressions and product discovery before a user ever opens ChatGPT, Google, or any other monetizing platform. Glance can position itself as the ad reach layer that exists upstream of all conversation-based AI ad inventory.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Consumer trust gap blocking agentic checkout autonomy",
+      "why_glance": "Multiple sources (Forrester, Checkout.com, eMarketer) note that 65.5% of U.S. consumers still distrust agent-led payments and that OpenAI scaled back Instant Checkout after merchant pushback on data control. Coverage frames this as a trust/protocol problem to be solved. No publication has connected this to the OEM trust layer: Glance is pre-installed by Samsung and other OEMs — it carries native device trust, not third-party app trust. Glance Zapps inherit OEM credibility in a way that ChatGPT or Klarna apps cannot. This is a differentiated trust story no competitor can replicate.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Virtual try-on as a conversion and returns reducer",
+      "why_glance": "Multiple sources including Modern Retail and fashion tech outlets cite virtual try-on driving 40% fewer returns and 25% higher conversion. All coverage assumes the try-on experience lives inside an open app (Nike, Sephora, Warby Parker). Zero coverage of try-on at the lockscreen discovery moment. Glance's Physical AI Stylist — which works without requiring a selfie mid-session — is the only try-on experience that operates at D0 product discovery. The angle: try-on has always lived inside the funnel; Glance moves it to the top of the funnel before brand consideration has even formed.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Klarna + Google BNPL integration into agentic checkout flows",
+      "why_glance": "Digital Commerce 360 and eMarketer both covered Klarna's May 2026 integration into Google's agentic payments flow and its ChatGPT shopping app launch. Coverage frames BNPL as the financing layer completing agentic transactions. No one has connected BNPL to the discovery moment: if Glance surfaces a product on the lockscreen with an embedded Zapp that includes Klarna financing at point-of-impulse (before the user even opens a browser), the impulse-to-purchase window collapses from days to seconds. This is a 'BNPL at D0' story no one has told.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "angle": "Agentic commerce protocol wars (UCP vs. ACP) and merchant readiness",
+      "why_glance": "The Agentic Commerce Frontier's two posts this fortnight were both infrastructure-deep: UCP standardizing product offers, AP2 standardizing payment authorization, Shopify's Agentic Storefronts terms, Visa's Agentic Ready program. Merchant-side tools (Pattern Intelligence, Triple Whale Moby 2) are proliferating. All coverage focuses on how merchants connect to AI agents through open protocols. The missing angle: Brand AI Store on Glance is a first-party OEM storefront that gives brands a curated, pre-protocol distribution channel — no UCP/ACP integration required to reach 175M lockscreens. Glance is the merchant readiness story that doesn't require merchants to build anything new.",
+      "urgency": "MEDIUM"
+    }
+  ],
+  "momentum_angles": [
+    {
+      "angle": "Platform protocol wars: UCP vs. ACP as the new distribution battleground",
+      "publications_covering": [
+        "The Agentic Commerce Frontier (May 26 issue)",
+        "The Agentic Commerce Frontier (May 19 issue)",
+        "Forrester ('State of Agentic Commerce, Q2 2026')",
+        "Modern Retail ('Marketer's Guide to Agentic AI')",
+        "Fast Company / GeekWire agentic commerce reporting"
+      ],
+      "coverage_summary": "Google's Universal Commerce Protocol (UCP, co-developed with Shopify, Visa, Mastercard, Stripe, Target, Walmart) and OpenAI/Stripe's Agent Payments Protocol (ACP) are now the central battleground. Coverage frames 2026 as the year merchants must pick a protocol stack or risk agentic invisibility. The Agentic Commerce Frontier calls UCP Google's move 'from monetizing blue links to monetizing the rails.' Forrester says most agentic experiences are still conversational but the protocol layer is maturing fast. Amazon's AWS Agentic Shopping Assistant, built on Rufus technology, is now available to third-party retailers — adding a third rail to the race.",
+      "glance_counter_angle": "Every protocol in this race presupposes the phone is unlocked and an app is running. Glance's counter-frame: the protocol wars are a fight over the last mile of a purchase journey that already lost the first mile. D0 commerce — product discovery before any protocol handshake, on a locked screen — is the upstream territory no UCP or ACP specification covers. Glance should publish a 'Protocol Zero' narrative: the discovery layer that feeds intent into all downstream protocol stacks."
+    },
+    {
+      "angle": "AI monetization compression: advertising inside AI answer engines",
+      "publications_covering": [
+        "AI Ad Economy ('The AI Monetization Shift', May 28)",
+        "AI Ad Economy ('A Reality Check on the Reality Check', May 21)",
+        "Stratechery ('Interview with Eric Seufert About Models and Ads', May 28)",
+        "Stratechery ('2026.22: Luceing Their Mind', May 29)"
+      ],
+      "coverage_summary": "ChatGPT's self-serve Ads Manager (launched May 5, 2026) hit $100M annualized in six weeks and is projecting $2.5B for full-year 2026. AI Ad Economy argues monetization timelines are compressing — ChatGPT reached ads in ~3 years vs. Amazon's ~2 decades. Criteo data shows 70% of LLM-referred users land directly on product pages, bypassing traditional retail media. 75% of consumers trust brands less when they know AI recommendations are paid. Stratechery's Seufert interview explores whether ad-supported AI is even optimistic for humanity.",
+      "glance_counter_angle": "The ad trust crisis inside AI answer engines creates a structural opening for ambient, non-interruptive brand moments. Glance lockscreen content is editorial-feeling and inspiration-driven rather than answer-contaminating. Brands on Glance reach users at a moment of zero intent — pure visual merchandising — that sidesteps the trust collapse that plagues ChatGPT and Google AI Overviews. Glance can position itself as the brand-safe AI surface: 'We don't answer questions. We spark them.'"
+    },
+    {
+      "angle": "Consumer trust as the chief blocker to agentic checkout autonomy",
+      "publications_covering": [
+        "AI Ad Economy ('The Commercialization Challenge Facing AI Media', May 14)",
+        "The Agentic Commerce Frontier (PhotonPay/Checkout.com coverage, May 19)",
+        "Forrester ('Agentic Commerce's Success Centers On Overcoming Key Frontiers in Consumer Trust')",
+        "Modern Retail ('Retailers are rushing to build AI apps. It's unclear if shoppers will use them')"
+      ],
+      "coverage_summary": "Checkout.com research identifies privacy as the primary adoption barrier. Forrester confirms most consumers still supervise all agentic actions — true autonomy is rare. 65.5% of U.S. consumers have misgivings about agent-led payments. OpenAI's Instant Checkout was scaled back after merchant pushback. 75% of consumers trust brands less knowing AI recommendations were paid. Modern Retail notes retailers are building AI apps faster than shoppers are adopting them.",
+      "glance_counter_angle": "Glance's trust architecture is structurally different from every platform covered: pre-installation by Samsung/OEM means users never chose to install Glance, but they also never chose to distrust it. OEM provenance is the highest trust signal on a device — higher than a downloaded app. Glance Zapps inherit this trust. The story: while every AI platform is trying to earn trust through transparency disclosures and opt-in flows, Glance starts from a position of embedded device trust that no app-store download can replicate."
+    }
+  ],
+  "per_publication_summary": [
+    {
+      "name": "The Agentic Commerce Frontier",
+      "recent_focus": "Infrastructure layer of agentic commerce: protocol standardization (UCP, AP2), merchant readiness tooling, payment authentication (Visa Agentic Ready, Mastercard tokenization), and BNPL integrations (Klarna, Affirm into Google Pay). The May 26 issue focused on Google's attempt to own the 'rails under the transaction.' The May 19 issue examined Amazon Alexa for Shopping and the brand agent opportunity in high-demand product launches.",
+      "notable_post": "'The Agentic Commerce Frontier | May 19-25, 2026' (May 26) — deep analysis of Google Universal Cart, UCP/AP2 protocol stack, and how Google is shifting from search monetization to rail monetization across Gemini, YouTube, Gmail, and Google Pay.",
+      "gap_vs_glance": "Both issues assume commerce discovery begins when a user opens a Google, Amazon, or AI agent surface. The D0 layer — the locked screen before any surface loads — is entirely absent from the analysis. Glance's Zapps and Brand AI Store represent a pre-protocol distribution channel that feeds into, but exists upstream of, everything this publication covers."
+    },
+    {
+      "name": "AI Ad Economy",
+      "recent_focus": "How AI platforms monetize through advertising and the trust consequences. Key tensions: ChatGPT's $2.5B ad ambition vs. 75% consumer trust erosion when AI recommendations are paid; compression of monetization timelines; how LLM-referred traffic bypasses retail media inventory. Kiri Masters guest post argues the real threat is role disruption (bypassing premium ad surfaces) not total transaction displacement.",
+      "notable_post": "'The AI Monetization Shift: Why Media Won't Get 8 Years This Time' (May 28) — argues AI platforms are compressing the monetization-to-adoption cycle from decades to years, threatening media's ability to adapt.",
+      "gap_vs_glance": "All ad monetization coverage assumes intent exists before the ad appears (user opened ChatGPT, searched Google). Glance creates product desire before intent. The publication has not explored ambient, pre-intent brand surfaces — the lockscreen as the original 'zero-click discovery' before any AI answer engine existed."
+    },
+    {
+      "name": "Stratechery",
+      "recent_focus": "AI infrastructure economics (Nvidia earnings, SpaceX compute), Google I/O strategic positioning, advertising economics in an AI-denominated future, and the agentic web's content economics (interview with Parallel/Parag Agarwal on how to value content when agents are the consumers). Broad coverage of how ad-supported models break down when agentic traffic dominates.",
+      "notable_post": "'An Interview with Parag Agarwal About Valuing Content on the Agentic Web' (May 21) — explores how content incentive structures shift when AI agents consume content instead of humans, and why ads designed for humans don't map to agentic traffic.",
+      "gap_vs_glance": "Stratechery frames agentic commerce as a content and distribution economics problem for web publishers. Missing: the OEM-layer platform that is neither a web publisher nor an app and thus bypasses the ad-on-agentic-web debate entirely. Glance is pre-OS, pre-browser, pre-agent — a distribution tier Ben Thompson has not yet addressed in his platform frameworks."
+    },
+    {
+      "name": "Modern Retail",
+      "recent_focus": "Retailer AI strategy maturation ('proving real results'), in-store AI deployment (Guitar Center's Rig Advisor, Walmart Sparky's 35% higher order values), AI shopping agent wars (Amazon AWS Agentic Shopping Assistant available to third-party retailers), and the consumer adoption lag relative to retailer AI investment pace. 97% of retailers plan to maintain or increase AI spend in 2026.",
+      "notable_post": "'Why the AI shopping agent wars will heat up in 2026' — covers Amazon expanding Rufus tech to external retailers, Google/Shopify UCP partnership, and Microsoft Copilot checkout tools as the competitive landscape consolidates.",
+      "gap_vs_glance": "Modern Retail's entire coverage frame is app-open, browser-session commerce. The lockscreen as a retail surface — reaching consumers before they open Amazon, Google, or Walmart — is absent. Glance's 175M pre-installed device footprint is larger than most retailers' loyalty program bases, yet does not appear in any retailer AI strategy coverage."
+    }
+  ]
+}
