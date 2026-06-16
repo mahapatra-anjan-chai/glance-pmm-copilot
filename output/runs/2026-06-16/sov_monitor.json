@@ -1,0 +1,92 @@
+{
+  "run_date": "2026-06-16",
+  "agent": "SOV Monitor",
+  "unexplored": [
+    {
+      "query": "does Siri AI actually complete purchases 2026",
+      "volume_tier": "Med",
+      "current_owner": "none",
+      "glance_angle": "Siri AI (WWDC 2026) still lacks autonomous checkout — Glance Zapps execute zero-install transactional mini-apps at the D0 wake moment, filling the gap Apple left open on 175M Android devices",
+      "priority": "P1"
+    },
+    {
+      "query": "Android 17 lockscreen widget commerce brands opportunity",
+      "volume_tier": "Med",
+      "current_owner": "none",
+      "glance_angle": "Android 17 re-introduces lockscreen widgets; Glance's OEM-native layer already operates at this surface with shoppable AI experiences — brands can act now via Glance's Brand AI Store before competitors discover the channel",
+      "priority": "P1"
+    },
+    {
+      "query": "Prime Day 2026 Alexa auto-buy brands not in Amazon ecosystem",
+      "volume_tier": "Med",
+      "current_owner": "none",
+      "glance_angle": "Alexa auto-buy locks out brands not structured for Amazon's agentic stack; Glance's ambient D0 surface reaches 175M Android users before they open any app — an orthogonal discovery channel for brands squeezed off Prime Day",
+      "priority": "P1"
+    },
+    {
+      "query": "pre-search brand discovery mobile lockscreen 2026",
+      "volume_tier": "Low-Med",
+      "current_owner": "none",
+      "glance_angle": "Pre-intent discovery is the new battleground; Glance surfaces brand content at device wake — before any search query forms — making it the only scaled OEM-native pre-search commerce surface on Android",
+      "priority": "P1"
+    },
+    {
+      "query": "how to make brand visible to AI agents before user searches 2026",
+      "volume_tier": "Med",
+      "current_owner": "none",
+      "glance_angle": "GEO and UCP optimization answer intent-triggered queries; Glance's pre-intent ambient layer reaches consumers before any query fires — a complementary D0 strategy brands can pair with UCP/ACP compliance",
+      "priority": "P2"
+    },
+    {
+      "query": "Google Gemini Siri deal what it means for Android commerce brands",
+      "volume_tier": "Low-Med",
+      "current_owner": "none",
+      "glance_angle": "The Apple-Gemini deal consolidates AI commerce influence in Google's ecosystem; Glance's OEM-native lockscreen layer on Samsung and Motorola gives brands a direct ambient channel that operates outside the Gemini-Siri funnel entirely",
+      "priority": "P2"
+    }
+  ],
+  "high_volume": [
+    {
+      "query": "Apple Intelligence vs Google agentic commerce 2026",
+      "volume_tier": "High",
+      "current_owner": "TechCrunch, Fast Company, CNBC",
+      "glance_angle": "Both Apple Intelligence and Google UCP are app-open, post-intent architectures; Glance's D0 lockscreen commerce fires before any AI assistant activates — positioning it as the pre-agentic discovery layer neither platform covers",
+      "priority": "P1"
+    },
+    {
+      "query": "Amazon Prime Day 2026 AI shopping strategy for brands",
+      "volume_tier": "High",
+      "current_owner": "CommerceIQ, Tinuiti, GeekWire, Axios",
+      "glance_angle": "Prime Day AI strategies focus on Alexa for Shopping and UCP compliance; Glance offers brands an ambient pre-Prime-Day awareness surface on 175M Android lockscreens that builds purchase intent before deals go live",
+      "priority": "P1"
+    },
+    {
+      "query": "best agentic checkout platforms comparison 2026",
+      "volume_tier": "High",
+      "current_owner": "Search Engine Journal, Opascope, Silverback Strategies",
+      "glance_angle": "Agentic checkout comparisons cover Google UCP, OpenAI ACP, Shopify Storefronts — all post-intent; Glance Zapps are the only zero-install transactional layer operating at device wake, before any agent is invoked",
+      "priority": "P1"
+    },
+    {
+      "query": "WWDC 2026 Siri AI what brands need to know",
+      "volume_tier": "High",
+      "current_owner": "TechCrunch, Tom's Guide, TechRadar, Digital Trends",
+      "glance_angle": "Siri AI (Gemini-powered) dominates post-WWDC brand coverage but still has no autonomous checkout; Glance's Android-native D0 layer reaches a parallel 175M-device audience that Apple's iOS ecosystem does not touch",
+      "priority": "P1"
+    },
+    {
+      "query": "Universal Commerce Protocol UCP how brands get selected by AI agents",
+      "volume_tier": "High",
+      "current_owner": "Prefixbox, GrowthOS, Ekamoira, Silverback Strategies",
+      "glance_angle": "UCP optimizes for AI agent selection within search and checkout flows; Glance's pre-intent Brand AI Store gives brands OEM-native visibility at the D0 moment — the discovery layer that feeds into UCP-driven agent decisions downstream",
+      "priority": "P2"
+    },
+    {
+      "query": "retail AI shopping tools summer 2026 comparison",
+      "volume_tier": "High",
+      "current_owner": "OnyxRanked, Groath.ai, TheRetailExec, Alhena AI",
+      "glance_angle": "Summer 2026 retail AI roundups focus on in-app and post-search tools; Glance's Physical AI Stylist and Zapps operate at device wake — a differentiated ambient-commerce category absent from every major comparison piece",
+      "priority": "P2"
+    }
+  ]
+}

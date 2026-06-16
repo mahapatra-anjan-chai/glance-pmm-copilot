@@ -1,0 +1,37 @@
+{
+  "run_date": "2026-06-16",
+  "agent": "QA Checker",
+  "passed": true,
+  "checks": {
+    "trend_scout": {
+      "passed": true,
+      "notes": "Exactly 5 trends. All required fields present (title, source, date, summary, relevance_score, pillar, glance_hook). All pillars valid: The Commerce Shift (x2), Market Intelligence (x1), Trends & Culture (x1), Tech Depth (x1). All 5 trends score ≥8 (scores: 10, 9, 9, 8, 9) — exceeds the minimum of 3."
+    },
+    "sov_monitor": {
+      "passed": true,
+      "notes": "6 unexplored queries (≥5 required). 6 high_volume queries (≥3 required). All rows contain: query, volume_tier, current_owner, glance_angle, priority. Priority values are all P1 or P2 — no invalid values."
+    },
+    "optimise_geo_csv": {
+      "passed": true,
+      "notes": "13 data rows excluding header (≥8 required). All 6 required columns present: query, type, volume_tier, current_owner, glance_angle, priority. No empty required fields detected. CSV mirrors sov_monitor data correctly across both unexplored and high_volume rows."
+    },
+    "competitor_pulse": {
+      "passed": true,
+      "notes": "6 whitespace_angles (≥5 required). 3 momentum_angles (≥2 required). 4 per_publication_summary entries (≥3 required). All whitespace angles are specific and non-generic, grounded in named publications and concrete Glance differentiators. Urgency values: 4 HIGH, 2 MEDIUM — all valid."
+    },
+    "calendar": {
+      "passed": true,
+      "notes": "10 events (≥8 required). All events have: name, date, type, description, content_hook, urgency. 4 HIGH urgency events: Android 17 Stable Release (Jun 16), Amazon Prime Day 2026 (Jun 23), CommerceNext Growth Show 2026 (Jun 23), Back-to-School Shopping Season Opens (Jun 28) — exceeds the minimum of 2. Date window: June 16 – July 22."
+    },
+    "article_ideas": {
+      "passed": true,
+      "notes": "Exactly 5 ideas. All 10 required fields present for each idea: rank, title, priority, pillar, author_persona, geo_query, insider_angle, calendar_hook, opening_hook, why_now. Titles are specific and differentiated (no generic language). Insider angles explicitly reference Glance products and stats: Zapps, Brand AI Store, Physical AI Stylist, 175M devices, D0, Samsung, Motorola."
+    },
+    "fact_check": {
+      "passed": true,
+      "notes": "175M devices: correctly cited in trend_scout (Amazon trend glance_hook), sov_monitor (multiple queries), competitor_pulse (whitespace angles and per_publication_summary), and article_ideas (ideas 1-5). OEM partners Samsung and Motorola: named in sov_monitor ('Samsung and Motorola') and competitor_pulse (per_publication_summary Stratechery gap). Zapps as zero-install mini-apps: correctly described as 'zero-install transactional mini-apps' throughout. Brand AI Store as OEM-native: correctly described as OEM-native in competitor_pulse and article_ideas. D0 = discovery before any app opens: used consistently and correctly across all files. Physical AI Stylist requires no selfie: explicitly confirmed in trend_scout ('without asking users to photograph themselves') and article_ideas ('no selfie, no camera permission gate, no app open')."
+    }
+  },
+  "issues": [],
+  "summary": "All 7 checks passed. No issues detected. Trend Scout, SOV Monitor, OptimiseGEO CSV, Competitor Pulse, Calendar, Article Ideas, and Fact Check all meet or exceed requirements. Pipeline output is complete and internally consistent. Ready for HTML generation."
+}

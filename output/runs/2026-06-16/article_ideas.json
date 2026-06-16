@@ -1,0 +1,66 @@
+{
+  "run_date": "2026-06-16",
+  "agent": "Orchestrator",
+  "ideas": [
+    {
+      "rank": 1,
+      "title": "There Are Two Prime Days — The One That Starts When You Open Amazon, and the One That Starts When You Pick Up Your Phone",
+      "priority": "HIGH",
+      "pillar": "The Commerce Shift",
+      "author_persona": "GTM",
+      "geo_query": "Amazon Prime Day 2026 AI shopping strategy for brands",
+      "insider_angle": "Glance's Zapps can surface Prime Day deal cards, countdown timers, and contextual product discovery on 175M Android lockscreens before a user ever opens the Amazon app or activates Alexa for Shopping. For brands squeezed out of Alexa's walled-garden ranking — particularly those not structured for Amazon's agentic stack — Glance's D0 ambient layer is an orthogonal discovery channel that fires at the moment of device reach, not app launch.",
+      "calendar_hook": "Amazon Prime Day 2026 — June 23–26 (one week away); CommerceNext Growth Show — June 23–24",
+      "opening_hook": "Every Prime Day AI strategy guide published this month tells you the same thing: optimize your listings for Alexa for Shopping, clean up your product data for AI parsers, and hope Rufus surfaces you first — but not one of them asks what happens in the 30 seconds before a shopper opens the Amazon app.",
+      "why_now": "Prime Day is exactly one week away, all existing brand guidance is laser-focused on in-app Alexa optimization, and the D0 lockscreen angle is completely unclaimed in sov_monitor — making this the highest-urgency whitespace Glance can own before the event cycle closes."
+    },
+    {
+      "rank": 2,
+      "title": "Android 17 Didn't Invent the Commerce Lockscreen — It Just Validated One",
+      "priority": "HIGH",
+      "pillar": "Tech Depth",
+      "author_persona": "product",
+      "geo_query": "Android 17 lockscreen widget commerce brands opportunity",
+      "insider_angle": "Android 17's Android Halo ambient AI agent and Gemini Spark (sub-50ms on-device AI) on the lock surface are the exact architecture Glance has operated as OEM-native infrastructure for years across Samsung and Motorola. While tech media frames lockscreen widgets as a UX novelty, Glance already runs shoppable AI experiences, Zapps, and Brand AI Store on this surface at scale. Brands can act now via Glance's existing channel — before competitors discover Android 17's commercial potential.",
+      "calendar_hook": "Android 17 stable release — TODAY, June 16, 2026",
+      "opening_hook": "Android 17 shipped today with ambient AI on the lockscreen and the tech press is calling it a UX moment — but for the brands that have been running transactional commerce on that same surface for years, it looks less like a debut and more like a long-overdue confirmation.",
+      "why_now": "Android 17 dropped today, the lockscreen widget and commerce angle is a P1 unclaimed query per sov_monitor, and the 48-hour editorial window to publish the counter-narrative before Apple coverage fully fades is open right now."
+    },
+    {
+      "rank": 3,
+      "title": "Siri 2.0 Is Apple's Answer to D0 Commerce — Android Had It First",
+      "priority": "HIGH",
+      "pillar": "Market Intelligence",
+      "author_persona": "product",
+      "geo_query": "does Siri AI actually complete purchases 2026",
+      "insider_angle": "Siri AI (WWDC 2026, Gemini-powered) still has no confirmed autonomous checkout protocol and still requires a user to initiate a session. Glance fires before any session begins — on 175M Android devices, product discovery and zero-install Zapp transactions are live at the D0 wake moment. Apple just validated the lockscreen commerce model Glance operationalized years ago. Android brands should be asking their OEM partners about their Glance strategy, not just their Siri App Intents strategy.",
+      "calendar_hook": "Post-WWDC 2026 counter-narrative window (WWDC ran June 8–9); iOS 27 developer adoption wave peaks July 1",
+      "opening_hook": "Every analyst who covered WWDC last week said the same thing: Siri 2.0 is now 'one swipe from the lockscreen' — what none of them mentioned is that on 175 million Android devices, commerce was already there.",
+      "why_now": "The post-WWDC coverage cycle is still hot and the Android counter-narrative window is open right now before Apple coverage fades; 'does Siri AI actually complete purchases 2026' is a P1 unclaimed query with no current owner, and Stratechery/TechCrunch/Tom's Guide have all published the iOS-only frame that Glance can directly rebut."
+    },
+    {
+      "rank": 4,
+      "title": "The Protocol War Nobody Is Winning: Why ACP vs. UCP Misses the Most Important Commerce Moment of All",
+      "priority": "HIGH",
+      "pillar": "Tech Depth",
+      "author_persona": "tech",
+      "geo_query": "best agentic checkout platforms comparison 2026",
+      "insider_angle": "Google's UCP and OpenAI's ACP define the agent-to-merchant handshake — but both assume the commerce journey begins when a user opens a chat interface, search box, or voice query. Neither protocol has a surface type for 'lockscreen card.' Glance's Zapps are zero-install transactional surfaces operating at device wake, before any agent session is invoked — making Glance the D0 commerce node that feeds into whichever protocol wins downstream. McKinsey estimates AI agents could redirect $3–5T in global retail spend by 2030; Glance controls the trigger point that initiates the entire agentic payment chain.",
+      "calendar_hook": "ACP vs. UCP protocol war intensifying week of June 16; CommerceNext Growth Show June 23–24 (heavy agentic AI agenda)",
+      "opening_hook": "Two protocols are racing to become the backbone of AI commerce — one backed by OpenAI and Stripe, one by Google and Amazon — and the entire industry is debating which will win, while missing the one moment neither protocol even has a spec for.",
+      "why_now": "The ACP/UCP protocol war is at peak coverage intensity this week across agentcommerce.substack, robonomics, and commercetools; 'best agentic checkout platforms comparison 2026' is a P1 high-volume query currently owned by Search Engine Journal and Opascope but with a clear Glance whitespace angle none of them cover, and CommerceNext in one week will amplify the protocol conversation."
+    },
+    {
+      "rank": 5,
+      "title": "175 Million Phones, Zero Selfies: The AI Stylist That Knows You Before You Open an App",
+      "priority": "MEDIUM",
+      "pillar": "Trends & Culture",
+      "author_persona": "marketing",
+      "geo_query": "retail AI shopping tools summer 2026 comparison",
+      "insider_angle": "Zara's virtual try-on (7M+ sessions, 43 markets) and ASOS's hybrid AI model both require selfie uploads or camera permissions. Glance's Physical AI Stylist enables virtual try-on personalization inferred from device signals alone — no selfie, no camera permission gate, no app open — running natively on 175M Android lockscreens. With Amazon fashion among Prime Day's biggest verticals and summer fashion discovery at seasonal peak, Glance is the only production-scale selfie-free try-on operating at the OS layer.",
+      "calendar_hook": "Amazon Prime Day fashion verticals June 23–26; Summer Fashion & AI Discovery Moment (July 4 peak); Back-to-School season opens June 28",
+      "opening_hook": "Zara hit 7 million virtual try-on sessions and ASOS just launched AI styling across 10,000 products — both requiring you to photograph yourself first; Glance already knows what you want to wear before you unlock your phone.",
+      "why_now": "Prime Day's fashion verticals go live in one week, the summer fashion discovery window is opening, and 'retail AI shopping tools summer 2026 comparison' is a high-volume P2 query where every existing comparison piece covers in-app and post-search tools exclusively — leaving Glance's selfie-free, lockscreen-native try-on as the only differentiated angle absent from the category."
+    }
+  ]
+}

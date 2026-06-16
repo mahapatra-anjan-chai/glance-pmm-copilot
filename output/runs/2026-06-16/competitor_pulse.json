@@ -1,0 +1,105 @@
+{
+  "run_date": "2026-06-16",
+  "agent": "Competitor Pulse",
+  "publications_scanned": [
+    "agentcommerce.substack.com",
+    "aiadeconomy.substack.com",
+    "stratechery.com",
+    "robonomics.substack.com",
+    "insights4vc.substack.com (partial — feed blocked)",
+    "modernretail.co (feed blocked, supplemented via web search)",
+    "Web search: agentic commerce / AI retail June 2026 coverage"
+  ],
+  "whitespace_angles": [
+    {
+      "angle": "Siri 2.0 is 'one swipe from the lockscreen' — but every analyst frames it as an iOS app layer",
+      "why_glance": "Every WWDC recap calls Siri 2.0 'the new lockscreen-adjacent commerce layer' while simultaneously assuming the experience begins when a user picks up their phone and opens Siri. Glance operates at the moment before that pick-up — on 175M Android devices, product discovery fires before Siri ever loads. No publication has written the counter-narrative: Siri 2.0 is Apple's answer to D0 commerce on iOS, but Android already has a live D0 layer that Siri is three years behind. Glance can own this framing.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Prime Day 2026 AI strategy is entirely focused on Amazon's own Alexa discovery layer and seller SEO for AI search",
+      "why_glance": "Coverage from CommerceIQ, ZonGuru, TechEdgeAI, and Modern Retail frames Prime Day AI strategy as 'optimize your listing for Rufus / Alexa for Shopping.' All of it assumes discovery begins inside the Amazon app. Zero coverage asks: what about the 250M+ sessions that happen on Android lockscreens during Prime Day before a user opens any app? Glance's Zapps can surface Prime Day deal cards at the moment of device reach — upstream of Alexa, upstream of the Amazon app. This is an untouched editorial angle.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Android 17's AI widgets and 'swipe-in lockscreen panels' are covered as a UX novelty, not a commerce infrastructure moment",
+      "why_glance": "Tech media celebrates Android 17's lockscreen widget revival and Gemini Intelligence background task completion as convenience features. No publication has mapped this to commerce infrastructure: Android 17 normalizes the lockscreen as an interaction surface, legitimizing and expanding the exact surface Glance has operated on for years. Glance has first-mover advantage in the infrastructure layer Android 17 just made mainstream. The angle: Android 17 didn't invent the commerce lockscreen — it validated one.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "The ChatGPT-as-shopping-entry-point pivot is framed as an OpenAI strategy story, not a 'who wins D0' story",
+      "why_glance": "The AI Ad Economy and Robonomics both covered ChatGPT shifting from end-to-end shopping destination to a discovery router that hands off to apps. The analysis stops at 'ChatGPT owns top-of-funnel.' The missing frame: ChatGPT still requires an open app or browser tab — it is D1 at best. Glance's D0 position means it intercepts intent before any conversational AI session begins. The editorial angle: the real D0 gap that ChatGPT, Siri, and Alexa all share is that they all need a user to have already decided to open something.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Agentic payment rails (Mastercard/Worldline/ING, stablecoins) are discussed as infrastructure without asking who controls the trigger point",
+      "why_glance": "Agentcommerce.substack.com and insights4vc both cover agentic payment infrastructure — the European live agentic payment, stablecoins as agent settlement rails, UCP/ACP protocols. The conversation is entirely about what happens after intent is expressed. Nobody asks: who captures intent before it enters the payment funnel? On Android, if a user sees a Zapp on their lockscreen and taps to transact, Glance controls the trigger point that initiates the entire agentic payment chain. The missing angle: D0 commerce surfaces are the true 'first mile' of agentic payment flows.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "angle": "Virtual try-on and AI styling are covered as app-based or web-based features requiring selfies or camera access",
+      "why_glance": "Modern Retail and broader trade coverage of AI styling focuses on in-app try-on tools that require a selfie or camera permission. Glance's Physical AI Stylist enables virtual try-on without a selfie — no camera permission gate, no app open. With Amazon's fashion categories among the biggest Prime Day verticals, and Siri 2.0 enabling shopping actions, no publication has noted that the only production-scale selfie-free try-on running on a native device surface (not an app) is already live on 175M Android lockscreens.",
+      "urgency": "MEDIUM"
+    }
+  ],
+  "momentum_angles": [
+    {
+      "angle": "Siri / Apple WWDC 2026 as the defining agentic commerce platform moment of 2026",
+      "publications_covering": [
+        "stratechery.com",
+        "aiadeconomy.substack.com",
+        "agentcommerce.substack.com",
+        "pymnts.com / azoma.ai (web)"
+      ],
+      "coverage_summary": "Stratechery ran three pieces around WWDC (June 8-12) arguing Siri AI 'suffices for consumers' and positions Apple as a commerce gatekeeper on 2B devices. The AI Ad Economy covered how ChatGPT and Siri are intercepting consumer intent before traditional ad channels. Agentcommerce.substack framed Siri's App Intents requirement as a new commerce infrastructure tax. Consensus narrative: Siri 2.0 puts a capable agent 'one swipe from the lockscreen' on iOS and closes Apple's agentic commerce gap with Google.",
+      "glance_counter_angle": "Siri 2.0 is the first serious iOS D0 contender — but it still requires a user to initiate a session. Glance fires before any session. On the 175M Android devices where Glance is pre-installed, D0 commerce has been live for years. The real WWDC story for Android brands: Apple just validated the lockscreen commerce model Glance already operationalized. Android brands should be asking their OEM partners what their Glance strategy is, not just their Siri App Intents strategy."
+    },
+    {
+      "angle": "Agentic commerce protocols (UCP, ACP, MCP) as the new retail infrastructure standard",
+      "publications_covering": [
+        "agentcommerce.substack.com",
+        "robonomics.substack.com",
+        "insights4vc.substack.com",
+        "commercetools.com / opascope.com (web)"
+      ],
+      "coverage_summary": "All three major newsletters covered the emergence of machine-readable commerce manifests (Google's UCP, OpenAI's ACP, Anthropic's MCP) as the new SEO for AI agents. Coverage frames this as a protocol war where merchants must expose structured data to remain visible to AI shoppers. Agentcommerce.substack specifically covered AWS packaging Amazon's agentic shopping tech for third-party retailers, calling it a 'Faustian bargain.' Robonomics mapped how B2B sourcing is the first mass-adoption use case.",
+      "glance_counter_angle": "Every protocol (UCP, ACP, MCP) assumes discovery happens inside an AI agent session — a chat interface, a search box, a voice query. None of these protocols have a surface type for 'lockscreen card.' Glance's Zapps represent a zero-latency D0 commerce surface that existing protocol frameworks haven't modeled. Brands optimizing for UCP/ACP should ask: what protocol governs the moment before the agent session starts? That's where Glance operates."
+    },
+    {
+      "angle": "Prime Day 2026 as the first major retail event fully shaped by AI-native discovery",
+      "publications_covering": [
+        "aiadeconomy.substack.com",
+        "modernretail.co (web)",
+        "commerceiq.ai / zonguru.com / techedgeai.com (web)"
+      ],
+      "coverage_summary": "Coverage frames Prime Day 2026 (June 23-26) as the first major event where traditional PPC/SEO is structurally disadvantaged versus AI-optimized listings. Alexa for Shopping (250M users, merged Rufus + Alexa+) is positioned as the primary discovery layer. The AI Ad Economy noted 1,400+ brands tested ChatGPT ads, with shopping-related brands at 40% of impressions. Seller guidance uniformly focuses on product data hygiene for AI parsers and conversational query optimization.",
+      "glance_counter_angle": "All Prime Day AI coverage assumes the discovery moment begins when a user opens the Amazon app, ChatGPT, or asks Alexa. Glance surfaces Prime Day deal cards on the Android lockscreen — before any of those sessions begin. For brands with Zapp integrations, Prime Day reach starts at device wake, not app launch. The Glance angle: there are two Prime Days — the one that starts when you open Amazon, and the one that starts when you pick up your phone."
+    }
+  ],
+  "per_publication_summary": [
+    {
+      "name": "Agentic Commerce Frontier (agentcommerce.substack.com)",
+      "recent_focus": "Ecosystem mapping of agentic commerce infrastructure layers; weekly roundups of live deployments (Mastercard/Worldline/ING agentic payment, Gopuff/SpaceXAI predictive shopping); analysis of retailer dependency risk from Amazon's agentic platform expansion; fraud vectors in agentic commerce.",
+      "notable_post": "'The Agentic Commerce Frontier — June 2-8, 2026' (June 9): Covered the first live European agentic payment using card rails, framing it as the moment agentic commerce moved from prototype to production. Updated ecosystem map (June 16) added 20 companies across AEO, dynamic pricing, headless CMS, and trust layers.",
+      "gap_vs_glance": "The publication maps every layer of the agentic commerce stack — discovery, decision, payment, fulfillment, trust — but has no 'surface' category for pre-session, pre-app, D0 moments. The lockscreen as a commerce surface is entirely absent from their ecosystem map. Glance's Zapps would represent a new category in their framework: 'ambient commerce surfaces' that sit upstream of the discovery layer they do cover."
+    },
+    {
+      "name": "The AI Ad Economy (aiadeconomy.substack.com)",
+      "recent_focus": "How AI platforms (ChatGPT, Siri) are intercepting advertiser intent signals before traditional ad channels capture them; brand advertising dynamics on ChatGPT (1,400+ brands tested); AI as the new media monetization layer compressing the traditional platform-to-ads timeline.",
+      "notable_post": "'The Signals I Sent ChatGPT (That Ads Did Not See)' (June 4): Documented a first-person discovery journey where ChatGPT intercepted brand intent before a paid ad could — making a compelling case that AI platforms own the zero-moment of truth.",
+      "gap_vs_glance": "The publication is acutely focused on AI as an intent interception layer — which is precisely Glance's thesis. However, every example is app-open or browser-session based. The publication has not considered that 175M Android users have an AI-surfaced discovery experience before any session begins. Glance is the only platform that intercepts intent before the user decides to query ChatGPT or open a browser. This newsletter is the highest-priority outreach target for a Glance guest post or data collaboration."
+    },
+    {
+      "name": "Stratechery (stratechery.com)",
+      "recent_focus": "WWDC 2026 / Siri AI deep dives; Apple's AI catch-up and its implications for the platform power structure; Microsoft/Satya Nadella on AI core competencies; Anthropic's governance and safety positioning as a business strategy.",
+      "notable_post": "'The iPhone's Last Stand' (June 9): Argued that Siri AI 'suffices' for consumer markets because everyday users prioritize convenience over frontier capabilities — drawing a line between consumer-grade (Siri) and enterprise-grade (agentic systems) AI.",
+      "gap_vs_glance": "Stratechery's Siri analysis is entirely iOS-centric and focuses on the 2B iPhone install base. The 175M Android devices with Glance pre-installed represent a D0 commerce surface that Stratechery's framework — which models platforms as app stores, browsers, or agents — doesn't have a category for. Thompson's 'convenience beats capability' framing actually supports Glance's thesis: lockscreen commerce wins because it requires zero friction, zero intent to open an app."
+    },
+    {
+      "name": "Robonomics (robonomics.substack.com)",
+      "recent_focus": "Structural analysis of how AI agents shift buyer/seller power dynamics; protocol economics (UCP, ACP, MCP as commerce infrastructure standards); B2B sourcing as the leading agentic commerce use case; ChatGPT's pivot from shopping destination to discovery router.",
+      "notable_post": "'Agentic Commerce 2026.03': Argued that AI agents 'democratize information and reduce platform taxes' by shifting discovery away from Amazon's walled garden toward open protocol layers — framing Shopify as a potential infrastructure winner over Amazon in agentic commerce.",
+      "gap_vs_glance": "Robonomics maps agentic commerce as a web/app-layer phenomenon with sessions, queries, and protocols. The concept of a device-native, pre-session commerce surface (lockscreen) doesn't appear in their framework. Their argument that AI shifts power from platforms to buyers actually makes Glance's D0 position more compelling — Glance surfaces discovery before any platform (Amazon, ChatGPT, Google) gets to mediate intent. This is the 'pre-protocol' moment Robonomics hasn't written about."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "run_date": "2026-06-16",
+  "agent": "Trend Scout",
+  "trends": [
+    {
+      "title": "Google Launches Universal Cart and Expands Universal Commerce Protocol at I/O 2026",
+      "source": "Google Blog / The Next Web / eMarketer",
+      "date": "2026-05-20",
+      "summary": "At Google I/O 2026, Google unveiled Universal Cart — an AI-powered shopping basket that persists across Search, Gemini, YouTube, and Gmail, powered by its Universal Commerce Protocol (UCP). Once a product is added, Gemini agents work in the background to monitor price drops, surface deals, and alert on restocks. Launch partners include Nike, Sephora, Target, Walmart, and Wayfair, with UCP checkout now expanding to Canada, Australia, and YouTube in the US.",
+      "relevance_score": 10,
+      "pillar": "The Commerce Shift",
+      "glance_hook": "Google's Universal Cart proves that ambient, always-on commerce is winning — Glance has been operating this model at the lockscreen layer for years, reaching users a full screen deeper than any Google surface can."
+    },
+    {
+      "title": "Apple Unveils 'Siri AI' at WWDC 2026 with Agentic App-Store Shopping Delegation",
+      "source": "TechCrunch / Tom's Guide / NPR",
+      "date": "2026-06-09",
+      "summary": "Apple's WWDC 2026 headline was a ground-up rebuild of Siri — rebranded 'Siri AI' and powered partly by Google Gemini — capable of multi-step conversations, cross-app context, and delegated task execution including bookings and purchases via an App Store agent integration. Apple also redesigned the Apple Pay checkout flow in iOS 27 for easier card switching and order review. Investor reaction was muted, with no firm launch timeline announced, and AAPL shares slid ~2% post-keynote.",
+      "relevance_score": 9,
+      "pillar": "Market Intelligence",
+      "glance_hook": "Siri AI's agentic commerce play is in-app and still screen-dependent — Glance's D0 lockscreen model delivers product discovery before any app (including Siri) is ever opened, giving Android OEM partners a structural head start."
+    },
+    {
+      "title": "Amazon Retires Rufus, Launches 'Alexa for Shopping' Ahead of Prime Day 2026",
+      "source": "Flipflow / Paz.ai / CommerceIQ / Retail Dive",
+      "date": "2026-05-13",
+      "summary": "Amazon merged its Rufus AI shopping agent and Alexa+ into a single unified assistant called Alexa for Shopping, now embedded across the Amazon Shopping app, Amazon.com, and Echo Show devices. The agent leverages full purchase history, browsing behavior, and smart-home Alexa conversations to autonomously recommend products, build carts, and execute purchases — arriving just ahead of Prime Day 2026 (June 23–26). Rufus had already generated nearly $12B in incremental annualized sales during 2025.",
+      "relevance_score": 9,
+      "pillar": "The Commerce Shift",
+      "glance_hook": "Amazon's Alexa for Shopping is agentic commerce inside a walled garden — Glance's Zapps bring the same zero-friction, intent-to-checkout speed to the lockscreen across 175M devices before the Amazon app is ever unlocked."
+    },
+    {
+      "title": "Zara Virtual Try-On Surpasses 7 Million Sessions Across 43 Markets; ASOS Launches Hybrid AI Try-On with AIUTA",
+      "source": "DRESSX / Retail Technology Innovation Hub / ASOS PLC",
+      "date": "2026-02-17",
+      "summary": "Zara's AI virtual try-on — launched December 2025 and expanded to Spain in early 2026 — has clocked over 7 million try-on sessions across 43 markets, requiring users to upload two photos for hyper-realistic outfit visualization. In parallel, ASOS launched a hybrid model on February 17 with AI platform AIUTA, covering ~10,000 products on iOS, allowing shoppers to either upload their image or pick an AI-generated avatar matching their likeness. Both moves signal mainstream adoption of AI-powered fashion visualization.",
+      "relevance_score": 8,
+      "pillar": "Trends & Culture",
+      "glance_hook": "Zara and ASOS still require selfie uploads — Glance's Physical AI Stylist infers style from device signals alone, delivering try-on personalization at lockscreen scale without asking users to photograph themselves."
+    },
+    {
+      "title": "Agentic Commerce Protocols Race: OpenAI's ACP vs. Google's UCP Define New Shopping Infrastructure",
+      "source": "TechCrunch / Opascope / Efficiently Connected / Commercetools",
+      "date": "2026-06-11",
+      "summary": "Two competing open standards are now vying to become the backbone of AI-mediated commerce: OpenAI's Agentic Commerce Protocol (ACP, co-built with Stripe), backed by Instacart, DoorDash, Shopify, and Etsy; and Google's Universal Commerce Protocol (UCP), joined by Amazon, Meta, Microsoft, Salesforce, and Stripe on its Tech Council. Shopify's Agentic Storefronts now let merchants sell simultaneously inside ChatGPT, Microsoft Copilot, Google AI Mode, and Gemini. McKinsey estimates AI agents could redirect $3–5T in global retail spend by 2030.",
+      "relevance_score": 9,
+      "pillar": "Tech Depth",
+      "glance_hook": "While ACP and UCP battle to own the agent-to-merchant handshake, Glance's Zapps already operate as zero-install transactional surfaces at the device's most valuable moment — the wake screen — making Glance a natural D0 commerce node in either protocol's ecosystem."
+    }
+  ]
+}

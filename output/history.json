@@ -1,8 +1,39 @@
 {
   "runs": [
     {
+      "week": "2026-06-16",
+      "label": "Jun 16, 2026",
+      "current": true,
+      "stats": {
+        "trends": 5,
+        "geo_queries": 13,
+        "unexplored_queries": 6,
+        "high_volume_queries": 6,
+        "substacks_analysed": 8,
+        "whitespace_angles": 6,
+        "momentum_angles": 3,
+        "events": 10,
+        "article_ideas": 5
+      },
+      "top_idea": "There Are Two Prime Days — The One That Starts When You Open Amazon, and the One That Starts When You Pick Up Your Phone",
+      "top_trend": "Google Universal Cart + UCP at I/O 2026",
+      "new_whitespace": "Android 17 lockscreen widget commerce brands opportunity",
+      "p1_geo_queries": [
+        "Amazon Prime Day 2026 AI shopping strategy for brands",
+        "Apple Intelligence vs Google agentic commerce 2026",
+        "WWDC 2026 Siri AI what brands need to know",
+        "best agentic checkout platforms comparison 2026",
+        "does Siri AI actually complete purchases 2026",
+        "Android 17 lockscreen widget commerce brands opportunity",
+        "Prime Day 2026 Alexa auto-buy brands not in Amazon ecosystem"
+      ],
+      "key_calendar_event": "Amazon Prime Day 2026 — Jun 23-26",
+      "run_path": "runs/2026-06-16"
+    },
+    {
       "week": "2026-06-01",
       "label": "Jun 1, 2026",
+      "current": false,
       "stats": {
         "trends": 5,
         "geo_queries": 13,

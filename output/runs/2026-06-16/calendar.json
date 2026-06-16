@@ -1,0 +1,87 @@
+{
+  "run_date": "2026-06-16",
+  "agent": "Calendar Agent",
+  "window": "2026-06-16 to 2026-07-15",
+  "events": [
+    {
+      "name": "Android 17 Stable Release",
+      "date": "2026-06-16",
+      "type": "Launch",
+      "description": "Google releases Android 17 stable build today — the most significant visual and AI overhaul since Material Design. Key features include Gemini Spark (on-device AI with sub-50ms latency), Android Halo (live ambient AI agent updates on the lock/home surface), and deep Gemini Intelligence integration across widgets and screen context.",
+      "content_hook": "Android 17 ships Gemini Spark directly onto the lock surface — exactly where Glance already lives. Android Halo's ambient AI agent updates validate the D0 commerce thesis: the lockscreen is now Google's official first-surface for AI commerce. Glance is native infrastructure for this moment, not an add-on.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "Amazon Prime Day 2026",
+      "date": "2026-06-23",
+      "type": "Cultural",
+      "description": "Amazon Prime Day 2026 runs June 23–26 — a four-day global shopping event, expanded from two days. Moved earlier than usual from its traditional July slot. Hundreds of millions of consumers will be in active deal-discovery mode across mobile, and deal-hunting will dominate lockscreen notification behavior.",
+      "content_hook": "Prime Day is the single highest-intent retail moment of the year — and it starts on the lockscreen. Glance's D0 commerce layer can surface deal alerts, countdown timers, and contextual product cards before consumers ever open Amazon or any app. OEM-native placement on 175M Android devices = first-mover advantage on the most traffic-dense shopping weekend of the summer.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "CommerceNext Growth Show 2026",
+      "date": "2026-06-23",
+      "type": "Conference",
+      "description": "Two-day AI-focused retail conference (June 23–24) at New York Hilton Midtown. 2,500+ attendees, 150+ speakers, 60+ sessions. Theme: 'The AI Intelligent Era.' Heavy agenda coverage of agentic AI in consumer behavior, commerce media, AI-driven merchandising, and marketing efficiency.",
+      "content_hook": "The retail industry's leading minds will be debating agentic AI commerce while Glance is already running it at scale. Opportunity to position Glance as the D0 proof-point: the only agentic commerce surface that operates before app-open, before intent is typed, before the funnel even starts. Brand AI Store is the answer to every 'what does agentic commerce look like in practice?' panel question.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "Back-to-School Shopping Season Opens",
+      "date": "2026-06-28",
+      "type": "Cultural",
+      "description": "Late June marks the official start of back-to-school retail season, the second-largest U.S. shopping season. 67% of BTS shoppers have already begun buying by early July per NRF. 18% of parents plan to use generative AI for BTS research. Mobile is the dominant channel. Retailers like Target, Walmart, and Staples launch BTS campaigns this week.",
+      "content_hook": "Back-to-school is the first major shopping season where AI-assisted discovery is mainstream — and the majority of purchases start on mobile. Glance's ambient AI lockscreen is positioned as the 'AI shopping assistant that never sleeps': surfacing BTS deals, trending products, and school supply checklists before parents ever open a browser. This is the editorial hook to demonstrate D0 commerce for a high-intent category.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "Nike Q4 FY2026 Earnings",
+      "date": "2026-06-30",
+      "type": "Earnings",
+      "description": "Nike reports Q4 FY2026 results after market close on June 30. Wall Street is watching Nike's direct-to-consumer digital turnaround strategy and performance in Asia-Pacific, especially India. Results will signal health of premium athletic apparel demand and mobile commerce penetration in emerging markets.",
+      "content_hook": "Nike's earnings are a litmus test for D2C mobile commerce and brand-native digital channels in key Glance markets (India, SE Asia). If Nike DTC digital numbers beat, it validates that consumers are ready to buy premium brand product through ambient/lockscreen surfaces — the exact thesis for Brand AI Store. If they miss, the counternarrative is that brands need new reach channels like Glance to recapture mobile-first consumers.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "name": "Apple iOS 27 / WWDC 2026 Fallout — Developer Adoption Window",
+      "date": "2026-07-01",
+      "type": "Launch",
+      "description": "Following WWDC 2026 (June 9), the post-announcement developer adoption wave peaks in July as iOS 27 betas proliferate. Key announcements: rebuilt Siri with on-device Foundation Models + Google Gemini, Apple Intelligence across all first-party surfaces, and advanced Siri screen-context awareness. iOS 27 stable is expected fall 2026 but developer narrative dominates July.",
+      "content_hook": "Apple deepening Gemini integration into Siri creates an unexpected opening: even Apple's AI commerce story is cloud-dependent and app-layer. Glance's Android-native, on-device, always-on lockscreen is the contrarian position — D0 commerce that works without voice activation, without app switching, without an iOS device. July is the moment to publish the 'Android vs iOS AI commerce' differentiation narrative while tech media is deep in the WWDC hangover.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "name": "NRF Retail Advocates Summit",
+      "date": "2026-07-14",
+      "type": "Conference",
+      "description": "NRF Retail Advocates Summit, July 14–15, Washington D.C. Biennial event connecting retail executives with policymakers. Features demos by top retailers and technology innovators. Focused on policy, legislation, and advocacy priorities for the retail industry, including data privacy, AI regulation, and cross-border commerce.",
+      "content_hook": "As AI commerce regulation enters the policy conversation, Glance's OEM-native model — privacy-preserved, carrier-partnered, operating at the OS layer rather than via third-party data brokers — positions uniquely well for a regulatory environment that increasingly scrutinizes app-layer data practices. This is the moment to frame Glance as 'responsible ambient AI commerce.'",
+      "urgency": "MEDIUM"
+    },
+    {
+      "name": "NRF Nexus 2026",
+      "date": "2026-07-22",
+      "type": "Conference",
+      "description": "NRF Nexus, July 22–24, Colorado Springs, CO. Senior-level retail executive summit where industry leaders define strategy and challenge conventions. Smaller, more intimate than NRF Big Show — focused on next-generation retail execution, emerging tech, and C-suite networking.",
+      "content_hook": "NRF Nexus is where retail CEOs and CMOs shape investment priorities for the following year. The ambient AI commerce and D0 discovery thesis needs to land here in July to influence H2 2026 and 2027 planning cycles. Glance content should be in market ahead of this event to seed the 'lockscreen-first commerce' narrative before executive conversations happen in Colorado Springs.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "name": "Meta Muse Spark LLM & Creator AI Ecosystem Launch",
+      "date": "2026-06-20",
+      "type": "Launch",
+      "description": "Meta unveiled Muse Spark, its first proprietary (non-open-source) large language model, alongside Creator Assistant for Facebook and expanded AI subscription plans across Instagram, Facebook, and WhatsApp. Meta is spending $115–135B on AI infrastructure in 2026. These launches signal Meta's aggressive push into agentic, personalized commerce and creator monetization via AI.",
+      "content_hook": "Meta building a closed, proprietary AI layer on top of its social commerce surfaces is the walled-garden move Glance is designed to counter. While Meta locks brands into its ad ecosystem, Glance's Brand AI Store gives brands a direct, OEM-native commerce surface that reaches consumers before they open Instagram or Facebook. Every Meta AI commerce move creates urgency for brands to diversify their ambient AI presence.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "name": "Summer Fashion & AI Discovery Moment",
+      "date": "2026-07-04",
+      "type": "Cultural",
+      "description": "July 4th weekend in the U.S. is the peak of summer fashion retail — swimwear, outdoor apparel, and lifestyle brand campaigns dominate social and mobile. Combined with broader summer travel and festival season, this is the highest-index moment for fashion discovery on mobile surfaces. AI-powered fashion tools (Daydream, Google Shopping AI, etc.) are actively competing for discovery share.",
+      "content_hook": "Summer fashion is inherently discovery-driven — consumers don't always know what they want until they see it. This is the perfect editorial moment for Glance's D0 commerce thesis: ambient AI surfaces on the lockscreen can present the right outfit, travel accessory, or trend before the consumer has articulated intent. The hook is 'AI that discovers for you before you search' — and Glance is the only platform that does this at the OS layer on Android.",
+      "urgency": "LOW"
+    }
+  ]
+}
