@@ -1,0 +1,51 @@
+{
+  "run_date": "2026-07-02",
+  "agent": "Trend Scout",
+  "trends": [
+    {
+      "title": "AI Chatbots Convert 40-50% Better Than Every Other Channel During Prime Day 2026",
+      "source": "Adobe Analytics / Forbes / CMSWire",
+      "date": "2026-06-27",
+      "summary": "Adobe Analytics data from Amazon's four-day Prime Day event (June 23-26) showed AI-referred shoppers converted 40-51% better than any other digital channel — a complete reversal from 2025, when AI-directed traffic converted 23% worse. AI-referred visitors also spent 49.9% more time on-site, viewed 20.5% more pages, and generated a 33% higher add-to-cart rate. AI traffic itself surged 98.3% year-over-year, though agentic sources still account for less than 1% of total retail traffic.",
+      "relevance_score": 10,
+      "pillar": "The Commerce Shift",
+      "glance_hook": "This is the D0 commerce thesis playing out at scale: shoppers who arrive pre-decided buy more. Glance's lockscreen discovery drives the same pre-intent state — users who see a product at wake and tap through are already in purchase mode. The Prime Day data proves ambient pre-intent is now the highest-converting channel in commerce."
+    },
+    {
+      "title": "Google Launches Universal Commerce Protocol and Universal Cart Across Search, Gemini, YouTube, Gmail",
+      "source": "Google Blog / Search Engine Land / Shopify Engineering",
+      "date": "2026-06-25",
+      "summary": "Google's Universal Commerce Protocol (UCP) — developed with Shopify, Target, Walmart, Wayfair, and 20+ partners — went live post-Google Marketing Live, enabling one-tap agentic checkout directly inside AI Mode in Search and Gemini. The Universal Cart lets users accumulate products across Google surfaces (Search, YouTube, Gmail) and check out via Google Pay or transfer to the merchant site. UCP is expanding from the US to Canada, Australia, and the UK, and into hotel booking and local food delivery verticals.",
+      "relevance_score": 9,
+      "pillar": "Tech Depth",
+      "glance_hook": "Google's Universal Cart is the walled-garden answer to ambient commerce. Glance's Zapps are the open-OEM answer: zero-install transactional mini-apps that run on 175M devices without routing through Google's surfaces. As Google taxes the discovery layer, Glance's direct-to-OEM channel becomes a strategic bypass for brands that want D0 reach without Google's margin."
+    },
+    {
+      "title": "Back-to-School 2026: 23% of Parents Turn to AI for Deals as Season Opens June 28",
+      "source": "PwC / eMarketer / Shopify",
+      "date": "2026-06-28",
+      "summary": "Back-to-school 2026 officially opened June 28, with 67% of shoppers already buying by early July — the earliest start on record. PwC data shows 23% of parents plan to use AI to find deals (a channel that barely existed last season), and 21% will use AI assistants to research products. Kids are also driving purchases directly: 61% of parents let children add items to carts, with 40% giving kids their own cart access via family accounts.",
+      "relevance_score": 8,
+      "pillar": "Market Intelligence",
+      "glance_hook": "Back-to-school is the first major shopping season where AI deal-finding goes mainstream. Glance's lockscreen — pre-installed on devices used by both parents and teens — is positioned to surface contextually timed B2S promotions at wake, before any app is opened. The OEM pre-consent model means Glance can reach this audience without competing in a crowded ad auction."
+    },
+    {
+      "title": "Apple iOS 27 Developer Beta Ships: Siri AI Gets On-Screen Commerce Awareness, Wallet Loyalty Scan",
+      "source": "Apple Newsroom / Tom's Guide / MacRumors",
+      "date": "2026-07-01",
+      "summary": "Apple released iOS 27 to developers on July 1, shipping a rebuilt Siri AI with on-screen context awareness ('Siri Mode' in Camera) and Apple Intelligence. Commerce-relevant features include: bill-splitting via camera-scanned receipts routed to Apple Cash, and physical loyalty/membership card scanning directly into Apple Wallet. The update is a meaningful step toward ambient commerce on iOS — Siri can now take transactional action based on what it sees on screen, not just what the user says.",
+      "relevance_score": 8,
+      "pillar": "Tech Depth",
+      "glance_hook": "iOS 27's on-screen Siri Mode is Apple's version of ambient commerce — transactional action triggered by visual context. Glance does this at a more primitive but far earlier moment: the lockscreen, before the device is fully unlocked. Apple's move validates the ambient commerce UX paradigm Glance pioneered; Glance's 175M Android device footprint means it reaches this future before iOS users do."
+    },
+    {
+      "title": "CommerceNext 2026: State of Agentic Commerce Report Reveals Shifting Benchmarks as AI Moves from Discovery to Action",
+      "source": "CommerceNext / Business Wire / Zero Click Project",
+      "date": "2026-06-24",
+      "summary": "The CommerceNext Growth Show (June 23-24, NYC, 2,500+ attendees) centered entirely on agentic commerce, with the headline event unpacking the 2026 State of Agentic Commerce Report. Key findings: AI is shifting from automation to action — proactively optimizing pricing, assortments, and customer experiences in real time. Wharton's Kartik Hosanagar keynoted on how AI-powered search and agentic discovery are restructuring retail, while brands like Tractor Supply shared how devoted customer bases are the moat against AI commoditization.",
+      "relevance_score": 7,
+      "pillar": "Market Intelligence",
+      "glance_hook": "The CommerceNext consensus: agentic AI is now table stakes for retail, but the winning brands are those with direct audience relationships AI can't intermediate. Glance's OEM pre-consent model and 175M-device reach is exactly that moat — a first-party commerce surface that sits upstream of every AI discovery channel and every app store."
+    }
+  ]
+}

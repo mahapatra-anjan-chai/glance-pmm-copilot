@@ -1,0 +1,113 @@
+{
+  "run_date": "2026-07-02",
+  "agent": "Competitor Pulse",
+  "publications_scanned": [
+    "agentcommerce.substack.com",
+    "aiadeconomy.substack.com",
+    "stratechery.com",
+    "theaieconomy.substack.com",
+    "robonomics.substack.com",
+    "insights4vc.substack.com",
+    "modernretail.co",
+    "retaildive.com",
+    "commercenext.com",
+    "wwd.com",
+    "techtimes.com (Prime Day AI data)",
+    "geekwire.com (AWS Agentic Shopping)"
+  ],
+  "whitespace_angles": [
+    {
+      "angle": "Prime Day Proved AI-Referred Shoppers Convert 40% Better — But Nobody Asks What Comes BEFORE the App",
+      "why_glance": "Adobe Analytics confirmed AI-chatbot-referred shoppers during Prime Day 2026 converted 40% better than search or social traffic — the first time in Prime Day history. Every publication frames this as a ChatGPT/Gemini story. Zero coverage addresses the layer before any app opens. Glance's D0 position is the only commerce surface that exists prior to a browser, assistant, or app being launched. Glance Zapps can surface Prime-Day-style intent signals the moment a user picks up their device — no app, no search, no agent needed.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Back-to-School Is the First AI-Native Shopping Season — Brands Are Optimizing for Agents, Not Ambient Surfaces",
+      "why_glance": "Back-to-school opened June 28 and every publication (Modern Retail, CommerceNext, AgentCommerce) frames the season through the lens of AEO/GEO (AI engine optimization) — structuring data so ChatGPT and Gemini can recommend products. No one covers the physical moment of shopping intent: the student or parent picking up their phone. Glance's lockscreen reaches 175M Android devices at exactly this ambient moment, before any discovery engine is consulted. BTS is the perfect launch season for Glance's Physical AI Stylist — styling outfits without a selfie, on the lockscreen.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Retailers Are Racing to Give Their Catalog to Third-Party AI Agents — Ceding First-Party Discovery in the Process",
+      "why_glance": "Best Buy is partnering with OpenAI to surface products in ChatGPT. Amazon is offering its agentic shopping tech to outside retailers. Salesforce Agentforce Commerce went GA. The entire industry is building for third-party agent intermediaries. Expert Julie Geller's warning (Retail Dive) that 'discovery, evaluation and repeat purchase start happening elsewhere' is covered but never solved. Glance's Brand AI Store is the only first-party, OEM-native commerce surface that keeps discovery owned by the brand + device partnership rather than surrendering it to OpenAI or Google.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "The Universal Commerce Protocol (UCP) Encodes Shopping for AI — But Only Inside Open Apps",
+      "why_glance": "Google's UCP (co-developed with Shopify, Etsy, Wayfair, Target) is the most-cited infrastructure story across publications. It standardizes discovery-to-checkout for AI agents. Every implementation assumes a browser, app, or assistant is already open. No publication has noted that UCP has no lockscreen layer — there is no protocol for pre-session commerce. Glance can articulate Zapps as the D0 commerce transport that sits above UCP: intent before the protocol even activates.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Siri AI (iOS 27) Gets Conversational Commerce — Android's 175M Lockscreen Devices Have No Equivalent Coverage",
+      "why_glance": "Apple's Siri AI announcement (WWDC 2026, iOS 27 beta now active) generated significant analyst coverage including Stratechery. The narrative is almost exclusively Apple/iOS. No publication has noted that Android's 175M Glance-enabled devices already have an ambient commerce surface that does not require Siri, a voice query, or an open app. The iOS 27 wave is the perfect moment for Glance to publish a direct comparison: Siri AI requires app-open context; Glance Zapps deliver commerce in the zero-app moment.",
+      "urgency": "HIGH"
+    },
+    {
+      "angle": "Consumer Trust Is the Unresolved Bottleneck for Agentic Commerce — Privacy-Safe Ambient Commerce Is the Answer Nobody Names",
+      "why_glance": "Multiple publications and Prime Day data surface the same consumer anxiety: over half of shoppers worry AI agents will collect and sell their behavioral data or make undetected purchase errors (AgentCommerce, WWD, CommerceNext). The proposed solutions are all transparency/consent layers inside existing apps. No publication has articulated on-device, no-cloud ambient discovery — where the intelligence lives on the lockscreen without behavioral profiling. Glance's Physical AI Stylist (virtual try-on without a selfie or data upload) is the clearest answer to this trust gap that nobody is naming.",
+      "urgency": "MEDIUM"
+    }
+  ],
+  "momentum_angles": [
+    {
+      "angle": "AI Chatbots Are Now the Highest-Converting Discovery Channel in Commerce",
+      "publications_covering": [
+        "agentcommerce.substack.com",
+        "aiadeconomy.substack.com",
+        "modernretail.co",
+        "retaildive.com",
+        "techtimes.com"
+      ],
+      "coverage_summary": "Adobe Analytics data from Prime Day 2026 showed AI chatbot-referred shoppers converted 40% better than search, email, or social. AgentCommerce covered the broader infrastructure (Salesforce Agentforce GA, Mastercard's first agentic payment in production). AI Ad Economy tracked OpenAI's Cannes debut and 1,400+ brands now advertising on ChatGPT. Modern Retail documented that AI-driven discovery at brands like Loftie nearly doubled from 1.5% to 3% within six months. The consensus: the discovery funnel now starts in AI chat.",
+      "glance_counter_angle": "Every publication treats AI chat as the new top of funnel. Glance's counter-angle: the funnel has a pre-chat layer. The 0.5 seconds before a user opens any app is an unclaimed discovery moment. AI chat requires deliberate intent (the user must open an app and type). Glance Zapps activate on passive intent — the moment the screen lights up. Prime Day's conversion data proves intent-matched discovery converts; Glance can publish data on lockscreen discovery-to-purchase at the moment of device pickup, framing it as the layer above AI chat."
+    },
+    {
+      "angle": "Platform Sovereignty vs. Agent Interoperability — Who Owns the Customer Relationship?",
+      "publications_covering": [
+        "agentcommerce.substack.com",
+        "stratechery.com",
+        "theaieconomy.substack.com",
+        "retaildive.com"
+      ],
+      "coverage_summary": "AgentCommerce dedicated its June 9-22 edition to the Amazon v. Perplexity dispute as a 'portable mandate' test case — whether consumers can delegate purchasing to their chosen agent across platforms. Stratechery's June 19 edition covered e-commerce dynamics in the AI era. The AI Economy analyzed Microsoft's Web IQ (search API for agents) and how Microsoft is rebuilding search for 'a customer that can't click.' Retail Dive noted Best Buy's risk of ceding brand control to AI intermediaries. The theme: every major platform is fighting to control the agent-to-purchase handshake.",
+      "glance_counter_angle": "The platform sovereignty debate assumes the battleground is between ChatGPT, Google, and Amazon. Glance's counter-angle: the OEM layer (Samsung, Motorola hardware) is the only commerce surface that is neither Apple, Google, nor Amazon. Glance's Brand AI Store is a first-party channel that bypasses the agent intermediary war entirely. While everyone argues about who owns the checkout handshake, Glance owns the device surface before any handshake begins."
+    },
+    {
+      "angle": "Structured Product Data Is the New Commerce Moat (AEO/GEO as Mandatory Retail Investment)",
+      "publications_covering": [
+        "modernretail.co",
+        "commercenext.com",
+        "agentcommerce.substack.com",
+        "nshift.com",
+        "paz.ai"
+      ],
+      "coverage_summary": "Modern Retail's Brands Briefing (June 30) documented measurement of AI-driven discovery as the 'next frontier in GEO.' CommerceNext webinar emphasized that structured, enriched product data is critical for agent surfacing. AgentCommerce argued that 'agent readiness is a controlled exposure problem' — brands must decide what data to expose. Multiple publications now treat AEO/GEO optimization as table stakes for 2026 holiday readiness. The framing is universal: if AI can't read your catalog, you don't exist.",
+      "glance_counter_angle": "AEO/GEO assumes discovery happens after a user query. Glance's counter-angle: Zapps surface product discovery before any query is issued. The first touchpoint isn't a search result — it's an ambient card on the lockscreen. While the industry obsesses over catalog legibility for AI agents, Glance can publish on ambient catalog surface: which categories convert best in zero-query discovery, using back-to-school and post-Prime Day data to anchor the argument."
+    }
+  ],
+  "per_publication_summary": [
+    {
+      "name": "Agentic Commerce Frontier (agentcommerce.substack.com)",
+      "recent_focus": "Infrastructure maturity for agentic transactions: Salesforce Agentforce Commerce GA, first production agentic payment (Mastercard/Worldline/Crédit Agricole), Amazon v. Perplexity 'portable mandate' legal battle. The editorial frame is strategic — agent readiness as a controlled exposure decision, not a race to maximum machine legibility.",
+      "notable_post": "June 9-22 edition on Amazon v. Perplexity: argued this is the first serious test of whether consumers can delegate commercial intent across platforms through their chosen software agents — with implications for retail media economics and platform sovereignty.",
+      "gap_vs_glance": "Entirely focused on app-open, agent-mediated commerce. No coverage of ambient/lockscreen surfaces, OEM-native discovery, or the D0 moment before any agent is invoked. The 'portable mandate' framing creates a perfect opening for Glance to publish on 'ambient mandate' — the consumer right to commerce before any app is opened."
+    },
+    {
+      "name": "AI Ad Economy (aiadeconomy.substack.com)",
+      "recent_focus": "OpenAI's emergence as a media seller (Cannes Lions debut), ChatGPT advertising scale (1,400+ brands, 40% of impressions from shopping brands), Amazon and Albertsons launching AI-native ad formats for voice and conversational search. Frame: AI media is now a distinct, measurable advertising category.",
+      "notable_post": "June 26 post on OpenAI's Cannes debut: OpenAI expanded to Japan and South Korea while building momentum with 2,000 advertisers through Criteo. Amazon's AI-native ad formats for voice shopping represent a new format class.",
+      "gap_vs_glance": "Coverage is entirely ad-tech and platform-centric (ChatGPT, Amazon, Albertsons). No discussion of lockscreen advertising, OEM-native inventory, or pre-session discovery surfaces. Glance's lockscreen represents a zero-share-of-voice category in this publication — a direct pitch opportunity for Brand AI Store as an AI-native ad format that reaches users before any chatbot ad is served."
+    },
+    {
+      "name": "Modern Retail (modernretail.co)",
+      "recent_focus": "Post-Prime Day retail health, GEO/AEO measurement maturity, TikTok Shop international expansion, EU de minimis exemption impact, consumer spending caution (essentials over discretionary). Increasingly covering AI-driven discovery as a measurable traffic and conversion channel.",
+      "notable_post": "June 30 Brands Briefing: 'Measurement is the next frontier in GEO for brands.' Loftie data showed AI-driven discovery nearly doubled from 1.5% to 3% within six months. Brand executives now track AI engine recommendations as a first-class channel metric alongside search and social.",
+      "gap_vs_glance": "Modern Retail's AI coverage is almost entirely about web traffic and session-based discovery — what happens after a user opens a browser or app. Zero coverage of pre-session, device-layer, or lockscreen commerce surfaces. The GEO measurement story is a direct opening: Glance can pitch a contributed piece on 'measuring D0 discovery' — the impression that happens before any browser session begins."
+    },
+    {
+      "name": "Stratechery (stratechery.com)",
+      "recent_focus": "Apple regulatory battles (iOS 27, Siri AI withheld from EU), Microsoft's China AI model strategy, AI as development tool (vibe coding), Figma's AI positioning. Ben Thompson is on summer break through July 6.",
+      "notable_post": "June 19 weekly digest mentioned e-commerce dynamics in the AI era as one of its five topics, but without deep analysis. The Apple/Siri AI coverage (June 22) focused on EU regulatory friction, not commerce features.",
+      "gap_vs_glance": "Stratechery covers platform-level strategy but has no Android/OEM commerce lens. The iOS 27/Siri AI coverage creates an implicit gap: what is the Android answer to Apple's ambient intelligence push? Glance is the only entity that has shipped ambient commerce at OEM scale on Android. A Stratechery-style 'Aggregation Theory' analysis of Glance's D0 position — sitting below the OS layer that Google, Samsung, and Motorola all agreed to ship — would be a novel framing this publication has never touched."
+    }
+  ]
+}

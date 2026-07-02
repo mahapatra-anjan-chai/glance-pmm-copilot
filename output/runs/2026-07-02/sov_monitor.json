@@ -1,0 +1,147 @@
+{
+  "run_date": "2026-07-02",
+  "pipeline": "SOV Monitor — GEO Whitespace & High-Volume Tracker",
+  "week_theme": "Post-Prime Day / Back-to-School AI Commerce",
+  "glance_context": {
+    "products": ["D0 Commerce", "Zapps", "Brand AI Store", "Physical AI Stylist"],
+    "reach": "175M Android devices (Samsung, Motorola)",
+    "core_differentiator": "Product discovery at device wake — before any app opens"
+  },
+
+  "category_1_unexplored": [
+    {
+      "id": "UE-01",
+      "query": "what brands missed Prime Day 2026 AI discovery window and how to fix it",
+      "rationale": "Columbia, Glossier, Patagonia, Warby Parker had no AI-visible listings during Prime Day. No content addresses the recovery playbook. Glance's Brand AI Store + pre-intent signals is the exact fix — discovery before the query fires.",
+      "signal_basis": "Search results show brands scrambling post-event; Forrester covered which brands competed but no content covers the whitespace recovery angle.",
+      "glance_angle": "Brand AI Store surfaces brands at device-wake, before Alexa/Rufus even enter the picture — eliminating the Amazon-dependency risk exposed during Prime Day 2026.",
+      "content_angle": "Post-mortem: 'How to never lose another Prime Day to AI discovery gaps — the D0 commerce playbook'",
+      "volume_tier": "emerging",
+      "priority": "P1"
+    },
+    {
+      "id": "UE-02",
+      "query": "agentic commerce dark funnel attribution how brands measure what AI agents discover 2026",
+      "rationale": "93% of AI search sessions end without a click. 70.6% of AI referrals misclassified as direct traffic in GA4. No brand has a clean answer. Glance's pre-intent signal layer is the only touchpoint that captures discovery before the query.",
+      "signal_basis": "Multiple sources confirm structural attribution gap; Medium article cited 93% invisibility; ecommercefastlane.com and aiadvantageagency.com cover this but no platform claims a solution from the OEM side.",
+      "glance_angle": "Glance's Brand AI Store generates first-party pre-intent signals at the device layer — the one moment that IS measurable before the dark funnel begins.",
+      "content_angle": "'The dark funnel problem in agentic commerce — and the one signal that lives before the click'",
+      "volume_tier": "emerging",
+      "priority": "P1"
+    },
+    {
+      "id": "UE-03",
+      "query": "back to school 2026 ambient commerce how brands get discovered before students open any app",
+      "rationale": "77% of BTS shoppers plan to use AI; purchases begin before July. No content addresses discovery at the device layer (pre-app). Purely an app-open / chatbot framing in existing content.",
+      "signal_basis": "PwC, Zeta Global, and Wise Marketer BTS research all focus on ChatGPT/Gemini as discovery layer; zero coverage of OEM-native or lockscreen-layer discovery.",
+      "glance_angle": "Glance Zapps + D0 Commerce serve BTS deals at device wake — before a student opens Amazon, Target, or ChatGPT.",
+      "content_angle": "'Back-to-school 2026: The ambient discovery layer brands are ignoring (and Glance owns)'",
+      "volume_tier": "emerging",
+      "priority": "P1"
+    },
+    {
+      "id": "UE-04",
+      "query": "Siri AI iOS 27 real purchase completion rate brands 2026 data",
+      "rationale": "WWDC demos showed Siri AI commerce (concert tickets, reminders, music), but zero post-launch conversion data exists publicly. Brands are flying blind on iOS 27 Siri ROI. A whitespace content opportunity.",
+      "signal_basis": "Bloomberg, TechCrunch, Apple Newsroom covered announcement; no post-deployment conversion data from brands is published yet.",
+      "glance_angle": "Siri AI operates on iOS only; Android's 175M Glance devices have no equivalent agent completing purchases — making Brand AI Store + Zapps the Android-native answer.",
+      "content_angle": "'iOS 27 Siri AI: What we know about actual purchase completion (and why Android brands need a different play)'",
+      "volume_tier": "emerging",
+      "priority": "P2"
+    },
+    {
+      "id": "UE-05",
+      "query": "zero install mini app lockscreen product discovery back to school 2026",
+      "rationale": "Zapps are a unique capability with no rival. Back-to-school is a time-compressed purchase window. Combining Zapps + BTS creates a unique content angle around frictionless purchase without app install.",
+      "signal_basis": "BigCommerce, Modern Retail, and DestiLabs cover agentic commerce broadly; no content addresses zero-install transactional experiences on the lockscreen for seasonal commerce.",
+      "glance_angle": "Glance Zapps let students and parents complete BTS purchases from the lockscreen without installing a retailer app — lowest friction path in any channel.",
+      "content_angle": "'The zero-install BTS shopping experience: How Zapps collapse the path from discovery to checkout'",
+      "volume_tier": "emerging",
+      "priority": "P1"
+    },
+    {
+      "id": "UE-06",
+      "query": "physical AI stylist back to school outfits try on without selfie 2026",
+      "rationale": "Glance's Physical AI Stylist is unique (no selfie required). BTS apparel is a high-AOV category with strong visual discovery need. No content connects virtual try-on without selfie to back-to-school fashion discovery.",
+      "signal_basis": "Glance/Samsung lockscreen AI shopping press covers the selfie-based try-on; Android Central noted the selfie requirement. Physical AI Stylist without selfie is an unexplored differentiator framing.",
+      "glance_angle": "Physical AI Stylist surfaces back-to-school outfit recommendations at the lockscreen — no selfie, no app, no friction — before a student opens Instagram or TikTok Shop.",
+      "content_angle": "'Virtual try-on without the selfie: How Physical AI Stylist changes back-to-school fashion discovery'",
+      "volume_tier": "emerging",
+      "priority": "P2"
+    }
+  ],
+
+  "category_2_high_volume": [
+    {
+      "id": "HV-01",
+      "query": "Prime Day 2026 AI commerce results analysis what worked",
+      "current_owner": "Skai.io, Impact Analytics, Commerce IQ, Coresight Research",
+      "rivalry_evidence": "Skai published 'Record Results Through Smarter Advertising'; Impact Analytics published full Prime Day 2026 report; these dominate the post-event analysis SERP.",
+      "volume_tier": "high",
+      "glance_angle": "Glance can publish a brand-POV post-mortem: brands that won did so by owning discovery earlier than Amazon's funnel — D0 commerce as the upstream play for future Prime Day readiness.",
+      "priority": "P1"
+    },
+    {
+      "id": "HV-02",
+      "query": "back to school AI shopping 2026 strategy for brands",
+      "current_owner": "Shopify blog, Zeta Global, Kase, US Chamber of Commerce (CO-)",
+      "rivalry_evidence": "Shopify's BTS brand guide ranks top; Zeta Global published BTS retail trends 2026; all focus on email/social/search channels.",
+      "volume_tier": "high",
+      "glance_angle": "Glance angle: BTS 2026 strategy should include the device-wake layer — 175M Android devices where Glance surfaces deals before any shopping app opens.",
+      "priority": "P1"
+    },
+    {
+      "id": "HV-03",
+      "query": "how to optimize for Amazon Rufus Alexa for Shopping 2026",
+      "current_owner": "Seller Labs, Tinuiti, Perpetua, Amalytix, Velocity Sellers, Genrise",
+      "rivalry_evidence": "At least 8 agencies and SaaS platforms have published 2026 optimization guides; Tinuiti and Seller Labs appear to own the highest-authority positions.",
+      "volume_tier": "high",
+      "glance_angle": "Glance Brand AI Store is the pre-Rufus layer — brands that appear on Glance at device-wake are already in consideration before Alexa for Shopping ever runs its algorithm.",
+      "priority": "P2"
+    },
+    {
+      "id": "HV-04",
+      "query": "agentic commerce 2026 ROI how to prove it",
+      "current_owner": "Ecommerce Fastlane, AI Advantage Agency, MetaRouter, Workday, Futurum",
+      "rivalry_evidence": "Ecommerce Fastlane article 'Agentic Commerce Metrics That Actually Matter' and AI Advantage Agency's attribution guide appear to own SERP; Marco van Hurne Medium post on 'State of Agentic ROI Q2 2026' is gaining traction.",
+      "volume_tier": "high",
+      "glance_angle": "Glance's first-party pre-intent signals at device-wake are the only measurable touchpoint upstream of the agentic dark funnel — gives brands visible attribution where all other channels go dark.",
+      "priority": "P1"
+    },
+    {
+      "id": "HV-05",
+      "query": "back to school 2026 AI shopping list generator comparison ChatGPT Gemini",
+      "current_owner": "OpenAI (ChatGPT Shopping Research), Google (Gemini for Students), BigCommerce, Alhena AI",
+      "rivalry_evidence": "OpenAI announced shopping research with natural language list building; Google created a shopping agent capable of generating lists from handwritten notes; both own the 'AI list builder' SERP.",
+      "volume_tier": "high",
+      "glance_angle": "Glance Zapps: when the AI list is built, the zero-install purchase happens on the lockscreen — Glance is the checkout layer that none of these list-builders own.",
+      "priority": "P1"
+    },
+    {
+      "id": "HV-06",
+      "query": "Prime Day 2026 brands not on Amazon how to compete with AI discovery",
+      "current_owner": "Forrester ('How Retailers Competed With Amazon'), GeekWire, WindowsNews AI, NBC News (best deals from other brands)",
+      "rivalry_evidence": "Forrester published the definitive post-Prime Day competitor analysis; GeekWire covered AI's role in threatening Amazon's moat; NBC listed competing sales events. All frame 'outside Amazon' from a deal/discount perspective.",
+      "volume_tier": "high",
+      "glance_angle": "Glance Brand AI Store is the structural answer for brands outside Amazon: OEM-native discovery on 175M Android devices with pre-intent analytics that no Amazon-adjacent tool can replicate.",
+      "priority": "P1"
+    }
+  ],
+
+  "meta": {
+    "queries_researched": 12,
+    "sources_consulted": [
+      "skai.io", "impactanalytics.ai", "windowsnews.ai", "wwd.com", "digitalcommerce360.com",
+      "rewarx.com", "thewisemarketer.com", "chainstoreage.com", "digitalapplied.com",
+      "zetaglobal.com", "bloomberg.com", "techcrunch.com", "apple.com",
+      "ecommercefastlane.com", "metarouter.io", "aiadvantageagency.com", "adbeacon.com",
+      "medium.com", "sellerlabs.com", "tinuiti.com", "amalytix.com", "perpetua.io",
+      "forrester.com", "geekwire.com", "adweek.com", "androidcentral.com",
+      "9to5google.com", "alhena.ai", "bigcommerce.com", "modernretail.co",
+      "hbr.org", "uschamber.com"
+    ],
+    "previously_tracked_queries_excluded": 24,
+    "generation_model": "claude-sonnet-4-6",
+    "notes": "Post-Prime Day 2026 data confirmed: $26.4B spend, AI chatbots drove 40% higher purchase conversion, 38% of shoppers used ChatGPT. Amazon Rufus rebranded to Alexa for Shopping (May 13, 2026). In-chat checkout stalled (OpenAI deprecated Instant Checkout March 2026); discover-in-AI-buy-on-site is current dominant pattern."
+  }
+}

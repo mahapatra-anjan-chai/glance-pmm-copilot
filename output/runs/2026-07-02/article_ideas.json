@@ -1,0 +1,67 @@
+{
+  "run_date": "2026-07-02",
+  "agent": "Orchestrator",
+  "synthesis_notes": "Post-Prime Day data window is live. BTS season opened June 28. NRF Nexus July 22. Samsung Galaxy Z Fold 8 July 22. iOS 27 public beta July 7. Five ideas ranked by urgency × whitespace × Glance-exclusive angle.",
+  "ideas": [
+    {
+      "rank": 1,
+      "title": "The Channel Above AI Chat: How D0 Commerce Outconverted Every Prime Day Channel Nobody Tracked",
+      "priority": "HIGH",
+      "pillar": "The Commerce Shift",
+      "author_persona": "GTM",
+      "geo_query": "agentic commerce dark funnel attribution how brands measure what AI agents discover 2026",
+      "insider_angle": "Adobe Analytics proved AI-referred shoppers converted 40-51% better than every channel during Prime Day 2026 — but 93% of AI sessions end with no website click, meaning the majority of that conversion lift is invisible in GA4. Glance's Brand AI Store generates first-party pre-intent signals at the device layer — the only measurable touchpoint that exists BEFORE the dark funnel begins. Glance can cite D0 discovery-to-purchase data from 175M Android devices as proof the pre-app moment is the highest-trust, highest-intent slot in the funnel.",
+      "calendar_hook": "NRF Nexus July 22-24 — senior retail tech leaders are walking in asking 'how do I measure AI-driven discovery?' This article is the answer they need before they land in Colorado Springs.",
+      "opening_hook": "AI chatbots just converted 40% better than search, social, and email combined during Prime Day — and brands still have no idea how to measure it, because 93% of those sessions never produced a click.",
+      "why_now": "Prime Day ended June 26. Brand post-mortems are being written THIS week. The attribution gap is the number-one unanswered question in every post-Prime-Day debrief, and zero content currently owns the D0 angle on this gap. The window to be the definitive answer is 5-7 days before the conversation moves to Q3 planning."
+    },
+    {
+      "rank": 2,
+      "title": "Which Brands Missed Prime Day's AI Discovery Window — and the D0 Playbook to Never Miss It Again",
+      "priority": "HIGH",
+      "pillar": "Market Intelligence",
+      "author_persona": "marketing",
+      "geo_query": "what brands missed Prime Day 2026 AI discovery window and how to fix it",
+      "insider_angle": "Columbia, Glossier, Patagonia, and Warby Parker had no AI-visible listings during Prime Day. Forrester covered which brands competed but zero content addresses the recovery playbook. Glance's Brand AI Store surfaces brands at device-wake — before Alexa for Shopping, before Rufus, before any chatbot is launched — eliminating Amazon-dependency risk entirely. Glance holds first-party pre-intent analytics from OEM-embedded device-level data that no third-party attribution tool can replicate.",
+      "calendar_hook": "Post-Prime Day debrief week (July 2-9) — brand and media planning teams are in retrospective mode right now. NRF Nexus July 22 gives this a B2B amplification window three weeks out.",
+      "opening_hook": "Prime Day 2026 generated $26.4B and AI chatbots converted 40% better than every other channel — which means the brands that weren't AI-discoverable didn't just lose a sale, they lost the highest-converting moment in modern retail.",
+      "why_now": "The post-Prime Day content SERP is dominated by brands-that-won analysis (Skai, Impact Analytics, CommerceNext). The recovery playbook angle is completely unclaimed. Brand planners reading post-mortems this week are specifically looking for 'what do I do next time' — and this article is that answer with a Glance-specific resolution."
+    },
+    {
+      "rank": 3,
+      "title": "Back-to-School 2026: The Ambient Discovery Layer Brands Are Ignoring (and Zapps Already Own)",
+      "priority": "HIGH",
+      "pillar": "Trends & Culture",
+      "author_persona": "product",
+      "geo_query": "back to school 2026 ambient commerce how brands get discovered before students open any app",
+      "insider_angle": "77% of BTS 2026 shoppers plan to use AI to find deals — but all existing coverage (Shopify, Zeta Global, Modern Retail) frames this through ChatGPT and Gemini, which require the user to open an app and type a query. Glance Zapps serve zero-install transactional BTS experiences on 175M Android lockscreens at the moment of device unlock — before a student opens Amazon, Target, or any AI chatbot. Physical AI Stylist delivers BTS outfit recommendations without a selfie, without an app, and without competing in a paid discovery auction.",
+      "calendar_hook": "BTS season officially opened June 28 and 67% of shoppers are already buying by early July — the earliest start on record. Peak digital engagement window runs now through mid-July, with the biggest single-day in-store traffic on August 8. Brand planning decisions are being made this week.",
+      "opening_hook": "Back-to-school 2026 is the first AI-native shopping season — but every brand is optimizing for the chatbot layer, and no one is thinking about the 0.5 seconds before a student opens any app.",
+      "why_now": "BTS opened June 28 and the content window for brand strategy guidance is July 1-15. After mid-July, BTS content shifts from planning to execution coverage. This is the last week to publish a planning-focused piece that catches brand budget decisions in time to influence the season."
+    },
+    {
+      "rank": 4,
+      "title": "Siri AI Gets Ambient Commerce on iOS 27. Android's 175M Lockscreen Devices Have Had It for Years.",
+      "priority": "HIGH",
+      "pillar": "Tech Depth",
+      "author_persona": "tech",
+      "geo_query": "Siri AI iOS 27 real purchase completion rate brands 2026 data",
+      "insider_angle": "iOS 27 developer beta shipped July 1 with on-screen Siri Mode enabling transactional action from visual context — a feature Apple is marketing as ambient commerce. Glance has done this at OEM scale on 175M Android devices without requiring an unlocked screen, a voice query, or an open app. The D0 moment (device wake, pre-unlock) is a capability Apple cannot match because iOS's architecture doesn't permit pre-unlock transactional surfaces. Glance's OEM pre-consent — embedded at the device level before any app is installed — is a trust layer iOS 27's Siri AI doesn't have.",
+      "calendar_hook": "iOS 27 public beta launches July 7 — a guaranteed media wave that puts ambient commerce on every tech editor's agenda. Samsung Galaxy Z Fold 8 launches July 22, expanding Glance's Android OEM footprint simultaneously. The Android counter-narrative window is July 7-22.",
+      "opening_hook": "Apple just shipped iOS 27 with a rebuilt Siri that can see your screen and complete purchases — and the entire tech press is calling it the future of ambient commerce, apparently forgetting that 175M Android devices have been doing this since before iOS 27 was announced.",
+      "why_now": "iOS 27 developer beta went live July 1 — the tech press wave peaks July 7 when the public beta drops. Glance needs to publish its counter-positioning piece before that wave crests, or the narrative sets without Android in it. This is a 5-day window."
+    },
+    {
+      "rank": 5,
+      "title": "Retailers Are Surrendering Discovery to ChatGPT and Alexa. Glance's Brand AI Store Is the Exit Ramp.",
+      "priority": "HIGH",
+      "pillar": "The Commerce Shift",
+      "author_persona": "GTM",
+      "geo_query": "Prime Day 2026 brands not on Amazon how to compete with AI discovery",
+      "insider_angle": "Best Buy is partnering with OpenAI to surface products in ChatGPT. Amazon offers its agentic shopping tech to outside retailers. Salesforce Agentforce Commerce went GA July 1. The entire industry is routing first-party discovery through third-party AI intermediaries — surrendering brand relationship data to OpenAI, Google, or Amazon in exchange for reach. Glance's Brand AI Store is the only OEM-native commerce surface that keeps discovery owned by the brand-device partnership: first-party pre-intent analytics on 175M Android devices that no Amazon-adjacent tool can replicate, with zero algorithmic tax.",
+      "calendar_hook": "Salesforce Agentforce Commerce + ChatGPT integration went GA July 1 — the exact moment when brand surrender to third-party AI intermediaries becomes enterprise-scale. NRF Nexus July 22 is the venue where the B2B case for Brand AI Store reaches its highest-value audience.",
+      "opening_hook": "Every major retailer is now racing to give their product catalog to ChatGPT, Alexa, and Google's agents — and in doing so, they're handing over the highest-value asset in commerce: the first moment a customer thinks about buying.",
+      "why_now": "Salesforce Agentforce GA (July 1) triggered a new wave of enterprise brands committing to third-party AI discovery channels. The Forrester post-Prime Day competitor analysis already owns the 'brands outside Amazon' SERP — but it frames the question as discount strategy, not channel sovereignty. Glance can own the B2B strategic angle in a gap that won't stay open past NRF Nexus."
+    }
+  ]
+}

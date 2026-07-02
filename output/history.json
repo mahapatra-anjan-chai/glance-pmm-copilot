@@ -1,9 +1,37 @@
 {
   "runs": [
     {
+      "week": "2026-07-02",
+      "label": "Jul 2, 2026",
+      "current": true,
+      "stats": {
+        "trends": 5,
+        "geo_queries": 13,
+        "unexplored_queries": 6,
+        "high_volume_queries": 6,
+        "substacks_analysed": 12,
+        "whitespace_angles": 6,
+        "momentum_angles": 3,
+        "events": 11,
+        "article_ideas": 5
+      },
+      "top_idea": "The Channel Above AI Chat: How D0 Commerce Outconverted Every Prime Day Channel Nobody Tracked",
+      "top_trend": "AI Chatbots Convert 40-50% Better Than Every Other Channel During Prime Day 2026",
+      "new_whitespace": "agentic commerce dark funnel attribution how brands measure what AI agents discover 2026",
+      "p1_geo_queries": [
+        "agentic commerce dark funnel attribution how brands measure what AI agents discover 2026",
+        "what brands missed Prime Day 2026 AI discovery window and how to fix it",
+        "back to school 2026 ambient commerce how brands get discovered before students open any app",
+        "Siri AI iOS 27 real purchase completion rate brands 2026 data",
+        "Prime Day 2026 brands not on Amazon how to compete with AI discovery"
+      ],
+      "key_calendar_event": "NRF Nexus 2026 — Jul 22-24",
+      "run_path": "runs/2026-07-02"
+    },
+    {
       "week": "2026-06-16",
       "label": "Jun 16, 2026",
-      "current": true,
+      "current": false,
       "stats": {
         "trends": 5,
         "geo_queries": 13,

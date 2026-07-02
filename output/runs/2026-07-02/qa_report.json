@@ -1,0 +1,44 @@
+{
+  "run_date": "2026-07-02",
+  "agent": "QA Checker",
+  "passed": true,
+  "checks": {
+    "trend_scout": {
+      "passed": true,
+      "notes": "5 trends present. All 7 fields present on every entry (title/source/date/summary/relevance_score/pillar/glance_hook). Pillars: 'The Commerce Shift', 'Tech Depth', 'Market Intelligence', 'Tech Depth', 'Market Intelligence' — all valid. Scores: 10, 9, 8, 8, 7 — 4 scores ≥8, meets the ≥3 threshold. Dates span 2026-06-24 to 2026-07-01, all within range."
+    },
+    "sov_monitor": {
+      "passed": true,
+      "notes": "6 unexplored queries (UE-01 through UE-06) — meets ≥5. 6 high_volume queries (HV-01 through HV-06) — meets ≥3. All fields present (id/query/rationale/signal_basis/glance_angle/content_angle/volume_tier/priority for unexplored; id/query/current_owner/rivalry_evidence/volume_tier/glance_angle/priority for high_volume). Priorities: UE-01=P1, UE-02=P1, UE-03=P1, UE-04=P2, UE-05=P1, UE-06=P2; HV-01=P1, HV-02=P1, HV-03=P2, HV-04=P1, HV-05=P1, HV-06=P1. P1/P2/P3 constraint: only P1 and P2 used — compliant (P3 not present, which is acceptable — no invalid priority values)."
+    },
+    "optimise_geo_csv": {
+      "passed": true,
+      "notes": "13 data rows (rows 2-14 after header) — meets ≥8 requirement. All 6 columns present: query, type, volume_tier, current_owner, glance_angle, priority. Spot-checked all rows: no empty fields detected. Row 8 (HV-01) lists current_owner as 'Skai.io, Impact Analytics, Commerce IQ, Coresight Research' — populated correctly. Row 13 (HV-06) current_owner field contains valid multi-source string."
+    },
+    "competitor_pulse": {
+      "passed": true,
+      "notes": "6 whitespace_angles present — meets ≥5. All angles are specific and grounded: UCP lockscreen gap, Siri AI Android gap, agentic surrender to third-party AI, BTS ambient discovery, Prime Day pre-app layer, consumer trust/privacy. Not generic — each names specific platforms, data points, or companies. Urgency values: 5 HIGH + 1 MEDIUM — all HIGH/MEDIUM, no LOW values present — compliant. 3 momentum_angles present — meets ≥2. per_publication_summary covers 4 publications (Agentic Commerce Frontier, AI Ad Economy, Modern Retail, Stratechery) — meets ≥3. Each summary has name/recent_focus/notable_post/gap_vs_glance fields."
+    },
+    "calendar": {
+      "passed": true,
+      "notes": "11 events present — meets ≥8. All 6 fields present on every event (name/date/type/description/content_hook/urgency). Urgency values: HIGH=5 (NRF Retail Advocates Summit, NRF Nexus, Samsung Z Fold 8 launch, BTS Peak Window, iOS 27 Public Beta), MEDIUM=4 (Salesforce Agentforce GA, RAISE Summit, Nike Earnings, Meta Live Video Ads), LOW=2 (AI for Good, AMD Advancing AI). 5 HIGH urgency events — meets ≥2 threshold. Note: 1 event (Nike Q4 Earnings) has date 2026-06-30, which is before the stated window start of 2026-07-02 — minor date boundary issue, but the event is editorially relevant as a 'just reported' hook and the calendar agent explicitly labeled it '(just reported)'. Not a blocking issue."
+    },
+    "article_ideas": {
+      "passed": true,
+      "notes": "Exactly 5 ideas present (ranks 1-5). All 10 fields present on every idea: rank, title, priority, pillar, author_persona, geo_query, insider_angle, calendar_hook, opening_hook, why_now. Titles are specific and non-generic: each names a concrete competitive dynamic (D0 vs AI chat, Prime Day recovery playbook, Zapps vs BTS ambient, iOS 27 vs Android, Brand AI Store vs ChatGPT/Alexa). Opening hooks are punchy and specific. Insider angles cite Glance products/stats: Brand AI Store cited in ideas 1, 2, 5; D0 Commerce in ideas 1, 2, 3, 4; Zapps in ideas 3, 5; 175M Android devices cited in ideas 3, 4, 5; Physical AI Stylist in idea 3. No insider_angle is vague or placeholder."
+    },
+    "fact_check": {
+      "passed": true,
+      "notes": "175M devices: confirmed cited correctly in trend_scout (trends 2, 4, 5), sov_monitor (glance_context.reach and multiple entries), competitor_pulse (whitespace angles 2, 4, 5 and momentum angle 2), calendar (BTS event, iOS 27 event, RAISE event), article_ideas (ideas 3, 4, 5). Never written as 100M or 200M. Samsung and Motorola as OEM partners: confirmed in sov_monitor glance_context ('175M Android devices (Samsung, Motorola)') and competitor_pulse momentum angle 2. Zapps = zero-install mini-apps: confirmed in sov_monitor (UE-05: 'zero-install transactional mini-apps'), competitor_pulse whitespace angle 1 ('Glance Zapps can surface Prime-Day-style intent signals... no app, no search, no agent needed'), article_ideas idea 3. Brand AI Store = OEM-native (not a downloaded app): confirmed throughout — consistently described as OEM-native, first-party, device-embedded; never described as a downloaded app. D0 = discovery before any app opens: confirmed in trend_scout glance_hook 1 ('users who see a product at wake and tap through'), sov_monitor glance_context ('Product discovery at device wake — before any app opens'), competitor_pulse ('the layer before any app opens'), article_ideas idea 1 opening_hook. Physical AI Stylist requires no selfie: confirmed in sov_monitor UE-06 ('no selfie required'), competitor_pulse whitespace angle 6 ('virtual try-on without a selfie or data upload'), article_ideas idea 3 insider_angle ('no selfie, without an app')."
+    }
+  },
+  "issues": [
+    {
+      "severity": "LOW",
+      "file": "calendar.json",
+      "issue": "Nike Q4 FY2026 Earnings event has date 2026-06-30, which is before the stated calendar window start of 2026-07-02. The event is editorially valid (labeled 'just reported') but technically falls outside the window.",
+      "recommendation": "Either update date to 2026-07-02 (the report publication date) or add a 'window_note' field clarifying this is a trailing event. Non-blocking for HTML generation."
+    }
+  ],
+  "summary": "All 7 checks passed. 6 files validated across 40+ individual criteria. One low-severity date boundary note on the Nike earnings calendar event (pre-window date) — non-blocking. All Glance fact anchors verified correct: 175M devices, Samsung/Motorola OEM partners, Zapps as zero-install mini-apps, Brand AI Store as OEM-native, D0 as pre-app discovery, Physical AI Stylist as selfie-free. Pipeline is ready for HTML dashboard generation."
+}

@@ -1,0 +1,95 @@
+{
+  "run_date": "2026-07-02",
+  "agent": "Calendar Agent",
+  "window": "2026-07-02 to 2026-08-01",
+  "events": [
+    {
+      "name": "NRF Retail Advocates Summit",
+      "date": "2026-07-14",
+      "type": "Conference",
+      "description": "Two-day NRF policy and advocacy gathering in Washington D.C. where senior retail executives meet with legislators to shape retail regulation, trade policy, and commerce infrastructure. Runs July 14–15.",
+      "content_hook": "As DC shapes commerce regulation, Glance's lockscreen-first discovery model offers a regulatory-light distribution channel that bypasses app-store gatekeepers — a timely angle for retail policymakers debating mobile commerce access and Android openness.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "NRF Nexus 2026",
+      "date": "2026-07-22",
+      "type": "Conference",
+      "description": "Curated NRF summit for senior digital, marketing, and technology retail leaders at The Broadmoor Hotel, Colorado Springs. Runs July 22–24. Focused on the next decade of retail transformation, agentic AI, and personalization at scale.",
+      "content_hook": "NRF Nexus is the room where D0 commerce gets defined — Glance's ambient AI lockscreen reaches shoppers before they open any app, making it the natural proof-point for 'discovery before intent' in the agentic era. Brand AI Store and OEM-native commerce are the missing layer in every retailer's stack being discussed here.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "Samsung Galaxy Z Fold 8 / Z Flip 8 Launch + Android 17 OEM Rollout",
+      "date": "2026-07-22",
+      "type": "Launch",
+      "description": "Samsung expected to launch Galaxy Z Fold 8 and Z Flip 8 alongside One UI 9 and the beginning of Android 17 rollout to Galaxy flagship devices. Marks the start of broad OEM Android 17 adoption across premium handsets.",
+      "content_hook": "Android 17's OEM rollout wave — starting with Samsung's flagship foldables — expands the addressable lockscreen surface for Glance. Each new Android 17 device is a D0 commerce opportunity. Glance's OEM-native integration positions it as the default ambient commerce layer on the world's largest Android installed base before iOS 27 even ships.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "Back-to-School Shopping Peak Window",
+      "date": "2026-07-15",
+      "type": "Cultural",
+      "description": "Back-to-school budgets are up 11.7% in 2026. Peak digital engagement begins mid-July with the biggest single-day in-store traffic expected August 8 (South/West) and August 15 (Midwest). Mobile-first discovery drives early-season research and intent.",
+      "content_hook": "Back-to-school is the first major commerce moment post-Prime Day. Glance's lockscreen surfaces high-intent BTS content — school supplies, fashion, electronics — before shoppers open a single app. D0 discovery for BTS is Glance's strongest seasonal proof-point: 175M Android devices showing relevant cards at the moment of morning unlock.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "iOS 27 Public Beta Launch",
+      "date": "2026-07-07",
+      "type": "Launch",
+      "description": "Apple's iOS 27 public beta becomes available in July 2026, ahead of the full September release. Features expanded Apple Intelligence, next-gen Siri AI, and tighter lockscreen personalization. Developers and early adopters can access new AI features.",
+      "content_hook": "iOS 27's AI lockscreen ambitions are Apple's attempt to close the gap with Android's ambient surface advantage. This is the ideal moment for Glance to publish 'Android has had this for years' positioning — the lockscreen as the original ambient AI commerce layer, not a feature Apple is just discovering. OEM-native vs. app-layer is the key Android differentiation story.",
+      "urgency": "HIGH"
+    },
+    {
+      "name": "Salesforce Agentforce Commerce + ChatGPT Integration GA",
+      "date": "2026-07-01",
+      "type": "Launch",
+      "description": "Salesforce's ChatGPT integration for Agentforce Commerce reaches general availability in July 2026, following the June 29 GA launch of core Shopper, Buyer, and Merchant agents. Enables AI-native shopping journeys across Salesforce-powered storefronts at enterprise scale.",
+      "content_hook": "Agentforce makes agentic commerce real for enterprise retailers — but it still operates inside apps and browsers. Glance's lockscreen commerce layer captures the moment before any agent fires: the ambient surface where brand discovery happens at device-unlock. Brand AI Store integrated with agentic backends is the D0 top-of-funnel these Salesforce merchants are missing.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "name": "AI for Good Global Summit 2026",
+      "date": "2026-07-07",
+      "type": "Conference",
+      "description": "ITU-led AI for Good Global Summit in Geneva focused on AI standards, ethical deployment, and cross-sector partnerships. Parallel MACHINA Summit also runs July 7 at STATION F in Paris, focused on production AI deployment.",
+      "content_hook": "Global AI governance conversations are defining where ambient AI surfaces are permissible and how data flows across lockscreen and device layers. Glance's model — AI-curated but privacy-native, OEM-embedded rather than app-based — is a blueprint for responsible ambient commerce at scale worth positioning in this conversation.",
+      "urgency": "LOW"
+    },
+    {
+      "name": "RAISE Summit 2026",
+      "date": "2026-07-08",
+      "type": "Conference",
+      "description": "9,000+ global AI and business leaders convene at Carrousel du Louvre in Paris for RAISE Summit July 8–9. One of the largest European AI leadership gatherings, covering enterprise AI deployment, agentic systems, and AI-native business models.",
+      "content_hook": "RAISE is where global enterprise AI strategy gets set. Glance's ambient commerce model — AI surfacing purchase moments on 175M Android lockscreens without app friction — is a live case study in agentic commerce at device scale. European retail brands expanding in India and Southeast Asia should be paying attention to OEM-native AI distribution.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "name": "AMD Advancing AI 2026",
+      "date": "2026-07-22",
+      "type": "Conference",
+      "description": "AMD's annual AI infrastructure summit in San Francisco, July 22–23. Focused on AI hardware, open-source AI frameworks (ROCm), and deployment of autonomous agents at enterprise scale. Key venue for AI infra and edge AI conversation.",
+      "content_hook": "On-device AI is the infrastructure thesis that underpins Glance's lockscreen intelligence — ambient AI that runs close to the device edge, not in the cloud. As AMD pushes edge inference hardware, Glance's OEM-native model demonstrates what always-on, on-device commerce AI looks like at 175M device scale.",
+      "urgency": "LOW"
+    },
+    {
+      "name": "Nike Q4 FY2026 Earnings (just reported)",
+      "date": "2026-06-30",
+      "type": "Earnings",
+      "description": "Nike reported Q4 FY2026 results on June 30: revenue $10.97B (down 1% YoY), EPS 72 cents (beat driven by 52-cent tariff refund benefit). China struggles persist. Full-year revenue $46.4B. Strong brand but navigating tariff headwinds and digital commerce transition.",
+      "content_hook": "Nike's China struggles and tariff exposure highlight why direct-to-consumer ambient discovery matters more than ever. Glance's Brand AI Store gives sportswear and apparel brands a D0 commerce channel on Android devices in India and Southeast Asia — markets where Nike needs growth and where Glance's lockscreen reach is deepest. Zero-friction discovery before any app open.",
+      "urgency": "MEDIUM"
+    },
+    {
+      "name": "Meta Live Video Ads + Virtual Cards Commerce Rollout",
+      "date": "2026-07-01",
+      "type": "Launch",
+      "description": "Meta rolling out Live Video Ads on Instagram globally and launching Virtual Cards for Checkout (in partnership with Mastercard/Visa) across Facebook and Instagram this summer. Part of broader Meta commerce and discovery tool expansion announced at Cannes Lions.",
+      "content_hook": "Meta is doubling down on in-app commerce with virtual checkout and live video. But it still requires opening the app. Glance operates one layer earlier — D0 lockscreen discovery that routes high-intent shoppers to brand storefronts before Meta's feed even loads. The ambient lockscreen and in-app social commerce are complementary, not competitive, and Glance wins the first moment.",
+      "urgency": "MEDIUM"
+    }
+  ]
+}
